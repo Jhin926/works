@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/index.css" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/banner1.js"></script>
+<script type="text/javascript" src="js/modal.js"></script>
+<style>
+/*banner begin*/
+.banner{
+	width:100%;
+	max-width: 640px;
+	margin:0 auto;
+	overflow:hidden;
+    position:relative;}
+
+.banner ul{
+	list-style:none;
+	margin:0;
+	padding:0;}
+	
+.banner ul li img{width:100%;}
+
+.banner>.banner-control{
+    height:22px;
+	width: 100%;
+    position: absolute;
+    z-index:8;
+	left: 0;
+	bottom: 10px;
+    text-align:center;
+	padding:0;
+	}
+.banner>.banner-control>ol {
+	display: inline-block;
+}
+.banner>.banner-control>ol>li{
+    display:inline-block;
+    margin:7px 6px;
+    width:35px;
+    height:7px;
+    background-color:#fff;
+	box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, .3);}
+	
+.banner>.banner-control>ol>li.on{
+    background-color:#003793;}
+/*banner end*/
+</style>
+</head>
+
+<body>
+<div id="header">
+  <p class="logo-container"><img src="img/logo-pororo.png" width="30%" alt="pororo" /></p>
+</div>
+<div id="container">
+<!--banner begin-->
+<div id="banner_box" class="banner">
+  <ul>
+    <li><a onclick="return false;"><img src="img/index/bnr-img01.gif" /></a></li>
+    <li><a onclick="return false;"><img src="img/index/bnr-img01.gif" /></a></li>
+    <li><a onclick="return false;"><img src="img/index/bnr-img01.gif" /></a></li>
+    <li><a onclick="return false;"><img src="img/index/bnr-img01.gif" /></a></li>
+  </ul>
+  <div class="banner-control">
+    <ol>
+      <li class="on"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ol>
+  </div>
+</div>
+<script>
+	$(function(){
+		new Swipe(document.getElementById('banner_box'), {
+			speed:500,
+			auto:3000,
+			callback: function(){
+				var lis = $(this.element).next(".banner-control").find("ol").children();
+				lis.removeClass("on").eq(this.index).addClass("on");
+			}
+		});
+	});
+</script>
+<!--banner end-->
+  <ul class="nav-class">
+    <li><a href="javascript:;" id="modal-confirm" data-title="<img src='img/logo-pororo.png' width='30%' alt='pororo' />"><img src="img/index/img-fac.png" width="100%" alt="" /></a></li>
+    <li><a href="interact.html"><img src="img/index/img-class.png" width="100%" alt="" /></a></li>
+    <li><a href="interact.html"><img src="img/index/img-mar.png" width="100%" alt="" /></a></li>
+    <li><a href="javascript:;" id="modal-alert" data-title="<img src='img/logo-pororo.png' width='30%' alt='pororo' />"><img src="img/index/img-park.png" width="100%" alt="" /></a></li>
+    <li><a href="active.html"><img src="img/index/img-meet.png" width="100%" alt="" /></a></li>
+    <li><a href="ticket.html"><img src="img/index/img-online.png" width="100%" alt="" /></a></li>
+  </ul>
+</div>
+<div id="footer">
+  <div class="footer-fixed">
+    <div class="footer-inner">
+      <ul class="more-container">
+        <li class="more-login">
+          <a href="login.html">
+          <img src="img/index/bg-login.png" width="100%" alt="" />
+          <div class="more-content">
+          <p class="more-img"><img src="img/index/ico-login.png" /></p>
+          <p>登陆注册</p>
+          </div>
+          </a>
+        </li>
+        <li class="more-login">
+          <a href="">
+          <img src="img/index/bg-city.png" width="100%" alt="" />
+          <div class="more-content">
+          <p class="more-img"><img src="img/index/ico-city.png" /></p>
+          <p>选择城市</p>
+          </div>
+          </a>
+        </li>
+        <li class="more-login">
+          <a href="">
+          <img src="img/index/bg-point.png" width="100%" alt="" />
+          <div class="more-content">
+          <p class="more-img"><img src="img/index/ico-point.png" /></p>
+          <p>国内指数</p>
+          </div>
+          </a>
+        </li>
+        <li class="more-login">
+          <a href="about.html">
+          <img src="img/index/bg-about.png" width="100%" alt="" />
+          <div class="more-content">
+          <p class="more-img"><img src="img/index/ico-about.png" /></p>
+          <p>关于创旭</p>
+          </div>
+          </a>
+        </li>
+      </ul>
+      <a href="javascript:;"  class="more-btn"><img src="img/btn-more.png" width="112" height="19" alt="点击更多" /></a>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  $(document).ready(function(){
+    $(".more-btn").on("touchstart",function(){
+      $(".more-container").toggle();
+    });
+  });
+  $("#modal-confirm").on("touchend" , function(){
+        $("#modal-confirm").createModal({
+            background: "#000",//设定弹窗之后的覆盖层的颜色
+            width: "300px",//设定弹窗的宽度
+            height: "190px",//设定弹窗的高度
+            resizable: false,//设定弹窗是否可以拖动改变大小
+            move: false,//规定弹窗是否可以拖动
+            bgClose: false,//规定点击背景是否可以关闭
+            html: "<div class='modal-promot-mess'>是否要执行此次操作？</div>" +
+                    "<p class='insure-btn-con'><span class='sure-btn'>确认</span><span class='cancel-btn modal-close'>返回</span></p>",
+            addFunction: function(){//增加的方法
+                $(".modal-promot-mess").click(function(){})
+            }
+        },function(){//回调函数的方法
+            $(".insure-btn-con").click(function(){alert("ok");});
+        });
+    });
+  $("#modal-alert").on("touchend" , function(){
+        $("#modal-alert").createModal({
+            background: "#000",//设定弹窗之后的覆盖层的颜色
+            width: "300px",//设定弹窗的宽度
+            height: "190px",//设定弹窗的高度
+            resizable: false,//设定弹窗是否可以拖动改变大小
+            move: false,//规定弹窗是否可以拖动
+            bgClose: false,//规定点击背景是否可以关闭
+            html: "<div class='modal-promot-mess'>操作成功</div>" +
+                    "<p class='insure-btn-con'><span class='cancel-btn modal-close'>确定</span></p>",
+            addFunction: function(){//增加的方法
+                $(".modal-promot-mess").click(function(){})
+            }
+        },function(){//回调函数的方法
+            $(".insure-btn-con").click(function(){alert("ok");});
+        });
+    });
+</script>
+</html>

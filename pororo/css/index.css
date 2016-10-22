@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+.nav-class {
+  overflow: hidden;
+  width: 88%;
+  margin: auto;
+  padding-top: 40px;
+}
+.nav-class li {
+  float: left;
+  width: 26%;
+  margin: 0 3.5% 27px 3.5%;
+  text-align: center;
+}
+.nav-class li img {
+  max-width: 83px;
+  max-height: 113px;
+}
+
+/*-------点击更多的样式----------*/
+#footer {
+  height: 50px;
+}
+.footer-inner {
+  background-color: #eee;
+  padding: 14px 0;
+}
+.more-container {
+  overflow: hidden;
+  width: 92%;
+  max-width: 640px;
+  margin: 0 auto 20px auto;
+  display: none;
+}
+.more-container li {
+  float: left;
+  width: 20%;
+  margin: 0 2.5%;
+  position: relative;
+}
+.more-container .more-content {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  font-size: 12px;
+}
+.more-content p.more-img {
+  padding: 10% 0 6% 0;
+}

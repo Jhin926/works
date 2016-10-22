@@ -1,0 +1,563 @@
+@charset "utf-8";
+
+/*----------通用部分的样式----------*/
+h1.page-title {
+  font-size: 20px;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #c69b6d;
+}
+.commom-bg {
+  background-color: #eeeeee;
+}
+.common-border {
+  border-top: 1px solid #b5b5b5;
+  border-bottom: 1px solid #b5b5b5;
+}
+
+/*----------登录，注册页面样式----------*/
+.login-container {
+  color: #c69b6d;
+  font-size: 14px;
+}
+.login-container a {
+  color: #c69b6d;
+}
+.login-input {
+  width: 60%;
+  margin: auto;
+}
+.login-input li {
+  margin-bottom: 15px;
+  line-height: 1.5em;
+}
+.login-input input[type="text"],
+.login-input input[type="password"]{
+  background: url(../img/person/bg-input.png) no-repeat;
+  background-size: 100% 100%;
+  border: none;
+  outline: none;
+  padding-left: 5px;
+  width: 97%;
+  height: 35px;
+  color: #c69b6d;
+  font-size: 15px;
+}
+.login-btn {
+  width: 59%;
+  margin: 25px auto 0;
+  border: 3px solid #c69b6d;
+  text-align: center;
+  padding: 7px 0;
+  font-size: 20px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.login-regist {
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.check-code input[type="text"] {
+  width: 45%;
+  font-size: 12px;
+}
+.check-code label {
+  width: 45%;
+  border: 3px solid #c69b6d;
+  padding: 3px 0;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+/*----------个人中心页面样式----------*/
+.information-container {
+  
+}
+.information-content {
+  border-top: 1px solid #b5b5b5;
+}
+.information-content a {
+  color: inherit;
+}
+.information-content li {
+  position: relative;
+  padding: 15px 0 15px 5%;
+  background-color: #eeeeee;
+  border-bottom: 1px solid #b5b5b5;
+}
+.information-content li .card-number {
+  color: #a0a0a0;
+}
+.information-content li dl dt {
+  float: left;
+  margin-right: 5%;
+}
+.information-content li dl dd {
+  float: left;
+}
+
+/*----------购物车样式----------*/
+.cart-content {
+  
+}
+.cart-content thead {
+  color: #c69b6d;
+  font-size: 17px;
+}
+.cart-content tbody {
+  font-weight: bold;
+}
+.cart-content tbody tr td:last-child {
+  color: #e60012;
+}
+.cart-content tr td:first-child img {
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px #aaa;
+}
+.cart-content span.cart-reduce {
+  background-color: #fff;
+  font-weight: bold;
+  padding: 0 5px;
+  display: inline-block;
+}
+.cart-content span.cart-add {
+  background-color: #fff;
+  font-weight: bold;
+  padding: 0 5px;
+  display: inline-block;
+}
+.cart-content span.cart-count {
+  width: 60px;
+  height: 21px;
+  text-align: center;
+  display: inline-block;
+}
+.cart-content span.cart-count input {
+  background-color: #fff;
+  font-weight: bold;
+  border: none;
+  width: 100%;
+  height: 21px;
+  text-align: center;
+}
+.cart-total {
+  text-align: right;
+  font-weight: bold;
+  color: #e60012;
+  font-size: 18px;
+  margin: 15px 3% 0 0;
+}
+.cart-pay {
+  text-align: center;
+  margin: 30px 0;
+}
+.cart-pay a {
+  background-color: #e60012;
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px 1px #aaa;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  display: inline-block;
+  width: 80%;
+  margin: auto;
+  padding: 10px 0;
+}
+
+/*----------修改手机号码页面----------*/
+.phone-content {
+  background-color: #eeeeee;
+  border-top: 1px solid #b5b5b5;
+  border-bottom: 1px solid #b5b5b5;
+  text-align: center;
+  font-size: 14px;
+}
+.phone-content ul li {
+  margin: 20px 0;
+}
+.phone-content dl {
+  overflow: hidden;
+  line-height: 30px;
+}
+.phone-content dl dt {
+  float: left;
+  width: 30%;
+}
+.phone-content dl dd {
+  float: left;
+  width: 35%;
+}
+.phone-content dl dd input[type="text"] {
+  vertical-align: middle;
+  height: 30px;
+  border-radius: 0;
+  width: 99%;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+.phone-content a.phone-btn {
+  display: inline-block;
+  background-color: #e5e5e5;
+  border: 1px solid #b5b5b5;
+  padding: 0 10px;
+  line-height: 30px;
+  font-size: 13px;
+}
+.phone-save {
+  padding: 20px 0;
+}
+
+/*----------修改密码页面样式----------*/
+.modify-content {
+}
+.modify-content li {
+  padding: 20px 0;
+}
+.modify-content dl {
+  overflow: hidden;
+  line-height: 30px;
+}
+.modify-content dl dt {
+  float: left;
+  width: 30%;
+  text-align: right;
+}
+.modify-content dl dd {
+  float: left;
+  width: 65%;
+  padding-left: 5%;
+}
+.modify-content dl dd input {
+  height: 30px;
+  border-radius: 0;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+.modify-btn {
+  padding: 15px 0;
+  text-align: center;
+}
+.modify-btn a {
+  display: inline-block;
+  background-color: #e5e5e5;
+  border: 1px solid #b5b5b5;
+  padding: 0 10px;
+  line-height: 30px;
+}
+
+/*----------地址管理页面----------*/
+.address-container {
+  
+}
+.address-content {
+  border-top: 1px solid #b5b5b5;
+  color: #a0a0a0;
+}
+.address-content li a {
+  color: inherit;
+}
+.address-content .address-default {
+  color: #333;
+  border-bottom: 1px solid #b5b5b5;
+  margin-bottom: 20px;
+}
+.address-content li {
+  position: relative;
+  padding: 15px 0 15px 5%;
+  background-color: #eeeeee;
+  border-bottom: 1px solid #b5b5b5;
+}
+.address-content li.border-bottom {
+  border-bottom: 1px solid #b5b5b5;
+}
+.address-content li.border-top {
+  border-top: 1px solid #b5b5b5;
+}
+.address-content li .card-number {
+  color: #a0a0a0;
+}
+.address-content li dl dt {
+  float: left;
+  margin-right: 5%;
+  width: 25%;
+  min-height: 1px;
+  font-size: 17px;
+  color: #333;
+  text-align: center;
+}
+.address-content li dl dd {
+  float: left;
+  width: 60%;
+  min-height: 1px;
+}
+.address-content li.add-address a.modify {
+  top: 20px;
+}
+.address-content li a.modify {
+  top: 36px;
+}
+
+/*----------地址编辑页面----------*/
+.address01-content {
+}
+.address01-content li {
+  padding: 20px 0;
+}
+.address01-content dl {
+  overflow: hidden;
+  line-height: 30px;
+}
+.address01-content dl dt {
+  float: left;
+  width: 30%;
+  text-align: right;
+}
+.address01-content dl dd {
+  float: left;
+  width: 65%;
+  padding-left: 5%;
+}
+.address01-content dl dd input {
+  height: 30px;
+  border-radius: 0;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+.address01-content dl dd select {
+  height: 30px;
+  font-size: 15px;
+}
+.address01-content dl dd span.choice-default {
+  background-color: #818181;
+  border-radius: 20px;
+  width: 50px;
+  height: 25px;
+  display: inline-block;
+}
+.address01-content dl dd span.active {
+  background-color: #28cb43;
+  text-align: right;
+}
+.address01-content dl dd span.choice-default span {
+  background-color: #fff;
+  border-radius: 20px;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+
+/*----------订单列表页面----------*/
+.order-content {
+  position: relative;
+  padding: 10px 0;
+  margin: 15px 0;
+  font-size: 14px;
+}
+.order-content .order-name a {
+  color: inherit;
+}
+.order-content > .left {
+  width: 30%;
+  text-align: center;
+}
+.order-content > .right {
+  margin: 0 12% 0 2%;
+  width: 55%;
+  text-align: right;
+}
+.order-content .right .order-state {
+  margin-top: 7px;
+}
+.order-content .right .order-state .right {
+  color: #a0a0a0;
+}
+.order-content .modify {
+  top: 35px;
+  right: 3%;
+}
+
+/*----------订单详情页面----------*/
+.order01-content {
+  padding: 20px 10%;
+}
+.order01-content .order-img {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.order01-content .order-name {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.order01-content .order-information {
+  margin-bottom: 20px;
+}
+.order01-content .order-price {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.order01-content .order-pay {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.order01-content .order-pay a {
+  color: #fff;
+  background-color: #e60012;
+  display: inline-block;
+  width: 100%;
+  border-radius: 8px;
+  padding: 5px 0;
+  font-size: 20px;
+}
+.order01-content .order-refund {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.order01-content .order-refund a {
+  color: #fff;
+  background-color: #0075a9;
+  display: inline-block;
+  width: 100%;
+  border-radius: 8px;
+  padding: 5px 0;
+  font-size: 20px;
+}
+.order01-content .order-discuss {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.order01-content .order-discuss a {
+  color: #fff;
+  background-color: #f39800;
+  display: inline-block;
+  width: 100%;
+  border-radius: 8px;
+  padding: 5px 0;
+  font-size: 20px;
+}
+.order01-content .order-cancel {
+  text-align: center;
+}
+.order01-content .order-cancel a {
+  color: #a0a0a0;
+}
+
+/*----------确认支付页面----------*/
+.pay-content {
+}
+.pay-content .pay-information {
+  overflow: hidden;
+  border-bottom: 1px solid #d5d5d5;
+  padding: 15px 5% 5px 3%;
+}
+.pay-information a {
+  color: inherit;
+}
+.pay-information > .left {
+  width: 30%;
+}
+.pay-information > .right {
+  width: 65%;
+}
+.pay-information > .right h2 {
+  font-size: 16px;
+}
+.pay-information .pay-product {
+  font-size: 14px;
+  margin: 3px 0;
+}
+.pay-information .pay-price {
+  text-align: right;
+}
+.pay-content .pay-total {
+  text-align: right;
+  padding: 10px 5%;
+}
+.pay-address {
+  border-top: 1px solid #b5b5b5;
+  margin-top: 20px;
+}
+.pay-address li a {
+  color: inherit;
+}
+.pay-address li {
+  border-bottom: 1px solid #b5b5b5;
+  padding: 12px 0;
+}
+.pay-address li dl {
+  overflow: hidden;
+}
+.pay-address li dl dt {
+  float: left;
+  text-align: right;
+  width: 25%;
+  min-height: 1px;
+}
+.pay-address li dl dt input[type="radio"] {
+  margin: 15px 10px 0 0;
+  width: 16px;
+  height: 16px;
+}
+.pay-address li dl dd {
+  float: left;
+  width: 63%;
+  margin: 0 7% 0 5%;
+}
+.pay-add-default {
+  display: block;
+}
+.pay-insure {
+  margin: 15px 0;
+  text-align: center;
+}
+.pay-insure a {
+  background-color: #e60012;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 0;
+  display: inline-block;
+  width: 80%;
+}
+
+/*----------交易记录----------*/
+.trading-list {
+  border-top: 1px solid #b5b5b5;
+}
+.trading-list a {
+  color: inherit;
+}
+.trading-list li {
+  border-bottom: 1px solid #b5b5b5;
+  padding: 10px 12% 10px 5%;
+  position: relative;
+}
+.name-state .right {
+  color: #a0a0a0;
+}
+.trading-list li .modify {
+  top: 25px;
+}
+
+/*----------交易详情页面----------*/
+.trading01-content {
+  padding: 20px 10%;
+}
+.trading01-content .trading01-img {
+  margin-bottom: 15px;
+}
+.trading01-content ul li {
+  margin-bottom: 10px;
+}

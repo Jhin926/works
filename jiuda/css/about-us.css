@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+#container {
+	overflow: hidden;
+}
+#container .container_about_us {
+	padding-bottom: 20px;
+}
+#container .container_about_us h1 {
+	font-size: 21px;
+	line-height: 40px;
+	font-weight: normal;
+	border-bottom: 1px solid #CFCFCF;
+	font-size: 18px;
+}
+#container .container_about_us p {
+	padding: 15px 20px 0 20px;
+	font-size: 16px;
+	text-indent: 2em;
+	line-height: 2em;
+}
+p.news_time {
+	font-size: 13px;
+}
+p.other_new {
+	text-align: right;
+}
+
+
+#container .container_contact_us {
+	padding-bottom: 20px;
+}
+#container .container_contact_us h1 {
+	font-size: 21px;
+	line-height: 40px;
+	font-weight: normal;
+	border-bottom: 1px solid #CFCFCF;
+	font-size: 18px;
+}
+.container_contact_us .container_content {
+	float: left;
+	font-size: 14px;
+	line-height: 50px;
+	width: 246px;
+	margin-top: 20px;
+}
+.container_contact_us .container_map {
+	float: right;
+	width: 760px;
+	height: 302px;
+	border: 1px solid #CFCFCF;
+	margin: 20px 0;
+}

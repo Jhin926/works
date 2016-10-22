@@ -1,0 +1,198 @@
+@charset "utf-8";
+
+#container .index-nav {
+  text-align: center;
+  font-size: 14px;
+  padding: 20px 0 30px 0;
+  background-color: #fff;
+  box-shadow: 0 4px 5px 0 #aaa;
+  margin-bottom: 30px;
+}
+.index-nav li {
+  float: left;
+  width: 20%;
+}
+.index-nav li a {
+  text-decoration: none;
+  color: #d7a554;
+}
+.index-nav li p.nav-text {
+  margin-top: 10px;
+}
+
+.pro-container {
+  margin-bottom: 30px;
+}
+.pro-container h1.pro-title {
+  font-size: 18px;
+  font-weight: normal;
+  color: #c69b6d;
+  display: inline-block;
+  background-color: #fff;
+  padding: 3px 15px 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: 1px 0 0 0 #aaa;
+}
+h1.pro-title a {
+  color: inherit;
+}
+h1.pro-title a span {
+  font-weight: bold;
+}
+.pro-container .pro-introduce {
+  background-color: #fff;
+  padding: 25px 0;
+  font-size: 14px;
+}
+.pro-introduce .pro-img {
+  width: 50%;
+  text-align: center;
+  padding-top: 10px;
+}
+.pro-introduce .pro-text {
+  width: 45%;
+  padding-right: 5%;
+}
+.pro-introduce .pro-text a {
+  color: inherit;
+}
+.pro-text h2 {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+.pro-text .pro-price {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.pro-price span {
+  color: #e71f19;
+  font-size: 17px;
+}
+.discount-pack {
+  
+}
+.discount-pack .discount-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.pack-con {
+  min-height: 165px;
+  position: relative;
+  text-align: center;
+  background-color: #fff;
+  width: 57%;
+  margin-left: 2%;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px 1px #aaa;
+  padding-bottom: 20px;
+}
+.pack-con .pack-tit {
+  color: #d7a554;
+  padding: 10px 0 40px;
+}
+.pack-con .pack-tit a {
+  color: inherit;
+}
+.pack-con .pack-reduce {
+  display: inline-block;
+  border: 2px solid #c69b6d;
+  border-radius: 50%;
+  padding: 3px 10px 5px 6px;
+  position: absolute;
+  top: 25%;
+  right: 15%;
+}
+.pack-reduce .reduce-text {
+  font-size: 13px;
+  padding-top: 10px;
+}
+.pack-reduce .reduce-count {
+ font-size: 14px;
+ color: #e71f19;
+ font-weight: bold;
+}
+.pack-con .pack-information {
+  background-color: #c69b6d;
+  border-radius: 10px;
+  box-shadow: 1px 3px 5px 4px #ccc;
+  padding: 10px 0 15px;
+  position: absolute;
+  left: 103%;
+  top: 28px;
+  width: 66%;
+}
+.pack-information h3 {
+  font-size: 16px;
+  color: #fff;
+  padding-top: 5px;
+}
+.pack-information h3 a {
+  color: inherit;
+}
+.pack-information p.add-send {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+.pack-information .mark-price {
+  font-size: 10px;
+}
+.mark-price del {
+  font-size: 14px;
+  font-weight: bold;
+}
+.pack-information .discount-price {
+  font-size: 12px;
+  font-weight: bold;
+}
+.discount-price span {
+  color: #e71f19;
+  font-size: 16px;
+}
+.pack-information .discount-online {
+  margin-top: 5px;
+}
+.discount-online a {
+  display: inline-block;
+  color: #fff;
+  padding: 5px 15px;
+  text-decoration: none;
+  background-color: #e71f19;
+  border-radius: 5px;
+}
+.often-problem {
+  text-align: center;
+  margin-bottom: 15px;
+} 
+.often-problem > a {
+  color: #b5b5b5;
+  text-decoration: none;
+  background: url(../img/index/bg-often.png) no-repeat right center;
+  padding-right: 25px;
+  font-size: 17px;
+}
+.often-problem > a.open {
+  background: url(../img/index/bg-often-open.png) no-repeat right center;
+}
+.often-problem .question-container {
+  margin-top: 10px;
+  text-align: left;
+  margin-left: 33%;
+}
+
+/*----------特价优惠页面样式----------*/
+.discount-tit-img {
+  margin-bottom: 15px;
+}
+.discount-container .pack-information {
+  top: 0;
+  min-height: 160px;
+}
+.discount-container .discount-online a {
+  padding: 5px 0;
+  width: 80%;
+  margin: auto;
+  box-shadow: 0 1px 0 1px #959595;
+}

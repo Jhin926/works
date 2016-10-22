@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+#container {
+	overflow: hidden;
+}
+#container .nav_sidebar {
+	line-height: 2em;
+	width: 140px;
+	float: left;
+	background: #f7f7f7;
+	border: #cfcfcf solid 1px;
+	position: relative;	
+	padding: 0 10px 10px 10px;
+	margin: 20px 0;
+}
+.nav_sidebar ul {
+	margin-top: 15px;
+}
+.nav_sidebar h1 {
+	font-size: 21px;
+	line-height: 40px;
+	font-weight: normal;
+	padding-left: 10px;
+	border-bottom: 1px solid #CFCFCF;
+}
+
+/*以下是商品列表部分*/
+#container .shop_list {
+	margin: 20px 0;
+	float: right;
+}
+.shop_list ul {
+	width: 853px;
+	overflow: hidden;
+}
+.shop_list ul li {
+	float: left;
+	width: 203px;
+	border: #cfcfcf solid 1px;
+	text-align: center;
+	padding-top: 5px;
+	margin: 0 8px 10px 0;
+}
+.shop_list ul li p.shop_list-text {
+	background: #f7f7f7;
+	border-top: #cfcfcf solid 1px;
+	font-size: 12px;
+	line-height: 30px;
+	padding-left: 10px;
+	margin-top: 7px;
+	text-align: left;
+}
+
+#container .accessory_detail {
+	margin: 20px 0;
+	float: right;
+	width: 853px;
+}
+.accessory_detail h2 {
+	line-height: 40px;
+	font-size: 18px;
+	border-bottom: 1px solid #CFCFCF;
+	font-weight: normal;
+}
+.accessory_detail p {
+	font-size: large;
+	font-weight: bold;
+	color: #f00;
+	margin: 15px 0;
+	line-height: 1.6em;
+}
+
+#container .shop_detail {
+	margin: 20px 0;
+	float: right;
+	width: 853px;
+	font-size: 16px;
+}
+.shop_detail h2 {
+	line-height: 40px;
+	font-size: 18px;
+	border-bottom: 1px solid #CFCFCF;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+.shop_detail p {
+	line-height: 1.6em;
+	color: #222;
+	text-indent: 1.5em;
+}
+.shop_detail .details_list {
+	margin: 20px 0 5px;
+	line-height: 1.5em;
+}

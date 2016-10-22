@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+.discuss-container {
+  width: 90%;
+  margin: auto;
+}
+.discuss-content {
+  margin-top: 20px;
+  position: relative;
+}
+.discuss-content .praise-container {
+  width: 130px;
+  height: 64px;
+  position: absolute;
+  right: 15px;
+  bottom: 25px;
+  background: url(../img/discuss/img-praise.png) no-repeat;
+  background-size: 100% 100%;
+}

@@ -1,0 +1,583 @@
+@charset "utf-8";
+
+body.bgblue {
+  background-color: #4cc1f1;
+}
+body.bgred {
+  background-color: #ea656f;
+}
+.title {
+  position: relative;
+  margin-bottom: 10px;
+}
+.title .title-name {
+  position: absolute;
+  left: 0;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+}
+/*----------注册页面样式----------*/
+.regist-title {
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.regist-container {
+  width: 80%;
+  margin: auto;
+}
+.regist-container li {
+  margin-bottom: 20px;
+}
+.regist-container dl dt {
+  width: 25%;
+  text-align: right;
+  line-height: 30px;
+  min-height: 1px;
+}
+.regist-container dl dd {
+  margin-left: 5%;
+  width: 70%;
+}
+.regist-container dl dd span {
+  color: #F63;
+  margin-left: 5px;
+}
+.regist-container dl dd input[type="text"] {
+  width: 84%;
+  padding-left: 1%;
+  height: 30px;
+}
+.regist-container dl dd input[type="text"].code-input {
+  width: 40%;
+}
+.regist-container button {
+  width: 40%;
+  height: 30px;
+}
+.regist-btn {
+}
+.reset-btn {
+  margin-right: 16%;
+}
+
+/*----------登录页面样式----------*/
+.login-title {
+  margin: 0 0 15px 12%;
+  color: #fff;
+  font-size: 19px;
+}
+.login-container {
+  width: 80%;
+  margin: auto;
+}
+.login-container input[type="text"],
+.login-container input[type="password"]{
+  width: 97%;
+  padding-left: 3%;
+  color: #707070;
+  height: 40px;
+  background: url(../img/bg-input.png) no-repeat;
+  background-size: 100% 100%;
+  border: none;
+}
+.login-container input[type="text"].code-login {
+  width: 45%;
+  margin-right: 5%;
+}
+.login-container li {
+  margin-bottom: 20px;
+}
+.login-btn {
+}
+.login-btn a {
+  color: #fff;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+}
+.login-btn a.left {
+  width: 30%;
+  text-align: left;
+}
+.login-btn a.right {
+  width: 40%;
+  text-align: center;
+}
+.login-btn a span {
+  margin-right: 5px;
+}
+
+/*----------关于我们样式----------*/
+.about-container {
+  width: 85%;
+  margin: auto;
+}
+.about-container h1 {
+  font-size: 20px;
+  color: #fff;
+}
+.about-content {
+  margin-bottom: 20px;
+}
+.about-content p {
+  text-indent: 2em;
+  color: #fff;
+  line-height: 1.5em;
+}
+
+/*----------互动课堂样式----------*/
+.interact-container {
+  color: #7d7d7d;
+}
+.interact-content {
+  width: 85%;
+  margin: 0 auto 20px auto;
+}
+.interact-content .interact-title {
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 15px 0 10px 0;
+}
+.interact-content p {
+  line-height: 1.5em;
+}
+
+/*----------活动信息样式----------*/
+.active-container {
+  width: 100%;
+  margin: auto;
+}
+.active-content {
+  width: 90%;
+  margin: auto;
+}
+.active-container li {
+  border-bottom: 1px solid #cfcfcf;
+  padding: 15px 0;
+}
+.active-container li dl {
+  overflow: hidden;
+}
+.active-container li dl dt {
+  width: 30%;
+}
+.active-container li dl dd {
+  width: 65%;
+  margin-left: 5%;
+  padding-bottom: 10px;
+  position: relative;
+}
+.active-container li dl dd h2 {
+  font-size: 16px;
+  margin-top: 5px;
+}
+.active-introduce {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  font-size: 14px;
+}
+.active-introduce .left {
+  font-weight: bold;
+}
+.active-introduce .right {
+  color: #7d7d7d;
+  font-weight: bold;
+}
+.active-introduce .right a {
+  color: #7d7d7d;
+}
+.active-introduce .right .arrow {
+  margin-left: 5px;
+}
+.active-more {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.active-container .active-details {
+  width: 90%;
+  margin: auto;
+}
+.active-details h2 {
+  text-align: center;
+  font-size: 17px;
+  margin: 7px 0;
+}
+.active-details .active-time {
+  text-align: right;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.detail-content {
+  line-height: 1.5em;
+  margin-top: 10px;
+}
+
+/*----------线上购票样式----------*/
+.ticket-content {
+  width: 90%;
+  margin: 0 auto 10px auto;
+  background-color: #e5e5e5;
+  padding: 3%;
+}
+.ticket-img {
+  width: 25%;
+}
+.ticket-img img {
+  max-width: 100px;
+  max-height: 100px;
+}
+.ticket-infor {
+  width: 27%;
+  margin-left: 3%;
+}
+.ticket-infor h2 {
+  font-size: 19px;
+  font-weight: bold;
+  margin: 3px 0;
+}
+.ticket-infor .ticket-price {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 7px;
+}
+.ticket-operat {
+	
+}
+.ticket-operat p {
+  margin-top: 7px;
+  text-align: center;
+}
+.ticket-operat p a {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  display: inline-block;
+  background-color: #ff0000;
+  padding: 5px 0;
+  border-radius: 8px;
+  width: 106px;
+}
+
+/*----------我的购票样式----------*/
+.myticket-content {
+}
+.myticket-content h2 {
+  text-align: center;
+  font-size: 18px;
+  margin: 10px 0;
+}
+.myticket-content .myticket-list {
+  border-top: 1px solid #b5b5b5;
+}
+.myticket-list li {
+  padding: 10px 0;
+  background-color: #eeeeee;
+  border-bottom: 1px solid #b5b5b5;
+}
+.myticket-list dl {
+  overflow: hidden;
+}
+.myticket-list dl dt {
+  margin-left: 5%;
+  width: 40%;
+  min-height: 1px;
+}
+.myticket-list dl dt h3 {
+  font-size: 16px;
+}
+.myticket-list dl dt p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+.myticket-list dl dd {
+  text-align: right;
+  margin-right: 5%;
+  width: 50%;
+  padding-top: 11px;
+}
+.myticket-list dl dd .count-container {
+  line-height: 20px;
+  font-size: 18px;
+  margin-right: 10px;
+}
+.myticket-list dl dd .count-container img {
+  vertical-align: sub;
+}
+.myticket-list dl dd .myticker-price,
+.myticket-list dl dd .ticket-total{
+  font-size: 18px;
+  font-weight: bold;
+}
+a.go-pay {
+  color: #fff;
+}
+a.go-pay p {
+  font-size: 20px;
+  background-color: #ff0000;
+  padding: 10px 0;
+  width: 70%;
+  margin: 30px auto 10px auto;
+  border-radius: 8px;
+  text-align: center;
+}
+a.choice-ticket {
+  color: #b5b5b5;
+}
+a.choice-ticket p {
+  text-align: center;
+  font-size: 21px;
+}
+
+/*----------我的积点样式----------*/
+.integral-content h2 {
+  text-align: center;
+}
+.integral-content a {
+  color: inherit;
+}
+.integral-content li {
+  position: relative;
+  padding: 20px 5%;
+  line-height: 15px;
+}
+.integral-content li > .left {
+  width: 30%;
+}
+.integral-content li > .right {
+  margin-right: 5%;
+}
+
+/*----------兑换记录样式----------*/
+.changelist-container h2 {
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 0;
+}
+.changelist-content a {
+  color: inherit;
+}
+.changelist-content li {
+  position: relative;
+  padding: 20px 5%;
+  line-height: 15px;
+}
+.changelist-content li > .right {
+  width: 30%;
+  text-align: right;
+}
+.changelist-content li > .left {
+  width: 70%;
+}
+.change-state {
+  color: #a0a0a0;
+}
+
+/*----------积分兑换样式----------*/
+.exchange-container {
+}
+.exchange-container .integral-change {
+  background-color: #007bc5;
+  width: 90%;
+  padding: 10px 5%;
+  margin: auto;
+}
+.integral-change .left {
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+}
+.integral-change a.right {
+  font-size: 17px;
+  text-decoration: underline;
+  color: #c9c9c9;
+}
+.exchange-content h2 {
+  text-align: center;
+  font-size: 17px;
+  margin: 15px 0;
+}
+.exchange-btn {
+  margin: 20px 0;
+}
+.exchange-btn a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+.exchange-btn a p {
+  background-color: #ff0000;
+  border-radius: 8px;
+  padding: 10px;
+  width: 70%;
+  text-align: center;
+  margin: auto;
+}
+
+/*----------购票记录样式----------*/
+.buylist-content a {
+  color: inherit;
+}
+.buylist-content li > .right {
+  margin-right: 5%;
+  width: 25%;
+}
+.buylist-content li .modify {
+  top: 34px;
+}
+
+/*----------交易详情样式----------*/
+.buydetail-content h2 {
+  font-size: 18px;
+  margin: 20px 0;
+  text-align: center;
+}
+.buy-detail {
+  padding: 20px 10%;
+}
+.buy-detail .buy-price {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.buy-detail h3 {
+  font-size: 17px;
+}
+.buy-detail .buy-infor {
+  font-size: 14px;
+  margin: 10px 0 15px 0;
+}
+.buy-detail .buy-use {
+  color: #009944;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.buy-detail .buy-use.used {
+  color: #f00;
+}
+.buy-state {
+  margin-bottom: 3px;
+}
+
+/*----------忘记密码样式----------*/
+.forget-content {
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.forget-container h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+.forget-content li {
+  padding-bottom: 20px;
+  line-height: 29px;
+}
+.forget-content dl.dl-inlne {
+  overflow: hidden;
+}
+.forget-content dl dt {
+  width: 25%;
+  margin-right: 5%;
+  text-align: right;
+}
+.forget-content dl dd {
+  width: 35%;
+  text-align: center;
+}
+.forget-content dl dd a {
+  color: #313131;
+}
+.forget-content dl dd input {
+  width: 100%;
+  height: 29px;
+}
+/*----------修改密码样式----------*/
+.modify-content {
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.modify-container h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+.modify-content li {
+  padding-bottom: 20px;
+  line-height: 29px;
+}
+.modify-content dl.dl-inlne {
+  overflow: hidden;
+}
+.modify-content dl dt {
+  width: 30%;
+  margin-right: 5%;
+  text-align: right;
+}
+.modify-content dl dd {
+  width: 50%;
+  text-align: center;
+}
+.modify-content dl dd a {
+  color: #313131;
+}
+.modify-content dl dd input {
+  width: 100%;
+  height: 29px;
+}
+
+/*----------订单详情样式----------*/
+.order-container h2 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 18px;
+}
+.order-container h3 {
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+.order-content {
+  padding: 30px 12.5%;
+}
+.order-container .order-state {
+  margin-top: 30px;
+}
+.order-container .pay-btn {
+  background-color: #e60012;
+  color: #fff;
+  font-size: 17px;
+  text-align: center;
+  padding: 5px 0;
+  display: block;
+  border-radius: 7px;
+  margin: 30px 0 15px 0;
+}
+.order-content .order-cancel {
+  text-align: center;
+  color: #a0a0a0;
+  display: block;
+}
+
+/*----------动画欣赏----------*/
+.video-content {
+  padding: 0 10%;
+}
+.video-content li {
+  padding: 10px 0;
+}
+.video-content dl {
+  overflow: hidden;
+}
+.video-content dl dt {
+  width: 30%;
+}
+.video-content dl dd {
+  width: 65%;
+  margin-left: 5%;
+  padding-top: 5px;
+}
+.video-content dl dd h2 {
+  margin-bottom: 5px;
+}

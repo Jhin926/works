@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/index.css" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/banner1.js"></script>
+<style>
+/*banner begin*/
+.banner{
+	width:100%;
+	max-width: 640px;
+	margin:0 auto;
+	overflow:hidden;
+    position:relative;}
+
+.banner ul{
+	list-style:none;
+	margin:0;
+	padding:0;}
+	
+.banner ul li img{width:100%;}
+
+.banner>ol{
+    height:22px;
+    position: absolute;
+    z-index:8;
+	left: 5%;
+	bottom: 15px;
+    text-align:center;
+	padding:0;
+	
+	}
+.banner>ol>li{
+    display:inline-block;
+    margin:7px 0;
+    width:12px;
+    height:12px;
+    background-color:#c2986b;
+	border:2px solid #c2986b;
+    border-radius: 12px;}
+	
+.banner>ol>li.on{
+    background-color:#e5b47f;
+	border:2px solid #c2986b;}
+/*banner end*/
+</style>
+</head>
+
+<body>
+<div id="header">
+  <div class="header-inner">
+  <div class="header-content">
+  <div class="menu-nav left">
+    <img src="img/ico-menu.png" width="20" height="16" alt="" />
+  </div>
+  <div class="log-reg right"><a href="person/information.html">zumamaka</a> <a href="person/cart.html"><img src="img/ico-cart.png" width="15" alt="" /></a> 1<!--<a href="login.html">登陆</a>/<a href="regist.html">注册</a>--></div>
+  <div class="online right">
+    <span class="online-img"><img src="img/ico-online.png" alt="" width="18" /></span>
+    <span class="online-text">在线咨询</span>
+  </div>
+  <div class="clear"></div>
+  <ul class="dropdown-menu">
+      <a href="class.html"><li>产品分类</li></a>
+      <a href="introduce01.html"><li>产品介绍</li></a>
+      <a href="discount.html"><li>特价优惠</li></a>
+      <a href="discuss.html"><li>用户评论</li></a>
+      <a href="person/information.html"><li>个人中心</li></a>
+      <div class="clear"></div>
+  </ul>
+  </div>
+  </div>
+</div>
+<div id="container">
+<!--banner begin-->
+<div id="banner_box" class="banner">
+  <ul>
+    <li><a onclick="return false;"><img src="img/index/bnr-img01.jpg" /></a></li>
+    <li><a onclick="return false;"><img src="img/index/bnr-img01.jpg" /></a></li>
+    <li><a onclick="return false;"><img src="img/index/bnr-img01.jpg" /></a></li>
+    <li><a onclick="return false;"><img src="img/index/bnr-img01.jpg" /></a></li>
+  </ul>
+  <ol>
+    <li class="on"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ol>
+</div>
+<script>
+	$(function(){
+		new Swipe(document.getElementById('banner_box'), {
+			speed:500,
+			auto:3000,
+			callback: function(){
+				var lis = $(this.element).next("ol").children();
+				lis.removeClass("on").eq(this.index).addClass("on");
+			}
+		});
+	});
+</script>
+<!--banner end-->
+<ul class="index-nav">
+  <li>
+  <a href="class.html">
+    <p><img src="img/ico-class.png" height="20px" alt="" /></p>
+    <p class="nav-text">产品分类</p>
+  </a>
+  </li>
+  <li>
+  <a href="introduce01.html">
+    <p><img src="img/ico-introduce.png" height="20px" alt="" /></p>
+    <p class="nav-text">产品介绍</p>
+  </a>
+  </li>
+  <li>
+  <a href="discount.html">
+    <p><img src="img/ico-discount.png" height="20px" alt="" /></p>
+    <p class="nav-text">特价优惠</p>
+  </a>
+  </li>
+  <li>
+  <a href="discuss.html">
+    <p><img src="img/ico-discuss.png" height="20px" alt="" /></p>
+    <p class="nav-text">用户评论</p>
+  </a>
+  </li>
+  <li>
+  <a href="person/information.html">
+    <p><img src="img/ico-person.png" height="20px" alt="" /></p>
+    <p class="nav-text">个人中心</p>
+  </a>
+  </li>
+  <div class="clear"></div>
+</ul>
+<div class="pro-container">
+  <h1 class="pro-title"><a href="introduce01.html">祖玛玛咖<span>胶囊</span></a></h1>
+  <div class="pro-introduce">
+    <div class="left pro-img">
+      <a href="introduce01.html"><img src="img/index/img-photo01.png" width="100" height="72" alt="祖玛玛珈胶囊" /></a>
+    </div>
+    <div class="right pro-text">
+      <h2><a href="introduce01.html">祖玛至尊</a></h2>
+      <p><a href="introduce01.html">主要成分：秘鲁玛咖粉,灵芝提取物,马鹿茸,西洋参提取物。</a></p>
+      <p class="pro-price">价格 <span>￥3980</span></p>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="pro-container">
+  <h1 class="pro-title"><a href="introduce01.html">祖玛玛咖<span>粉剂</span></a></h1>
+  <div class="pro-introduce">
+    <div class="left pro-img">
+      <a href="introduce01.html"><img src="img/index/img-photo01.png" width="100" height="72" alt="祖玛玛珈胶囊" /></a>
+    </div>
+    <div class="right pro-text">
+      <h2><a href="introduce01.html">和颜悦色</a></h2>
+      <p><a href="introduce01.html">主要成分：秘鲁玛咖</a></p>
+      <p class="pro-price">价格 <span>￥498</span></p>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="discount-pack">
+  <h1 class="discount-title"><img src="img/index/tit-discount.png" width="90%" /></h1>
+  <div class="pack-con">
+    <h2 class="pack-tit"><a href="discount.html">套餐A- -祖玛玛咖经典装</a></h2>
+    <p><img src="img/index/img-pro-photo01.png" width="150" alt="套餐A" /></p>
+    <div class="pack-reduce">
+      <p class="reduce-text">立减</p>
+      <p class="reduce-count">￥416</p>
+    </div>
+    <div class="pack-information">
+      <h3><a href="discount.html">60粒特惠装2瓶</a></h3>
+      <p class="add-send">加送一瓶60粒特惠装</p>
+      <p class="mark-price">品牌市场价<del>￥996</del></p>
+      <p class="discount-price">特惠价 <span>￥580</span></p>
+  	  <p class="discount-online"><a href="person/pay.html">在线订购</a></p>
+    </div>
+  </div>
+  <div class="pack-con">
+    <h2 class="pack-tit"><a href="discount.html">套餐A- -祖玛玛咖经典装</a></h2>
+    <p><img src="img/index/img-pro-photo01.png" width="150" alt="套餐A" /></p>
+    <div class="pack-reduce">
+      <p class="reduce-text">立减</p>
+      <p class="reduce-count">￥416</p>
+    </div>
+    <div class="pack-information">
+      <h3><a href="discount.html">60粒特惠装2瓶</a></h3>
+      <p class="add-send">加送一瓶60粒特惠装</p>
+      <p class="mark-price">品牌市场价<del>￥996</del></p>
+      <p class="discount-price">特惠价 <span>￥580</span></p>
+  	  <p class="discount-online"><a href="person/pay.html">在线订购</a></p>
+    </div>
+  </div>
+</div>
+<div class="often-problem">
+  <a href="javascript:;" id="control-problem">常见问题</a>
+  <ul class="question-container" style="display: none;">
+    <li><a href="person/forget.html">1.忘记密码？</a></li>
+    <li><a href="person/forget.html">2.又忘记密码？</a></li>
+    <li><a href="person/forget.html">3.再次忘记密码？</a></li>
+    <li><a href="person/forget.html">4.记不住密码？</a></li>
+  </ul>
+</div>
+</div>
+<div id="footer">
+  <div class="footer-fixed">
+    <div class="footer-inner">
+      <a href="http://www.jc2014.com"><p>大连国泰生物科技</p></a>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  $(document).ready(function(){
+    $(".menu-nav").on("touchend",function(){
+      $(".dropdown-menu").slideToggle();
+    });
+  });
+  $("#control-problem").on("touchstart" ,function(){
+	$(this).toggleClass("open");
+	$(".question-container").toggle();
+  })
+</script>
+</html>

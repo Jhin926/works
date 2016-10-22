@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>互动课堂</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/all.css" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/banner1.js"></script>
+<style>
+/*banner begin*/
+.banner{
+	width:100%;
+	max-width: 640px;
+	margin:0 auto;
+	overflow:hidden;
+    position:relative;}
+
+.banner ul{
+	list-style:none;
+	margin:0;
+	padding:0;}
+	
+.banner ul li img{width:100%;}
+
+.banner>.banner-control{
+    height:22px;
+	width: 100%;
+    position: absolute;
+    z-index:8;
+	right: 5%;
+	bottom: 10px;
+    text-align:right;
+	padding:0;
+	}
+.banner>.banner-control>ol {
+	display: inline-block;
+}
+.banner>.banner-control>ol>li{
+    display:inline-block;
+    margin:7px 1px;
+    width:14px;
+    height:14px;
+    background-color:#004099;
+	border: 3px solid #004099;
+	border-radius: 50%;}
+	
+.banner>.banner-control>ol>li.on{
+    background-color:#ffea00;}
+/*banner end*/
+</style>
+</head>
+
+<body>
+<div id="header">
+  <p class="logo-container"><img src="img/logo-pororo.png" width="30%" alt="pororo" /></p>
+<p class="return-container"><a href="index.html"><img src="img/ico-return.png" width="40" height="40" alt="返回首页" /></a></p>
+</div>
+<div id="container">
+  <div class="interact-container">
+    <h1 class="title">
+      <img src="img/tit-bg.gif" width="100%" alt="" />
+      <div class="title-name"><p><img src="img/tit-interact.png" width="30%" alt="互动课堂" /></p></div>
+    </h1>
+    <div class="banner-container">
+    <!--banner begin-->
+<div id="banner_box" class="banner">
+  <ul>
+    <li><a onclick="return false;"><img src="img/img-banner01.jpg" /></a></li>
+    <li><a onclick="return false;"><img src="img/img-banner01.jpg" /></a></li>
+    <li><a onclick="return false;"><img src="img/img-banner01.jpg" /></a></li>
+    <li><a onclick="return false;"><img src="img/img-banner01.jpg" /></a></li>
+  </ul>
+  <div class="banner-control">
+  <ol>
+    <li class="on"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ol>
+  </div>
+</div>
+<script>
+	$(function(){
+		new Swipe(document.getElementById('banner_box'), {
+			speed:500,
+			auto:3000,
+			callback: function(){
+				var lis = $(this.element).next(".banner-control").find("ol").children();
+				lis.removeClass("on").eq(this.index).addClass("on");
+			}
+		});
+	});
+</script>
+<!--banner end-->
+</div>
+    <div class="interact-content">
+      <h2 class="interact-title">剧目内容的创新：</h2>
+      <p>为了使儿童剧的受众和悠游堂原本游乐及零售项目的顾客年龄层次更为匹配，所以在儿童剧的经典剧目之外又另行开发了诸如《身体的秘密》和《萌萌猫的故事》等低幼系列剧 ，同时为了使演出的形式内容更加丰富多元，在原创剧目之外，又积极和其他演出团体进行合作，引进了诸如《韩国泡泡秀》《韩国科学秀》《龙在天皮影戏》《PORORO冰雪秀》等各类特色演出，作为儿童剧的补充。</p>
+    </div>    
+  </div>  
+</div>
+<div id="footer">
+  <div class="footer-fixed">
+    <div class="footer-inner">
+      Copyright © 2003-2014 啵乐乐公园(PORORO PARK).<br />All Rights Reserved.  辽ICP备：11040001-1号<br />
+      <a href="http://www.jc2014.com">技术支持：隽铖网络科技</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

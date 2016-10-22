@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/*----------产品介绍模块样式----------*/
+.product-introduce {
+  width: 90%;
+  margin: auto;
+}
+.product-introduce h1 {
+  text-align: center;
+  margin: 25px 0;
+  font-size: 14px;
+}
+.product-introduce .introduce-text {
+  margin-bottom: 30px;
+  font-size: 13px;
+}
+/*----------产品优势模块样式----------*/
+.product-advantage {
+  margin-bottom: 30px;
+  width: 90%;
+  margin: auto;
+}
+.advantage-list {
+}
+.advantage-list li {
+  float: left;
+  width: 23%;
+  margin: 0 1%;
+  text-align: center;
+}
+.advantage-list .advantage-name {
+  color: #cca864;
+  margin: 5px 0;
+}
+.advantage-list .advantage-text {
+  font-size: 12px;
+}
+.advantage-content {
+  text-align: center;
+  font-size: 14px;
+}
+.advantage-content h1 {
+  color: #cca864;
+  font-size: 17px;
+  margin: 10px 0;
+}

@@ -1,0 +1,24 @@
+@charset "utf-8";
+/*样式名称英文单词的简写：
+detail__>det
+container__>cont 
+title__>tit  */
+html{overflow-y:scroll;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;}table{border-collapse:collapse;border-spacing:0;}caption,th{text-align:left;}q:before,q:after{content:'';}object,embed{vertical-align:top;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}img,abbr,acronym{border:0;}ul li{list-style-type:none;}a,label{cursor:pointer;}img{vertical-align:bottom;margin:0;padding:0;}a{text-decoration: none; color: inherit;}dl{overflow:hidden;}dl dt,dl dd{float:left;}input{outline:none;}
+body {
+  font-family: "微软雅黑", "黑体", "宋体";
+  font-size: 14px;
+  font-weight: normal;
+  color: #000;
+  background-color: #f0f4f7;
+}
+.clear {
+  clear: both;
+  height: 0;
+  width: 0;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}

@@ -1,0 +1,9 @@
+﻿[
+
+{ "imgUrl": "img/active/img-active01.jpg", "title":"json标题", "time": "2015年1月8日", "link": "active02.html" },
+
+{ "imgUrl": "img/active/img-active01.jpg", "title":"json标题", "time": "2015年1月8日", "link": "active03.html" },
+
+{ "imgUrl": "img/active/img-active01.jpg", "title":"json标题", "time": "2015年1月8日", "link": "active04.html" }
+
+]

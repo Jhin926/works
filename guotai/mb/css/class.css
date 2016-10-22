@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+/*----------商品列表页样式----------*/
+#container .class-section {
+  overflow: hidden;
+  width: 95%;
+  margin: auto;
+  color: #c69b6d;
+  background-color: #fff;
+  box-shadow: 0 4px 5px 0 #aaa;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+.class-section .class-left {
+  width: 36%;
+}
+.class-left img {
+  min-height: 100px;
+}
+.class-section .class-right {
+  width: 60%;
+  margin-left: 4%;
+  font-size: 13px;
+}
+.class-right a {
+  color: #c69b6d;
+}
+.class-right h1 {
+  font-size: 15px;
+  margin: 5px 0 0 0;
+}
+.class-right .product-form {
+  width: 80%;
+  line-height: 1em;
+}
+.class-right .class-price {
+  font-size: 15px;
+  color: #e60012;
+  width: 90%;
+}
+.class-price .left {
+  padding-top: 4px;
+}
+.class-price a {
+  color: #fff;
+  display: inline-block;
+  padding: 3px 8px;
+  background-color: #c69b6d;
+  border-radius: 7px;
+}
+
+
+/*----------商品详情页样式----------*/
+#container .product-information {
+  color: #c69b6d;
+  width: 90%;
+  margin: auto;
+}
+.product-information h1 {
+  font-size: 17px;
+  margin-top: 10px;
+}
+.product-information .product-price {
+  color: #e60012;
+  font-size: 18px;
+  margin: 8px 0;
+}
+.product-information .product-content {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.product-information .product-btn {
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.product-information .product-btn a {
+  color: #fff;
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: 18px;
+  margin-right: 4%;
+  background-color: #e71f19;
+  border-radius: 7px;
+}

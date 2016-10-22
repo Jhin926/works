@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/all.css" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body class="bgblue">
+<div id="header">
+  <p class="logo-container"><img src="img/logo-pororo.png" width="30%" alt="pororo" /></p>
+<p class="return-container"><a href="index.html"><img src="img/ico-return.png" width="40" height="40" alt="返回首页" /></a></p>
+</div>
+<div id="container">
+  <h1 class="login-title">登录</h1>
+  <div class="login-container">
+  <form>
+    <ul>
+      <li>
+        <p><input onfocus="if(this.value=='用户名'){this.value='';this.style.color='#333';}" onblur="if(this.value==''){this.value='用户名';this.style.color='#707070'}" type="text" value="用户名" /></p>
+      </li>
+      <li>
+        <p><input onfocus="if(this.type=='text'){this.value='';this.type='password';this.style.color='#333';}" onblur="if(this.value==''){this.value='密码';this.type='text';this.style.color='#707070'}" type="text" value="密码" /></p>
+      </li>
+      <li>
+        <p><input onfocus="if(this.value=='验证码'){this.value='';this.style.color='#333';}" onblur="if(this.value==''){this.value='验证码';this.style.color='#707070'}" class="code-login" type="text" value="验证码" /><span><img src="img/img-code.gif" height="38" /></span></p>
+      </li>
+      <li>
+        <div class="login-btn">
+        <a class="left" href="javascript:;"><span><img src="img/ico-login.png" width="20" alt="" /></span>登录</a>
+        <a class="left" href="regist.html"><span><img src="img/ico-regist.png" width="20" alt="" /></span>注册</a>
+        <a class="right" href="person/forget.html"><span><img src="img/ico-forget.png" width="20" alt="" /></span>忘记密码</a>
+        <div class="clear"></div>
+        </div>
+      </li>
+    </ul>
+  </form>
+  </div>
+</div>
+</body>
+</html>

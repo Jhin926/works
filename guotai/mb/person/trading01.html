@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>交易详情</title>
+<link rel="stylesheet" href="../css/common.css" type="text/css" media="all" />
+<link rel="stylesheet" href="../css/person.css" type="text/css" media="all" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+</head>
+
+<body>
+<div id="header">
+  <div class="header-inner">
+  <div class="header-content">
+  <div class="menu-nav left">
+    <img src="../img/ico-menu.png" width="20" height="16" alt="" />
+  </div>
+  <div class="log-reg right"><a href="information.html">zumamaka</a> <a href="cart.html"><img src="../img/ico-cart.png" width="15" alt="" /></a> 1<!--<a href="login.html">登陆</a>/<a href="regist.html">注册</a>--></div>
+  <div class="online right">
+    <span class="online-img"><img src="../img/ico-online.png" alt="" width="18" /></span>
+    <span class="online-text">在线咨询</span>
+  </div>
+  <div class="clear"></div>
+  <ul class="dropdown-menu">
+      <a href="../class.html"><li>产品分类</li></a>
+      <a href="../introduce01.html"><li>产品介绍</li></a>
+      <a href="../discount.html"><li>特价优惠</li></a>
+      <a href="../discuss.html"><li>用户评论</li></a>
+      <a href="information.html"><li>个人中心</li></a>
+      <div class="clear"></div>
+  </ul>
+  </div>
+  </div>
+</div>
+<div id="container">
+<div class="page-nav">
+  <div class="page-nav-tit">
+    <img src="../img/ico-person.png" height="20px" alt="" />个人中心
+    <p class="backspace"><a href="javascript:history.go(-1);"><img src="../img/img-backspaces.png" width="11" alt="回退" /></a></p>
+  </div>
+</div>
+<div class="trading01-container">
+  <h1 class="page-title">交易详情</h1>
+  <div class="trading01-content commom-bg common-border">
+    <p class="trading01-img"><img src="../img/trading/img-trading01.jpg" width="100%" alt="" /></p>
+    <ul>
+      <li>
+        <p class="left">付款金额</p>
+        <p class="right">￥588.00</p>
+        <p class="clear"></p>
+      </li>
+      <li>
+        <p class="left">商品名称</p>
+        <p class="right">祖玛玛咖</p>
+        <p class="clear"></p>
+      </li>
+      <li>
+        <p class="left">当前状态</p>
+        <p class="right">交易成功</p>
+        <p class="clear"></p>
+      </li>
+      <li>
+        <p class="left">时间</p>
+        <p class="right">2014-12-25</p>
+        <p class="clear"></p>
+      </li>
+      <li>
+        <p class="left">支付方式</p>
+        <p class="right">微信支付</p>
+        <p class="clear"></p>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+<div id="footer">
+  <div class="footer-fixed">
+    <div class="footer-inner">
+      <a href="http://www.jc2014.com"><p>大连国泰生物科技</p></a>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  $(document).ready(function(){
+    $(".menu-nav").on("touchend",function(){
+      $(".dropdown-menu").slideToggle();
+    });
+  });
+</script>
+</html>

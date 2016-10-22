@@ -1,0 +1,294 @@
+@charset "utf-8";
+
+#container #content {
+  width: 940px;
+  margin: 0 40px 0 44px;
+}
+#content .settlement-message {
+  margin-bottom: 10px;
+}
+.settlement-message .receive-container {
+  padding-left: 25px;
+}
+.settlement-message .receive-container h2 {
+  font-size: 16px;
+  border-bottom: 2px solid #b50124;
+  font-weight: bold;
+  padding: 5px 0 10px;
+  margin-bottom: 27px;
+}
+.receive-container .address-container {
+  margin-left: 15px;
+}
+.address-container {
+  margin-bottom: 30px;
+}
+.address-container dl.address-content {
+  margin-bottom: 28px;
+}
+.address-container dl.address-content dt {
+  width: 144px;
+  font-weight: bold;
+}
+.address-container dl.address-content dt span {
+  margin-right: 15px;
+  vertical-align: middle;
+}
+.address-container dl.address-content dd span.telephone {
+  margin-left: 50px;
+}
+.address-container .add-address {
+  color: #0087cd;
+  cursor: pointer;
+  display: inline-block;
+  margin: 17px 0 20px;
+}
+.input-address {
+  
+}
+.input-address ul li {
+  margin-bottom: 18px;
+}
+.input-address ul li dl dt {
+  width: 84px;
+  vertical-align: middle;
+  padding-top: 5px;
+}
+.input-address ul li dl dt span {
+  width: 1em;
+  display: inline-block;
+  vertical-align: middle;
+}
+.input-address ul li dl dt span.require {
+  color: #f05251;
+}
+.input-address ul li dl dd {
+  margin-right: 15px;
+  vertical-align: middle;
+}
+.input-address ul li dl dd span.prompt {
+  margin-left: 15px;
+}
+.input-address ul li dl dd input {
+  width: 133px;
+  height: 28px;
+  padding-left: 5px;
+  *+line-height: 28px;
+  line-height: 28px\9;
+  border: 1px solid #d7d7d7;
+}
+.input-address ul li dl dd input.area-code {
+  width: 69px;
+}
+.input-address ul li dl dd input.address-text {
+  width: 290px;
+}
+.input-address ul li dl dd .choice {
+  width: auto;
+  display: inline-block;
+  float: left;
+  padding: 0 0 0 15px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d7d7d7;
+  display: inline-block;
+  margin-right: 6px;
+  outline: none;
+}
+.input-address .submit-address {
+  text-align: center;
+  margin-top: 39px;
+}
+.confirm-form {
+}
+.confirm-form h2 {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 12px;
+}
+.confirm-form .name {
+  width: 385px;
+}
+.confirm-form .price {
+  width: 158px;
+}
+.confirm-form .count {
+  width: 175px;
+}
+.confirm-form .total {
+  width: 178px;
+}
+.confirm-form .confirm-nav {
+  text-align: center;
+  border: 1px solid #e1e1e1;
+  border-top: 2px solid #b50124;
+  background-color: #f7f7f7;
+  padding-left: 17px;
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+.confirm-nav li {
+  float: left;
+  padding: 6px 0;
+}
+.confirm-form {
+  padding-left: 25px;
+}
+.confirm-form .confirm-content {
+  background-color: #f9f9f9;
+  border: 1px solid #d9d9d9;
+  overflow: hidden;
+  padding: 13px 0 17px 17px;
+  margin-bottom: 21px;
+  color: #5e5e5e;
+}
+.confirm-form .confirm-content li a {
+  color: #5e5e5e;
+}
+.confirm-form .confirm-content li {
+  float: left;
+  text-align: center;
+}
+.confirm-form .confirm-content li.name {
+  text-align: left;
+}
+.confirm-form .confirm-content li.name img {
+  float: left;
+  margin-right: 10px;
+}
+.confirm-form .confirm-content li.total {
+  font-weight: bold;
+}
+.confirm-form .form-price {
+  text-align: right;
+  margin-bottom: 17px;
+}
+.form-price span {
+  margin-left: 21px;
+}
+.use-integral {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.use-integral .use-inner {
+  float: right;
+}
+.use-inner span.discount {
+  margin-left: 30px;
+}
+.use-inner span.discount span {
+  font-size: 18px;
+  color: #dc141b;
+}
+.use-inner span.use-count input {
+  width: 51px;
+  height: 19px;
+  border: 1px solid #cdcdcd;
+  margin: 0 20px 0 10px;
+  padding-left: 8px;
+  *+line-height: 19px;
+  line-height: 19px\9;
+}
+.use-inner span.checkbox {
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  background: url(../img/bg-checkbox.gif) no-repeat;
+  display: inline-block;
+  margin-right: 10px;
+}
+.use-inner span.active {
+  background: url(../img/bg-checkbox.gif) no-repeat -15px 0;
+}
+.use-inner span.checkbox input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  opacity: 0;
+}
+.use-inner .all-integral {
+  color: #999999;
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.confirm-form .need-pay {
+  background-color: #f7f7f7;
+  border: 1px solid #d9d9d9;
+  text-align: right;
+  padding: 16px 0 12px;
+  margin-bottom: 22px;
+}
+.need-pay span {
+  font-size: 18px;
+  color: #de171d;
+  margin: 0 15px 0 30px;
+}
+.cart-pay {
+  overflow: hidden;
+}
+.cart-pay .re-cart {
+  float: left;
+  color: #3e3e3e;
+  padding: 7px 19px;
+  border: 1px solid #dddddd;
+  background-color: #f7f7f7;
+}
+.cart-pay .go-pay {
+  float: right;
+  font-size: 18px;
+  background-color: #e01920;
+  padding: 9px 35px;
+  color: #fff;
+}
+
+
+.recommend {
+  width: 940px;
+  position: relative;
+  margin-bottom: 25px;
+}
+.recommend .rec-slider {
+  position: relative;
+  width: 840px;
+  height: 217px;
+  margin-left: 55px;
+  overflow: hidden;
+}
+.recommend .rec-slider ul {
+  position: relative;
+}
+.recommend ul li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-right: 43px;
+  margin-right: 0;
+}
+.recommend .recommend-tab {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  top: 135px;
+  left: 0;
+  font-size: 18px;
+}
+.recommend .recommend-tab span {
+  background-color: #dfdede;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  -moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-radius: 13px;
+  text-align: center;
+  display: inline-block;
+}
+.recommend .recommend-tab span:hover {
+  cursor: pointer;
+}
+.recommend-tab .recommend-prev {
+  float: left;
+}
+.recommend-tab .recommend-next {
+  float: right;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>购物车</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/cart.css" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body bgcolor="#e8e9e6">
+<div id="header">
+  <div class="logo"><a href="index.html"><img src="img/logo.png" alt="芙佳shop" /></a></div>
+  <div class="search"><a href="javascript:;">搜索</a><input type="text" /></div>
+  <div class="login"><a class="header-login" href="login.html">登录</a> <a class="header-regist" href="regist.html">注册</a></div>
+</div>
+<div id="container">
+  
+  <div class="shopping-information">
+    <p class="all-choice"><input type="checkbox" name="all" />全选</p>
+    <ul>
+      <li>
+        <p class="left check"><input type="checkbox" /></p>
+        <p class="left img"><img src="img/cart/img-cart01.jpg" alt="豌豆" width="100%" /></p>
+        <div class="right text">
+          <div class="name-price">
+            <p class="left name">豌豆</p>
+        	<p class="right price">￥100.00<br /><span class="gray">X1</span></p>
+          </div>
+        
+        <div class="buy-count">
+          <p class="left gray">购买数量</p>
+          <p class="right count">
+            <span class="add">-</span>
+            <span class="number">1</span>
+            <span class="reduce">+</span></p>
+        </div>
+        <p class="buy-delete">
+          <a href="">删除</a>
+        </p>
+      </div>
+      </li>
+      <li>
+        <p class="left check"><input type="checkbox" /></p>
+        <p class="left img"><img src="img/cart/img-cart01.jpg" alt="豌豆" width="100%" /></p>
+        <div class="right text">
+          <div class="name-price">
+            <p class="left name">豌豆</p>
+        	<p class="right price">￥100.00<br /><span class="gray">X1</span></p>
+          </div>
+        
+        <div class="buy-count">
+          <p class="left gray">购买数量</p>
+          <p class="right count">
+            <span class="add">-</span>
+            <span class="number">1</span>
+            <span class="reduce">+</span></p>
+        </div>
+        <p class="buy-delete">
+          <a href="">删除</a>
+        </p>
+      </div>
+      </li>
+      <li>
+        <p class="left check"><input type="checkbox" /></p>
+        <p class="left img"><img src="img/cart/img-cart01.jpg" alt="豌豆" width="100%" /></p>
+        <div class="right text">
+          <div class="name-price">
+            <p class="left name">豌豆</p>
+        	<p class="right price">￥100.00<br /><span class="gray">X1</span></p>
+          </div>
+        
+        <div class="buy-count">
+          <p class="left gray">购买数量</p>
+          <p class="right count">
+            <span class="add">-</span>
+            <span class="number">1</span>
+            <span class="reduce">+</span></p>
+        </div>
+        <p class="buy-delete">
+          <a href="">删除</a>
+        </p>
+      </div>
+      </li>
+      <li>
+        <p class="shopping-total">共1件商品 合计：￥100.00</p>
+      </li>
+      <li>
+        <p class="clear-cart">
+          <a class="delete-checked" href="javascript:;">删除所选商品</a>
+          <a href="javascript:;">清空购物车</a>
+        </p>
+      </li>
+    </ul>
+    <p class="cash-total">
+    合计：￥100.00
+    <a href="insure.html">确认</a>
+  </p>
+  </div>
+</div>
+<div id="footer">
+  <ul>
+    <li>
+      <p class="footer-ico"><a href="person.html"><img src="img/ico-my.png" alt="my" /></a></p>
+      <p class="footer-text"><a href="person.html">我的</a></p>
+    </li>
+    <li>
+      <p class="footer-ico"><a href="kinds.html"><img src="img/ico-search.png" alt="search" /></a></p>
+      <p class="footer-text"><a href="kinds.html">分类</a></p>
+    </li>
+    <li>
+      <p class="footer-ico"><a href="promotion.html"><img src="img/ico-active.png" alt="active" /></a></p>
+      <p class="footer-text"><a href="promotion.html">活动</a></p>
+    </li>
+    <li>
+      <p class="footer-ico"><a href="cart.html"><img src="img/ico-shopping.png" alt="shopping" /></a></p>
+      <p class="footer-text"><a href="cart.html">购物车</a></p>
+    </li>
+    <li>
+      <p class="footer-ico"><a href="contact.html"><img src="img/ico-contact.png" alt="contact" /></a></p>
+      <p class="footer-text"><a href="contact.html">联系我</a></p>
+    </li>
+  </ul>
+</div>
+<script>
+  $(document).ready(function(){
+    $(".on-off").click(function(){
+	  $(this).toggleClass("active");
+	});
+	var addList= $('input:radio[name="address"]');
+	addList.click(function(){
+	  if($(this).is(':checked')){
+	  	  addList.each(function(){
+			$(this).parent().removeClass("active");
+	  	  });
+		  $(this).parent().addClass("active");
+	  }
+	});
+	$(".add-address").click(function(){
+	  $("form[name='add-address']").toggle();
+	})
+  })
+</script>
+</body>
+</html>

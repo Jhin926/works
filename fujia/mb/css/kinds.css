@@ -1,0 +1,41 @@
+@charset "utf-8";
+#container section {
+  margin-top: 15px;
+  background-color: #fff;
+  overflow: hidden;
+}
+#container section:last-child {
+  margin-bottom: 15px;
+}
+section .img-container {
+  float: left;
+  width: 50%;
+}
+section .list-detail {
+  padding: 20px 0;
+  float: right;
+  width: 48%;
+  margin-right: 2%;
+  direction: rtl;
+  text-align: right;
+  color: #b5b5b5;
+}
+.list-detail h1 {
+  font-size: 120%;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: left;
+  margin-left: 6%;
+}
+.list-detail .price {
+  text-align: center;
+  margin-top: 20px;
+}
+.price span {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 120%;
+  background: #e60012;
+  border-radius: 8px;
+  color: #fff;
+}

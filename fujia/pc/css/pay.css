@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+#container #content {
+  width: 940px;
+  margin: 0 40px 0 44px;
+}
+.pay-method {
+  margin-bottom: 22px;
+}
+.form-message {
+  background-color: #f5f5f5;
+  padding: 20px 17px;
+  margin-bottom: 40px;
+}
+.form-message p {
+  display: inline;
+  margin-right: 60px;
+}
+.form-message p span {
+  color: #e11a21;
+  font-weight: bold;
+}
+
+.online-container {
+  background-color: #f5f5f5;
+  padding: 42px 25px 18px 25px;
+  *+padding: 42px 25px 48px 25px;
+  margin-top: 25px;
+  overflow: hidden;
+}
+.online-method .online-title img {
+  vertical-align: text-bottom;
+}
+.online-container ul {
+  overflow: hidden;
+  width: 930px;
+}
+.online-container ul li {
+  float: left;
+  margin: 0 49px 30px 0;
+}
+.online-container ul li img {
+  border: 1px solid #ccc;
+}
+
+
+
+.recommend {
+  width: 940px;
+  position: relative;
+  margin-bottom: 25px;
+}
+.recommend .rec-slider {
+  position: relative;
+  width: 840px;
+  height: 217px;
+  margin-left: 55px;
+  overflow: hidden;
+}
+.recommend .rec-slider ul {
+  position: relative;
+}
+.recommend ul li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-right: 43px;
+  margin-right: 0;
+}
+.recommend .recommend-tab {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  top: 135px;
+  left: 0;
+  font-size: 18px;
+}
+.recommend .recommend-tab span {
+  background-color: #dfdede;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  -moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-radius: 13px;
+  text-align: center;
+  display: inline-block;
+}
+.recommend .recommend-tab span:hover {
+  cursor: pointer;
+}
+.recommend-tab .recommend-prev {
+  float: left;
+}
+.recommend-tab .recommend-next {
+  float: right;
+}

@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+.integral-con {
+  margin: 0 0 15px 23px;
+}
+
+.integral-con .integral-count {
+  height: 62px;
+  background-color: #f9f9f9;
+  margin-bottom: 27px;
+  padding: 35px 0 0 16px;
+  font-size: 18px;
+}
+.integral-count > span {
+  margin-right: 68px;
+}
+.integral-count > span span {
+  color: #c40000;
+}
+
+.integral-detail {
+  color: #5e5e5e;
+}
+.integral-detail .source {
+  width: 250px;
+}
+.integral-detail .change {
+  width: 150px;
+}
+.integral-detail .date {
+  width: 180px;
+}
+.integral-detail .remark {
+  width: 150px;
+  border-right: none !important;
+}
+.integral-detail .integral-nav {
+  overflow: hidden;
+  text-align: center;
+  background-color: #f9f9f9;
+  border: 1px solid #d0d0d0;
+}
+.integral-detail .integral-nav li {
+  float: left;
+  border-right: 1px solid #d0d0d0;
+  padding: 12px 0 9px;
+}
+
+.integral-cont {
+  overflow: hidden;
+  padding: 13px 0;
+  border-bottom: 1px dashed #ccc;
+  text-align: center;
+}
+.integral-cont a {
+ color: #5e5e5e;
+}
+.integral-cont li {
+  float: left;
+  padding-top: 25px;
+}
+.integral-cont li.source {
+  padding-top: 0;
+}
+.integral-cont li.source dl dt {
+  width: 80px;
+  margin: 0 10px 0 18px;
+}
+.integral-cont li.source dl dd {
+  width: 120px;
+  text-align: left;
+}
+.integral-cont li.change {
+  color: #c40000;
+}
+.integral-exchange {
+  padding-bottom: 6px;
+}
+.integral-exchange .ex-list {
+  width: 780px;
+  overflow: hidden;
+}
+.ex-list ul {
+  overflow: visible;
+}
+.ex-list ul li {
+  float: left;
+  width: 177px;
+  margin-right: 10px;
+}
+.ex-list .recom-img {
+  position: relative;
+}
+.recom-img span {
+  position: absolute;
+  top: 13px;
+  right: 10px;
+  display: inline-block;
+  width: 91px;
+  height: 56px;
+  background: url(../img/img-fresh.png) no-repeat;
+}
+.ex-list .recom-img img {
+  border: 7px solid #ebecec;
+}
+.ex-list .recom-name {
+  padding: 6px 1em;
+}
+.ex-list .recom-price {
+  color: #af001e;
+  padding-left: 1em;
+  font-weight: bold;
+}
+
+
+
+
+.integral-con .page-list {
+  margin-top: 34px;
+}
+.integral-con .recommend ul li {
+  padding-right: 10px;
+}
+.recommend {
+  width: 738px;
+}
+.recommend .rec-slider {
+  width: 740px;
+}

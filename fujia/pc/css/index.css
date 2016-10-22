@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+.product-show h1 {
+  height: 24px;
+  line-height: 1em;
+  color: #fefefe;
+  padding: 5px 0 0 30px;
+  margin-bottom: 23px;
+  font-size: 13px;
+  background: url(../img/index/bg-show.png) no-repeat;
+}
+.product-show h1 span {
+  display: inline-block;
+  float: left;
+}
+.product-show h1 span.show-arrow {
+  float: left;
+  margin:2px 0 0 70px;
+  display: inline-block;
+  width: 11px;
+  height: 10px;
+  background: url(../img/index/ico-arrow.png) no-repeat center;
+}
+.product-show h1 a {
+  float: right;
+  margin: 1px 30px 0 0;
+  color: #fff;
+}
+.show-list li {
+  margin-right: 56px;
+}
+.show-list .show-name {
+  color: #a1a3a8;
+  margin: 10px 0 2px;
+}

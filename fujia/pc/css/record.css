@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+.record-con {
+  margin-left: 25px;
+}
+.record-con .control-tab li span {
+  color: #c40000;
+  margin-left: 3px;
+}
+.record-con .record-cont {
+  
+}
+.record-con .record-cont thead {
+  font-weight: bold;
+}
+.record-cont tbody.record-tb-bo {
+  border: 1px solid #cecece;  
+}
+.record-cont .record-num {
+  color: #5e5e5e;
+  display: inline-block;
+  font-size: 12px;
+}
+.record-cont .record-name {
+  display: inline-block;
+  color: #5e5e5e;
+  width: 120px;
+  margin-left: 7px;
+  vertical-align: middle;
+}
+.record-cont .record-img {
+  display: inline-block;
+  margin: 15px 0 15px 20px;
+  vertical-align: middle;
+}
+.record-cont .record-check {
+  margin: 0 10px 0 15px;
+}
+.record-cont .record-date {
+  margin-right: 10px;
+}
+.record-cont .record-tit {
+  background-color: #f9f9f9;
+}
+.record-cont .record-bo-bm {
+  border-bottom: 1px solid #ccc;
+}
+.record-cont .record-bo-lt {
+  border-left: 1px solid #ccc;
+}
+
+
+
+.page-list {
+  margin: 15px 0 20px;
+}

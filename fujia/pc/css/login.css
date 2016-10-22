@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+.login-con {
+  margin-top: 100px;
+}
+.login-con fieldset {
+  border: 1px solid #ccc;
+  width: 851px;
+  margin: 0 auto 74px;
+  padding: 38px 0 50px;
+}
+.login-con fieldset legend {
+  margin-left: 20px;
+  padding: 5px 23px;
+  background-color: #fb6e0f;
+  color: #fff;
+  font-size: 18px;
+}
+.login-con .login-cont {
+  overflow: hidden;
+  padding-left: 70px;
+}
+.login-cont .login-left {
+  float: left;
+  border-right: 1px solid #ededed;
+  padding: 14px 102px 17px 0;
+}
+.login-cont .login-right {
+  float: left;
+  margin-left: 102px;
+  padding-top: 20px;
+}
+.login-right input {
+  width: 191px;
+  height: 27px;
+  *+line-height: 27px;
+  line-height: 27px\9;
+  border: 1px solid #cccccc;
+  outline: none;
+  padding-left: 30px;
+  color: #c8c8c8;
+}
+.login-right a {
+  color: #000;
+}
+.login-right p.login-name input {
+  background: url(../img/bg-login-name.gif) no-repeat 6px 5px #f8f6f7;
+  margin-bottom: 33px;
+}
+.login-right p.login-password input {
+  background: url(../img/bg-login-password.gif) no-repeat 6px 5px #f8f6f7;
+  margin-bottom: 10px;
+}
+.login-right .btn-login {
+  margin: 22px 0 15px;
+}
+.login-right .new-user {
+  text-align: right;
+  padding-right: 15px;
+}
+.login-right .new-user a {
+  text-decoration: underline;
+}

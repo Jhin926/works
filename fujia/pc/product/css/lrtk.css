@@ -1,0 +1,156 @@
+
+/*轮播图开始*/
+
+/* css 重置 */
+body,div,{ padding: 0; margin: 0; }
+ul { list-style: none ; }
+img { border: none; }
+
+/*本例css*/
+.www51buycom { width: 1000px; height: 330px; margin-left:auto; margin-right:auto; margin-top:0px; position: relative; overflow:hidden; z-index:-1;}
+
+/*数字按钮样式*/
+.www51buycom .num { overflow:hidden; height: 25px; position: absolute; bottom:12px; left: 15px; zoom:1; z-index:3 }
+.num ul{ margin-top:0px;}
+.www51buycom .num li { width: 25px; height: 25px; line-height: 25px; text-align: center; font-weight: 400; font-family: "微软雅黑", Arial; color: #FFFFFF; background: #444444; margin-right: 10px; border-radius:50%; cursor:pointer; float: left; }
+.www51buycom .num li.on { background: #FF7700; } /*当前项*/
+
+/*上一个  下一个*/
+.www51buycom .prev,
+.www51buycom .next { display: none; width: 40px; height: 100px; background: url(../image/btn.png) no-repeat; position: absolute; top: 115px;}
+.www51buycom .prev { left: 0; }
+.www51buycom .next { right: 0; background-position: right }
+
+.51buypic{ margin-top:0px;}
+
+/*轮播图结束*/
+
+/*悬浮qq开始*/
+#cleft_box{position:absolute;right:0px;top:215px;padding:0px;margin:0px;overflow:hidden;width:36px;}
+.cleft_inner{margin:0px;padding:0px;overflow:hidden;width:175px;}
+.inner_btn{width:36px;height:74px;color:#fff;font-size:14px;font-weight:bold;text-align:center;margin-top:15px;padding-top:35px;cursor:pointer;cursor:pointer;float:left;background:url(../image/QQ.png) left top no-repeat;}
+.inner_btn span{layout-flow:vertical-ideographic;}
+.inner_info{width:132px;overflow:hidden;float:right;background:none;margin-top:15px;}
+.inner_tit{margin:0 auto;padding-left:20px;height:30px;background:url(../image/leftbg.png) left top no-repeat;overflow:hidden;width:132px; }
+.inner_list{text-align:center;width:132px;background:url(../image/leftcontentbg.png) repeat-y}
+.inner_list ul{margin:0px;padding:0px;font-size:12px;list-style-type:none}
+.inner_list ul li{padding-top:5px;line-height:180%;margin:0px auto}
+.inner_list ul li a{ color:#000;text-decoration:none}
+.inner_btm a{width:132px;height:22px;background:url(../image/leftbt.png) left top no-repeat;display:block}
+/*悬浮qq结束*/
+
+/*左侧导航开始*/
+.menu {font-family:"Microsoft YaHei UI"; width:184px; height:auto; position:relative;  font-size:14px; margin-top:10px; z-index:1; +position:absolute; +z-index:10000;}
+.menu ul li a, .menu ul li a:visited {display:block; text-decoration:none; color:#000;width:184px; height:26px; text-indent:1em; color:#000; border-bottom:1px solid #aaa; background:#fff; line-height:26px; font-size:11px; overflow:hidden; text-overflow:ellipsis;}
+.menu ul {padding:0; margin:0;list-style-type: none; }
+.menu ul li {float:left; margin-right:1px; position:relative;}
+.menu ul li ul {display: none;}
+/* specific to non IE browsers */
+.menu ul li:hover a {color:#fff; background:#d60407;}
+.menu ul li:hover ul {display:block; position:absolute; top:0; left:184px; width:105px;}
+.menu ul li:hover ul li a.hide {background:#6a3; color:#fff;}
+.menu ul li:hover ul li:hover a.hide {background:#6fc; color:#000;}
+.menu ul li:hover ul li ul {display: none;}
+.menu ul li:hover ul li a {display:block; background:#fff; color:#000;}
+.menu ul li:hover ul li a:hover {background:#d60407; color:#fff;}
+.menu ul li:hover ul li:hover ul {display:block; position:absolute; left:184px; top:0;}
+/*左侧导航结束*/
+
+
+/*放大镜开始*/
+li{list-style:none;}
+
+/* tsShopContainer */
+#tsShopContainer li,#tsShopContainer img{vertical-align:top;}
+#tsShopContainer{width:300px;margin:20px 0 0 20px;position:relative;border:1px solid #CCC;font-size:12px;padding-bottom:5px; float:left;}
+#tsShopContainer #tsImgS{text-align:center;width:100%;position:relative;}
+#tsShopContainer #tsImgS a{display:block;text-align:center;margin:0px auto;}
+#tsShopContainer #tsImgS img{border:0px;}
+#tsShopContainer #tsPicContainer{width:100%;height:70px;position:relative;background:url(../image/scrollPicbg.gif) repeat-x 0px 0px;}
+#tsShopContainer #tsPicContainer #tsImgSArrL{width:17px;height:100%;background:url(../image/picshopArr.gif) no-repeat left center;position:absolute;top:0px;left:8px;cursor:pointer;}
+#tsShopContainer #tsPicContainer #tsImgSArrR{width:17px;height:100%;background:url(../image/picshopArr.gif) no-repeat right center;position:absolute;top:0px;right:8px;cursor:pointer;}
+#tsShopContainer #tsPicContainer #tsImgSCon{position:absolute;top:10px;left:38px;width:1px;height:70px;overflow:hidden;}
+#tsShopContainer #tsPicContainer #tsImgSCon ul{width:100%;overflow:hidden;margin:0px;padding:0px;}
+#tsShopContainer #tsPicContainer #tsImgSCon li{width:57px;float:left;cursor:pointer;margin:0px;padding:0px;}
+#tsShopContainer #tsPicContainer #tsImgSCon li img{padding:3px;margin:1px;border:1px solid  #e4e4e4;display:block;width:42px;height:42px;margin:0px;padding:0px;}
+#tsShopContainer #tsPicContainer #tsImgSCon li.tsSelectImg img{border:2px solid #F00;margin:0px;padding:0px;}
+
+.MagicZoomBigImageCont {
+	border:1px solid #91b817;
+	background:#FFF;
+}
+
+.MagicZoomMain {
+	text-align: center !important;
+	width: 92px;
+}
+
+.MagicZoomMain div {
+	padding: 0px !important;
+}
+
+/* Header look and feel CSS class */
+/* header is shown if "title" attribute is present in the <A> tag */
+.MagicZoomHeader {
+	font:			10px Tahoma, Verdana, Arial, sans-serif;
+	color:			#fff;
+	background:		#91b817;
+	text-align:     center !important; 
+}
+
+
+/* CSS class for small looking glass square under mouse */
+.MagicZoomPup {
+	border: 		0px solid #aaa;
+	background: 	#ffffff;
+}
+
+/* CSS style for loading animation box */
+.MagicZoomLoading {
+	text-align:		center;
+	background: 	#ffffff;
+	color:			#444;
+	border: 		1px solid #ccc;
+	opacity:		0.8;
+	padding:		3px 3px 3px 3px !important;
+	display: 		none; /* do not edit this line please */
+}
+
+/* CSS style for gif image in the loading animation box */
+.MagicZoomLoading img {
+	padding-top:	3px !important;
+}
+/*放大镜结束*/
+
+
+/*产品轮播开始*/
+a{ text-decoration:none;}
+.blk_18 { overflow:hidden; zoom:1; font-size:9pt; border:1px solid #e3e3e3; width:750px; margin:20px auto 0 auto;}
+.blk_18 .pcont { width:694px; float:left; overflow:hidden; padding-left:5px; }
+.blk_18 .ScrCont { width:32766px; zoom:1; margin-left:-5px; }
+.blk_18 #List1_1, .blk_18 #List2_1 { float:left; }
+.blk_18 .LeftBotton, .blk_18 .RightBotton { width:15px; height:74px; float:left; background:url(../image/ax.gif) no-repeat; }
+.blk_18 .LeftBotton { background-position: 0 0; margin:8px 5px 0; }
+.blk_18 .RightBotton { background-position: 0 -100px; margin:8px 1px 10px 5px; }
+.blk_18 .LeftBotton:hover { background-position: -20px 0; }
+.blk_18 .RightBotton:hover { background-position: -20px -100px; }
+.blk_18 .pl img { display:block; cursor:pointer; border:none; margin:6px auto 1px auto;border:1px solid #CCCCCC; padding:2px; width:120px; height:100px; }
+.blk_18 .pl { width:126.5px; border:1px solid #fff; float:left; float:left; text-align:center; line-height:24px;  font-family:"Microsoft YaHei UI"; margin-right:13px;}
+.blk_18 a.pl:hover { border:1px solid #5dacec; color:#5dacec; background:#fff; }
+/*产品轮播结束*/
+
+
+/*图片悬浮开始*/
+.food_img{overflow:hidden;margin:20px auto; background:url(../image/beiying.png) no-repeat; }
+.food_img td{width:124px;height:124px;position:relative;overflow:hidden; padding:10px;}
+.box{width:124px;height:124px;background:url(../image/food_bg.jpg) no-repeat left top #020000;position:absolute;left:0;line-height:18px;color:#e69714;top:-142px;filter:alpha(Opacity=80);-moz-opacity:0.8;opacity: 0.8; margin-left:10px; margin-top:10px; display:none;}
+.box h3{color:#fff; font-weight:normal; font-size:12px; font-family:"Microsoft YaHei UI"; text-align:center; margin:0px; padding:0px; line-height:14px; float:left; height:40px; margin-top:10px; margin-bottom:10px;}
+.aa9{display:block;margin-top:5px; text-align:center; color:#d48f23; font-family:"Microsoft YaHei UI"; font-size:14px; text-decoration:none; margin-right:5px; margin-top:20px;}
+.aqie1{ background:url(../image/f8f8f8.png) no-repeat; width:17px; height:17px; display:block; float:left; margin-right:7px;}
+.aqie2{ background:url(../image/t8t8t8.png) no-repeat; width:17px; height:17px; display:block; float:left; margin-right:7px;}
+.aqie3{ background:url(../image/q8q8q8.png) no-repeat; width:17px; height:17px; display:block; float:left; margin-right:7px;}
+.aqie4{ background:url(../image/t88t88.png) no-repeat; width:17px; height:17px; display:block; float:left; margin-right:7px;}
+.aqie5{ background:url(../image/g+8g+8.png) no-repeat; width:17px; height:17px; display:block; float:left;}
+.shark{ margin-left:6px;}
+.agang:hover{ color:#666666;}
+/*图片悬浮结束*/

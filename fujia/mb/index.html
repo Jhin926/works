@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/index.css" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/banner1.js"></script>
+<style>
+/*banner begin*/
+.banner{
+	width:100%;
+	margin:0 auto;
+	overflow:hidden;
+    position:relative;}
+
+.banner ul{
+	list-style:none;
+	margin:0;
+	padding:0;}
+	
+.banner ul li img{width:100%;}
+</style>
+</head>
+
+<body bgcolor="#e8e9e6">
+<div id="header">
+  <div class="logo"><a href="index.html"><img src="img/logo.png" alt="芙佳shop" /></a></div>
+  <div class="search"><a href="javascript:;">搜索</a><input type="text" /></div>
+  <div class="login"><a class="header-login" href="login.html">登录</a> <a class="header-regist" href="regist.html">注册</a></div>
+</div>
+<div id="container">
+    <div id="banner_box" class="banner">
+	<ul>
+		<li><a onClick="return false;"><img src="img/index/img-index01.jpg" /></a></li>
+		<li><a onClick="return false;"><img src="img/index/img-index01.jpg" /></a></li>
+        <li><a onClick="return false;"><img src="img/index/img-index01.jpg" /></a></li>
+		<li><a onClick="return false;"><img src="img/index/img-index01.jpg" /></a></li>
+	</ul>
+	</div>
+    <script>
+	$(function(){
+		new Swipe(document.getElementById('banner_box'), {
+			speed:500,
+			auto:3000,
+			callback: function(){
+				var lis = $(this.element).next("ol").children();
+				lis.removeClass("on").eq(this.index).addClass("on");
+			}
+		});
+	});
+</script>
+  <ul class="species-container">
+    <li>
+      <p><a href="kinds01.html"><img src="img/index/ico-fruit.png" alt="水果" /></a></p>
+      <p><a href="kinds01.html">水果</a></p>
+    </li>
+    <li>
+      <p><a href="kinds01.html"><img src="img/index/ico-vegetable.png" alt="蔬菜" /></a></p>
+      <p><a href="kinds01.html">蔬菜</a></p>
+    </li>
+    <li>
+      <p><a href="kinds01.html"><img src="img/index/ico-shopes.png" alt="百货" /></a></p>
+      <p><a href="kinds01.html">百货</a></p>
+    </li>
+    <li>
+      <p><a href="integral.html"><img src="img/index/ico-integral.png" alt="积分" /></a></p>
+      <p><a href="integral.html">积分</a></p>
+    </li>
+  </ul>
+  <div class="discount-container">
+    <p class="discount-more"><a href="promotion.html">更多...</a></p>
+    <h1 class="discount-title">打折促销</h1>
+    <div class="discount-lineheight">
+      <ul class="discount-content">
+      <li>
+        <p><a href="promotion01.html"><img src="img/index/img-discount01.jpg" alt="打折" /></a></p>
+        <p class="discount-name"><a href="promotion01.html">无公害新鲜水果蔬菜</a></p>
+        <p class="discount-price"><a href="promotion01.html">￥100.00</a></p>
+      </li>
+      <li>
+        <p><a href="promotion01.html"><img src="img/index/img-discount02.jpg" alt="打折" /></a></p>
+        <p class="discount-name"><a href="promotion01.html">无公害新鲜水果蔬菜</a></p>
+        <p class="discount-price"><a href="promotion01.html">￥100.00</a></p>
+      </li>
+    </ul>
+    </div>
+    <div class="discount-lineheight">
+      <ul class="discount-content">
+      <li>
+        <p><a href="promotion01.html"><img src="img/index/img-discount03.jpg" alt="打折" /></a></p>
+        <p class="discount-name"><a href="promotion01.html">无公害新鲜水果蔬菜</a></p>
+        <p class="discount-price"><a href="promotion01.html">￥100.00</a></p>
+      </li>
+      <li>
+        <p><a href="promotion01.html"><img src="img/index/img-discount04.jpg" alt="打折" /></a></p>
+        <p class="discount-name"><a href="promotion01.html">无公害新鲜水果蔬菜</a></p>
+        <p class="discount-price"><a href="promotion01.html">￥100.00</a></p>
+      </li>
+    </ul>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <ul>
+    <li>
+      <p class="footer-ico"><a href="person.html"><img src="img/ico-my.png" alt="my" /></a></p>
+      <p class="footer-text"><a href="person.html">我的</a></p>
+    </li>
+    <li>
+      <p class="footer-ico"><a href="kinds.html"><img src="img/ico-search.png" alt="search" /></a></p>
+      <p class="footer-text"><a href="kinds.html">分类</a></p>
+    </li>
+    <li>
+      <p class="footer-ico"><a href="promotion.html"><img src="img/ico-active.png" alt="active" /></a></p>
+      <p class="footer-text"><a href="promotion.html">活动</a></p>
+    </li>
+    <li>
+      <p class="footer-ico"><a href="cart.html"><img src="img/ico-shopping.png" alt="shopping" /></a></p>
+      <p class="footer-text"><a href="cart.html">购物车</a></p>
+    </li>
+    <li>
+      <p class="footer-ico"><a href="contact.html"><img src="img/ico-contact.png" alt="contact" /></a></p>
+      <p class="footer-text"><a href="contact.html">联系我</a></p>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

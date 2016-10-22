@@ -1,0 +1,52 @@
+@charset "utf-8";
+#container h1 {
+  background-color: #fff;
+  line-height: 2em;
+  font-size: 120%;
+  border-top: 1px solid #b5b5b5;
+  border-bottom: 1px solid #b5b5b5;
+  margin: 20px 0 50px;
+  padding-left: 4%;
+}
+#container section {
+  background-color: #fff;
+  overflow: hidden;
+  border-top: 1px solid #b5b5b5;
+  border-bottom: 1px solid #b5b5b5;
+}
+#container section:last-child {
+  margin-bottom: 60px;
+}
+section p.coupon-logo {
+  width: 17%;
+  margin: 10px 3%;
+  float: left;
+}
+section p.coupon-content {
+  margin-top: 25px;
+  width: 47%;
+  float: left;
+}
+section p.coupon-content span {
+  font-size: 90%;
+  color: #b5b5b5;
+}
+section p.coupon-useful {
+  float: right;
+  width: 30%;
+  background-color: #f29149;
+  color: #fff;
+  font-size: 150%;
+  line-height: 70px;
+  height: 75px;
+  text-align: center;
+}
+#container h1.title-useless {
+  color: #fff;
+  background-color: #e2622e;
+  text-align: center;
+  border: none;
+}
+.coupon-useless {
+  background-color: #b5b5b5 !important;
+}

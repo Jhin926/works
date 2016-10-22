@@ -1,0 +1,124 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*拖动改变窗口大小的八个地方的样式*/
+.resizable-e {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  height: 100%;
+  width: 5px;
+  cursor: e-resize;
+}
+.resizable-s {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    cursor: s-resize;
+}
+.resizable-w {
+    position: absolute;
+    top: 0;
+    left: -2px;
+    height: 100%;
+    width: 5px;
+    cursor: w-resize;
+}
+.resizable-n {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    cursor: n-resize;
+}
+.resizable-en {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    height: 5px;
+    width: 5px;
+    cursor: ne-resize;
+}
+.resizable-es {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    height: 5px;
+    width: 5px;
+    cursor: se-resize;
+}
+.resizable-ws {
+    position: absolute;
+    bottom: -2px;
+    left: -2px;
+    height: 5px;
+    width: 5px;
+    cursor: sw-resize;
+}
+.resizable-wn {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    height: 5px;
+    width: 5px;
+    cursor: nw-resize;
+}
+
+
+/*以下是关于弹窗的样式*/
+.modal-title {
+    background: #eee;
+    font-size: 17px;
+    line-height: 30px;
+    text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+.close-pos-r-t {
+	position: absolute;
+    width: 30px;
+    height: 30px;
+	line-height: 30px;
+	text-align: center;
+    top: 0;
+    right: 0;
+}
+.modal-close {
+  cursor: pointer;
+}
+.text-border {
+  border: #e5e5e5 solid 1px;
+  background: #fff;
+  font-size: 14px;
+  color: #333;
+  padding: 6px 12px;
+}
+.modal-promot-mess {
+  margin: 13px 0;
+  padding: 13px 25px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+}
+.insure-btn-con {
+  text-align: right;
+}
+.insure-btn-con span {
+  display: inline-block;
+  margin-right: 20px;
+}
+.insure-btn-con .sure-btn {
+  padding: 6px 15px;
+  color: white;
+  cursor: pointer;
+  background-color: #4b8df8;
+  border: 1px solid #4b8df8;
+}
+.insure-btn-con .cancel-btn {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 6px 15px;
+  cursor: pointer;
+}

@@ -1,0 +1,103 @@
+@charset "utf-8";
+#container .person-img {
+    margin-bottom: 17px;
+	position: relative;
+}
+.person-img .person-infor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+}
+.person-infor p.person-photo {
+  margin: 20px 0 10px 0;
+}
+.person-infor p.person-photo img {
+  border-radius: 50%;
+}
+.person-infor h1 {
+  font-size: 115%;
+}
+.person-infor h1 a {
+  color: inherit;
+}
+#container .order-container {
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+.order-title {
+  overflow: hidden;
+  padding: 20px 5%;
+  border-bottom: 1px solid #b5b5b5;
+  border-top: 1px solid #b5b5b5;
+  font-size: 120%;
+}
+.order-title .my-order {
+  float: left;
+  width: 50%;
+}
+.my-order dl {
+  overflow: hidden;
+}
+.my-order dl dt {
+  max-width: 30px;
+  max-height: 33px;
+  float: left;
+} 
+.my-order dl dd {
+  float: left;
+  padding-top: 6px;
+  margin-left: 4%;
+}
+.order-title .get-shopping {
+  float: right;
+  padding-top: 5px;
+  width: 50%;
+  text-align: right;
+  color: #b5b5b5;
+}
+.order-container .pay-list {
+  overflow: hidden;
+  border-bottom: 1px solid #b5b5b5;
+  padding: 20px 0 30px;
+}
+.order-container .pay-list li {
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+.pay-list li .pay-list-img {
+  height: 48px;
+}
+.coupon-intergal {
+  padding: 30px 6%;
+  border-bottom: 1px solid #b5b5b5;
+  overflow: hidden;
+}
+.coupon-intergal .coupon {
+  float: left;
+  overflow: hidden;
+  width: 50%;
+}
+.coupon span {
+  float: left;
+  margin-right: 2%;
+  display: inline-block;
+}
+.coupon-intergal .intergal {
+  float: right;
+  overflow: hidden;
+  width: 50%;
+  text-align: right;
+}
+.intergal span {
+  float: right;
+  margin-left: 2%;
+  display: inline-block;
+}
+.coupon-intergal .text {
+  padding-top: 10px;
+}

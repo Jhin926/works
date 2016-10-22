@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+html{overflow-y:scroll;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;}table{border-collapse:collapse;border-spacing:0;}caption,th{text-align:left;}q:before,q:after{content:'';}object,embed{vertical-align:top;}hr,legend{display:none;}h1,h2,h3,h4,h5,h6{font-size:100%;}img,abbr,acronym,fieldset{border:0;}ul li{list-style-type:none;}a,label{cursor:pointer;}img{margin:0;padding:0;}a{text-decoration: none; color: inherit !important;}
+#header {
+  width: 100%;
+  max-width: 640px;
+  height: 39px;
+  margin: auto;
+  padding-top: 17px;
+  background: url(../img/bg-header.gif) repeat-x;
+  color: #fff;
+  position: relative;
+  box-shadow: 0 1px 5px 0 #333;
+}
+#header .login {
+  width: 30%;
+  float: right;
+  text-align: center;
+}
+#header .search {
+  width: 40%;
+  float: left;
+}
+#header .logo {
+  width: 27%;
+  margin-right: 2%;
+  float: left;
+}
+#header .logo img {
+  max-width: 80px;
+}
+#header .search input[type="text"] {
+  width: 60%;
+  border: none;
+  border-radius: 3px;
+  margin-left: 10px;
+  outline: none;
+  padding: 0 3px;
+  height: 20px;
+}
+#header .header-login {
+  float: left;
+  margin-left: 15%;
+}
+#header .header-regist {
+  float: right;
+  margin-right: 15%;
+}
+
+
+#container {
+  width: 100%;
+  max-width: 640px;
+  margin: auto;
+  background-color: #e8e9e6;
+}
+
+#footer {
+  width: 100%;
+  max-width: 640px;
+  height: 99px;
+  background: url(../img/bg-footer.gif) repeat-x;
+  margin: auto;
+  position: relative;
+  box-shadow: 0 -1px 5px 0 #333;
+}
+#footer ul {
+  overflow: hidden;
+  text-align: center;
+  padding-top: 25px;
+}
+#footer ul li {
+  width: 20%;
+  float: left;
+  text-align: center;
+  color: #fff;
+}
+#footer ul li p.footer-ico {
+  height: 32px;
+  margin-bottom: 5px;
+}
+
+
+.article_inner-top ul.banner-top {
+    position: relative;
+}
+.article_inner-top .banner-top li {
+    position: absolute;
+}

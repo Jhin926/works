@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+.regist-con {
+  margin-top: 100px;
+}
+.regist-con fieldset {
+  border: 1px solid #ccc;
+  width: 851px;
+  margin: 0 auto 50px;
+  padding-bottom: 63px;
+}
+.regist-con fieldset legend {
+  margin-left: 20px;
+  padding: 5px 23px;
+  background-color: #fb6e0f;
+  color: #fff;
+  font-size: 18px;
+}
+.regist-con .regist-cont {
+  font-size: 18px;
+  margin-top: 60px;
+}
+.regist-cont li {
+  position: relative;
+  width: 390px;
+  margin-left: 250px;
+  margin-bottom: 35px;
+}
+.regist-cont li > span {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  color: #ff0505;
+}
+.regist-cont li dl {
+}
+.regist-cont li dl dt {
+  width: 130px;
+}
+.regist-cont li dl dd {
+  width: 260px;
+  *+line-height: 27px;
+}
+.regist-cont li dl dd input {
+  width: 211px;
+  height: 27px;
+  *+line-height: 27px;
+  line-height: 27px\9;
+  background-color: #f8f6f7;
+  border: 1px solid #cccccc;
+  outline: none;
+  font-size: 13px;
+  color: #c8c8c8;
+  padding-left: 10px;
+}
+.btn-regist {
+  padding-left: 380px;
+  margin-bottom: 22px;
+}
+.login-direct {
+  padding-left: 535px;
+}
+.login-direct a {
+  text-decoration: underline;
+  *+color: #000;
+}

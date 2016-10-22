@@ -1,0 +1,75 @@
+@charset "utf-8";
+#container .top-show {
+    margin-bottom: 17px;
+}
+#container .top-show img{
+    width: 100%;
+}
+.species-container {
+    overflow: hidden;
+    background-color: #fff;
+    padding: 16px 0;
+    margin-bottom: 20px;
+}
+.species-container li {
+    float: left;
+    width: 21%;
+    margin: 0 2%;
+    text-align: center;
+    color: #b5b5b5;
+    font-size: 118%;
+}
+.species-container li img {
+    width: 100%;
+    max-width: 81px;
+	border-radius: 50%;
+}
+.discount-container {
+	position: relative;
+}
+.discount-container .discount-more {
+	position: absolute;
+	top: 35px;
+	right: 2%;
+	color: #fff;
+}
+.discount-container .discount-title {
+    font-size: 200%;
+    letter-spacing: 0.5em;
+    color: #fff799;
+    text-align: center;
+    background-color: #e48359;
+    font-weight: bold;
+    line-height: 2em;
+	margin-bottom: 19px;
+}
+.discount-container .discount-lineheight {
+}
+.discount-container .discount-content {
+    overflow: hidden;
+}
+.discount-content li {
+	float: left;
+	margin: 0 0 17px 1.8%;
+	width: 47%;
+	background-color: #fff;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.discount-content li:nth-child(even) {
+	float: right;
+	margin: 0 1.8% 17px 0;
+}
+.discount-content li img {
+    border-radius: 3px;
+	width: 100%;
+}
+.discount-content .discount-name {
+	padding-left: 5px;
+	margin: 10px 0;
+}
+.discount-content .discount-price {
+	padding-left: 5px;
+	margin: 10px 0;
+	color: #e60012;
+}

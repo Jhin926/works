@@ -1,0 +1,62 @@
+@charset "utf-8";
+.regist-container {
+  background-color: #fff;
+  margin: 0 5%;
+  overflow: hidden;
+}
+.regist-container h1 {
+  text-align: center;
+  font-size: 150%;
+  padding: 20px 0 30px;
+}
+.regist-content {
+  background-color: #fff;
+  margin: 0 6%;
+}
+.regist-content li {
+  margin-bottom: 30px;
+}
+.regist-content dl {
+  overflow: hidden;
+}
+.regist-content dl dt {
+  float: left;
+  width: 40%;
+  min-height: 1px;
+  text-align: center;
+  line-height: 30px;
+}
+.regist-content dl dd {
+  float: left;
+  width: 59%;
+}
+.regist-content dl dd input[type="text"] {
+  border: none;
+  background-color: #eee;
+  outline: none;
+  width: 100%;
+  height: 30px;
+  border-radius: 6px;
+  padding-left: 3px;
+}
+.regist-content dl dd.error {
+  color: red;
+  font-size: 80%;
+}
+.regist-btn {
+  margin: 0 6% 60px;
+  overflow: hidden;
+  color: #fff;
+}
+.regist-btn a {
+  padding: 4px 10px;
+  background-color: #ababab;
+  border-radius: 6px;
+}
+.regist-btn a.submit {
+  float: left;
+  margin-left: 11%;
+}
+.regist-btn a.reset {
+  float: right;
+}

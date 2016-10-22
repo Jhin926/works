@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+.coupon-con {
+  margin: 0 0 41px 25px;
+}
+.coupon-con .value {
+  width: 181px;
+}
+.coupon-con .term {
+  width: 182px;
+}
+.coupon-con .condition {
+  width: 182px;
+}
+.coupon-con .sitiuation {
+  width: 183px;
+  border-right: none;
+}
+.coupon-nav {
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid #d0d0d0;
+  background-color: #f9f9f9;
+  color: #5e5e5e;
+}
+.coupon-nav li {
+  float: left;
+  border-right: 1px solid #d0d0d0;
+  padding: 13px 0 10px;
+}
+
+.coupon-details {
+  overflow: hidden;
+  border-bottom: 1px dashed #ccc;
+  text-align: center;
+  color: #5e5e5e;
+}
+.coupon-details li {
+  float: left;
+  padding: 50px 0 30px;
+  margin-right: 1px;
+}
+.coupon-details li.value {
+  padding-top: 35px;
+}
+.coupon-details li.sitiuation a {
+  color: #c40000;
+}
+.coupon-details li.sitiuation a.used {
+  color: #ccc;
+}
+
+
+.page-list {
+  margin-bottom: 20px;
+}

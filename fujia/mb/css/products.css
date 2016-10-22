@@ -1,0 +1,89 @@
+@charset "utf-8";
+#container .product-explain {
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+.product-explain h1 {
+  font-size: 150%;
+  padding-left: 2%;
+}
+.product-explain .product-content {
+  color: #b5b5b5;
+  padding-left: 2%;
+  margin-bottom: 8px;
+}
+.product-explain .product-price {
+  padding-left: 2%;
+  margin-bottom: 10px;
+}
+.product-explain .product-price span {
+  font-size: 120%;
+  color: #e60012;
+  font-weight: bold;
+}
+.product-explain .product-buy {
+  text-align: center;
+  padding-bottom: 15px;
+  color: #fff;
+}
+.product-buy a {
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 120%;
+  padding: 7px 15px;
+}
+.product-buy .cart {
+  background-color: #e5794d;
+  margin-right: 3%;
+}
+.product-buy .buy {
+  background-color: #e60012;
+}
+
+
+#container .product-evaluation {
+  background-color: #fff;
+  padding-left: 4%;
+}
+.product-evaluation .evaluation-title {
+  font-size: 120%;
+  font-weight: normal;
+  color: #b5b5b5;
+  margin-bottom: 13px;
+  padding-top: 13px;
+}
+.product-evaluation .evaluation-options {
+  margin-bottom: 20px;
+}
+.evaluation-options a {
+  border-radius: 5px;
+  border: 1px solid #333;
+  padding: 1px 7px;
+  display: inline-block;
+  margin-right: 5px;
+}
+.product-evaluation .customer-comment {
+  border-top: 1px solid #b5b5b5;
+  padding-top: 10px;
+  margin: 0 5% 7px 0;
+  color: #b5b5b5;
+}
+.customer-comment .customer-name {
+  background: url(../img/product/ico-customer.gif) no-repeat;
+  line-height: 32px;
+  padding-left: 30px;
+  margin-bottom: 15px;
+}
+.customer-comment .comment-content {
+  padding-left: 3%;
+}
+.customer-comment .comment-time {
+  text-align: right;
+  font-size: 88%;
+}
+.product-evaluation .more-comment {
+  font-size: 150%;
+  color: #333;
+  text-align: center;
+  padding: 20px 0 25px;
+}

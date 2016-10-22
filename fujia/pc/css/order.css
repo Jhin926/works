@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+h2.specie-title {
+  color: #e97439;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.specie-container {
+  padding: 0 0 20px 25px;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #ccc;
+}
+.specie-message dt {
+  width: 100px;
+}
+.specie-message dd {
+  width: 635px;
+  min-height: 1px;
+}
+.detail-list thead tr {
+  background-color: #eee;
+}
+.settlement-message {
+}
+.settlement-price {
+  text-align: right;
+}
+.settlement-price span {
+  font-size: 20px;
+  color: #b50124;
+  margin-right: 30px;
+}

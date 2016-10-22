@@ -1,0 +1,226 @@
+@charset "utf-8";
+#container .consumer-data {
+    margin-bottom: 17px;
+	padding: 0 5% 10px;
+	background-color: #fff;
+}
+.consumer-data .get-data {
+  overflow: hidden;
+  padding: 20px 0 0;
+  color: #b5b5b5;
+  position: relative;
+}
+.get-data .choice-address {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: url(../img/bg-checkbox.gif) no-repeat 0 0;
+  right: 7%;
+  bottom: 10%;
+  font-size: 200%;
+}
+.get-data .choice-address input {
+  opacity: 0;
+}
+.get-data .choice-address.active {
+  background: url(../img/bg-checkbox.gif) no-repeat -15px 0;
+}
+.add-address {
+  margin: 20px 0;
+  text-align: right;
+  font-size: 80%;
+}
+.add-address a {
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+.get-data .person-name {
+  font-size: 110%;
+  margin-top: 5px;
+}
+.get-data dt {
+  float: left;
+  width: 15%;
+}
+.get-data dd {
+  float: left;
+  width: 85%;
+}
+.get-data dd p span {
+  margin-left: 5%;
+}
+.input-data {
+  margin-top: 20px;
+  overflow: hidden;
+}
+.input-data dt {
+  width: 30%;
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.input-data dd {
+  width: 70%;
+  float: left;
+  line-height: 30px;
+  padding-bottom: 10px;
+}
+.input-data dd input[type="text"] {
+  border: none;
+  background-color: #eee;
+  outline: none;
+  width: 100%;
+  border-radius: 6px;
+  height: 30px;
+}
+.input-btn {
+  text-align: right;
+}
+.input-btn a {
+  padding: 3px 10px;
+  border-radius: 3px;
+  background-color: #eee;
+}
+#container .shopping-information {
+  background-color: #fff;
+  padding: 15px 4% 0;
+}
+.shopping-information .all-choice {
+  padding-left: 2%;
+}
+.shopping-information ul {
+  border-top: 1px solid #b5b5b5;
+}
+.shopping-information ul li {
+  padding: 15px 2%;
+  overflow: hidden;
+  border-bottom: 1px solid #b5b5b5;
+}
+.shopping-information .left {
+  float: left;
+}
+.shopping-information .right {
+  float: right;
+}
+.shopping-information p.count {
+  border: 1px solid #000;
+  color: #000;
+  width: 100px;
+  height: 25px;
+}
+p.count span {
+  float: left;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+}
+p.count span.number {
+  width: 48px;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+.shopping-information .gray {
+  color: #b5b5b5;
+}
+.shopping-information .img {
+  float: left;
+  width: 32%;
+}
+.shopping-information .check {
+  width: 8%;
+}
+.shopping-information .text {
+  width: 60%;
+}
+.shopping-information .name-price {
+  overflow: hidden;
+  margin-left: 4%;
+}
+.shopping-information .buy-count {
+  overflow: hidden;
+  margin: 15px 0 0 4%;
+}
+.shopping-information .buy-delete {
+  text-align: right;
+  margin-top: 15px;
+}
+.buy-delete a {
+  color: #333;
+}
+.shopping-information .name {
+  float: left;
+  width: 20%;
+}
+.shopping-information .price {
+  width: 40%;
+  text-align: right;
+}
+.shopping-information .message {
+  background-color: #eee;
+  border-radius: 6px;
+  padding: 8px 15px;
+  font-size: 137%;
+}
+.shopping-information .shopping-total {
+  text-align: right;
+}
+.shopping-information .clear-cart {
+  text-align: right;
+}
+.clear-cart a {
+  display: inline-block;
+}
+.clear-cart .delete-checked {
+  margin-right: 5%;
+}
+.use-other {
+  padding: 0 4%;
+}
+.use-other li {
+  border-bottom: 1px solid #b5b5b5;
+  padding: 15px 3%;
+}
+
+.cash-total {
+  text-align: right;
+  padding: 30px 7% 20px;
+  font-size: 150%;
+  color: #e60012;
+}
+.cash-total a {
+  padding: 5px 15px;
+  color: #fff !important;
+  display: inline-block;
+  background-color: #e60012;
+  border-radius: 7px;
+  margin-left: 4%;
+}
+
+.on-off {
+  width: 50px;
+  height: 20px;
+  background-color: #b5b5b5;
+  border-radius: 4px;
+  float: right;
+}
+.on-off span {
+  width: 23px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 20px;
+  background-color: #dcdcdc;
+  box-shadow: 2px 2px 1px #888888;
+  float: right;
+  margin-top: -1px;
+}
+.active {
+  background-color: #f49800 !important;
+}
+.active span {
+  float: left;
+}

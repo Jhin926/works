@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+.new-address {
+  padding-left: 25px;
+}
+h2.add-address {
+  color: #e97439;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.input-address {
+  
+}
+.input-address ul li {
+  margin-bottom: 18px;
+}
+.input-address ul li dl dt {
+  width: 84px;
+  vertical-align: middle;
+  padding-top: 5px;
+}
+.input-address ul li dl dt span {
+  width: 1em;
+  display: inline-block;
+  vertical-align: middle;
+}
+.input-address ul li dl dt span.require {
+  color: #f05251;
+}
+.input-address ul li dl dd {
+  margin-right: 15px;
+  vertical-align: middle;
+}
+.input-address ul li dl dd span.prompt {
+  margin-left: 15px;
+}
+.input-address ul li dl dd input {
+  width: 133px;
+  height: 28px;
+  padding-left: 5px;
+  *+line-height: 28px;
+  line-height: 28px\9;
+  border: 1px solid #d7d7d7;
+}
+.input-address ul li dl dd input.area-code {
+  width: 69px;
+}
+.input-address ul li dl dd input.address-text {
+  width: 290px;
+}
+.input-address ul li dl dd .choice {
+  width: auto;
+  display: inline-block;
+  float: left;
+  padding: 0 0 0 15px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d7d7d7;
+  display: inline-block;
+  margin-right: 6px;
+  outline: none;
+}
+.input-address .submit-address {
+  text-align: center;
+  margin-top: 20px;
+}
+.address-list {
+  padding-left: 25px;
+  margin-top: 30px;
+}
+.address-list thead td {
+  background-color: #f9f9f9;
+  border: 1px solid #d0d0d0;
+  padding: 10px 0;
+  text-align: center;
+}
+.address-list tbody {
+  border: 1px solid #d0d0d0;
+  border-top: none;
+}
+.address-list tbody tr {
+  border-bottom: 1px solid #d0d0d0;
+}
+.address-list tbody td {
+  padding: 10px 0 10px 5px;
+}
+.address-list tbody td span {
+  cursor: pointer;
+}
+.address-list tbody td span:hover {
+  text-decoration: underline;
+}
+.address-list tbody td span.address-modify {
+  color: #039;
+  margin-right: 7px;
+}
+.address-list tbody td span.address-del {
+  color: #F00;
+}

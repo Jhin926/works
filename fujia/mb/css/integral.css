@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+#container .person-img {
+    margin-bottom: 17px;
+	position: relative;
+}
+.person-img .person-infor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+}
+.person-infor p.person-photo {
+  margin: 13px 0 7px 0;
+}
+.person-infor p.person-photo img {
+  border-radius: 50%;
+}
+.person-infor h1 {
+  font-size: 100%;
+  font-weight: normal;
+}
+.person-infor h1 a {
+  color: inherit;
+}
+#container .integral-top {
+  color: #fff;
+  position: relative;
+}
+.integral-top .integral-title {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 48%;
+}
+.integral-top .integral-tab {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,.3);
+  position: absolute;
+  overflow: hidden;
+  padding: 13px 0;
+  bottom: 0;
+}
+.integral-tab li {
+  width: 33%;
+  text-align: center;
+  float: left;
+  border-right: 1px solid #fff;
+}
+.integral-tab li.active {
+	color: red;
+}
+.integral-tab li:last-child {
+  border-right: none;
+}
+
+#container .integral-record {
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+#container .integral-record caption {
+  text-align: center;
+  padding: 10px 0;
+  color: #333;
+  font-size: 120%;
+}
+#container .integral-record thead {
+  background-color: #d9d9d9;
+}
+.integral-record td {
+  width: 25%;
+}

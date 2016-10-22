@@ -1,0 +1,341 @@
+@charset "utf-8";
+.show-list li {
+  margin-right: 39px;
+}
+.show-list .show-name {
+  margin: 8px 0 5px;
+}
+.show-list .show-price {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.product-show .show-list img {
+  border-bottom-width: 7px;
+}
+
+.pro-detail {
+   margin-bottom: 50px;
+}
+.pro-detail .pro-img {
+  width: 317px;
+  float: left;
+}
+.pro-img .img-container {
+  padding: 7px;
+  border: 1px solid #cccccc;
+  width: auto;
+  overflow: hidden;
+}
+.pro-img ul.tab-pro-img {
+  width: 327px;
+  overflow: hidden;
+}
+.pro-img ul.tab-pro-img li {
+  width: 60px;
+  height: 60px;
+  float: left;
+  margin: 8px 9px 0;
+  cursor: pointer;
+}
+
+.pro-detail .text-container {
+  float: right;
+  width: 425px;
+  color: #999;
+}
+.text-container h1 {
+  font-size: 18px;
+  color: #313131;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.text-container .pro-text {
+  margin-bottom: 20px;
+}
+.text-container .pro-price {
+  background-color: #f0efef;
+  padding: 12px 0 0 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.pro-price dl {
+  margin-bottom: 7px;
+}
+.pro-price dl dt {
+  width: 50px;
+}
+.pro-price dl dd {
+  font-size: 14px;
+  line-height: 1em;
+  color: #313131;
+  padding-top: 2px;
+}
+.pro-price dl dd del {
+  margin-right: 15px;
+}
+.pro-price dl dd.low-price {
+  font-size: 26px;
+  color: #c40000;
+  line-height: 1em;
+  padding-top: 0;
+}
+.text-container dl.freight {
+  margin-bottom: 20px;
+  padding-left: 10px;
+  overflow: visible;
+  height: 20px;
+}
+dl.freight dt {
+  width: 50px;
+}
+dl.freight dd span {
+  margin: 0 10px;
+  color: #313131;
+  font-size: 15px;
+}
+dl.freight dd div.fre-target {
+  display: inline;
+  position: relative;
+  margin-left: 10px;
+  padding-right: 13px;
+  color: #313131;
+  font-size: 15px;
+  background: url(../img/detail/ico-cho-address.gif) no-repeat right center;
+  cursor: pointer;
+}
+dl.freight dd div.fre-target a {
+  color: #313131;
+}
+dl.freight dd div.fre-target ul {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: 999;
+  background: #fff;
+  width: 118px;
+  text-align: center;
+  padding: 10px 0px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+dl.freight dd div.fre-target ul li {
+  padding: 3px 0;
+}
+dl.freight dd div.fre-target ul li:hover {
+  background: #ccc;
+}
+
+ul.count-total {
+  overflow: hidden;
+  border-top: 1px dashed #b3b3b3;
+  border-bottom: 1px dashed #b3b3b3;
+  margin-bottom: 20px;
+}
+ul.count-total li {
+  float: left;
+  width: 140px;
+  text-align: center;
+  border-right: 1px dashed #b3b3b3;
+  line-height: 1em;
+  padding: 11px 0;
+}
+ul.count-total li:last-child {
+  border-right: none;
+}
+ul.count-total li span {
+  color: #c40000;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.pro-simu-cart {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px solid #c40000;
+  margin-bottom: 20px;
+}
+.pro-simu-cart span.close-simu-cart {
+  position: absolute;
+  top: 0;
+  right: 7px;
+  color: #c40000;
+  cursor: pointer;
+}
+.pro-simu-cart p.add-cart-success {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #0F6;
+  font-size: 18px;
+  font-weight: bold;
+}
+.pro-simu-cart p.add-cart-faild {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #c40000;
+  font-size: 18px;
+  font-weight: bold;
+}
+.pro-simu-cart p.operation-cart {
+  text-align: center;
+  width: 100%;
+  height: 35px;
+}
+.pro-simu-cart .continue-buy {
+  color: #c40000;
+  padding: 8px 15px;
+  background-color: #ffeded;
+  margin-right: 15px;
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #c40000;
+}
+.pro-simu-cart .go-settlement {
+  color: #fff;
+  padding: 8px 15px;
+  background-color: #c40000;
+  display: inline-block;
+}
+dl.pro-stock {
+  padding-left: 10px;
+  margin-bottom: 24px;
+}
+dl.pro-stock dt {
+  width: 63px;
+  padding-top: 6px;
+}
+dl.pro-stock dd {
+  width: 350px;
+}
+dl.pro-stock dd input {
+  width: 40px;
+  height: 28px;
+  padding-left: 4px;
+  border: 1px solid #ccc;
+  outline: none;
+  display: inline-block;
+  vertical-align: middle;
+  *+line-height: 28px;
+  line-height: 28px\9;
+}
+dl.pro-stock dd span.cho-number {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+dl.pro-stock dd span.cho-number span {
+  display: block;
+}
+dl.pro-stock dd span.cho-number span:hover {
+  cursor: pointer;
+}
+dl.pro-stock dd span.cho-number span:first-child {
+  margin-bottom: 4px;
+  *+margin-bottom: 0;
+}
+dl.pro-stock dd span.cho-number span img {
+  vertical-align: middle;
+}
+dl.pro-stock dd span.stock-total {
+  margin-left: 20px;
+}
+.buy-cart {
+  font-size: 16px;
+  padding-left: 10px;
+}
+.buy-cart a {
+  display: inline-block;
+}
+.buy-cart a.buy {
+  background-color: #ffeded;
+  padding: 9px 57px;
+  border: 1px solid #c40000;
+  color: #c40000;
+  margin-right: 7px;
+}
+.buy-cart a.cart {
+  color: #fff;
+  padding: 10px 40px 10px 60px;
+  background: url(../img/detail/ico-cart.gif) no-repeat 40px 15px #c40000;
+}
+
+
+.goods-evaluation h1 {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.goods-evaluation h1 a {
+  display: inline-block;
+  color: #000;
+}
+.goods-evaluation h1 a.active {
+  border-top: 2px solid #c40000;
+  margin-top: -1px;
+  background-color: #f9f9f9;
+  color: #c40000;
+  border-right: 1px solid #ccc;
+}
+.goods-evaluation h1 a.tab-detail {
+  padding: 17px 20px;
+  border-right: 1px solid #ccc;
+}
+.goods-evaluation h1 a.tab-evaluation {
+  padding: 17px 32px;
+}
+
+.goods-details {
+}
+.goods-details .goods-para {
+  background-color: #f9f9f9;
+  padding: 30px 0 20px 25px;
+  overflow: hidden;
+  color: #999;
+  margin-bottom: 35px;
+}
+ .goods-para li {
+  display: inline;
+  float: left;
+  width: 225px;
+  height: 18px;
+  overflow: hidden;
+  margin: 0 20px 20px 0;
+  line-height: 18px;
+  vertical-align: top;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.goods-img {
+  margin-bottom: 20px;
+}
+.goods-text {
+  margin-bottom: 20px;
+  line-height: 2em;
+  text-indent: 2.5em;
+} 
+
+.total-evaluation {
+  display: none;
+}
+.total-evaluation ul li {
+  border-bottom: 1px solid #eeedf2;
+  overflow: hidden;
+  padding: 22px 0 15px 5px;
+  position: relative;
+}
+.total-evaluation ul li .eval-content {
+  color: #313131;
+  margin-bottom: 3px;
+}
+.total-evaluation ul li .eval-time {
+  color: #999;
+}
+.total-evaluation ul li .eval-people {
+  color: #c40000;
+  position: absolute;
+  top: 25px;
+  right: 70px;
+}
+.page-list {
+  margin: 45px 0;
+}

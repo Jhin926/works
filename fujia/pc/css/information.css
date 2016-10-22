@@ -1,0 +1,74 @@
+@charset "utf-8";
+.info-list {
+  color: #313131;
+  margin-bottom: 43px;
+}
+.info-list ul {
+}
+.info-list ul li {
+  background: url(../img/ico-point.gif) no-repeat 15px 9px;
+  margin-top: 20px;
+}
+.info-list ul li p {
+  margin-left: 30px;
+  border-bottom: 1px dashed #747474;
+  padding-bottom: 16px;
+  overflow: hidden;
+  
+}
+.info-list ul li a {
+  float: left;
+  color: #313131;
+}
+.info-list ul li span.info-time {
+  float: right;
+  color: #737373;
+}
+
+.info-detail {
+  color: #313131;
+}
+.info-detail h2.info-title {
+  text-align: center;
+  font-size: 18px;
+}
+.info-detail .info-message {
+  border-bottom: 1px dashed #cecece;
+  border-top: 1px dashed #cecece;
+  text-align: center;
+  margin: 25px 0;
+  padding: 12px 0;
+  font-size: 12px;
+  color: #a7a7a7;
+}
+.info-message span {
+  margin: 0 12px;
+}
+.info-content {
+  text-indent: 2em;
+  line-height: 2em;
+}
+.info-content img {
+  border: 1px solid #cdcdcd;
+  float: right;
+  margin: 0 0 15px 15px;
+}
+.info-tab {
+  margin-top: 40px;
+  padding: 28px 0;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  overflow: hidden;
+}
+.info-tab p span {
+  color: #e97439;
+}
+.info-tab p a {
+  color: #313131;
+}
+.info-tab .info-prev {
+  float: left;
+}
+.info-tab .info-next {
+  float: right;
+}

@@ -1,0 +1,85 @@
+@charset "utf-8";
+#container .consumer-data {
+    margin-bottom: 17px;
+	padding: 0 5% 10px;
+	background-color: #fff;
+}
+.consumer-data .get-data {
+  overflow: hidden;
+  padding: 20px 0 0;
+  color: #b5b5b5;
+  position: relative;
+}
+
+.add-address {
+  padding: 20px 0 10px;
+  font-size: 120%;
+  font-weight: normal;
+}
+.get-data .person-name {
+  font-size: 110%;
+  margin-top: 5px;
+}
+.get-data dt {
+  float: left;
+  width: 15%;
+}
+.get-data dd {
+  float: left;
+  width: 85%;
+}
+.get-data dd p span {
+  margin-left: 5%;
+}
+.get-data dd p.address-handle a {
+  display: inline-block;
+  padding: 3px 13px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.get-data dd p .modify-address {
+  color: #333 !important;
+  margin-right: 15px;
+}
+.get-data dd p .del-address {
+  color: #333 !important
+}
+.input-data {
+  margin-top: 20px;
+  overflow: hidden;
+}
+.input-data dt {
+  width: 30%;
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.input-data dd {
+  width: 70%;
+  float: left;
+  line-height: 30px;
+  padding-bottom: 10px;
+}
+.input-data dd input[type="text"] {
+  border: none;
+  background-color: #eee;
+  outline: none;
+  width: 100%;
+  border-radius: 6px;
+  height: 30px;
+}
+.input-data .chioce-area {
+  margin-bottom: 10px;
+}
+.input-btn {
+  text-align: right;
+}
+.input-btn a {
+  padding: 3px 10px;
+  border-radius: 3px;
+  background-color: #eee;
+  margin-right: 15px;
+}

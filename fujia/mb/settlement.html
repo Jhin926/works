@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>结算</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/cart.css" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body bgcolor="#e8e9e6">
+<div id="header">
+  <div class="logo"><a href="index.html"><img src="img/logo.png" alt="芙佳shop" /></a></div>
+  <div class="search"><a href="javascript:;">搜索</a><input type="text" /></div>
+  <div class="login"><a class="header-login" href="login.html">登录</a> <a class="header-regist" href="regist.html">注册</a></div>
+</div>
+<div id="container">
+  <div class="consumer-data">
+    <dl class="get-data">
+      <dt><img src="img/cart/ico-position.gif" width="36" alt="" /></dt>
+      <dd>
+        <p class="person-name">收件人：XXX <span>15000000000</span></p>
+        <p>收货地址：XXXXXXXXXX</p>
+        <span class="choice-address"><input type="radio" name="address" /></span>
+      </dd>
+    </dl>
+    <dl class="get-data">
+      <dt><img src="img/cart/ico-position.gif" width="36" alt="" /></dt>
+      <dd>
+        <p class="person-name">收件人：XXX <span>15000000000</span></p>
+        <p>收货地址：XXXXXXXXXX</p>
+        <span class="choice-address"><input type="radio" name="address" /></span>
+      </dd>
+    </dl>
+    <dl class="get-data">
+      <dt><img src="img/cart/ico-position.gif" width="36" alt="" /></dt>
+      <dd>
+        <p class="person-name">收件人：XXX <span>15000000000</span></p>
+        <p>收货地址：XXXXXXXXXX</p>
+        <span class="choice-address"><input type="radio" name="address" /></span>
+      </dd>
+    </dl>
+    <p class="add-address"><a href="javascript:;">+新增地址</a></p>
+    <form name="add-address" style="display: none;">
+        <dl class="input-data">
+          <dt>收件人：</dt>
+          <dd><input type="text" /></dd>
+          <dt>联系电话：</dt>
+          <dd><input type="text" /></dd>
+          <dt>收件地址：</dt>
+          <dd><input type="text" /></dd>
+      </dl>
+        <p class="input-btn"><a href="javascript:;">提交</a></p>
+    </form>
+  </div>
+  <div class="shopping-information">
+    <ul>
+      <li>
+        <p class="left img"><img src="img/cart/img-cart01.jpg" alt="豌豆" width="100%" /></p>
+        <div class="right text">
+          <div class="name-price">
+            <p class="left name">豌豆<br /><br /><span class="gray">购买数量</span></p>
+        	<p class="right price">￥100.00<br /><br /><span class="gray">X1</span></p>
+          </div>
+      </div>
+      </li>
+      <li>
+        <p class="message gray" contentEditable="true">给卖家留言：</p>
+      </li>
+      <li>
+        <p class="shopping-total">共1件商品 合计：￥100.00</p>
+      </li>
+    </ul>
+  </div>
+  <ul class="use-other">
+    <li>
+      使用积分
+      <input type="text" value="1000" /><br />
+      <span>当前积分10000</span>
+    </li>
+    <li>
+      使用打折卡
+      <select>
+        <option>打折卡1</option>
+        <option>打折卡2</option>
+        <option>打折卡3</option>
+        <option>打折卡4</option>
+      </select>
+    </li>
+    <li>
+      物流价格：10.00
+    </li>
+  </ul>
+  <p class="cash-total">
+    合计：￥100.00
+    <a href="insure.html">确认</a>
+  </p>
+</div>
+<div id="footer">
+  <ul>
+    <li>
+      <p class="footer-ico"><a href="person.html"><img src="img/ico-my.png" alt="my" /></a></p>
+      <p class="footer-text"><a href="person.html">我的</a></p>
+    </li>
+    <li>
+      <p class="footer-ico"><a href="kinds.html"><img src="img/ico-search.png" alt="search" /></a></p>
+      <p class="footer-text"><a href="kinds.html">分类</a></p>
+    </li>
+    <li>
+      <p class="footer-ico"><a href="promotion.html"><img src="img/ico-active.png" alt="active" /></a></p>
+      <p class="footer-text"><a href="promotion.html">活动</a></p>
+    </li>
+    <li>
+      <p class="footer-ico"><a href="cart.html"><img src="img/ico-shopping.png" alt="shopping" /></a></p>
+      <p class="footer-text"><a href="cart.html">购物车</a></p>
+    </li>
+    <li>
+      <p class="footer-ico"><a href="contact.html"><img src="img/ico-contact.png" alt="contact" /></a></p>
+      <p class="footer-text"><a href="contact.html">联系我</a></p>
+    </li>
+  </ul>
+</div>
+<script>
+  $(document).ready(function(){
+    $(".on-off").click(function(){
+	  $(this).toggleClass("active");
+	});
+	var addList= $('input:radio[name="address"]');
+	addList.click(function(){
+	  if($(this).is(':checked')){
+	  	  addList.each(function(){
+			$(this).parent().removeClass("active");
+	  	  });
+		  $(this).parent().addClass("active");
+	  }
+	});
+	$(".add-address").click(function(){
+	  $("form[name='add-address']").toggle();
+	})
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../css/datepicker.css"/>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/bootstrap-datepicker.js"></script>
+</head>
+<body>
+<div class="date date-picker" data-date-format="dd/mm/yyyy">
+  <input type="text" class="form-control form-filter input-sm" readonly name="order_date_from" placeholder="From">
+  <span class="input-group-btn">
+  <button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
+  </span>
+</div>
+</body>
+<script>
+        jQuery(document).ready(function() {   
+        //init date pickers
+        $('.date-picker').datepicker({
+            //rtl: Metronic.isRTL(),
+            autoclose: true
+        });
+        });
+    </script>
+</html>

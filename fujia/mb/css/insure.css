@@ -1,0 +1,94 @@
+@charset "utf-8";
+#container section {
+  background-color: #fff;
+}
+#container .insure-pay,
+#container .insure-address{
+  margin-bottom: 20px;
+  padding: 20px 0;
+}
+#container .insure-pay dl,
+#container .insure-address dl{
+  overflow: hidden;
+  color: #b5b5b5;
+}
+.insure-pay dl dt {
+  float: left;
+  width: 20%;
+  text-align: right;
+  padding-top: 15px;
+}
+.insure-address dl dt {
+  float: left;
+  width: 20%;
+  text-align: right;
+}
+.insure-pay dl dd,
+.insure-address dl dd {
+  float: left;
+  margin-left: 3%;
+  width: 76%;
+}
+.insure-pay dl dd p,
+.insure-address dl dd p {
+  margin: 5px 0;
+}
+.insure-pay .pay-title,
+.insure-address .pay-title {
+  font-size: 120%;
+}
+.insure-shopping {
+  padding: 0 4%;
+}
+.insure-shopping .shopping-details {
+  overflow: hidden;
+  border-top: 1px solid #b5b5b5;
+  border-bottom: 1px solid #b5b5b5;
+  padding: 20px 4%;
+}
+.shopping-details .img {
+  float: left;
+  width: 40%;
+}
+.shopping-details .name {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+.shopping-details .price {
+  float: left;
+  width: 40%;
+  text-align: right;
+}
+.shopping-details .count {
+  color: #b5b5b5;
+}
+.insure-shopping .insure-summary {
+  padding: 20px 0;
+  border-bottom: 1px solid #b5b5b5;
+}
+.insure-shopping .insure-summary li {
+  overflow: hidden;
+  padding: 0 4%;
+  margin-bottom: 10px;
+}
+.insure-summary li .summary-name {
+  float: left;
+}
+.insure-summary li .summary-val {
+  float: right;
+}
+.insure-btn {
+  text-align: right;
+  padding: 20px 4% 25px;
+  background-color: #fff;
+  color: #fff;
+}
+.insure-btn a {
+  padding: 5px 15px;
+  background-color: #e60012;
+  font-size: 150%;
+  margin-right: 4%;
+  display: inline-block;
+  border-radius: 8px;
+}

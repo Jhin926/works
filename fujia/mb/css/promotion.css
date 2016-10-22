@@ -1,0 +1,65 @@
+@charset "utf-8";
+#container .promotion-container {
+  background-color: #fff;
+}
+.promotion-img {
+  position: relative;
+}
+.promotion-img .ico-promotion {
+  position: absolute;
+  width: 9%;
+  top: 0;
+  right: 10%;
+}
+.promotion-container .promotion-product {
+  margin: 10px 5%;
+}
+.promotion-container .price-detail {
+  overflow: hidden;
+  margin: 0 5%;
+  padding-bottom: 20px;
+}
+.price-detail span {
+  display: inline-block;
+  padding: 3px 12px;
+  font-size: 125%;
+}
+.price-detail .promotion-price {
+  float: left;
+  background-color: #e60012;
+  border-radius: 8px;
+  color: #fff;
+}
+.price-detail .promotion-detail {
+  float: right;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+#container .pmt-title {
+  font-size: 150%;
+  padding: 30px 0 10px 4%;
+}
+#container .pmt-explain {
+  padding: 20px 4%;
+  color: #b5b5b5;
+  font-size: 110%;
+}
+.pmt-explain,.price-buy,.pmt-title {
+  background-color: #fff;
+}
+#container .price-buy {
+  padding: 0 4% 40px;
+  overflow: hidden;
+  color: #fff;
+}
+.price-buy a {
+  background-color: #e5794d;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.price-buy .pmt-price {
+  float: left;
+}
+.price-buy .pmt-buy {
+  float: right;
+}

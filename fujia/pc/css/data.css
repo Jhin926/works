@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+.data-real {
+  margin-left: 156px;
+}
+.data-real h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.data-input li {
+  margin-bottom: 25px;
+}
+.data-input li dl.photo img{
+  border: 3px solid #e6e6e6;
+}
+.data-input dl dt {
+  width: 90px;
+  min-height: 1px;
+}
+.data-input dl dd input[type="text"] {
+  width: 141px;
+  height: 24px;
+  padding-left: 5px;
+  border: 1px solid #cecece;
+  *+line-height: 27px;
+  line-height: 27px\9;
+}
+.page-list {
+  margin-bottom: 20px;
+}

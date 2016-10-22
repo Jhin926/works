@@ -1,0 +1,86 @@
+@charset "utf-8";
+#container .all-nav {
+  background-color: #fff;
+  border-bottom: 1px solid #b5b5b5;
+  border-top: 1px solid #b5b5b5;
+  padding: 20px 0;
+  margin: 20px 0;
+  overflow: hidden;
+  text-align: center;
+}
+.all-nav li {
+  width: 20%;
+  float: left;
+}
+#container section {
+  background-color: #fff;
+  border-bottom: 1px solid #b5b5b5;
+  position: relative;
+  margin-bottom: 20px;
+}
+section h1 {
+  border-top: 1px solid #b5b5b5;
+  border-bottom: 1px solid #b5b5b5;
+  line-height: 2em;
+  padding: 5px 4%;
+}
+section .pay-content {
+  border-bottom: 1px solid #b5b5b5;
+  padding: 15px 0;
+}
+.pay-content dl {
+  margin: 0 4%;
+  overflow: hidden;
+}
+.pay-content dl dt {
+  width: 25%;
+  float: left;
+}
+.pay-content dl dd {
+  width: 38%;
+  margin-left: 4%;
+  float: left;
+  padding-top: 5px;
+}
+.pay-content dl dd.pay-count {
+  float: right;
+  text-align: right;
+  margin-left: 0;
+  width: 32%;
+}
+.pay-count .count {
+  color: #b5b5b5;
+}
+section .pay-status {
+  color: #e60012;
+  position: absolute;
+  top: 10px;
+  right: 4%;
+}
+section .pay-total {
+  margin: 10px 4% 15px;
+  overflow: hidden;
+}
+.pay-total dt {
+  float: left;
+  width: 40%;
+  text-align: right;
+}
+.pay-total dd {
+  float: left;
+  width: 30%;
+  text-align: right;
+}
+.pay-state {
+  text-align: right;
+  padding: 0 4% 10px;
+  color: #fff;
+}
+.pay-state a {
+  display: inline-block;
+  padding: 3px 5px;
+  background-color: #b5b5b5;
+  font-size: 120%;
+  border-radius: 5px;
+  margin-left: 4%;
+}

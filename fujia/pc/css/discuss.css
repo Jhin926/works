@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+#content {
+  width: 800px;
+  margin: auto;
+  float: none;
+}
+.discuss-container {
+  border: 1px solid #ccc;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+.discuss-container .discuss-content {
+  margin: auto;
+  padding: 20px 0 20px 130px;
+  border-bottom: 1px dashed #ccc;
+}
+.discuss-container .discuss-content:last-child {
+  border-bottom: none;
+}
+.discuss-content .discuss-class {
+  margin-bottom: 10px;
+}
+.discuss-content .discuss-class label {
+  margin-right: 20px;
+}
+.discuss-content dl dt img {
+  margin-bottom: 7px;
+}
+.discuss-content dl dt a {
+  color: #36c;
+}
+.discuss-content dl dd {
+  margin-left: 30px;
+}
+.discuss-content .discuss-input {
+  padding: 5px;
+  background-color: #EEF8FD;
+}
+.discuss-content .discuss-input textarea {
+  width: 360px;
+  height: 105px;
+  font-family: "微软雅黑", "宋体", "黑体";
+  outline: none;
+  padding: 5px;
+  color: #aaa;
+}
+.discuss-score dt p {
+  font-size: 14px;
+  color: #999;
+  font-weight: 700;
+  text-align: center;
+  padding: 15px 25px;
+  background-color: #f3f3f3;
+}
+.discuss-score dd p {
+  margin-bottom: 5px;
+}
+
+.discuss-insure {
+  text-align: center;
+  margin-top: 30px;
+}
+.discuss-insure a {
+  color: #fff;
+  width: 170px;
+  height: 38px;
+  display: inline-block;
+  font-size: 17px;
+  background-color: #52a1e6;
+  line-height: 38px;
+  text-align: center;
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" > 
+ 
+<hibernate-mapping package="com.nr.umi.action">
+<class name="UserAction" table="t_user_action" dynamic-insert="true" dynamic-update="true">
+	<id name="id" column="c_id">
+	<generator class="native"></generator>
+	</id>
+	<property name="user_id" column="c_user_id"></property>
+	<property name="action_type" column="c_action_type" ></property>
+	<property name="action_detail" column="c_action_detail"></property>
+	<property name="action_res" column="c_action_res"></property>
+	<property name="action_ip" column="c_action_ip"></property>
+	<property name="action_amount" column="c_action_amount"></property>
+	<property name="action_src_name" column="c_action_src_name"></property>
+	<property name="action_src_id" column="c_action_src_id"></property>
+	<property name="action_dst_name" column="c_action_dst_name"></property>
+	<property name="action_dst_id" column="c_action_dst_id"></property>
+	<property name="tradeNo" column="c_out_trade_no"></property>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.nr.umi.bean">
+	<class name="ApiRequest" table="t_sys_api_request"
+		dynamic-insert="true" dynamic-update="true">
+		<id name="id" column="c_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="user_id" column="c_user_id"></property>
+		<property name="api_type" column="c_api_type"></property>
+		<property name="api_name" column="c_api_name"></property>
+		<property name="api_id" column="c_api_id"></property>
+		<property name="request" column="c_request"></property>
+		<property name="response" column="c_response"></property>
+		<property name="orderNo" column="c_orderNo"></property>
+		<property name="isError" column="c_is_error"></property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.nr.umi.bean">
+	<class name="Experience" table="t_Experience" dynamic-insert="true"
+		dynamic-update="true">
+		<id name="eNo" column="c_E_No">
+			<generator class="native"></generator>
+		</id>
+		<property name="eExperienceing" column="c_E_Experienceing"></property>
+		<property name="eExperienced" column="c_E_Experienced"></property>
+		<property name="eType" column="c_E_Type"></property>
+		<property name="eUNo" column="c_E_U_No"></property>
+		<property name="eFriendNum" column="c_E_FriendNum"></property>
+		<property name="eDays" column="c_days"></property>
+		<property name="receiveDate" column="c_receive_date"></property>
+	</class>
+</hibernate-mapping>

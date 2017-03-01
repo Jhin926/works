@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" > 
+ 
+<hibernate-mapping package="com.nr.umi.bean">
+<class name="OrderDetail" table="t_order_detail"  dynamic-insert="true" dynamic-update="true">
+	<id name="id" column="c_id">
+	<generator class="native"></generator>
+	</id>
+	<property name="type" column="c_type" ></property>
+	<property name="step" column="c_step"></property>
+	<property name="createTime" column="c_createtime"></property>
+	<property name="comTime" column="c_complete_time"></property>
+	<property name="isSuccess" column="c_is_success"></property>
+</class>
+</hibernate-mapping>

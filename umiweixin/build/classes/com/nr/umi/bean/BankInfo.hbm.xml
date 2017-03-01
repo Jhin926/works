@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" > 
+ 
+<hibernate-mapping package="com.nr.umi.bean">
+<class name="BankInfo" table="t_user_bank_info" dynamic-insert="true" dynamic-update="true">
+	<id name="id" column="c_id">
+	<generator class="native"></generator>
+	</id>
+	<property name="userId" column="c_user_id"></property>
+	<property name="bankName" column="c_bank_name"></property>
+	<property name="province" column="c_province" ></property>
+	<property name="city" column="c_city"></property>
+	<property name="branch" column="c_branch"></property>
+	<property name="cardNo" column="c_card_no"></property>
+	<property name="accountName" column="c_account_name"></property>
+	<property name="cardId" column="c_card_id"></property>
+	<property name="timestamp" column="c_timestamp" type="timestamp"></property>
+	<property name="isVerified" column="c_is_verified"></property>
+	<property name="bankCode" column="c_bank_code"></property>
+	<property name="reservedPhone" column="c_reserved_phone"></property>
+</class>
+</hibernate-mapping>

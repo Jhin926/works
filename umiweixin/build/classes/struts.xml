@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.convention.action.mapallmatches" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	
+	<package name="default" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="authority" class="com.nr.umi.interceptor.AuthorizationInterceptor"></interceptor>
+			
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="authority"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<global-results>
+			<result name="logout" type="redirect">/login.jsp</result>
+			<result name="userIsNull" type="redirect">/login.jsp</result>
+			<result name="realNameVerify">/pages/shiming.jsp</result>
+			<result name="error" type="redirect">/error.jsp</result>
+		</global-results>
+
+		<action name="login" class="com.nr.umi.action.UserAction">
+			<result name="login">/zhuce.jsp</result>
+			<result name="error">/login.jsp</result>
+			<result name="loadIndexPage">/pages/index.jsp</result>
+			<result name="success" type="redirectAction">/login!loadIndexPage.action</result>
+			<result name="clearCache" type="redirectAction">/login!loadIndexPage.action</result>
+			<result name="queryBankLimit">/banklimitDate.jsp</result>
+			
+		</action>
+		
+		<action name="mainAction" class="com.nr.umi.action.MainAction">
+			<result name="login">/login.jsp</result>
+			<result name="error">/zhuce.jsp</result>
+		</action>
+		
+		<action name="detail" class="com.nr.umi.action.AccountAction">
+			<result name="success400">/pages/zhanghu-huoqi.jsp</result>
+			<result name="success100">/pages/zhanghu.jsp</result>
+			<result name="success300">/pages/zhanghu-30.jsp</result>
+			<result name="success700">/pages/zhanghu-60.jsp</result>
+			<result name="success900">/pages/zhanghu-90.jsp</result>
+			<result name="success888">/pages/zhanghu-custom.jsp</result>
+		</action>
+		<action name="chongZhiAction" class="com.nr.umi.action.ChongZhiAction">
+			<!-- 充值第一步:加载充值界面    start -->
+			<result name="loadDate400">/pages/chongzhi_huoqi.jsp</result>
+			<result name="loadDate100">/pages/chongzhi_6d.jsp</result>
+			<result name="loadDate300">/pages/chongzhi_1m.jsp</result>
+			<result name="loadDate700">/pages/chongzhi_2m.jsp</result>
+			<result name="loadDate900">/pages/chongzhi_3m.jsp</result>
+			<!-- /END -->
+			
+			<!-- 悠米定制 -->
+			<result name="customMade" type="redirectAction">/login!loadIndexPage.action</result>
+			<result name="loadDate888">/pages/recharge-custom.jsp</result>
+			<!-- 悠米定制  END -->
+			
+			<result name="asseAmount">/pages/chongzhi-yanzheng.jsp</result>
+			<result name="rechargeResult" type="redirect">/pages/transferResult.jsp</result>
+			<result name="verCode" type="redirectAction">/login!loadIndexPage.action
+			</result>
+			<interceptor-ref name="myStack"/>
+		</action>
+
+		<action name="withdrawAction" class="com.nr.umi.action.WithdrawAction">
+			<result name="loadDate100">/pages/tixian-6.jsp</result>
+			<result name="loadDate300">/pages/tixian-30.jsp</result>
+			<result name="loadDate700">/pages/tixian-60.jsp</result>
+			<result name="loadDate900">/pages/tixian-90.jsp</result>
+			<result name="loadDate888">/pages/withdraw-custom.jsp</result>
+			<result name="loadDate400">/pages/tixian-huoqi.jsp</result>
+			<result name="asseAmount" type="redirect">/pages/tixian-mima.jsp</result>
+			<result name="confirmPwd" type="redirectAction">/login!loadIndexPage.action</result>
+			<result name="withdrawResult" type="redirect">/pages/transferResult.jsp</result>
+			
+			<interceptor-ref name="myStack"/>
+		</action>
+
+		<action name="bankCardAction" class="com.nr.umi.action.BankCardAction">
+			<result name="loadUserBankInfo">/pages/zhifu_bank.jsp</result>
+			
+			<result name="switchCards" type="redirect">/pages/bindingBankCard-yanzheng.jsp</result>
+			<result name="bindingBankCard" type="redirect">/pages/bindingBankCard-yanzheng.jsp</result>
+			<result name="bindingCard_failure">/pages/bindCardResult.jsp</result>
+			
+			<result name="bindingBankCardAdvance" type="redirectAction">bankCardAction!loadUserBankInfo.action</result>
+			<interceptor-ref name="myStack"/>
+		</action>
+		
+		<action name="realNameValAction" class="com.nr.umi.action.RealNameValidateAction">
+			<result name="validateID" >/pages/realNameValResult.jsp</result>
+		</action>
+		
+		<action name="pwdManage" class="com.nr.umi.action.PwdManageAction">
+			<result name="pwdManage">/pages/pwdManage.jsp</result>
+			<result name="payPwd">/pages/payPwdEdit.jsp</result>
+			<result name="loginPwd">/pages/denglu-mima.jsp</result>
+			<result name="payPwdSet">/pages/payPwdSet.jsp</result>
+			
+			<result name="pwdSetResult" type="redirect">/pages/pwdSetResult.jsp</result>
+		</action>
+		
+		<action name="weChat" class="com.nr.umi.action.WeChatAction">
+			<result name="unbounded" type="redirect">/login.jsp</result>
+			<result name="bounded" type="redirectAction">/login!loadIndexPage.action</result>
+		</action>
+		
+		
+	</package>
+
+	<!-- test管理action -->
+	<package name="admin" namespace="/test/admin" extends="struts-default">
+		<action name="unbindBankCardAction" class="com.nr.umi.util.UnbindBankCardAction">
+			<result name="success" type="redirect">/success.html?retMsg=${retStr}</result>     
+			<result name="error">/error.html</result>     
+		</action>
+	</package>
+
+	<!-- 
+	<package name="default" extends="struts-default">
+		<default-action-ref name="notFound" />
+		<action name="notFound">
+			<result>/error/404.jsp</result>
+		</action>
+	</package>
+ -->
+</struts>

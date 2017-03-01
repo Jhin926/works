@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.nr.umi.bean">
+	<class name="CardInfo" table="v_cardinfo" dynamic-insert="true"
+		dynamic-update="true">
+		<id name="id" column="id">
+			<generator class="assigned" />
+		</id>
+		<property name="user_mobile" column="user_mobile"></property>
+		<property name="real_name" column="real_name"></property>
+		<property name="id_card" column="id_card"></property>
+		<property name="c_id" column="c_id"></property>
+		<property name="user_id" column="user_id"></property>
+		<property name="bank_name" column="bank_name"></property>
+		<property name="card_no" column="card_no"></property>
+		<property name="card_id" column="card_id"></property>
+		<property name="active" column="active"></property>
+	</class>
+</hibernate-mapping>

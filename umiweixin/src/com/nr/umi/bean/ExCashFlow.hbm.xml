@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.nr.umi.bean">
+	<class name="ExCashFlow" table="t_ex_cashflow" dynamic-insert="true" dynamic-update="true">
+		<id name="id" column="c_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="userID" column="c_user_id"></property>
+		<property name="type" column="c_type"></property>
+		<property name="amount" column="c_amount"></property>
+		<property name="exBalance" column="c_ex_balance"></property>
+		<property name="date" column="c_timestamp"></property>
+		<property name="accountID" column="c_accountID"></property>
+		<property name="provideId" column="c_provider_id"></property>
+	</class>
+</hibernate-mapping>

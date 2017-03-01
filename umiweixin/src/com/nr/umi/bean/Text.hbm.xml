@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" > 
+ 
+<hibernate-mapping package="com.nr.umi.bean">
+<class name="Text" table="t_sys_txt" dynamic-insert="true" dynamic-update="true">
+	<id name="id" column="c_id">
+		<generator class="native"></generator>
+	</id>
+	<property name="name" column="c_text_name"></property>
+	<property name="content" column="c_text_value"></property>
+	<property name="version" column="c_version"></property>
+	<property name="time" column="c_timestamp"></property>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.nr.umi.bean">
+	<class name="User" table="t_UserInfo">
+		<id name="no" column="c_U_No">
+			<generator class="native"></generator>
+		</id>
+		<property name="umiId" column="c_U_UmiUId"></property>
+		<property name="wenXinNo" column="c_U_WenXinNo"></property>
+		<property name="ret" column="c_ret"></property>
+	</class>
+</hibernate-mapping>

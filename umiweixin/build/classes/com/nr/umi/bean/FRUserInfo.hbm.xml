@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" > 
+<hibernate-mapping package="com.nr.umi.bean">
+<class name="FRUserInfo" table="t_UserInfo"  dynamic-insert="true" dynamic-update="true">
+	<id name="uNo" column="c_U_No">
+	<generator class="native"></generator>
+	</id>
+	<property name="uUmiId" column="c_U_UmiUId"></property>
+	<property name="wenXinNo" column="c_U_WenXinNo" ></property>
+	<property name="uExprience" column="c_U_Experience"></property>
+	<property name="uFriendsNum" column="c_U_FriendsNum"></property>
+	<property name="uDirectPeople" column="c_U_DirectPeople"></property>
+	<property name="uIndirectPeople" column="c_U_IndirectPeople"></property>
+	<property name = "ret" column="c_ret"></property>
+	<property name="timmer" column="c_timmer"></property>
+	<property name="bankFlag" column="c_bank_flag"></property>
+	<property name="isPayed" column="c_is_payed"></property>
+</class>
+</hibernate-mapping>

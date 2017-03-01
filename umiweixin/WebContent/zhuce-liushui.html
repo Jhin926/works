@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta name="layoutmode" content="standard"/>
+  <meta name="renderer" content="webkit"/>
+  <!--uc浏览器判断到页面上文字居多时，会自动放大字体优化移动用户体验。添加以下头部可以禁用掉该优化-->
+  <meta name="wap-font-scale" content="no"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <title>流水查询</title>
+  <link type="text/css" rel="stylesheet" href="css/css.css"/>
+  <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+  <script type="application/javascript" src="js/iscroll.js"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+  <script src="js/count.js"></script>
+</head>
+
+<body>
+<div class="flow-detail">
+  <div class="common-input2" style="height: auto; min-height: 50px;padding: 10px 0;">
+    <p class="result-name left">账户</p>
+
+    <div class="result-mes right">
+    </div>
+    <p class="clear"></p>
+  </div>
+  <div class="common-input2">
+    <p class="result-name left">金额</p>
+
+    <p id="dealAmount" class="result-cont right"></p>
+
+    <p class="clear"></p>
+  </div>
+  <div class="common-input2">
+    <p class="result-name left">类型</p>
+
+    <p id="actionStr" class="result-cont right"></p>
+
+    <p class="clear"></p>
+  </div>
+  <div class="common-input2">
+    <p class="result-name left">创建时间</p>
+
+    <p id="dateStr" class="result-cont right"></p>
+
+    <p class="clear"></p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-container">
+      <div class="timeline-grey">
+      </div>
+      <div class="timeline-current">
+        <div class="timeline-blue">
+        </div>
+      </div>
+    </div>
+    <ul class="timeline-stage">
+    </ul>
+  </div>
+  <p class="submit" type="button">确&nbsp;认</p>
+</div>
+<div id="wrapper">
+  <div id="scroller">
+    <ul class="flow-con">
+    </ul>
+    <div id="pullUp">
+      <span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+writeFooter(3, true);
+$(function () {
+  $(".flow-con").on("click", "li>ul.flow-class>li", function () {
+    getFlowdetail($(this).attr("data-cashflowid"));
+    $(".flow-detail").css({"transform": "translate(-100%)", "-webkit-transform": "translate(-100%)", "-moz-transform": "translate(-100%)"});
+    $("#wrapper").css({"transform": "translate(-10%)", "-webkit-transform": "translate(-10%)", "-moz-transform": "translate(-10%)"});
+  });
+
+  $(".submit").on("click", function () {
+    $(".flow-detail").css({"transform": "", "-webkit-transform": "", "-moz-transform": ""});
+    $("#wrapper").css({"transform": "", "-webkit-transform": "", "-moz-transform": ""});
+    setTimeout(function () {
+      $(".result-mes").html("");
+      $("#dealAmount").html("");
+      $("#actionStr").text("");
+      $("#dateStr").text("");
+      $(".timeline").css("display", "");
+      $(".timeline-grey").html("");
+      $(".timeline-blue").html("");
+    }, 300);
+  })
+
+  function getFlowdetail(_id) {
+    $.ajax({//取得详细信息
+      //url: "detail!getCashflowDetail?cashflowId=575375",
+      url: "detail!getCashflowDetail?cashflowId=" + _id,
+      success: function (data) {
+        var data;
+        try {
+          data = JSON.parse(data);
+        } catch (e) {
+          return;
+        }
+
+        if (data.retcode == "0") {//成功取得交易信息
+
+          var getDirect = "";
+          if (data.cfJsonObj.actionType == 1 || data.cfJsonObj.actionType == 2 || data.cfJsonObj.actionType == 3 || data.cfJsonObj.actionType == 4 || data.cfJsonObj.actionType == 701) {
+            getDirect = '<p class="left"><img src="images/' + data.cfJsonObj.srcAccountPic + '" width="20" alt="" />' + data.cfJsonObj.srcAccountName + '<span>' + data.cfJsonObj.srcAccountTailStr + '</span></p><p style="margin:0 10px;" class="left">→</p><p class="left"><img src="images/' + data.cfJsonObj.dstAccountPic + '" width="20" alt="" /> ' + data.cfJsonObj.dstAccountName + '<span>' + data.cfJsonObj.dstAccountTailStr + '</span></p>';
+          } else if (data.cfJsonObj.actionType == 6 || data.cfJsonObj.actionType == 7) {
+            getDirect = '<p class="left"><img src="images/' + data.cfJsonObj.srcAccountPic + '" width="20" alt="" />' + data.cfJsonObj.srcAccountName + '</p>';
+          }
+          $(".result-mes").html(getDirect);
+          $("#dealAmount").html("&yen;" + data.cfJsonObj.dealAmount);
+          $("#actionStr").text(data.cfJsonObj.actionStr);
+          $("#dateStr").text(data.cfJsonObj.dateStr);
+
+
+          //以下是时间轴的信息
+          if (data.message) {
+            $(".timeline").css("display", "block");
+          } else {
+            return;
+          }
+
+          var getLength = data.message.length, getDetail = "";
+          for (var i = 0; i < getLength; i++) {//首先吧下面的文字和时间写上，不管步骤有几步
+            var getName = data.message[i].name;
+            getDetail += '<li><p class="timeline-stage-name">' + getName + '</p><p class="timeline-stage-time">' + data.message[i].time + '</p></li>';
+          }
+          $(".timeline-stage").html(getDetail);
+          if (data.message.length == 4) {//其他充值
+            $(".timeline-stage").css("width", "304px").find("li").not(":first").not(":last").css("width", "80px");
+            var timeLine = '<p class="timeline-node"></p><p class="timeline-node"></p><p class="timeline-node"></p><p class="timeline-node"><span class="timeline-tick"></span></p>';
+
+            $(".timeline-grey").html(timeLine);
+            $(".timeline-blue").html(timeLine);
+
+            if (data.step == "1") {
+              $(".timeline-current").css("width", "46px");
+              $(".timeline-stage-name:first").addClass("current");
+            } else if (data.step == "2") {
+              $(".timeline-current").css("width", "120px");
+              $(".timeline-stage-name:lt(2)").addClass("current");
+            } else if (data.step == "3") {
+              $(".timeline-current").css("width", "199px");
+              $(".timeline-stage-name:lt(3)").addClass("current");
+            } else if (data.step == "4") {
+              $(".timeline-current").css("width", "240px");
+              $(".timeline-stage-name").addClass("current");
+            }
+          } else if (data.message.length == "3") {//活期充值
+            $(".timeline-stage li:nth-child(2)").css("width", "160px");
+            var timeLine = '<p class="timeline-node"></p><p class="timeline-node timeline-node2"></p><p class="timeline-node"><span class="timeline-tick"></span></p>';
+            $(".timeline-grey").html(timeLine);
+            $(".timeline-blue").html(timeLine);
+            if (data.step == "1") {
+              $(".timeline-current").css("width", "65px");
+              $(".timeline-stage-name:first").addClass("current");
+            } else if (data.step == "2") {
+              $(".timeline-current").css("width", "179px");
+              $(".timeline-stage-name:lt(2)").addClass("current");
+            } else if (data.step == "3") {
+              $(".timeline-current").css("width", "240px");
+              $(".timeline-stage-name").addClass("current");
+            }
+          }
+        }
+      }
+    })
+  }
+
+})
+function writePage(_item, _data) {//把获取的数据写到页面上
+  var flowCon = "";
+  var getMonth = _item % 100;
+  var flowBegin = "<li><div class='left flow-mon'>" + getMonth + "月</div>" +
+    "<div class='flow-line left'><p class='flow-node'></p></div>" +
+    "<ul class='flow-class right'>";
+  var flowEnd = "</ul><div class='clear'></div></li>"
+  var flowList = "";
+  for (var j = 0; j < _data.length; j++) {
+    var getStatus = "";
+    switch (_data[j].status) {
+      case 0:
+        getStatus = "<div class='flow-status success'>交易成功</div>";
+        break;
+      case 1:
+        getStatus = "<div class='flow-status red'>处理中</div>";
+        break;
+      case 2:
+        getStatus = "<div class='flow-status fail'>交易失败</div>";
+        break;
+    }
+
+    flowList += "<li data-cashflowId='" + _data[j].cashflowId + "'><div class='flow-arrow'><img src='./images/ico-arrow.png' width='20' height='16' alt='' /></div><p>" + _data[j].actionStr +
+      "：</p><div class='flow-cont'><div class='flow-tit'>" + _data[j].actionDetails +
+      "</div><div class='flow-amount'>" + Number(_data[j].dealAmount).toFixed(2) +
+      "元</div><div class='clear'></div><div class='flow-time'>" + _data[j].dateStr +
+      "</div>" + getStatus + "<div class='clear'></div></div></li>";//每个月里面的每一条交易信息
+  }
+
+  flowCon = flowBegin + flowList + flowEnd;
+  $(".flow-con").append(flowCon);
+  $(".flow-con > li:last .flow-line").height(_data.length * 117 + 20);//每次增加一行，肯定是最后一个月的，所以直接:last就可以保证是本月的咯
+}
+
+var myScroll, pullUpEl, pullUpOffset, lastMonth;
+
+function pullUpAction() {//上拉的方法
+  setTimeout(function () {
+    $.ajax({
+      type: "get",
+      url: getContextPath() + "/detail!queryCashFlow.action?cfCounts=" + $(".flow-class li").length,//下拉请求时候需要的数据的路径
+      dataType: "json",
+      success: function (data) {
+        for (var i in data) {
+          if (i == "retcode") {
+            alert("您的信息已经加载完成");
+            pullUpEl.querySelector('.pullUpLabel').innerHTML = '加载完成！';
+            return;
+          }
+        }
+        Object.keys(data).sort(function (a, b) {
+          return b - a
+        }).forEach(function (i) {
+          if (parseInt(i) === lastMonth) {
+            var flowList1 = "";
+            for (var j = 0; j < data[i].length; j++) {
+              var getStatus1 = "";
+
+              switch (data[i][j].status) {
+                case 0:
+                  getStatus1 = "<div class='flow-status success'>交易成功</div>";
+                  break;
+                case 1:
+                  getStatus1 = "<div class='flow-status red'>处理中</div>";
+                  break;
+                case 2:
+                  getStatus1 = "<div class='flow-status fail'>交易失败</div>";
+                  break;
+              }
+
+              flowList1 += "<li data-cashflowId='" + data[i][j].cashflowId + "'><div class='flow-arrow'><img src='./images/ico-arrow.png' width='20' height='16' alt='' /></div><p>" + data[i][j].actionStr +
+                "：</p><div class='flow-cont'><div class='flow-tit'>" + data[i][j].actionDetails +
+                "</div><div class='flow-amount'>" + Number(data[i][j].dealAmount).toFixed(2) +
+                "元</div><div class='clear'></div><div class='flow-time'>" + data[i][j].dateStr +
+                "</div>" + getStatus1 + "<div class='clear'></div></div></li>";
+            }
+            $(".flow-class:last").append(flowList1).prev().height(($(".flow-class:last li").length) * 117 + 20);//显示的最后一个月的最后一条数据
+          } else if (parseInt(i) < lastMonth) {
+            lastMonth = parseInt(i);
+            writePage(i, data[i]);
+          } else {
+            alert("未知错误");//这种情况是当请求的月份，比页面刚打开时候的月份还要大。
+          }
+        });
+        myScroll.refresh();
+      }
+    })
+  }, 500);
+};
+
+function loaded() {
+  $.ajax({
+    type: "get",
+    url: getContextPath() + "/detail!queryCashFlow.action?cfCounts=0",//页面加载时候需要的数据
+    dataType: "json",
+    success: function (data) {//初始数据完成之后执行iscroll
+      console.log(data);
+      if ("retcode" in data) {
+        alert("您还没有任何交易信息！");
+        return;
+      }
+      Object.keys(data).sort(function (a, b) {
+        return b - a;
+      }).forEach(function (i) {
+        lastMonth = parseInt(i);
+        writePage(i, data[i]);
+      });
+
+      pullUpEl = document.getElementById('pullUp');
+      pullUpOffset = pullUpEl.offsetHeight;
+
+      myScroll = new iScroll('wrapper', {
+        scrollbarClass: 'myScrollbar',
+        hScrollbar: true,
+        useTransition: false,
+        onRefresh: function () {
+          if (pullUpEl.className.match('loading')) {
+            pullUpEl.className = '';
+            pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+          }
+        },
+        onScrollMove: function () {
+          if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+            pullUpEl.className = 'flip';
+            pullUpEl.querySelector('.pullUpLabel').innerHTML = '松手开始更新...';
+            this.maxScrollY = this.maxScrollY;
+          } else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+            pullUpEl.className = '';
+            pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+            this.maxScrollY = pullUpOffset;
+          }
+        },
+        onScrollEnd: function () {
+          if (pullUpEl.className.match('flip')) {
+            pullUpEl.className = 'loading';
+            pullUpEl.querySelector('.pullUpLabel').innerHTML = '加载中...';
+            pullUpAction();
+          }
+        }
+      });
+
+      setTimeout(function () {
+        document.getElementById('wrapper').style.left = '0';
+      }, 500);
+    }
+  });
+
+}
+
+//初始化绑定iScroll控件
+document.addEventListener('touchmove', function (e) {
+  e.preventDefault();
+}, false);
+
+document.addEventListener('DOMContentLoaded', loaded, false);
+
+</script>
+</html>

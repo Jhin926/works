@@ -1,0 +1,91 @@
+﻿@charset "utf-8";
+.index-title {
+	padding: 12px 0;
+	margin-left: 3%;
+	font-size: 15px;
+	font-weight: normal;
+	color: #717171;
+}
+.assets {	
+	margin: 0 3%;
+}
+.assets li {    
+	position: relative;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    background: #fff;
+	border: 1px solid #e1e1e1;
+}
+.assets li a {
+	display: block;
+    color: #575757;
+}
+.asset-detail {
+	position: relative;
+	font-size: 14px;
+	color: #717171;
+}
+.asset-detail .corner {
+	position: absolute;
+	top: -1px;
+	right: -1px;
+	width: 57px;
+	height: 43px;
+	padding: 7px 7px 0 0;
+	background: url(../images/bg-corner1.png) no-repeat;
+	background-size: 100% 100%;
+    border-top-right-radius: 10px;
+    -moz-border-top-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+}
+.asset-detail .corner.custom {	
+	background: url(../images/bg-corner2.png) no-repeat;
+	background-size: 100% 100%;
+}
+.asset-detail .asset-tit {
+	width: 25%;
+	margin: 19px 0;
+	border-right: 1px solid #e1e1e1;
+	text-align: center;
+}
+.asset-detail .asset-amount {
+	width: 50%;
+	margin: 19px 0;
+	padding: 10px 0 0 0;
+	font-size: 17px;
+	color: #717171;
+	text-align: center;
+}
+.asset-detail .asset-amount p {
+	margin-top: 15px;
+	font-size: 26px;
+	color: #f46767;
+}
+.asset-detail .btn-asset-detail {
+	width: 45px;
+    height: 17px;
+    margin-top: 68px;
+    margin-right: 18px;
+    line-height: 17px;
+    font-size: 14px;
+}
+.asset-sub {
+	border-top: 1px solid #e1e1e1;
+	margin: 0 3px 0 3px;
+	padding: 5px 10px 5px 12px;
+    height: 14px;
+    font-size: 11px;
+    color: #afafaf;
+    line-height: 14px;
+}
+.asset-sub p.asset-sub-ensure {	
+    padding-left: 12px;
+    background: url("../images/ico-pretext.png") no-repeat left 2px;
+    background-size: auto 70%;
+}
+.asset-sub p.asset-sub-time {	
+    padding-left: 12px;
+    background: url("../images/ico-clock.png") no-repeat left 2px;
+    background-size: auto 70%;
+}

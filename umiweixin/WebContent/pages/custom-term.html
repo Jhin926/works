@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta name="layoutmode" content="standard"/>
+  <meta name="renderer" content="webkit"/>
+  <!--uc浏览器判断到页面上文字居多时，会自动放大字体优化移动用户体验。添加以下头部可以禁用掉该优化-->
+  <meta name="wap-font-scale" content="no"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <title>悠米定制选择期限</title>
+  <link type="text/css" rel="stylesheet" href="../css/css.css"/>
+  <script src="../js/jquery-1.11.0.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/count.js"></script>
+  <script>
+    isCompute();//判断收益是否计算完成
+  </script>
+  <style>
+    body {
+      background: #fff;
+    }
+  </style>
+</head>
+
+<body>
+<div class="custom-wrapper">
+  <nav class="custom-nav">
+    <ul>
+      <li class="percent20">
+        <p>转入期限</p>
+
+        <p class="blue"><span id="custom-term">235</span>天</p>
+      </li>
+      <li class="percent30">
+        <p>到期时间</p>
+
+        <p class="blue"><span id="custom-time">2016-07-05</span></p>
+      </li>
+      <li class="percent20">
+        <p>年化收益率</p>
+
+        <p class="blue"><span id="custom-rate">12.85</span>%</p>
+      </li>
+      <li class="percent30">
+        <p>每万元预期收益</p>
+
+        <p class="blue"><span id="custom-income">827.04</span>元</p>
+      </li>
+    </ul>
+  </nav>
+  <h2 class="custom-title"><span id="custom-title"></span></h2>
+
+  <div class="canvas-container">
+    <canvas id="myCanvas" width="612" height="584"></canvas>
+    <canvas id="arrow" width="600" height="584"></canvas>
+  </div>
+  <div class="custom-operate">
+    <span id="less" class="left" href="javascript:;"> </span>
+    <span id="add" class="right" href="javascript:;"> </span>
+
+    <p class="clear"></p>
+  </div>
+  <a class="custom-btn" href="javascript:;">下一步</a>
+  <img id="bgRatote" style="display: none" src="../images/img-custom-rotate.png"/>
+</div>
+</body>
+<script type="text/javascript">
+writeFooter(2, true);
+function drawUnder() {
+  var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");
+  //最外的圆圈
+  ctx.beginPath();
+  ctx.fillStyle = "#fcfcfc";
+  ctx.strokeStyle = "#ededed";
+  ctx.lineWidth = 4;
+  ctx.arc(300, 300, 250, 0, Math.PI * 2, false);//中心在300,300 半径为250的圆
+  ctx.stroke();
+  ctx.fill();
+  ctx.closePath();
+
+  //刻度线
+  var _degree = 0;
+  sDegree();
+  function sDegree() {
+    if (_degree >= 360) {
+      _degree = 0;
+      return;
+    }
+    ctx.beginPath();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "#d8d8d8";
+    ctx.moveTo(300 - 250 * Math.cos(_degree * Math.PI / 180), 300 - 250 * Math.sin(_degree * Math.PI / 180));//刻度短线，起始点在外圈圆
+    ctx.lineTo(300 - 238 * Math.cos(_degree * Math.PI / 180), 300 - 238 * Math.sin(_degree * Math.PI / 180));//刻度短线，终点在内圈圆（中心点坐标半径*夹角对应的高，中心点坐标-半径*夹角对应的x轴的距离）
+    ctx.stroke();
+    ctx.closePath();
+
+    _degree += 10;
+    sDegree();
+  }
+
+  //刻度周围的文字
+  ctx.beginPath();
+  ctx.fillStyle = "#d8d8d8";
+  ctx.textAlign = "center";
+  ctx.font = "32px Arial";
+  ctx.fillText('7', 35, 288);
+  ctx.fillText('90', 300, 40);
+  ctx.fillText('180', 580, 310);
+  ctx.fillText('270', 300, 582);
+  ctx.closePath();
+
+  //刻度之内的圈
+  ctx.save();//保留上下文绘画状态
+  ctx.beginPath();
+  ctx.fillStyle = "#fcfcfc";
+  ctx.shadowBlur = "8";
+  ctx.shadowColor = "#ccc";
+  ctx.arc(300, 300, 230, 0, Math.PI * 2, false);
+  ctx.closePath();
+  ctx.fill();
+  ctx.restore();//恢复上下文绘画状态，防止阴影影响其他的地方
+
+  //进度条轨迹的灰色区域
+  ctx.beginPath();
+  ctx.fillStyle = "#f7f7f7";
+  ctx.arc(300, 300, 227, 0, Math.PI * 2, false);
+  ctx.closePath();
+  ctx.fill();
+
+  //进度条轨迹之内的灰色区域
+  ctx.beginPath();
+  ctx.strokeStyle = "#fff";
+  ctx.lineWidth = 3;
+  ctx.fillStyle = "#ececed";
+  ctx.arc(300, 300, 176, 0, Math.PI * 2, false);
+  ctx.closePath();
+  ctx.stroke();
+  ctx.fill();
+
+  ctx.save();//保留上下文绘画状态
+  ctx.beginPath();
+  ctx.fillStyle = "#fcfcfc";
+  ctx.shadowBlur = "30";
+  ctx.shadowColor = "#ccc";
+  ctx.arc(300, 300, 151, 0, Math.PI * 2, false);
+  ctx.closePath();
+  ctx.fill();
+  ctx.restore();//恢复上下文绘画状态，防止阴影影响其他的地方
+
+  //最内层的圆环，绘制在第一个canvas上，所以下面就不用重复绘制了
+  ctx.beginPath();
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = "#f2f2f2";
+  ctx.arc(300, 300, 118, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.closePath();
+
+
+  window.onload = function () {//此时如果不用window.load 那么img会出现一定概率的画不上
+    var img = document.getElementById("bgRatote");
+    ctx.drawImage(img, 208, 212, 186, 80);
+  }
+
+
+  //注意这里用的是第一层的cavas,所以下面的clearRect不会清除之
+  ctx.beginPath();
+  ctx.textAlign = "center";
+  ctx.fillStyle = "rgb(217,217,217)";
+  ctx.font = "26px '微软雅黑'";
+  ctx.fillText('旋转选择', 300, 300);
+  ctx.fillText('转入期限', 300, 340);
+  ctx.closePath();
+}
+drawUnder();//所有的底盘
+
+//以下是第二层canvas
+var arrow = document.getElementById("arrow");
+var aCtx = arrow.getContext("2d");
+
+var pageLeft, pageTop;
+var getAngle = 7 * Math.PI / 180,
+  startAngle,
+  getEndAngle,
+  getMoveAngle;
+
+drawArrow(getAngle);
+
+
+//取得元素相对于文档的偏移量
+function getOffset(element, offset) {
+  if (!offset) {
+    offset = {};
+    offset.top = 0;
+    offset.left = 0;
+  }
+
+  offset.left = element.offsetLeft;
+  offset.top = element.offsetTop;
+
+  var current = element.offsetParent;
+  while (current !== null) {//父节点不为空，继续向上递归
+    offset.left += current.offsetLeft;
+    offset.top += current.offsetTop;
+    current = current.offsetParent;
+  }
+  return offset;
+}
+
+function moveArrow() {
+  var relativeX, relativeY;
+  var getEvent = window.event || arguments.callee.caller.arguments[0];
+  getEvent.preventDefault();
+
+  if (getEvent.changedTouches) {
+    var getMoveX = getEvent.changedTouches[0].pageX;
+    var getMoveY = getEvent.changedTouches[0].pageY;
+
+    relativeX = getMoveX - pageLeft;
+    relativeY = getMoveY - pageTop;
+
+    var getEndAngle = Math.atan2(150 - relativeY, relativeX - 150);//取得相对于圆心点的坐标，然后根据坐标求得夹角
+
+    if (startAngle < -Math.PI / 2 && getEndAngle > Math.PI / 2) {//从x轴下方到上方，中心的左边
+      startAngle += Math.PI;
+      getEndAngle = Math.PI - getEndAngle;
+      getMoveAngle = startAngle + getEndAngle;
+      startAngle = Math.PI - getEndAngle;
+    } else if (startAngle > Math.PI / 2 && getEndAngle < -Math.PI / 2) {//从x轴上方到下方，中心点左边
+      startAngle = Math.PI - startAngle;
+      getEndAngle += Math.PI;
+      getMoveAngle = -(startAngle + getEndAngle);
+      startAngle = getEndAngle - Math.PI;
+    } else {
+      getMoveAngle = startAngle - getEndAngle;
+      startAngle = getEndAngle;
+    }
+
+    getAngle += getMoveAngle;
+
+    if (getAngle < 7 * Math.PI / 180) {
+      getAngle = 7 * Math.PI / 180;
+    } else if (getAngle > (2 * Math.PI + 5 * Math.PI / 180)) {
+      getAngle = 2 * Math.PI + 5 * Math.PI / 180;
+    }
+    drawArrow(getAngle);
+  }
+}
+function drawArrow(_getAngle) {//绘制箭头和进度条
+  aCtx.clearRect(0, 0, 600, 600);//清除之前已经绘制的图形
+  //重新绘制蓝色的进度条
+  aCtx.beginPath();
+  aCtx.strokeStyle = "#e87c84";
+  aCtx.lineWidth = 48;
+  aCtx.lineCap = "round";
+  aCtx.arc(300, 300, 203, Math.PI + 5 * Math.PI / 180, _getAngle + Math.PI, false);
+  aCtx.stroke();
+  aCtx.closePath();
+
+  //重新绘制箭头
+  aCtx.beginPath();
+  aCtx.fillStyle = "#fcfcfc";
+  aCtx.strokeStyle = "#eee";
+  aCtx.lineWidth = 1;
+  aCtx.moveTo(300 - 151 * Math.cos(_getAngle + 10 * Math.PI / 180), 300 - 151 * Math.sin(_getAngle + 10 * Math.PI / 180));
+  aCtx.lineTo(300 - 210 * Math.cos(_getAngle), 300 - 210 * Math.sin(_getAngle));
+  aCtx.lineTo(300 - 151 * Math.cos(_getAngle - 10 * Math.PI / 180), 300 - 151 * Math.sin(_getAngle - 10 * Math.PI / 180));
+  aCtx.stroke();
+  aCtx.fill();
+  aCtx.closePath();
+
+
+  aCtx.beginPath();
+  aCtx.arc(300, 300, 250, 0, 2 * Math.PI, false);
+  aCtx.strokeStyle = "#000";
+  //aCtx.stroke();
+  //aCtx.closePath();
+  changeValue(_getAngle);
+}
+
+
+function changeValue(_getAngle) {//改变上面导航栏的数值和随机显示的语句
+  var customTitList = {//随机显示的语句
+    'a': ['25-35天: 1万元收益可看两场电影', '25-35天: 1万元收益相当于一个月话费', '25-35天: 1万元收益可看一场话剧', '25-35天: 2万元收益相当于一个月早餐', '25-35天: 2万元收益相当于一个月通勤费', '25-35天: 2万元收益可请客吃饭一次', '25-35天: 5万元收益可购家庭烤箱', '25-35天: 10万元收益可购空气净化器'],
+    'b': ['80-100天: 1万元收益可享养生SPA一次', '80-100天: 1万元收益可看演唱会一次', '80-100天: 1万元收益可报销每月话费', '80-100天: 5万元收益可购小米手机', '80-100天: 5万元收益可购胶囊咖啡机', '80-100天: 10万元收益可购一年健身会员'],
+    'c': ['170-190天: 2万元收益可购胶囊咖啡机', '170-190天: 5万元收益可购iPad Air', '170-190天: 5万元收益可购iWatch手表', '170-190天: 5万元收益可购家庭跑步机', '170-190天: 10万元收益可购iPhone 6s Plus', '170-190天: 10万元收益可购iPad Pro', '170-190天: 10万元收益可购单反相机', '170-190天: 10万元收益相当于每天一杯星巴克'],
+    'd': ['260-280天: 1万元收益可购魔声耳机', '260-280天: 1万元收益相当于一年宽带费', '260-280天: 2万元收益可供国内旅行一次', '260-280天: 5万元收益可购iPhone 6s', '260-280天: 5万元收益可供日韩旅游一次', '260-280天: 10万元收益可购MacBook笔记本'],
+    'e': ['350-365天: 1万元收益可每月多看两场电影', '350-365天: 1万元收益可购iPod音乐播放器', '350-365天: 2万元收益可每月多请客吃饭一次', '350-365天: 2万元收益可购智能电视', '350-365天: 2万元收益可购一年健身会员', '350-365天: 5万元收益可购航拍无人机', '350-365天: 10万元收益可供欧洲旅游一次']
+  };
+  var getDay = Math.round(_getAngle * 180 / Math.PI);
+  var getRate = 0, getIncome = 0, getCurDate = new Date(), getEndDate, setEndDate = new Date(), y, m, d;
+  document.getElementById('custom-term').innerText = getDay;
+
+  var getHref = '../chongZhiAction!customMade.action?timeLimit=' + getDay;
+  if (location.search != "") {
+    getHref = "../withdrawAction!loadDate.action"+location.search+"&timeLimit="+getDay;
+  };
+  document.getElementsByClassName("custom-btn")[0].href = getHref;
+
+  getEndDate = getCurDate.valueOf() + (getDay + 1) * 24 * 60 * 60 * 1000;//+1是因为从第二天开始计算时间
+  setEndDate.setTime(getEndDate);
+
+  y = setEndDate.getFullYear();
+  m = (setEndDate.getMonth() + 1).toString();
+  d = setEndDate.getDate().toString();
+
+  if (m.length == 1) {
+    m = "0" + m;
+  }
+
+  if (d.length == 1) {
+    d = "0" + d;
+  }
+
+  document.getElementById('custom-time').innerText = y + "-" + m + "-" + d;
+
+  if (getDay >= 7 && getDay < 30) {
+    getRate = 8 + (getDay - 6) / 24;
+  } else if (getDay >= 30 && getDay < 90) {
+    getRate = 9 + (getDay - 30) / 30;
+  } else {
+    getRate = 11 + (getDay - 90) * 7 / 550;
+  }
+  document.getElementById('custom-rate').innerText = getRate.toFixed(2);
+
+  getIncome = 100 * getRate * getDay / 365;
+
+  document.getElementById('custom-income').innerText = getIncome.toFixed(2);
+
+  var textList, getCustomTit = document.getElementById('custom-title');
+
+  if (getDay >= 20 && getDay <= 40) {
+    if (getCustomTit.style.opacity != '1') {
+      textList = customTitList.a;
+      getCustomTit.style.opacity = '1';
+      getCustomTit.innerText = textList[Math.floor((Math.random() * textList.length))];
+    }
+  } else if (getDay >= 80 && getDay <= 100) {
+    if (getCustomTit.style.opacity != '1') {
+      textList = customTitList.b;
+      getCustomTit.style.opacity = '1';
+      getCustomTit.innerText = textList[Math.floor((Math.random() * textList.length))];
+    }
+  } else if (getDay >= 170 && getDay <= 190) {
+    if (getCustomTit.style.opacity != '1') {
+      textList = customTitList.c;
+      getCustomTit.style.opacity = '1';
+      getCustomTit.innerText = textList[Math.floor((Math.random() * textList.length))];
+    }
+  } else if (getDay >= 260 && getDay <= 280) {
+    if (getCustomTit.style.opacity != '1') {
+      textList = customTitList.d;
+      getCustomTit.style.opacity = '1';
+      getCustomTit.innerText = textList[Math.floor((Math.random() * textList.length))];
+    }
+  } else if (getDay >= 350 && getDay <= 365) {
+    if (getCustomTit.style.opacity != '1') {
+      textList = customTitList.e;
+      getCustomTit.style.opacity = '1';
+      getCustomTit.innerText = textList[Math.floor((Math.random() * textList.length))];
+    }
+  } else {
+    getCustomTit.style.opacity = '0';
+  }
+}
+
+var getPosi = function () {
+  var _x, _y;
+  var getEvent = window.event || arguments.callee.caller.arguments[0];
+  getEvent.preventDefault();
+  var _element = getEvent.target;
+  if (getEvent.changedTouches) {
+    if (getEvent.changedTouches.length == 1) {
+      var getStartX = getEvent.changedTouches[0].pageX;
+      var getStartY = getEvent.changedTouches[0].pageY;
+
+      pageLeft = getOffset(_element).left;
+      pageTop = getOffset(_element).top;
+
+      _x = getStartX - pageLeft;
+      _y = getStartY - pageTop;
+
+      startAngle = Math.atan2(150 - _y, _x - 150);
+
+      if (aCtx.isPointInPath(_x * 2, _y * 2)) {//因为其实canvas是缩小了一倍！所以这里需要乘2
+        getEvent.preventDefault();
+        arrow.addEventListener("touchmove", moveArrow, false);
+
+        document.addEventListener("touchend", function () {
+          arrow.removeEventListener("touchmove", moveArrow, false);
+        }, false);
+      }
+    }
+  }
+}
+
+arrow.addEventListener("touchstart", getPosi, false);
+
+document.getElementById("less").addEventListener("touchstart", rateOperate, false);
+document.getElementById("add").addEventListener("touchstart", rateOperate, false);
+
+function rateOperate() {//进度条操作
+  var getEvent = window.event || arguments.callee.caller.arguments[0];
+  getEvent.preventDefault();
+
+  var isAdd = true;
+
+  if (getEvent.target.id != "add") {
+    isAdd = false;
+  }
+  addLess(isAdd);//先执行加1度或者减一度操作
+
+  function addLess(_isAdd) {
+    if (_isAdd) {//点击加按钮
+      getAngle += Math.PI / 180;
+      if (getAngle > (2 * Math.PI + 5 * Math.PI / 180)) {//大于365度
+        getAngle = 2 * Math.PI + 5 * Math.PI / 180;
+        return;
+      }
+    } else {
+      getAngle -= Math.PI / 180;
+      if (getAngle > 5 * Math.PI / 180 && getAngle < 6.5 * Math.PI / 180) {//这里不用7用6.5是因为算的数，有一定的误差！结果是6.99999所以用6.5
+        getAngle = 7 * Math.PI / 180;
+        return;
+      }
+    }
+    drawArrow(getAngle);
+  }
+
+  var setSecond = 1;
+  var loopDraw;//自动增加进度条
+  var addTime = setInterval(function () {
+    setSecond++;
+    if (setSecond >= 3) {//3s之后执行，快速增加进度
+      clearInterval(addTime);
+
+      function fastDraw() {
+        addLess(isAdd);
+        loopDraw = requestAnimationFrame(fastDraw);
+      }
+
+      fastDraw();
+    }
+  }, 400);
+
+  this.addEventListener("touchmove", function () {//手指移动，进度条就不再增加
+    clearInterval(addTime);
+    cancelAnimationFrame(loopDraw);
+  }, false);
+
+  this.addEventListener("touchend", function () {//手指离开，进度条就不再增加
+    clearInterval(addTime);
+    cancelAnimationFrame(loopDraw);
+  }, false);
+
+}
+
+</script>
+</html>

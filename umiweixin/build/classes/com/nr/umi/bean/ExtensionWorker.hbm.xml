@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" > 
+ 
+<hibernate-mapping package="com.nr.umi.bean">
+<class name="User" table="t_weixin_extensionworker_info">
+	<id name="id" column="c_id">
+	</id>
+	<property name="phoneNo" column="c_phoneNo"></property>
+	<property name="realName" column="c_realName"></property>
+	<property name="cardID" column="c_cardID"></property>
+	<property name="spareContact" column="c_spareContact"></property>
+	<property name="relation" column="c_relation"></property>
+	<property name="contactNo" column="c_contactNo"></property>
+	<property name="agentNu" column="c_agentNu"></property>
+</class>
+</hibernate-mapping>

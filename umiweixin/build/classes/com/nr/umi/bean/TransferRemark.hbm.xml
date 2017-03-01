@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.nr.umi.bean">
+	<class name="TransferRemark" table="t_transfer_remark"
+		dynamic-insert="true" dynamic-update="true">
+		<id name="id" column="c_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="identityId" column="c_user_identity_id"></property>
+		<property name="amount" column="c_amount"></property>
+		<property name="createTime" column="c_createtime"></property>
+		<property name="comment" column="c_comment"></property>
+		<property name="isCompleted" column="c_is_completed"></property>
+		<property name="transferType" column="c_type"></property>
+		<property name="cashID" column="c_cashID"></property>
+		<property name="dstCashID" column="c_dst_cashID"></property>
+		<property name="actionID" column="c_actionID"></property>
+		<property name="orderID" column="c_order_id"></property>
+		<property name="userID" column="c_user_id"></property>
+	</class>
+</hibernate-mapping>

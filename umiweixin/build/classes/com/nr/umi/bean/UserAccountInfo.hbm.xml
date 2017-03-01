@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" > 
+ 
+<hibernate-mapping package="com.nr.umi.bean">
+<class name="UserAccountInfo" table="t_user_account_info" dynamic-insert="true" dynamic-update="true">
+	<id name="id" column="c_id">
+	<generator class="native"></generator>
+	</id>
+	<property name="user_id" column="c_user_id"></property>
+	<property name="accountID" column="c_accountID"></property>
+	<property name="accountName" column="c_account_name" ></property>
+	<property name="accountType" column="c_account_type"></property>
+	<property name="balance" column="c_amount"></property>
+	<property name="profitAmt" column="c_profit_amt"></property>
+	<property name="profitAmt1m" column="c_profit_amt_1m"></property>
+	<property name="profitAmtSum" column="c_profit_amt_sum"></property>
+	<property name="profit10k" column="c_profit_10k"></property>
+	<property name="profit7d" column="c_profit_7d"></property>
+	<property name="date" column="c_date"></property>
+	<property name="boughtDate" column="c_boughtDate"></property>
+	<property name="isValid" column="c_is_valid"></property>
+	<property name="validated" column="c_validated"></property>
+	<property name="lastDstAcctId" column="c_last_dst_acct_id"></property>
+	<property name="lastDstAcctName" column="c_last_dst_acct_name"></property>
+	<property name="lastCategoryId" column="c_last_category_id"></property>
+	<property name="lastCategoryName" column="c_last_category_name"></property>
+	<property name="timestamp" column="c_timestamp" type="timestamp"></property>
+	<property name="principal" column="c_principal"></property>
+	<property name="profitExcepted" column="c_profit_excepted"></property>
+	<property name="remainDays" column="c_remain_days"></property>
+	<property name="noCashFlow" column="c_no_cashflow"></property>
+	<property name="freezedAmount" column="c_freezed_amount"></property>
+	<property name="duration" column="c_duration"></property>
+</class>
+</hibernate-mapping>

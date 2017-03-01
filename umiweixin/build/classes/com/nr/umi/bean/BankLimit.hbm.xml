@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.nr.umi.bean">
+	<class name="BankLimit" table="t_sys_bank_limit">
+		<id name="id" column="c_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="bankCode" column="c_bank_code"></property>
+		<property name="firstLimit" column="c_first_limit"></property>
+		<property name="dayLimit" column="c_day_limit"></property>
+		<property name="dayMaxLimit" column="c_day_max_limit"></property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>success</title>
+</head>
+
+<body>
+	<p>
+	<h1>
+		<center>success</center>
+
+	</h1>
+	<div id="msg"></div>
+
+	<script type="text/javascript">
+		var url = window.location.search;
+		url = url.substr(8, url.length);
+		url = url.replace(/\%22/g, "'");
+		var obj = JSON.parse("'"+url+"'");
+		var obj = eval('(' + url + ')');
+		document.getElementById("msg").innerText = "账户余额为: " + obj.balance;
+	</script>
+</body>
+</html>

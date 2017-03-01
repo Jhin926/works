@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" > 
+ 
+<hibernate-mapping package="com.nr.umi.bean">
+<class name="CashFlow" table="t_user_cashflow"  dynamic-insert="true" dynamic-update="true">
+	<id name="id" column="c_id">
+	<generator class="native"></generator>
+	</id>
+	<property name="userId" column="c_user_id"></property>
+	<property name="accountID" column="c_accountID" ></property>
+	<property name="accountName" column="c_accountName"></property>
+	<property name="amount" column="c_amount"></property>
+	<property name="dstAccountID" column="c_dstAccountID"></property>
+	<property name="dstAccountName" column="c_dstAccountName"></property>
+	<property name="systemGenerated" column="c_systemGenerated"></property>
+	<property name="categoryName" column="c_categoryName"></property>
+	<property name="categoryID" column="c_categoryID"></property>
+	<property name="comment" column="c_comment"></property>
+	<property name="createTimestamp" column="c_createTime"></property>
+	<property name="updateTimeStamp" column="c_updateTimeStamp" type="timestamp"></property>
+	<property name="status" column="c_status"></property>
+	<property name="isCover" column="c_isCover"></property>
+	<property name="orderID" column="c_order_id"></property>
+	<property name="version" column="c_version"></property>
+	
+</class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" > 
+ 
+<hibernate-mapping package="com.nr.umi.bean" >
+<class name="UMIUser" table="t_user_info" dynamic-insert="true" dynamic-update="true">
+	<id name="id" column="c_id">
+		<generator class="native"></generator>
+	</id>
+	<property name="userName" column="c_user_name"></property>
+	<property name="password" column="c_logon_password"></property>
+	<property name="userMobile" column="c_user_mobile"></property>
+	<property name="lastLogonTime" column="c_last_logon_time"></property>
+	<property name="lastLogonIP" column="c_last_logon_ip"></property>
+	
+	<property name="mobileVerified" column="c_mobile_verified"></property>
+	<property name="cashPwd" column="c_cash_password"></property>
+	<property name="registerTime" column="c_register_time"></property>
+	<property name="registerIP" column="c_register_ip"></property>
+	
+	<property name="token" column="c_token"></property>
+	<property name="identityId" column="c_identity_id"></property>
+	<property name="isVerified" column="c_is_verified"></property>
+	<property name="timestamp" column="c_timestamp"></property>
+	<property name="version" column="c_version"></property>
+	<property name="cardCount" column="c_card_count"></property>
+	
+	<property name="realName" column="c_real_name"></property>
+	<property name="certNo" column="c_cert_no"></property>
+	
+</class>
+</hibernate-mapping>

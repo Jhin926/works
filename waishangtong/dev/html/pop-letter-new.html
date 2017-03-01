@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-auto">
+
+<head>
+    <meta charset="utf-8" />
+    <title>新建营销信</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    
+    <!-- build:css ../css/common.min.css -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <!-- build:css ../css/email.min.css -->
+    <link href="../css/email.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="../css/dev-letter.css" rel="stylesheet" />
+    <style>.step{padding-top: 12px}</style>
+</head>
+
+<body style="background:#fff;overflow-y: auto !important;">
+	<!-- 新建弹窗开始 -->
+	<div class="letter-detail">
+		<div class="new-letter">
+			<div id="stepShow" class="text-center">
+				<img src="../images/step1.png">
+			</div>
+			<p style="margin-top:20px;padding-left:20px;margin-bottom: 20px;">剩余营销信<strong><span class="error" id="surplusNum"></span></strong>封</p>
+			<div id="stepOne" class="stepBlock">
+				<div class="step" data-addressMode="1">
+					<div class="stepLeft1 stepLeft11 left">
+					</div>
+					<div class="stepRight left">
+						<p class="stepP stepTitle"><strong>上传邮箱地址</strong><i class="circleDown"></i></p>
+						<div class="stepCont stepCont1">
+							<p class="stepP"><strong>上传邮箱地址</strong><i class="circleUp"></i></p>
+							<p class="ashen stepP">上传邮箱地址文档(excel、txt，文件不能超过 5MB。)</p>
+							<a class="btn btn-primary btn-radial-out add-attachment">上传邮箱地址</a>
+							<!-- <span>已上传<span>291</span>邮箱地址 <a class="blue">清空</a> <i class="circleDown"></i></span> -->
+							<ul id="addFiles" style="display:inline-block;color:#89c682"></ul>
+						</div>
+						<form class="form-horizontal" id="form_file" enctype="multipart/form-data" method="post" style="display:none;">
+		                    <input type="file" name="upFiles" id="up-files" />
+		                    <input type="hidden" name="file" value="upFiles" />
+		                    <input type="hidden" name="dictFileUpType" value="1" />
+		                </form>
+					</div>
+				</div>
+				<div class="step" data-addressMode="2">
+					<div class="stepLeft1 stepLeft12 left">
+					</div>
+					<div class="stepRight left">
+						<p class="stepP stepTitle"><strong>粘贴邮箱地址</strong><i class="circleDown"></i></p>
+						<div class="stepCont">
+							<p class="stepP"><strong>粘贴邮箱地址</strong> <span class="selectedNum">已粘贴 <span id="copyEmail">0</span> 个邮箱地址 <a class="blue blueClose">清空</a></span> <i class="circleUp"></i></p>
+							<div class="stepCont2"  id="accountEmail2">
+								<input class="inputEmail">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="step" data-addressMode="3">
+					<div class="stepLeft1 stepLeft13 left">
+					</div>
+					<div class="stepRight left">
+						<p class="stepP stepTitle"><strong>选择群发用户</strong><i class="circleDown"></i></p>
+						<div class="stepCont">
+							<p class="stepP"><strong>选择群发用户</strong> <span class="selectedNum">已选择 <span id="groupEmail">0</span> 个邮箱地址 <a class="blue blueClose">清空</a></span> <i class="circleUp"></i></p>
+							<div class="step3-cont left">
+								<p class="step3-p">私海分组</p>
+								<ul class="" id="noHighSeasUl" style="min-height:405px;">
+								</ul>
+							</div>
+							<div class="step3-cont right">
+								<p class="step3-p">公海分组</p>
+								<ul class="" id="highSeasUl" style="min-height:405px;">
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="step" data-addressMode="4">
+					<div class="stepLeft1 stepLeft14 left">
+					</div>
+					<div class="stepRight left">
+						<p class="stepP stepTitle"><strong>关键词客户</strong><i class="circleDown"></i></p>
+						<div class="stepCont">
+							<p class="stepP"><strong>关键词客户</strong> <span>已选择 <span id="FilterEmail">0</span> 个邮箱<span class="blue blueClose" id="resetClose">清空</span><i class="circleUp"></i></p>
+							<p class="step3-p" id="seas">
+								<label style="line-height:20px;display:inline-block">
+									<input type="radio" data-highSeas="0" name="optionsRadios" id="optionsRadios1" value="option2"> 私海分组
+								</label>
+								<label style="line-height:20px;display:inline-block">
+									<input type="radio" data-highSeas="1" name="optionsRadios" id="optionsRadios2" value="option2">公海分组
+								</label>
+							</p>
+							<div id="highSeas">
+								<div class="step3-cont left">
+									<ul class="step-ul">
+										<li><label>关键字</label><input type="text" class="inputText" placeholder="客户名称、编号" id="noHighSeasName"></li>
+										<li><label>星级</label>
+											<ul class="step-ul-inline" id="starLevel">
+												<li><input type="checkbox" data-value="0" id="starLevel0"> 全部</li>
+												<li><input type="checkbox" data-value="1"> 1星</li>
+												<li><input type="checkbox" data-value="2"> 2星</li>
+												<li><input type="checkbox" data-value="3"> 3星</li>
+												<li><input type="checkbox" data-value="4"> 4星</li>
+												<li><input type="checkbox" data-value="5"> 5星</li>
+											</ul>
+										</li>
+										<li id="containsTags"><label>客户标签</label><span style="margin-left: 10px;"><input type="radio" data-id="1" id="tagsRadios1" name="tagsRadios"><label for="tagsRadios1" class="tagsRadiosLabel">包含任意标签的客户</label></span><span><input type="radio" data-id="2" id="tagsRadios2" name="tagsRadios"><label for="tagsRadios2" class="tagsRadiosLabel">包含全部标签的客户</label></span></li>
+										<li style="position:relative">
+											<div id="tags" data-on="1" disabled><span data-id="" style="padding-top:8px">先选择标签样式，再选择标签</span><i class="s-updownBg s-up3" style="position:absolute;right: 40px;top: 12px;background-position: -101px -58px;display: inline-block;width: 12px;height: 8px;"></i></div>
+											<ul id="tagsUl"></ul>
+										</li>
+										<li>
+											<label>未联系时间</label>
+											<select name="" id="latestContactDays" class="">
+												<option value="0">全部</option>
+												<option value="1">1天</option>
+												<option value="3">3天</option>
+												<option value="7">7天</option>
+												<option value="15">15天</option>
+												<option value="30">30天</option>
+												<option value="60">60天</option>
+												<option value="90">90天</option>
+											</select>
+										</li>
+										<li><label>客户状态</label><select id="statusList" class="" ></select></li>
+										<li><label>原跟进人</label><select name="" id="followerList" class="" ></select></li>
+										<li style="padding-left: 70px;">
+											<button class="btn btn-primary btn-radial-out" id="Filter">筛选</button>
+											<button class="btn btn-primary btn-radial-out" id="reset">重置</button>
+										</li>
+									</ul>
+								</div>
+								<div class="step3-cont right">
+									<ul class="step-ul">
+										<li><label>国家</label><select id="countryList" class="" ></select></li>
+										<li><label>客户分组</label><select id="f-group" class="" ></select></li>
+										<li><label>客户类型</label><select id="f-kinds" class="" ></select></li>
+										<li><label>客户来源</label><select id="sourceList" class="" ></select></li>
+										<li><label>主营产品</label><select id="pdt1" style="width:135px"></select><select id="pdt2" style="width:135px"></select></li>
+										<li><select id="pdt3" style="width:135px;margin-left:70px;"></select><select id="pdt4" style="width:135px"></select></li>
+										<li id="followStatus"><label>跟进情况</label><span style="margin-left:10px"><input type="checkbox" data-id="1">一人跟进</span><span><input type="checkbox" data-id="2">两人及以上</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="btnOne" class="text-center">
+					<button class="btn btn-lg btn-primary btn-radial-out nextBtn">下一步</button>
+					<div class="prompt">您的剩余营销信数量不足，请向管理员申请更多的营销信或前去充值</div>
+				</div>
+			</div>
+			<div id="stepTwo" class="stepBlock">
+				<div class="step" style="box-shadow: 0 0 5px #ddd;border-top: 1px solid #e8e8e8;">
+					<div class="stepLeft21 left">
+					</div>
+					<div class="stepRight left">
+						<p class="stepP"><strong>设置营销主题</strong></p>
+						<div class="stepCont">
+							<input class="inputTheme" id="subject" placeholder="请输入营销的主题，中文40字以内，字母80以内">
+						</div>
+					</div>
+				</div>
+				<div class="step">
+					<div class="stepLeft22 left">
+					</div>
+					<div class="stepRight left">
+						<p class="stepP"><strong>设置邮件主题</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ashen">为了提高邮件送达率，不被当做垃圾邮件，请您尽可能填写三个主题，您的联系人将会收到随机的一个主题</span></p>
+						<div class="stepCont">
+							<span class="spanTheme">主题一</span><input class="inputTheme" id="subject1" placeholder="请输入邮件主题">
+							<span class="spanTheme">主题二</span><input class="inputTheme" id="subject2" placeholder="请输入邮件主题">
+							<span class="spanTheme">主题三</span><input class="inputTheme" id="subject3" placeholder="请输入邮件主题">
+							<button class="btn btn-primary btn-radial-out" id="addContTheme" style="margin-left:80px;">添加联系人</button>
+							<div class="contTheme">
+								<p>选择联系人插入位置</p>
+								<ul>
+									<li><input type="checkbox" id="themecheckbox1"><label for="themecheckbox1">主题一</label></li>
+									<li><input type="checkbox" id="themecheckbox2"><label for="themecheckbox2">主题一</label></li>
+									<li><input type="checkbox" id="themecheckbox3"><label for="themecheckbox3">主题一</label></li>
+								</ul>
+							</div>	
+						</div>
+					</div>
+				</div>
+				<div id="btnTwo" class="col-sm-12 text-center">
+					<a href="javascript:;" id="backStepTwo">&lt; 返回上一步</a>
+					<button class="btn btn-lg btn-primary btn-radial-out nextBtn">下一步</button>
+					<div class="prompt"></div>
+				</div>
+			</div>	
+			<div id="stepThree" class="stepBlock">
+				<div class="step" style="padding-left:0;">
+					<p class="step3title"><strong>设置营销内容</strong></p>
+					<div class="stepLeft left">
+						<a href="javascript:;" class="stepLeft3 stepLeft33 add-tem"><span>插入模板</span></a>
+						<a href="javascript:;" class="stepLeft3 stepLeft31 add-attachment1"><span>附件</span></a>
+						<a href="javascript:;" class="stepLeft3 stepLeft32 add-images"><span style="margin-top:60px;">插入图片</span></a>
+						<a href="javascript:;" class="stepLeft3 stepLeft34 add-cont"><span>插入联系人</span></a>
+					</div>
+					<form class="form-horizontal" id="form_file1" enctype="multipart/form-data" method="post" style="display:none;">
+	                    <input type="file" name="upFiles" id="up-files1" />
+	                    <input type="hidden" name="file" value="upFiles" />
+	                    <input type="hidden" name="dictFileUpType" value="1" />
+	                </form>
+					<form class="form-horizontal" id="form_img" enctype="multipart/form-data" method="post" style="display:none;">
+	                    <input type="file" class="" name="upImgs" id="up_1" />
+	                    <input type="hidden" name="file" value="upImgs" />
+	                    <input type="hidden" name="dictFileUpType" value="0" />
+	                </form>
+					<div class="stepRight left">
+						<div class="stepCont" style="padding:0;">
+							<ul id="addFiles1"></ul>
+							<div id="letterEditor"></div>
+							<!-- <p>邮件大小(单封营销邮件不能超过2M)：<span></span></p> -->
+						</div>
+					</div>
+				</div>
+				<div id="btnThree" class="colstep col-sm-12 text-center">
+					<a href="javascript:;" id="backStepThree">&lt; 返回上一步</a>
+					<a class="btn btn-lg btn-primary btn-radial-out nextBtn" id="submit">发送</a>
+					<div class="prompt"></div>
+				</div>
+			</div>
+			<div id="stepFour" class="text-center">
+				<h3>营销邮件已经开始发送</h3>
+				<p class="ashen">本次需要发送营销信数量为<span></span>封</p>
+				<P class="ashen">完全发送花费一定时间，请耐心等待哦！</P>
+				<img src="../images/sending.gif">
+				<p class="callBackP"><span class="error"><span id="setTimeout">5</span>秒</span> 后自动进入营销统计</p>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">选择模板</h4>
+	      </div>
+	      <div class="modal-body">
+	        <div class="custModels" id="custModels">
+				<p>
+					<a href="javascript:;" class="active">公司模板</a>
+					<a href="javascript:;">个人模板</a>
+					<a href="javascript:;">系统模板</a>
+				</p>
+				<ul class="add-model"></ul>
+			</div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" id="closeModal" data-dismiss="modal">取消</button>
+	        <button type="button" class="btn btn-primary" id="saveModal">提交</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- 新建弹窗结束 --><script src="../js/v.js"></script>
+    <script data-main="../js/pop-letter-new.js" src="../js/lib/require.min.js"></script>
+</body>
+</html>

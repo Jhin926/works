@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-营销信</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <!-- build:css ../css/email.min.css t-->
+    <link href="../css/email.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="../css/dev-letter.css" rel="stylesheet" />
+    <style>#tableSort tr>td:first-child,#tableSort tr>th:first-child{padding-left: 18px !important;}</style>
+</head>
+
+<body>
+    <!-- BEGIN CONTAINER -->
+    <div class="i-container">
+        <!-- BEGIN INDEX MAIN -->
+        <div class="i-content-wrapper">
+            <div class="page-content">
+                <!--收件箱主体部分-->
+                <div class="page-right" style="width:99%">
+                    <div class="page-title">
+                        <div class="titles r-titles">
+                            <i class="pub-icon develop-l-icon"></i>
+                            <span class="i_task model-name">营销信</span>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="page-title2">
+                            <div class="pull-left btn-about">
+                                <a href="pop-letter-new.html" class="btn btn-primary" id="addEmail" style="margin-right:15px !important" data-maintab><i class="pub-icon newemail-icon"></i><span>新建营销信</span></a>
+                            </div>
+                        </div>
+                        <i class="i-alertNew" title="消息"></i>
+                    </div>
+                    <div class="page_info">
+                        <div class="page_img">
+                            <p>外贸邮件营销活动</p>
+                            <img src="../images/step.png">
+                            <a id="new-develop" class="imgBtn" href="pop-letter-new.html" data-maintab>创建邮件营销活动</a>
+                        </div>
+                        <table class="table develop-letter" id="tableSort">
+                            <thead>
+                                <tr>
+                                    <th class="col-md-1" style="width:3%">状态</th>
+                                    <th class="col-md-4">标题</th>
+                                    <th class="text-center ellipsis email_total">邮件总数</th>
+                                    <th class="text-center" id="send-rate">
+                                        送达率
+                                        <i class="s-updownBg s-orderList">
+                                    </th>
+                                    <th class="text-center" id="open-num">
+                                        已打开数
+                                        <i class="s-updownBg s-orderList">
+                                    </th>
+                                    <th id="sortsTime">
+                                        时间
+                                        <i class="s-updownBg s-orderList">
+                                    </th>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <ul class="page"></ul>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!-- END INDEX MAIN -->
+    </div>
+    <!-- END CONTAINER --><script src="../js/v.js"></script>
+    <script data-main="../js/develop-letter.js" src="../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+</html>

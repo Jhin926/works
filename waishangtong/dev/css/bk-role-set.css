@@ -1,0 +1,43 @@
+html,body{
+	height: 100%;
+}
+.mid{
+	height: 100%;
+}
+.panel-left{
+	width: 180px;
+    min-height: 100%;
+	float: left;
+}
+.permission{
+    margin-bottom: 20px;
+}
+.permission-ul,
+.permission-li ul{
+    padding-left: 30px;
+}
+.permission-li{
+    margin: 15px 0;
+}
+.permission-li ul li{
+   margin: 15px 0;
+}
+.ztree li span.button.chk.checkbox_true_part,
+.ztree li span.button.chk.checkbox_true_part_focus,
+.ztree li span.button.chk.checkbox_false_full,
+.ztree li span.button.chk.checkbox_false_full_focus,
+.ztree li span.button.chk.checkbox_true_full,
+.ztree li span.button.chk.checkbox_true_full_focus,
+.ztree li span.button.chk.checkbox_false_part,
+.ztree li span.button.chk.checkbox_false_part_focus{
+    background-image: url(../images/zTreeStandard.png);
+}
+.ztree li{
+    margin:15px 0;
+}
+.ztree *{
+    /*font-size: 14px;*/
+}
+.ztree li span.button.chk{
+    margin-top: 3px;
+}

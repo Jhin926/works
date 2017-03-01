@@ -1,0 +1,68 @@
+
+#div1{
+    width: 60px;
+    height: 20px;
+    border-radius: 2px;
+    position: relative;
+    border:1px solid #ccc;
+    display:inline-block;
+}
+#div1 span{
+    display:inline-block;
+    width:50%;
+    text-align:center;
+    line-height:20px;
+    color:#fff;
+}
+#div2{
+    width: 50%;
+    height: 20px;
+    border-radius:2px;
+    position: absolute;
+    background: white;
+    -moz-transition: all 2s; /* Firefox 4 */
+    -webkit-transition: all 2s; /* Safari 和 Chrome */
+    -o-transition: all 2s; /* Opera */
+    /*box-shadow: 0px 2px 4px rgba(0,0,0,0.4);*/
+}
+.open1 span:first-child{
+    background: rgba(75,115,236,1);
+}
+.open2{
+    top: 0px;
+    left: 50%;
+    -moz-transition: all 0.7s; /* Firefox 4 */
+    -webkit-transition: all 0.7s; /* Safari 和 Chrome */
+    -o-transition: all 0.7s; /* Opera */
+}
+.close1{
+    background: rgba(255,255,255,0.4);
+    border:1px solid rgba(0,0,0,0.15);
+    border-left: transparent;
+}
+.close2{
+    left: 0px;
+    top: 0px;
+    border:1px solid rgba(0,0,0,0.1);
+}
+#div2{
+    -moz-transition: all 0.7s; /* Firefox 4 */
+    -webkit-transition: all 0.7s; /* Safari 和 Chrome */
+    -o-transition: all 0.7s; /* Opera */
+    transition: all 0.7s;
+}
+#add_special{padding-left:0;}
+.form-group .radio{
+    padding-top:5px;
+    margin-right:0;
+}
+#img_icon{position:relative;}
+#img_icon .img_down{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 16px;
+    bottom: 6px;
+    background: white;
+}

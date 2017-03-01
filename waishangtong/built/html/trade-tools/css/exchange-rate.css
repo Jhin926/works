@@ -1,0 +1,178 @@
+.exchange-rate-container{
+    background:#fff;
+    overflow:hidden;
+    overflow-y:auto;
+}
+.exchange-rate-container .i-content-wrapper{
+    background:#fff;
+}
+.exchange-rate-container .i-content-wrapper .page-content{
+    background:#fff;
+}
+.exchange-rate-container .i-content-wrapper .page-content .page-left{
+    border:none;
+}
+.exchange-rate-container .i-content-wrapper .page-content .page-left .page-title{
+    padding:20px 10px;
+}
+.exchange-rate-container .i-content-wrapper .page-content .page-left .titles .exchange_tools{
+    margin:0 10px;
+    font-size:18px;
+}
+.exchange-rate-container .i-content-wrapper .page-content .page-right{
+    width:88%;
+    border-left:10px solid #E6EAED;
+    border-right:10px solid #E6EAED;
+}
+.exchange-rate-container .page-right .page_info{
+   border-top:2px solid #e6e6e6;
+   padding-top:20px;
+   width: 100%;
+   position: relative;
+   padding-bottom: 31px;
+}
+.exchange-rate-container .page-right .page_info .exchange-rate-tools{
+    width:100%;
+    background:#fff;
+}
+.exchange-rate-container .page-right .page_info .exchange-rate-con{
+    width:960px;
+    height:120px;
+    margin:0 auto;
+    border:1px solid #E6E6E6;
+}
+.page_info .exchange-rate-con .exchange-rate{
+    width:680px;
+    height:100%;
+    margin:0 auto;
+}
+.s-exchange-tool{
+    display:inline-block;
+    width:16px;
+    height:16px;
+    background:url("../../../images/icon_menu_waimaogongju.png")no-repeat;
+}
+.page_info .exchange-rate-con .exchange-rate .exchange-rate-header{
+    height:50%;
+}
+.page_info .exchange-rate-con .exchange-rate .exchange-rate-header .exchange-rate-left{
+    width:120px;
+    float:left;
+    margin-right:10px;
+    padding-top:20px;
+}
+.page_title{
+    position: relative;
+    font-size: 14px;
+    padding: 20px 20px 0 20px;
+    height: 70px;
+    z-index: 1;
+}
+.page_title .i_tools{
+    margin-top:7px;
+}
+.page_title .model-name{
+   font-size:18px;
+   margin:0 7px;
+}
+.exchange-rate-bottom{
+    display:none;
+}
+.page_info .exchange-rate-con .exchange-rate .exchange-rate-header .exchange-rate-left label{
+    margin-bottom:10px;
+}
+.page_info .exchange-rate-con .exchange-rate .exchange-rate-header .exchange-rate-left select{
+    height:32px;
+    padding-top:6px;
+    margin-top:3px;
+}.page_info .exchange-rate-con .exchange-rate .exchange-rate-header .exchange-rate-left input{
+    margin-top:3px;
+ }
+.page_info .exchange-rate-con .exchange-rate .exchange-rate-header .exchange-rate-mid{
+    width:228px;
+}
+.page_info .exchange-rate-con .exchange-rate .exchange-rate-header .exchange-rate-mid .exchange_img{
+    display:inline-block;
+    width:32px;
+    height:35px;
+    padding-top:2px;
+    padding-bottom:2px;
+}
+.page_info .exchange-rate-con .exchange-rate .exchange-rate-header .exchange-rate-mid .exchange_img img{
+    width:100%;
+    height:100%;
+}
+.mid-select{
+    display: inline-block;
+    width: 180px;
+    margin-right: 10px;
+}
+.page_info .exchange-rate-con .exchange-rate .exchange-rate-header .exchange-rate-right{
+    width:272px;
+}
+.exchange-rate-header .exchange_rate .exchange_rate_top{
+    padding-top:8px;
+    text-align:center;
+}
+.exchange-rate-header .exchange_rate .exchange_rate_top .exchange_rate_left{
+    margin-left:-30px;
+    padding-top:8px;
+    line-height:15px;
+    display:inline-block;
+}
+.exchange-rate-header .exchange_rate .exchange_rate_top .exchange_rate_right{
+    margin-left:30px;
+}
+.exchange-rate-header .exchange_rate .exchange_rate_top .exchange_rate_left .rate_red,
+.exchange-rate-header .exchange_rate .exchange_rate_top .right .rate_red{
+    color:#000;
+}
+.exchange-rate-header .exchange_rate .exchange_rate_top .exchange_rate_left .rate_amount,
+.exchange-rate-header .exchange_rate .exchange_rate_top .right .rate_amount{
+    font-size:20px;
+}
+.exchange-rate-header .exchange_rate .exchange_rate_top span{
+    display:inline-block;
+}
+.exchange-rate-header .exchange_rate .exchange_rate_top .rate_red{
+    color:#FE5C4D;
+}
+.exchange-rate-header .exchange_rate .exchange_rate_top .rate_amount{
+    width:35px;
+    font-size:25px;
+    vertical-align:middle;
+}
+.exchange-rate-table{
+    padding:0 30px;
+}
+.exchange-rate-table .rate-title{
+    height:30px;
+    padding-top:20px;
+    padding-bottom:10px;
+    margin-top:10px;
+}
+.exchange-rate-table .rate-title label span{
+   font-size:14px;
+}
+.exchange-rate-table .rate-table{
+    margin-top:15px;
+}
+.exchange-rate-table .rate-table .rateTable{
+    border:1px solid #E6E6E6;
+}
+.exchange-rate-table .rate-table .rateTable tbody>tr>td,
+.page-right .page_info .table > tbody > tr > td:first-child,
+.page-right .page_info .table > tbody > tr > td:last-child {
+    text-align: center;
+}
+.exchange-rate-table .rate-table .rateTable tbody>tr{
+    height:40px;
+    line-height:40px;
+}
+.exchange-rate-table .rate-table .rateTable tbody>tr>td{
+    height:100%;
+    width:33.3333%;
+}
+.compute{
+    margin-bottom:3px;
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>外贸通-crm任务详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <meta name="MobileOptimized" content="320">
+
+    <!-- build:css ../css/common.min.css -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet"/>
+    <link href="../css/common.css" rel="stylesheet"/>
+    <!-- endbuild -->
+
+    <!-- build:css ../js/lib/bootstrap-datepicker/css/datepicker.min.css -->
+    <link href="../js/lib/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet"/>
+    <!-- endbuild -->
+
+    <!-- build:css ../css/crm.min.css -->
+    <link href="../css/crm.css" rel="stylesheet"/>
+    <!-- endbuild -->
+    <link href="../css/crm-task.css" rel="stylesheet"/>
+    <link href="../css/task-detail.css" rel="stylesheet"/>
+</head>
+
+<body class="overflow-auto" style="overflow-y: auto !important;">
+<!-- 任务详情弹窗开始 -->
+<div class="detailBox boxs" id="box-detail">
+    <div class="box-left">
+        <div class="" style="padding-left:25px;">
+            <button type="button" class="btn btn-primary btn-lg btn-radial-out" id="taskChange">编辑任务</button>
+            <button type="button" class="btn btn-primary btn-lg btn-radial-out" id="openDel">删除任务</button>
+            <button type="button" class="btn btn-primary btn-lg btn-radial-out" id="completeTask">完成任务</button>
+        </div>
+        <div class="detail-title"><i class="i-status"></i><span id="task-title" class="data-title"></span><!-- <i class="fa fa-pencil-square-o taskChange"></i><i class="fa fa-trash-o pull-right" id="openDel"></i> -->
+        </div>
+        <div class="detail-info">
+            <div class="info-group">
+                <label>任务时间：</label><span class="data-ed"></span>
+            </div>
+            <div class="info-group">
+                <label>客户名称：</label><span class="active data-targetName"></span>
+            </div>
+            <div class="info-group">
+                <label>任务负责人：</label><span class="data-accountName"></span>
+            </div>
+            <!-- <div class="info-group">
+                <label>关联邮件：</label><span class="active">--</span>
+            </div> -->
+            <div class="info-group">
+                <label>创建日期：</label><span class="data-st"></span>
+            </div>
+            <div class="info-group">
+                <label style="position:absolute;">任务描述：</label><span class="data-description">--</span>
+            </div>
+        </div>
+    </div>
+    <div class="box-right">
+        <div class="sender-condition-style"></div>
+    </div>
+    <div class="modal" id="delModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">删除</h4>
+                </div>
+                <div class="modal-body">
+                    <p>是否删除该任务？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-lg btn-radial-out delOne">确定</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-radial-out" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 任务详情弹窗结束 -->
+
+<!-- 编辑任务弹窗开始 -->
+<form class="editDetailBox boxs form-horizontal" id="editForm">
+    <!--<i class="pull-right fa fa-eye taskChange"></i>-->
+    <div class="clear"></div>
+    <fieldset>
+        <div class="form-group">
+            <div class="col-xs-10" id="taskSub">
+                <button class="btn btn-primary btn-lg btn-radial-out" id="taskBubSave" type="submit">保存</button>
+                <button class="btn btn-default btn-lg btn-radial-out" id="taskBubCencle" type="button">取消</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="taskName" class="col-xs-2 control-label"><span>*</span>任务名称</label>
+
+            <div class="col-xs-10">
+                <input type="text" class="form-control input-sm" id="taskName"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="customerName" class="col-xs-2 control-label"><span>*</span>客户名称</label>
+
+            <div class="col-xs-10 downs customerdown">
+                <select id="customer" class="form-control input-sm"></select>
+
+                <div class="errors" style="margin-top: 40px;"><span>请选择客户</span></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description" class="col-xs-2 control-label">任务描述</label>
+
+            <div class="col-xs-10">
+                <textarea class="form-control col-xs-10" id="description"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="head" class="col-xs-2 control-label"><span>*</span>任务负责人</label>
+
+            <div class="col-xs-10 downs headdown">
+                <select id="principal" class="form-control input-sm"></select>
+
+                <div class="errors"><span>请选择至少一个任务负责人</span></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="warn" class="col-xs-2 control-label">提醒</label>
+
+            <div class="col-xs-10">
+                <select id="warn" class="form-control">
+                    <option value="15">15分钟前</option>
+                    <option value="30">30分钟前</option>
+                    <option value="60">1个小时前</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="taskTime" class="col-xs-2 control-label"><span>*</span>任务时间</label>
+
+            <div class="col-xs-10">
+                <select name="taskType" id="taskType" class="form-control">
+                    <option value="1">指定日期任务</option>
+                    <option value="2">周期任务</option>
+                </select>
+
+                <div class="startTime">
+                    <div class="input-group" style="width:100%">
+                        <input class="form-control form-control-inline input-xs datetime-picker" size="16" type="text"
+                               id="startTime" readonly/>
+                        <!-- <span class="input-group-btn">
+                          <button class="btn btn-primary btn-calendar" type="button"><i class="fa fa-calendar"></i></button>
+                        </span> -->
+                    </div>
+                </div>
+                <div class="check-box">
+                    <div class="checkcycle">
+                        <label><input type="checkbox" name="cycle" data-id="1"/>周一</label>
+                        <label><input type="checkbox" name="cycle" data-id="2"/>周二</label>
+                        <label><input type="checkbox" name="cycle" data-id="3"/>周三</label>
+                        <label><input type="checkbox" name="cycle" data-id="4"/>周四</label>
+                        <label><input type="checkbox" name="cycle" data-id="5"/>周五</label>
+                        <label><input type="checkbox" name="cycle" data-id="6"/>周六</label>
+                        <label><input type="checkbox" name="cycle" data-id="7"/>周日</label>
+                    </div>
+                    <div class="checktime">
+                        <select id="ap">
+                            <option value="am">上午</option>
+                            <option value="pm">下午</option>
+                        </select>
+                        <select id="hours"></select>
+                        <input type="text" id="minutes" maxlength="2">分<span>至</span>
+                        <select id="ap2">
+                            <option value="am">上午</option>
+                            <option value="pm">下午</option>
+                        </select>
+                        <select id="hours2"></select>
+                        <input type="text" id="minutes2" maxlength="2">分
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<!-- 编辑任务弹窗结束 -->
+<script src="../js/v.js"></script>
+
+<script data-main="../js/pop-task-detail.js" src="../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-auto">
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-授权登录</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- <link href="../js/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" /> -->
+    <!-- build:css ../css/common.min.css -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="../css/user.css" rel="stylesheet" />
+</head>
+<body class="overflow-auto">
+    <!-- 授权登录弹窗开始 -->
+    <h3 class="spop-tit">连接</h3>
+    <div class="auth-box">
+        <form class="form-horizontal">
+            <fieldset>
+                <div class="form-group">
+                    <div class="col-xs-10">
+                        <button class="btn btn-primary" id="btn-save">保存</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="account" class="col-xs-2 control-label">
+                        <span class="require-tips">*</span>帐号
+                    </label>
+                    <div class="col-xs-10"><input type="text" class="form-control" id="account" /></div>
+                </div>
+                <div class="form-group">
+                    <label for="pwd" class="col-xs-2 control-label">
+                        <span class="require-tips">*</span>密码
+                    </label>
+                    <div class="col-xs-10"><input type="text" class="form-control" id="pwd" /></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-10 col-xs-offset-2">
+                        <label class="form-checkbox"><input type="checkbox" id="sync" checked />连接后自动将邮件也同步至系统</label>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <!-- 授权登录弹窗结束 --><script src="../js/v.js"></script>
+
+    <script data-main="../js/user.js" src="../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-上传文档</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/zTree_v3/css/zTreeStyle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/file-upload.css">
+</head>
+
+<body>
+<div class="file-handle">
+    <button class="btn upload">上传</button>
+    <button class="btn cancel">取消</button>
+</div>
+<div class="file-type">
+    <div class="file-local">
+        <img src="../images/ico-local.png" width="80" height="70" alt="" />
+        <p>本地文件</p>
+    </div>
+    <div class="file-cloud" data-toggle="modal" data-target="#cloudModal">
+        <img src="../images/ico-cloud.png" width="80" height="70" alt="" />
+        <p>云盘文件</p>
+    </div>
+</div>
+<ul class="file-list">
+</ul>
+<form id="file-form" enctype="multipart/form-data" method="post" style="display: none;">
+    <input type="file" name="upFiles" id="up-files" multiple="multiple" />
+    <input type="hidden" name="file" value="upFiles" />
+    <input type="hidden" name="dictFileUpType" value="1" />
+</form>
+<div class="modal fade" id="cloudModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">选择云文件</h4>
+            </div>
+            <div class="modal-body">
+                <ul id="treeCloud" class="ztree"></ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="addCloud">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../js/v.js"></script>
+<script data-main="../../js/pop-upload-file.js" src="../../js/lib/require.min.js"></script>
+</body>
+</html>

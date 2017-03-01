@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-PI详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    
+    <!-- build:css ../css/crm.min.css -->
+    <link href="../css/crm.css" rel="stylesheet" />
+    <!-- endbuild -->
+</head>
+
+<body style="overflow-y: auto !important;">
+    <!-- 报价详情单弹窗开始 -->
+    <div id="detailPIForm">
+        <div class="fieldset">
+            <div class="form-group pi-btn-group">
+                <button class="btn btn-primary none" id="pi-edit" data-type="edit" data-code="pi_edit">编辑</button>
+                <button class="btn btn-primary none" id="pi-copy" data-type="copy" data-code="pi_copy">复制</button>
+                <button class="btn btn-primary none" id="pi-order" data-type="order" data-code="pi_order">新建订单</button>
+                <button class="btn btn-primary none" id="pi-export" data-type="export" data-code="pi_export">导出</button>
+                <button class="btn btn-primary none" id="pi-print" data-type="print" data-code="pi_print">打印</button>
+                <button class="btn btn-primary" id="pi-email">邮件</button>
+                <div class="clear"></div>
+            </div>
+            <div class="formlist">
+                <div class="quo-title"><span></span><label class="pull-right">Date: <span class="pi-create"></span></label></div>
+                <div class="quo-custInfo">
+                    <div class="custInfo-left">
+                        <p><span>To</span><span>Addr</span></p>
+                        <p>
+                            <span class="custInfo-name"></span>
+                            <span class="custInfo-addr"></span>
+                        </p>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="custInfo-right">
+                        <p>
+                            <span>PI No</span>
+                            <span>Seller</span>
+                            <span>Date</span>
+                        </p>
+                        <p>
+                            <span class="custInfo-no"></span>
+                            <span class="custInfo-seller"></span>
+                            <span class="custInfo-date"></span>
+                        </p>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="quo-head"></div>
+                <div class="quo-items">
+                    <ul class="items-title">
+                        <li>No.</li>
+                        <li>Product Name</li>
+                        <li>Product Photo</li>
+                        <li>Price</li>
+                        <li>Quantity</li>
+                        <li>Amount</li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <ul class="box-other-param">
+                    <li><label>Freight</label><span class="p-freight"></span></li>
+                    <li><label>Term of Payment</label><span class="p-payment"></span></li>
+                    <li><label>Term of Delivery</label><span class="p-td"></span></li>
+                    <li><label>Date of Delivery</label><span class="p-dd"></span></li>
+                    <li><label>Total</label><span class="p-total"></span></li>
+                </ul>
+                <div class="quo-foot"></div>
+                <div class="pi-logo">
+                    <ul class="box-pi-logo">
+                        <li><label>The Seller</label></li>
+                        <li class="the-seller"></li>
+                        <li>Confirmed and signed By:</li>
+                        <li style="margin-top: 15px;"></li>
+                    </ul>
+                    <ul class="box-pi-logo">
+                        <li><label>The Buyer</label></li>
+                        <li class="the-buyer"></li>
+                        <li>Confirmed and signed By:</li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 报价详情单弹窗结束 --><script src="../js/v.js"></script>
+    <script data-main="../js/pop-pi-detail.js" src="../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+
+</html>

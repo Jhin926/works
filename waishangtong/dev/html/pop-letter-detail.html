@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>营销信详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    
+    <!-- build:css ../css/common.min.css -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <!-- build:css ../css/email.min.css -->
+    <link href="../css/email.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="../css/dev-letter.css" rel="stylesheet" />
+</head>
+
+<body style="overflow-y: auto !important;">
+	<!-- 统计弹窗开始 -->
+	<div style="width:910px;">
+		<div id="letterStatistics">
+			<div class="letter-title">
+				
+				<div class="col-sm-9">
+					<h3 id="letterTitle">营销信标题</h3>
+				</div>
+				<button class="btn btn-primary set-up" id="letterContentBtn">查看营销详情</button>
+			</div>
+			<div class="letter-statistics left">
+				<ul class="contUl left">
+					<li data-type="1" class="every_con left">
+						<label class="totalEmail total_Email"></label><br>
+						<span class="first">邮件总数</span>
+						<span><label class="sendFailedSum"></label>封失败</span>
+						<div class="con_icon">
+							<div><img src="../images/arrow_01.png" alt=""></div>
+						</div>
+					</li>
+					<li data-type="2" class="every_con left">
+						<label class="sendEmail total_Email"></label><br>
+						<span class="first">已送达</span>
+						<span>送达率<label class="deliveryRate"></label></span>
+						<div class="con_icon">
+							<div><img src="../images/arrow_02.png" alt=""></div>
+						</div>
+					</li>
+					<li data-type="3" class="every_con left">
+						<label class="openEmail total_Email"></label><br>
+						<span class="first">已打开</span>
+						<span>打开率<label class="openRate"></label></span>
+						<div class="con_icon">
+							<div><img src="../images/arrow_03.png" alt=""></div>
+						</div>
+					</li>
+					<li data-type="4" class="every_con left">
+						<label class="backEmail total_Email"></label><br>
+						<span class="first">已回复</span>
+						<span>回复率<label class="replyRate"></label></span>
+						<div class="con_icon">
+							<div><img src="../images/arrow_05.png" alt=""></div>
+						</div>
+					</li>
+					<li data-type="5" class="every_con left">
+						<label class="sendFailedSum total_Email"></label><br>
+						<span class="first">失败邮件</span>
+						<span>失败率<label class="failedRate"></label></span>
+						<div class="con_icon">
+							<div><img src="../images/arrow_04.png" alt=""></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div id="leffter-content">
+				<!--<ul class="contUl left">
+					<li data-type="1">
+						<span>邮件总数<label class="totalEmail"></label></span>
+						<span><label class="sendFailedSum"></label>封失败</span>
+					</li>
+					<li data-type="2">
+						<span>已送达-<label class="sendEmail"></label></span>
+						<span>送达率<label class="deliveryRate"></label></span>
+					</li>
+					<li data-type="3">
+						<span>已打开-<label class="openEmail"></label></span>
+						<span>打开率<label class="openRate"></label></span>
+					</li>	
+					<li data-type="4">
+						<span>已回复-<label class="backEmail"></label></span>
+						<span>回复率<label class="replyRate"></label></span>
+					</li>
+					<li data-type="5">
+						<span>失败邮件-<label class="sendFailedSum"></label></span>
+						<span>失败率<label class="failedRate"></label></span>
+					</li>
+				</ul>-->
+				<div class="tableCont left">
+					<div class="submir-btn">
+						<a role="button" class="btn btn-primary set-up letterAll">对全部联系人二次营销</a>
+						<a role="button" class="btn btn-primary set-up letterSend1 none">对已送达未打开的联系人二次营销</a>
+						<a role="button" class="btn btn-primary set-up letterSend0 none">对未送达的联系人二次营销</a>
+						<a role="button" class="btn btn-primary set-up letterOpen1 none">对已打开未回复联系人二次营销</a>
+						<a role="button" class="btn btn-primary set-up letterOpen0 none">对未打开的联系人二次营销</a>
+						<a role="button" class="btn btn-primary set-up letterBack0 none">对未回复的联系人二次营销</a>
+						<a role="button" class="btn btn-primary set-up letterFaile none">对失败联系人二次营销</a>
+						<button role="button" class="btn btn-primary set-up letterDown" onClick="$.daochu();">导出下列联系人</button>
+					</div>
+					<div class="title_con">
+						<div>联系人</div>
+						<div>追踪</div>
+						<div>时间</div>
+					</div>
+					<ul class="tableContUl"></ul>
+					<!--<ul class="pagination pull-right" id="pagination"></ul>-->
+                    <ul class='page'></ul>
+				</div>
+			</div>
+		</div>
+		<div class="sale-e-content letter-detail" id="letterContent">
+	    	<div class="sale-letter email-c-e" style="padding:20px 20px 10px">
+	    		<i class="i-left"></i>
+				<span class="sale-letter-title" id="ltContTitle"></span>
+<!-- 				<a class="pull-right" href="">
+					<i class="pub-icon reEditor-icon"></i>
+					再次编辑
+				</a> -->
+			</div>
+	    	<div class="sender-info">
+	        	<div class="form-group">
+				    <label class="control-label">发件人:</label>
+			      	<input class="detailSender" disabled="disabled" value="">
+			      	<div class="clear"></div>
+			  	</div>
+			  	<div class="form-group">
+				    <label class="control-label">时　间:</label>
+			      	<span class="sender-info-time" data-time="8"></span>
+			      	<i class="pub-icon sender-time-icon"></i>
+                    <select class="check-time">
+                        <option value="-10">GMT-10：夏威夷</option>
+                        <option value="-9">GMT-9：阿拉斯加</option>
+                        <option value="-8">GMT-8：太平洋时间</option>
+                        <option value="-7">GMT-7：山脉时间</option>
+                        <option value="-6">GMT-6：中央标准时间</option>
+                        <option value="-5">GMT-5：东部时间</option>
+                        <option value="-4">GMT-4：大西洋时间</option>
+                        <option value="-3">GMT-3：巴西利亚时间</option>
+                        <option value="-2">GMT-2：大西洋中部时间</option>
+                        <option value="-1">GMT-1：亚述尔群岛</option>
+                        <option value="0">GMT：伦敦</option>
+                        <option value="1">GMT+1：罗马，巴黎</option>
+                        <option value="2">GMT+2：雅典，以色列</option>
+                        <option value="3">GMT+3：莫斯科，科威特</option>
+                        <option value="4">GMT+4：喀布尔</option>
+                        <option value="5">GMT+5：伊斯兰堡，卡拉奇</option>
+                        <option value="6">GMT+6：阿拉木图，科伦坡</option>
+                        <option value="7">GMT+7：曼谷，雅加达</option>
+                        <option value="8" selected="selected">GMT+8：北京，香港，台湾</option>
+                        <option value="9">GMT+9：东京</option>
+                        <option value="10">GMT+10：悉尼</option>
+                    </select>
+			      	<div class="clear"></div>
+			  	</div>
+			  	<div class="form-group">
+				    <label class="control-label">主题1:</label>
+			      	<input class="detailSender" disabled="disabled" id="ltContTitle1" value="">
+			      	<div class="clear"></div>
+			  	</div>
+			  	<div class="form-group">
+				    <label class="control-label">主题2:</label>
+			      	<input class="detailSender" disabled="disabled" id="ltContTitle2" value="">
+			      	<div class="clear"></div>
+			  	</div>
+			  	<div class="form-group">
+				    <label class="control-label">主题3:</label>
+			      	<input class="detailSender" disabled="disabled" id="ltContTitle3" value="">
+			      	<div class="clear"></div>
+			  	</div>
+	        </div>
+	        <div id="fujian"></div>
+		    <!-- <div class="fujian">
+		  		<i class="pub-icon fujian2-icon"></i>
+		  		<span>20160301-采购商-IM-刘...</span>
+		  		<span>(695kb)</span>
+		  		<a href="">另存为</a>
+		  	</div> -->
+		    <div class="email-detail-main">
+		  		<iframe src="" class="email-detail-main-content" id="myIframe">
+		  		</iframe>
+		  	</div>
+	  	</div>
+    </div>
+	<!-- 统计弹窗结束 -->
+	<!-- 二次营销开始 -->
+	<div class="letter-detail" id="secondLetter">
+		<div class="new-letter">
+			<div id="stepShow" class="text-center">
+				<img src="../images/step1.png">
+			</div>
+			<p style="margin-top:20px;padding-left:20px;margin-bottom: 20px;">剩余营销信<strong><span class="error" id="surplusNum"></span></strong>封</p>
+			<div id="stepOne" class="stepBlock">
+				<div class="step" data-addressMode="2">
+					<div class="stepLeft1 stepLeft12 left">
+					</div>
+					<div class="stepRight left">
+						<p class="stepP stepTitle"><strong>已选择邮箱<span id="emailAccountNum">0</span>地址</strong></p>
+					</div>
+				</div>
+				<div id="btnOne" class="text-center">
+					<button class="btn btn-lg btn-primary btn-radial-out nextBtn">下一步</button>
+					<div class="prompt"></div>
+				</div>
+			</div>
+			<div id="stepTwo" class="stepBlock">
+				<div class="step" style="box-shadow: 0 0 5px #ddd;border-top: 1px solid #e8e8e8;">
+					<div class="stepLeft21 left">
+					</div>
+					<div class="stepRight left">
+						<p class="stepP"><strong>设置营销主题</strong></p>
+						<div class="stepCont">
+							<input class="inputTheme" id="subject" placeholder="请输入营销的主题，中文40字以内，字母80以内">
+						</div>
+					</div>
+				</div>
+				<div class="step">
+					<div class="stepLeft22 left">
+					</div>
+					<div class="stepRight left">
+						<p class="stepP"><strong>设置邮件主题</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ashen">为了提高邮件送达率，不被当做垃圾邮件，请您尽可能填写三个主题，您的联系人将会收到随机的一个主题</span></p>
+						<div class="stepCont">
+							<span class="spanTheme">主题一</span><input class="inputTheme" id="subject1" placeholder="请输入邮件主题">
+							<span class="spanTheme">主题二</span><input class="inputTheme" id="subject2" placeholder="请输入邮件主题">
+							<span class="spanTheme">主题三</span><input class="inputTheme" id="subject3" placeholder="请输入邮件主题">
+							<button class="btn btn-primary btn-radial-out" id="addContTheme" style="margin-left:80px;">添加联系人</button>
+							<div class="contTheme">
+								<p>选择联系人插入位置</p>
+								<ul>
+									<li><input type="checkbox" id="themecheckbox1"><label for="themecheckbox1">主题一</label></li>
+									<li><input type="checkbox" id="themecheckbox2"><label for="themecheckbox2">主题一</label></li>
+									<li><input type="checkbox" id="themecheckbox3"><label for="themecheckbox3">主题一</label></li>
+								</ul>
+							</div>	
+						</div>
+					</div>
+				</div>
+				<div id="btnTwo" class="col-sm-12 text-center">
+					<a href="javascript:;" id="backStepTwo">&lt; 返回上一步</a>
+					<button class="btn btn-lg btn-primary btn-radial-out nextBtn">下一步</button>
+					<div class="prompt"></div>
+				</div>
+			</div>	
+			<div id="stepThree" class="stepBlock">
+				<div class="step" style="padding:0">
+					<p class="step3title"><strong>设置营销主题</strong></p>
+					<div class="stepLeft left">
+						<a href="javascript:;" class="stepLeft3 stepLeft33 add-tem"><span>插入模板</span></a>
+						<a href="javascript:;" class="stepLeft3 stepLeft31 add-attachment1"><span>附件</span></a>
+						<a href="javascript:;" class="stepLeft3 stepLeft32 add-images"><span style="margin-top:60px;">插入图片</span></a>
+						<a href="javascript:;" class="stepLeft3 stepLeft34 add-cont"><span>插入联系人</span></a>
+					</div>
+					<form class="form-horizontal" id="form_file1" enctype="multipart/form-data" method="post" style="display:none;">
+	                    <input type="file" name="upFiles" id="up-files1" />
+	                    <input type="hidden" name="file" value="upFiles" />
+	                    <input type="hidden" name="dictFileUpType" value="1" />
+	                </form>
+					<form class="form-horizontal" id="form_img" enctype="multipart/form-data" method="post" style="display:none;">
+	                    <input type="file" class="" name="upImgs" id="up_1" />
+	                    <input type="hidden" name="file" value="upImgs" />
+	                    <input type="hidden" name="dictFileUpType" value="0" />
+	                </form>
+					<div class="stepRight left">
+						<div class="stepCont" style="padding: 0px;">
+							<ul id="addFiles1"></ul>
+							<div id="letterEditor"></div>
+							<!-- <p>邮件大小(单封营销邮件不能超过2M)：<span></span></p> -->
+						</div>
+						<div class="custModels" id="custModels">
+							<p>
+								<a href="javascript:;">公司模板</a>
+								<a href="javascript:;">个人模板</a>
+								<a href="javascript:;">系统模板</a>
+							</p>
+							<ul class="add-model"></ul>
+							<ul></ul>
+							<ul></ul>
+						</div>
+					</div>
+				</div>
+				<div id="btnThree" class="colstep col-sm-12 text-center">
+					<a href="javascript:;" id="backStepThree">&lt; 返回上一步</a>
+					<a class="btn btn-lg btn-primary btn-radial-out nextBtn" id="submit">发送</a>
+					<div class="prompt"></div>
+				</div>
+			</div>
+			<div id="stepFour" class="text-center">
+				<h3>营销邮件已经开始发送</h3>
+				<p class="ashen">本次需要发送营销信数量为<span></span>封</p>
+				<P class="ashen">完全发送花费一定时间，请耐心等待哦！</P>
+				<img src="../images/sending.gif">
+				<p class="callBackP"><span class="error"><span id="setTimeout"></span>秒</span> 后自动进入营销统计</p>
+			</div>
+		</div>
+	</div>
+	<!-- <button id="test">测试点击</button> -->
+	<!-- 二次营销结束 --><script src="../js/v.js"></script>
+
+    <script data-main="../js/pop-letter-detail.js" src="../js/lib/require.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-组织架构</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="../../js/lib/zTree_v3/css/zTreeStyle.css" rel="stylesheet">
+    <!-- 企业后台 -->
+    <link rel="stylesheet" type="text/css" href="../../css/manage.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bk-org.css">
+</head>
+
+<body>
+<div class="i-content-wrapper">
+    <div class="panel mid">
+		<div class="panel panel-default minW1200" style="padding:10px;background:#e6eaed;">
+			<div class="panel-heading left w100" style="padding-bottom:8px;position:relative;background:#fff;">
+				<h1 class="panel-title"><i class="i-org"></i>组织架构</h1>
+				<div class="org-btn">
+					<button type="button" id="delete" class="btn btn-default none" data-code="organization_user_delete">删除</button>
+					<button type="button" id="allotRole" class="btn btn-default none" data-code="organization_user_setrole">分配角色</button>
+					<button type="button" id="depManage" class="btn btn-default none" data-code="organization_user_admin">设为部门管理员</button>
+					<button type="button" id="depManageNot" class="btn btn-default none" data-code="organization_user_unadmin">取消部门管理员</button>
+					<button type="button" id="invite" class="btn btn-default none" data-code="organization_user_invite">发送激活邀请</button>
+					<button type="button" id="rePassword" class="btn btn-default none" data-code="organization_user_reset">密码重置</button>
+					<button type="button" id="btnEditDep" class="btn btn-default none" data-code="organization_user_setorg">修改部门</button>
+					<button type="button" id="leavePos" class="btn btn-default none" data-code="organization_user_leave">离职</button>
+					<button type="button" id="disabled" class="btn btn-default none" data-code="organization_user_disable">禁用</button>
+					<button type="button" id="start" class="btn btn-default none" data-code="organization_user_strat">启用</button>
+					<a href="bk-org-add.html" class="btn btn-primary btn-radial-out right none" data-code="organization_user_add" style="margin:0;margin-right:30px;" data-maintab><!-- <i class="i-add"> + </i>  -->新建用户</a>
+				</div>
+				<i class="i-alertNew" title="消息" style="top:24px;right:8px"></i>
+			</div>
+			<div class="panel panel-body">
+				<div class="panel-left" style="padding:5px;">
+					<div class="addAll panel">
+						<a class="addAll-close"><i class="i-close"></i></a>
+		            	<a href="#" class="newDep-a blue" style="margin-left:-16px;">新建部门</a><label>|</label><a href="#" class="newUser-a">新建用户</a>
+						<div class="newDep">
+							<input type="text" name="addDep" placeholder="部门名称"><br />
+							<button id="addBtnDep" class="btn brn-lg btn-primary btn-radial-out" style="width:190px;margin:0 auto;">创建</button>
+						</div>
+						<div class="newUser">
+							<input type="text" name="ztreeName" placeholder="姓名">
+							<input type="text" name="ztreeEmail" placeholder="邮箱">
+							<select id="ztreeGender">
+								<option value="1">男</option>
+								<option value="0">女</option>
+							</select>
+							<button id="addBtnUser" class="btn brn-lg btn-primary btn-radial-out" style="width:190px;margin:0 auto;">创建</button>
+						</div>
+		            </div>
+					<div class="role-main" >
+		                <ul id="treeDemo" class=" ztree"></ul>
+		            </div>
+				</div>
+				<div class="panel-right">
+					<table class="table">
+						<thead>
+							<tr>
+								<td><input type="checkbox" id="allCheckbox"></td>
+								<td>姓名</td>
+								<td>部门</td>
+								<td>邮箱</td>
+								<td>部门角色</td>
+								<td>角色</td>
+								<td>状态</td>
+								<td>最近登录时间</td>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- END CONTAINER -->
+	<!-- BEGIN 分配角色-->
+	<div id="allot-modal">
+		<div class="panel panel-default panel-modal panel-role-modal" style="margin-left:-180px;">
+			<div class="modal-head">
+				<a href="#" class="role-modal-close a-modal-close"><i class="i-close"></i></a>
+				<h1 class="panel-title title-modal">分配角色</h1>
+			</div>
+			<div class="role-body">
+				<div class="w100" style="padding-left:15px;">
+					<label class="gray">分配对象：</label>
+					<label id="rolesName"></label>（<label id="roleNUM"></label>人）
+				</div>
+				<div class="w100">
+					<h6 style="padding-left:15px;">角色</h6>
+					<hr />
+					<ul class="roles-list">
+						
+					</ul>
+					<div class="save-cancel" style="padding-left:15px;">
+						<button type="button" id="allot-modal-save" class="btn btn-lg btn-primary btn-radial-out">保存</button>
+						<button type="button" class="btn btn-lg role-modal-close" style="margin-right:10px;">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- BEGIN 分配角色-->
+	<!-- BEGIN 修改部门-->
+	<div id="depEdit-modal">
+		<div class="panel panel-default panel-modal panel-role-modal">
+			<div class="modal-head">
+				<a href="#" class="role-modal-close a-modal-close right"><i class="i-close"></i></a>
+				<h1 class="panel-title title-modal">修改部门</h1>
+			</div>
+			<div class="role-body">
+				<ul id="treeDemoBtn" class="ztree"></ul>
+				<div class="save-cancel">
+					<button type="button" id="editDep-modal-save" class="btn btn-lg btn-primary btn-radial-out">保存</button>
+					<button type="button" class="btn btn-lg role-modal-close">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+		<!-- BEGIN 修改部门--><script src="../../js/v.js"></script>
+    <script data-main="../../js/bk-org.js" src="../../js/lib/require.min.js"></script>
+</body>
+</html>

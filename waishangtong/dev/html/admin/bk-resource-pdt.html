@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    <title>外贸通-资源设置</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="../../js/lib/zTree_v3/css/zTreeStyle.css" rel="stylesheet">
+    <!-- 企业后台 -->
+    <link rel="stylesheet" type="text/css" href="../../css/manage.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bk-resource-set.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bk-resource-pdt.css">
+</head>
+<body>
+<div class="i-content-wrapper">
+    <!-- BEGIN MAIN -->
+    <div class="panel mid" style="padding-right:0">
+    	<div class="panel panel-default panel-left">
+    		<div class="panel-heading">
+				<h1 class="panel-title"><i class="i-resource"></i>资源设置</h1>
+			</div>
+			<ul class="list-group">
+			    <li id="group-set-li" class="list-group-item">
+					<label class="panel-left-label active">产品设置</label>
+			    </li>
+			    <li id="pdt-li" class="list-group-item">
+					<label class="panel-left-label">产品导入</label>
+			    </li>
+			</ul>
+        </div>
+        <div class="panel panel-default panel-right">
+    		<div class="panel-heading padding0">
+				<ul class="panel-title padding0 panel-right-nav left">
+                    <li class="none" data-code="resouce_customer"><a href="bk-resource-set.html"><i class="i-cust"></i> 客户设置</a></li>
+                    <li class="none" data-code="resouce_contact"><a href="bk-resource-lm.html"><i class="i-cont"></i> 联系人设置</a></li>
+                    <li class="none" data-code="resouce_email"><a href="bk-resource-email.html"><i class="i-email"></i> 邮件模板设置</a></li>
+                    <li class="none" data-code="resouce_product"><a href="bk-resource-pdt.html" class="active"><i class="i-pdt"></i> 产品设置</a></li>
+                    <li class="none" data-code="resouce_quotation"><a href="bk-resource-quoteHeader.html"><i class="i-quote"></i> 报价设置</a></li>
+                    <li class="none" data-code="resouce_pi"><a href="bk-resource-piHeader.html"><i class="i-pi"></i> PI设置</a></li>
+                    <li class="none" data-code="resouce_order"><a href="bk-resource-ofInfo.html"><i class="i-order"></i> 订单设置</a></li>
+                </ul>
+                <i class="i-alertNew" title="消息" style="top:30px;right:30px"></i>
+			</div>
+			<!--BEGIN 分组设置 -->
+			<div id="group-set" class="panel-body">
+				<button type="button" id="group-set-save" class="btn btn-lg btn-primary btn-radial-out">保存</button>
+				<ul class="resource-ul">
+				</ul>
+				<button type="button" class="btn btn-lg btn-primary btn-radial-out addGoup"> <i class="i-add"> + </i>添加新分组</button>
+			</div>
+			<!--END 分组设置 -->
+            <!--BEGIN 模板设置 -->
+            <div id="tem-set" class="panel-body">
+                <div class="form-group">
+                    <a href="#" class="return"><i class="i-left"></i></a>
+                    <button type="button" id="tem-add" class="btn btn-lg btn-primary btn-radial-out">添加</button>
+                </div>
+                <input type="text" id="tem-name" class="resource-input form-control" placeholder="模板名称">
+                <div id="addEditor">
+                    <!-- <textarea style="border:none;" id="emailEditor"></textarea> -->
+                </div>
+            </div>
+            <!--END 模板设置 -->
+            <!-- BEGIN 产品导入设置 -->
+            <div id="pdtIn-set" class="panel-body" style="display:none">
+                <div class="pdtIn">
+                    <h4 style="border-left:5px solid blue;margin:10px 0;padding-left:8px;">产品导入</h4>
+                    <div class="first">
+                        <h5><span class="circleLabel">1</span> 请选择导入产品类型</h5>
+                        <div class="pdt-select1">
+                            <select name="" id="pdt1">
+                                <option value="">请选择</option>
+                            </select>
+                            <select name="" id="pdt2">
+                                <option value="">请选择</option>
+                            </select>
+                            <select name="" id="pdt3">
+                                <option value="">请选择</option>
+                            </select>
+                            <select name="" id="pdt4">
+                                <option value="">请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="sencond">
+                        <h5><span class="circleLabel">2</span> 导入模板,填写表格</h5>
+                        <button class="btn btn-primary btn-radial-out" id="downloadTem">下载导入模板</button>
+                    </div>
+                    <div class="third">
+                        <h5><span class="circleLabel">3</span> 请选择导入产品的分组</h5>
+                        <select name="" id="pdtGroup">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                    <div class="fours">
+                        <h5><span class="circleLabel">4</span> 上传已经编辑好的产品表格</h5>
+                        <ul id="addFiles"></ul>
+                        <button class="btn btn-primary btn-radial-out add-attachment">上传产品表格</button>
+                        <label class="ashen">表格控制在5M以内;复制的内容可能会导致乱码</label>
+                        <form class="form-horizontal" id="form_file" enctype="multipart/form-data" method="post" style="display:none;">
+                            <input type="file" name="upFiles" id="up-files" />
+                            <input type="hidden" name="file" value="upFiles" />
+                            <input type="hidden" name="dictFileUpType" value="1" />
+                        </form>
+                    </div>
+                    <div class="submitBtn text-center">
+                        <button type="button" class="btn btn-primary btn-radial-out" id="pdtUpload">开始上传</button>
+                    </div>
+                </div>
+                <div class="pdtHis">
+                    <h4 style="border-left:5px solid blue;margin-bottom:10px;padding-left:8px;">导入历史</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>任务名称</th>
+                                <th>导入时间</th>
+                                <th>产品分组</th>
+                                <th>导入状态</th>
+                                <th>产品个数</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>产品导入.xls</td>
+                                <td>2016.03.17 12:50:22</td>
+                                <td>104</td>
+                                <td>导入中</td>
+                                <td>0</td>
+                                <td><a href="#" class="blue">产出本次导入产品</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- END 产品导入设置 -->
+        </div>
+    </div>
+</div>
+    <!-- END MAIN --><script src="../../js/v.js"></script>
+    <script data-main="../../js/bk-resource-pdt.js" src="../../js/lib/require.min.js"></script>
+</body>
+</html>

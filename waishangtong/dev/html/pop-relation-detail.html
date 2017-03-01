@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-查看联系人详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- <link href="../js/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" /> -->
+    <!-- build:css ../css/common.min.css -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet"/>
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../js/lib/zTree_v3/css/zTreeStyle.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    
+    <!-- build:css ../css/crm.min.css -->
+    <link href="../css/crm.css" rel="stylesheet" />
+    <link href="../css/pop-customer-detial.css" rel="stylesheet"/>
+    <!-- endbuild -->
+</head>
+
+<body style="background-color: #f7f7f7; overflow-y: auto !important;">
+    <!-- 查看客户详情弹窗开始 -->
+    <div class="box-customer-detail">
+        
+        <div class="detail-top">
+            <div class="top-1">
+                <div class="contact-img"><i class="s-updownBg s-users3"></i></div>
+            </div>
+            <div class="top-2">
+                <p class="top-title">
+                    <span></span>
+                    <label>
+                        <img src="../images/user.jpg" alt="国标" /><span></span>
+                    </label>
+                </p>
+                <div class="re-introduce">
+                    <span class="relation-position"></span>
+                    <span class="relation-company"></span>
+                </div>
+                <div class="status-star"></div>
+            </div>
+            <div class="top-3">
+                <ul>
+                    <!--<li><i class="s-updownBg s-facebook"></i></li>
+                    <li><i class="s-updownBg s-twitter"></i></li>
+                    <li><i class="s-updownBg s-linkin"></i></li>-->
+                    <li><i class="s-updownBg s-other"></i>
+                        <ul class="s-menus">
+                            <li>编辑</li>
+                            <li>删除</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div id="delsModal" class="modals">
+                    <div class="mhead">
+                        <button class="mclose">×</button>
+                        <h4>确定删除？</h4>
+                    </div>
+                    <div class="mbody">
+                        <div class="btn-box">
+                            <button class="btn btn-danger" id="del-ok">确定</button>
+                            <button class="btn btn-primary" id="del-no">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="detail-middle">
+            <div class="detail-middle-left">
+                <div class="box-detail-style">
+                    <ul class="box-quick-menu">
+                        <li class="active">写跟进</li>
+                        <li>写任务</li>
+                        <li>发邮件</li>
+                        <div class="clear"></div>
+                        <div class="box-selects">
+                            <span>提醒时间：</span>
+                            <div class="model-select selects4 active">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="task-remind" data-id="5">5分钟后</label>
+                                <ul>
+                                    <li data-id="15">15分钟后</li>
+                                    <li data-id="30">30分钟后</li>
+                                    <li data-id="60">1小时后</li>
+                                    <li data-id="120">2小时后</li>
+                                    <li data-id="180">3小时后</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="box-selects2 active">
+                            <!--<span>关联联系人</span>
+                            <div class="model-select selects4 active">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="customerContacts" data-id="5"></label>
+                                <ul id="custContList">
+                                    <li data-id="120">2小时后</li>
+                                    <li data-id="180">3小时后</li>
+                                </ul>
+                            </div>-->
+                            <span class="fllow-time">跟进时间 </span>
+                            <div class="fllow-time-check">
+                                <input type="text" class="form-control datetime-picker">
+                            </div>
+                        </div>
+                    </ul>
+                    <div class="box-quick-input">
+                        <div class="quick-input" data-type="0">
+                            <textarea name="box-follow" id="box-follow"></textarea>
+                            <div class="btns-upload">
+                                <div class="btn-sign active">
+                                    <label for="up-image"><i class="s-updownBg s-img2"></i><span>图片</span></label>
+                                    <label for="up-files"><i class="s-updownBg s-link2"></i><span>文档</span></label>
+                                </div>
+                                
+                                <div class="btn-decision">
+                                    <a href="javascript:;" class="">取消</a>
+                                    <button class="btn btn-primary btn-publish">发布</button>
+                                </div>
+                                <div class="models2 models-w1 show-img">
+                                    <div class="models2-top">
+                                        <span>上传图片</span><i class="s-updownBg s-dels6"></i>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="models2-content">
+                                        <p class="upload-tips"><!-- 拖拽图片到这里或 -->点击下面的按钮</p>
+                                        <ul class="upload-imgList">
+                                            <label for="up-image" class="upload-add"><i class="s-updownBg s-add"></i></label>
+                                            <i class="s-updownBg s-dels3"></i>
+                                            <div class="clear"></div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="upload-forms">
+                                <form class="form-horizontal up-form" id="upload-img" enctype="multipart/form-data" method="post">
+                                    <input type="file" name="upImage" id="up-image" />
+                                    <input type="hidden" name="file" value="upImage" />
+                                    <input type="hidden" name="dictFileUpType" value="0" />
+                                </form>
+                                <form class="form-horizontal up-form" id="upload-file" enctype="multipart/form-data" method="post">
+                                    <input type="file" name="upFiles" id="up-files" />
+                                    <input type="hidden" name="file" value="upFiles" />
+                                    <input type="hidden" name="dictFileUpType" value="1" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-detail-style box-tabs">
+                    <ul class="tabs-menu">
+                        <li class="active" data-type="timeline"><span>时间轴</span></li>
+                        <li data-type="info"><span>资料</span></li>
+                        <li data-type="follow"><span>跟进</span><span class="followCount"></span></li>
+                        <li data-type="task"><span>任务</span><span class="taskCount"></span></li>
+                        <li data-type="email"><span>邮件</span><span class="emailCount"></span></li>
+                        <li data-type="edm"><span>EDM</span><span class="edmCount"></span></li>
+                        <li data-type="quotation"><span>报价单</span><span class="quotationCount"></span></li>
+                        <li data-type="pi"><span>PI</span><span class="piCount"></span></li>
+                        <li data-type="order"><span>订单</span><span class="orderCount"></span></li>
+                        <li data-type="file"><span>文档</span><span class="documentCount"></span></li>
+                        <div class="clear"></div>
+                    </ul>
+                    <div class="box-tabs">
+                        <div class="box-tab tabs-timeline active">
+                            <div class="tab-top">
+                                <a href="javascript:;" data-type="follow">
+                                    <i class="s-updownBg s-add5"></i><span>跟进记录</span>
+                                </a>
+                            </div>
+                            <div class="tab-middle">
+                                <div class="tab-line"><span></span></div>
+                                <!-- <div class="tab-content">
+                                    <label class="tab-sign"><i class="s-menuBg s-menu18"></i></label>
+                                    <div class="tab-style">
+                                        <div class="style-title"><span>2015-12-10 5:57</span></div>
+                                        <div class="style-content">
+                                            <div class="file-style">
+                                                <p>
+                                                    <span>【PDF】2016年奔腾最新产品目录2016年奔腾最...</span>
+                                                    <label>
+                                                        <a href="javascript:;">下载</a>
+                                                        <span>|</span>
+                                                        <a href="javascript:;">删除</a>
+                                                    </label>
+                                                </p>
+                                                <label>来源：<span>2015奔腾电器新产品目录</span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="box-tab tabs-info">
+                            <ul class="info-tab">
+                                <li id="info-li" class="active">基本资料</li>
+                                <li id="fb-li">Facebook</li>
+                                <li id="tw-li">Twitter</li>
+                                <li id="lk-li">Linkedin</li>
+                                <div class="clear"></div>
+                                <a href="javascript:;" class="info-edit"><i class="s-updownBg s-edit2"></i><span>编辑</span></a>
+                            </ul>
+                            <div class="tab-middle">
+                                <div class="tab-content" id="info-content">
+                                    <label class="tab-sign"><i class="s-updownBg s-card2"></i></label>
+                                    <div class="info-content info-style">
+                                        <p class="info-caption">基本资料</p>
+                                        <table class="info-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>客户所有人：</td>
+                                                    <td class="con-user"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>昵称：</td>
+                                                    <td class="con-name"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>职位：</td>
+                                                    <td class="con-position"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>公司名称：</td>
+                                                    <td class="con-company"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>邮箱：</td>
+                                                    <td class="con-email"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>国家：</td>
+                                                    <td class="con-countries"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>生日：</td>
+                                                    <td class="con-birth"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>联系电话：</td>
+                                                    <td class="con-phone"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Facebook：</td>
+                                                    <td class="con-facebook"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Twitter：</td>
+                                                    <td class="con-twitter"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>LinkedIn：</td>
+                                                    <td class="con-linkedin"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>备注：</td>
+                                                    <td class="con-remark"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-content" id="fb-content">
+                                    <label class="tab-sign" style="padding-top:0;border:none"><i class="s-updownBg s-facebook"></i></label>
+                                    <div class="info-content info-style">
+                                        <p class="info-caption">FaceBook</p>
+                                        <table class="info-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>姓名：</td>
+                                                    <td class="fb-user"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>邮箱：</td>
+                                                    <td class="fb-name"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>性别：</td>
+                                                    <td class="fb-source"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>生日：</td>
+                                                    <td class="fb-type"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-content" id="tw-content">
+                                    <label class="tab-sign" style="padding-top:0;border:none"><i class="s-updownBg s-twitter"></i></label>
+                                    <div class="info-content info-style">
+                                        <p class="info-caption">Twitter</p>
+                                        <table class="info-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>姓名：</td>
+                                                    <td class="fb-user"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>邮箱：</td>
+                                                    <td class="fb-name"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>性别：</td>
+                                                    <td class="fb-source"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>生日：</td>
+                                                    <td class="fb-type"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-content" id="lk-content">
+                                    <label class="tab-sign" style="padding-top:0;border:none"><i class="s-updownBg s-linkin"></i></label>
+                                    <div class="info-content info-style">
+                                        <p class="info-caption">Linkedin</p>
+                                        <table class="info-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>姓名：</td>
+                                                    <td class="fb-user"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>邮箱：</td>
+                                                    <td class="fb-name"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>性别：</td>
+                                                    <td class="fb-source"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>生日：</td>
+                                                    <td class="fb-type"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-tab tabs-follow">
+                            <div class="tab-top">
+                                <a href="javascript:;" data-type="follow">
+                                    <i class="s-updownBg s-add5"></i><span>新建跟进</span>
+                                </a>
+                            </div>
+                            <div class="tab-middle">
+                                <div class="tab-line"><span></span></div>
+                                <!-- <div class="tab-content">
+                                    <label class="tab-sign"><i class="s-menuBg s-menu16"></i></label>
+                                    <div class="tab-style">
+                                        <div class="style-title"><span>2015-12-10 5:57:41</span><span>方小帅</span><span>创建了客户</span></div>
+                                        <div class="style-content">
+                                            <div class="follow-style">
+                                                <p>今天和客户在展会上碰到了，聊得非常愉快</p>
+                                                <ul class="upload-imglist">
+                                                    <li><img src="../images/user.jpg" alt="图片"></li>
+                                                    <li><img src="../images/user.jpg" alt="图片"></li>
+                                                    <li><img src="../images/user.jpg" alt="图片"></li>
+                                                    <li><img src="../images/user.jpg" alt="图片"></li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                                <ul class="upload-filelist">
+                                                    <li>
+                                                        <label><i class="s-updownBg s-link4"></i><span>项目周进度详细文档. PDF</span></label>
+                                                        <label>
+                                                            <a href="javascript:;">下载</a>
+                                                            <span>|</span>
+                                                            <a href="javascript:;">删除</a>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label><i class="s-updownBg s-link4"></i><span>项目周进度详细文档. PDF</span></label>
+                                                        <label>
+                                                            <a href="javascript:;">下载</a>
+                                                            <span>|</span>
+                                                            <a href="javascript:;">删除</a>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="box-tab tabs-email">
+                            <div class="tab-top">
+                                <a href="javascript:;" data-type="email">
+                                    <i class="s-updownBg s-add5"></i><span>发邮件</span>
+                                </a>
+                            </div>
+                            <div class="tab-middle">
+                                <div class="tab-line"><span></span></div>
+                                <!-- <div class="tab-content" data-id="214203">
+                                    <label class="tab-sign"><i class="s-menuBg s-menu17"></i></label>
+                                    <div class="tab-style">
+                                        <div class="style-title"><span>2015-12-10 5:57</span><span>方小帅</span></div>
+                                        <div class="style-content">
+                                            <div class="email-style">
+                                                <p><i class="s-updownBg s-dot"></i><span>2015奔腾电器新产品目录</span></p>
+                                                <p><i class="s-updownBg s-left2"></i>
+                                                    <span>HI，abb，很高兴认识你，这个是我们公司最新的产品目录...</span>
+                                                </p>
+                                                <label>4</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="box-tab tabs-edm">
+                            <div class="tab-top">
+                                <a href="javascript:;" data-type="edm">
+                                    <i class="s-updownBg s-add5"></i><span>新建EDM</span>
+                                </a>
+                            </div>
+                            <div class="tab-middle">
+                                <div class="tab-line"><span></span></div>
+                                <!-- <div class="tab-content">
+                                    <label class="tab-sign"><i class="s-menuBg s-menu4"></i></label>
+                                    <div class="tab-style">
+                                        <div class="style-title"><span>2015-12-10 5:57</span><span>方小帅</span></div>
+                                        <div class="style-content">
+                                            <div class="edm-style">
+                                                <label>2015奔腾电器新产品目录</label>
+                                                <p>共打开 <span>1</span> 次，回复 <span>1</span> 次</p>
+                                                <p>最近一次：<span>2016-04-20 10:07</span>，最近回复：<span>2106-04-10 10:08</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="box-tab tabs-quotation">
+                            <div class="tab-top">
+                                <a href="javascript:;" data-type="quotation">
+                                    <i class="s-updownBg s-add5"></i><span>新建报价单</span>
+                                </a>
+                            </div>
+                            <div class="tab-middle">
+                                <div class="tab-line"><span></span></div>
+                                <!-- <div class="tab-content">
+                                    <label class="tab-sign"><i class="s-menuBg s-menu10"></i></label>
+                                    <div class="tab-style">
+                                        <div class="style-title"><span>2015-12-10 5:57:41</span><span>方小帅</span><span>创建了客户</span></div>
+                                        <div class="style-content">
+                                            <div class="quotation-style">
+                                                <label>奔腾（POVOS）洁面最新报价</label>
+                                                <p>总金额：<span>10000USD</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="box-tab tabs-pi">
+                            <div class="tab-top">
+                                <a href="javascript:;" data-type="pi">
+                                    <i class="s-updownBg s-add5"></i><span>新建PI</span>
+                                </a>
+                            </div>
+                            <div class="tab-middle">
+                                <div class="tab-line"><span></span></div>
+                                <!-- <div class="tab-content">
+                                    <label class="tab-sign"><i class="s-menuBg s-menu11"></i></label>
+                                    <div class="tab-style">
+                                        <div class="style-title"><span>2015-12-10 5:57:41</span><span>方小帅</span><span>创建了客户</span></div>
+                                        <div class="style-content">
+                                            <div class="quotation-style">
+                                                <label>奔腾（POVOS）洁面最新报价</label>
+                                                <p>总金额：<span>10000USD</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="box-tab tabs-order">
+                            <div class="tab-top">
+                                <a href="javascript:;" data-type="order">
+                                    <i class="s-updownBg s-add5"></i><span>新建订单</span>
+                                </a>
+                            </div>
+                            <div class="tab-middle">
+                                <div class="tab-line"><span></span></div>
+                                <!-- <div class="tab-content">
+                                    <label class="tab-sign"><i class="s-menuBg s-menu12"></i></label>
+                                    <div class="tab-style">
+                                        <div class="style-title"><span>2015-12-10 5:57:41</span><span>方小帅</span><span>创建了客户</span></div>
+                                        <div class="style-content">
+                                            <div class="quotation-style">
+                                                <label>奔腾（POVOS）洁面最新报价</label>
+                                                <p>总金额：<span>10000USD</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="box-tab tabs-file">
+                            <div class="tab-top">
+                                <a href="javascript:;" data-type="upload">
+                                    <i class="s-updownBg s-add5"></i><span>上传文档</span>
+                                </a>
+                            </div>
+                            <div class="tab-middle">
+                                <div class="tab-line"><span></span></div>
+                                <!-- <div class="tab-content">
+                                    <label class="tab-sign"><i class="s-menuBg s-menu18"></i></label>
+                                    <div class="tab-style">
+                                        <div class="style-title"><span>2015-12-10 5:57</span></div>
+                                        <div class="style-content">
+                                            <div class="file-style">
+                                                <p>
+                                                    <span>【PDF】2016年奔腾最新产品目录2016年奔腾最...</span>
+                                                    <label>
+                                                        <a href="javascript:;">下载</a>
+                                                        <span>|</span>
+                                                        <a href="javascript:;">删除</a>
+                                                    </label>
+                                                </p>
+                                                <label>来源：<span>2015奔腾电器新产品目录</span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="box-tab tabs-task">
+                            <div class="tab-top">
+                                <a href="javascript:;" data-type="task">
+                                    <i class="s-updownBg s-add5"></i><span>新建任务</span>
+                                </a>
+                            </div>
+                            <div class="tab-middle">
+                                <div class="tab-line"><span></span></div>
+                                <!-- <div class="tab-content">
+                                    <label class="tab-sign"><i class="s-menuBg s-menu8"></i></label>
+                                    <div class="tab-style">
+                                        <div class="style-title"><span>2015-12-10 5:57</span><span>方小帅</span><span>创建了任务</span></div>
+                                        <div class="style-content">
+                                            <div class="task-style">
+                                                <p>
+                                                    <i class="s-updownBg s-unfinished"></i>
+                                                    <span class="red">已超时</span>
+                                                    <label>及时发报价邮件记得给ABB及时发报价邮件记得给ABB及时...</label>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="page"></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-middle-right box-detail-style">
+                <div class="right-content">
+                    <label>公司</label>
+                    <table class="contact-info">
+                        <tbody>
+                            <tr>
+                                <td>所属客户：</td>
+                                <td class="con-company" data-id="" style="cursor:pointer"></td>
+                            </tr>
+                            <tr>
+                                <td>状&nbsp;&nbsp;态：</td>
+                                <td class="re-status"></td>
+                            </tr>
+                            <tr>
+                                <td>相关联系人：</td>
+                                <td class="con-name"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="right-content">
+                    <label>联系人概览<i class="s-updownBg s-edit edit-overview"></i></label>
+                    <ul class="info-overview">
+                        <li><label>联系电话：</label><span class="overview-show o-phone"></span>
+                            <input type="text" class="overview-info overview-phone" />
+                        </li>
+                        <li><label>邮&nbsp;&nbsp;箱：</label><span class="overview-show o-email"></span>
+                            <input type="text" class="overview-info overview-email" />
+                            <i class="s-updownBg s-mail2"></i>
+                        </li>
+                        <li><label>创建时间：</label><span class="overview-time"></span></li>
+                        <li><label>职位：</label><span class="overview-position"></span></li>
+                    </ul>
+                </div>
+                <div class="right-content">
+                    <label>标签<i class="s-updownBg s-add4 show-models" data-type="label"></i></label>
+                    <ul class="list-label">无</ul>
+                    <div class="clear"></div>
+                    <div class="models2 show-label">
+                        <div class="models2-top">
+                            <span>添加标签</span><i class="s-updownBg s-dels6"></i>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="models2-content">
+                            <input type="text" class="input-style label-add" name="label-add" placeholder="标签" />
+                            <button class="btn btn-primary set-btn add-label">添加</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <label>跟进人<!--<i class="s-updownBg s-add4 show-models" data-type="follow"></i>--></label>
+                    <ul class="list-follow">无</ul>
+                    <div class="clear"></div>
+                    <a href="javascript:;" class="cancel-follow">取消跟进</a>
+                    <div class="models2 show-follow">
+                        <div class="models2-top">
+                            <span>添加跟进人</span><i class="s-updownBg s-dels6"></i>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="models2-content">
+                            <ul class="list-follower"></ul>
+                            <button class="btn btn-primary set-btn add-label">添加</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-content" style="display:none">
+                    <label>TA是不是同一个人</label>
+                    <div id="sameorno"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="cloudModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">选择云文件</h4>
+                </div>
+                <div class="modal-body">
+                    <ul id="treeCloud" class="ztree"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="addCloud">确定</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 查看客户详情弹窗结束 -->
+    <script src="../js/v.js"></script>
+    <script data-main="../js/pop-relation-detail.js" src="../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-auto">
+
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-新建产品</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    
+    <!-- build:css ../css/crm.min.css -->
+    <link href="../css/crm.css" rel="stylesheet" />
+    <!-- endbuild -->
+</head>
+
+<body style="overflow-y: auto !important;">
+    <!-- 新建客户弹窗开始 -->
+    <div class="pop-box">
+        <div class="pop-left">
+            <ul>
+                <li data-code="product_add" class="active none"><a href="#add" role="tab" data-toggle="tab">添加产品</a></li>
+                <li data-code="product_import" class="none"><a href="#outputForm" role="tab" data-toggle="tab">产品导入</a></li>
+            </ul>
+        </div>
+        <div class="pop-right boxs form-horizontal" id="addProForm">
+            <div data-code="product_add" role="tabpanel" class="box-form none active" id="add">
+                <div class="fieldset">
+                    <div class="form-group active">
+                        <div id="custSub">
+                            <button type="button" class="btn btn-primary" id="pro-add">保存</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="fieldset">
+                    <div class="form-title">
+                        <label>基本信息</label><span>Basic Infomation</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-name"><span><i>*</i>产品名称</span><span>Product Name</span></label>
+                        <div class="form-info">
+                            <input type="text" name="p-name" id="p-name" class="inputs long-input" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><span><i>*</i>产品图片</span><span>Product Photo</span></label>
+                        <div class="form-info box-upload">
+                            <div class="up-all">
+                                <label for="up_2"><i class="s-updownBg s-upload"></i><span>批量上传</span></label>
+                                <span>最多允许上传6张图片, 推荐图片大小： 480 * 480 px</span>
+                            </div>
+                            <label for="up_1" class="up-files"><i class="s-updownBg s-add"></i></label>
+                            <form class="form-horizontal" id="form_img" enctype="multipart/form-data" method="post">
+                                <input type="file" name="upImg" id="up_1" />
+                                <input type="hidden" name="file" value="upImg" />
+                                <input type="hidden" name="dictFileUpType" value="0" />
+                            </form>
+                            <form class="form-horizontal" id="form_img2" enctype="multipart/form-data" method="post">
+                                <input type="file" name="upImgs" id="up_2" multiple="multiple" />
+                                <input type="hidden" name="file" value="upImgs" />
+                                <input type="hidden" name="dictFileUpType" value="0" />
+                            </form>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><span><i>*</i>产品类型</span><span>Product Type</span></label>
+                        <div class="form-info box-select">
+                            <div class="model-select selects4 active">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="p-type" data-id="-1">请选择产品类型</label>
+                                <ul></ul>
+                            </div>
+                            <div class="model-select selects4">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="p-type2" data-id="-1">请选择产品类型</label>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        <div class="form-info box-select next-select">
+                            <div class="model-select selects4">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="p-type3" data-id="-1">请选择产品类型</label>
+                                <ul></ul>
+                            </div>
+                            <div class="model-select selects4">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="p-type4" data-id="-1">请选择产品类型</label>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        <div class="errors">
+                            <span>请选择产品类型</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><span>产品分组</span><span>Product Group</span></label>
+                        <div class="form-info">
+                            <div class="model-select long-input">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="p-group" data-id="-1">请选择</label>
+                                <ul></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fieldset pro-info pro-special-style">
+                    <div class="form-title params-list">
+                        <label>产品信息</label><span>Product Information</span>
+                    </div>
+                    <div class="form-group addform">
+                        <a href="javascript:;" id="add-param"><i class="s-updownBg s-add2"></i><span>增加参数</span></a>
+                    </div>
+                </div>
+                <div class="fieldset">
+                    <div class="form-title">
+                        <label>贸易信息</label><span>Trade Information</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-min"><span>最小起订量</span><span>Min.Order Quantity</span></label>
+                        <div class="form-info">
+                            <input type="text" name="p-min" id="p-min" class="inputs long-input5" />
+                            <div class="model-select model1">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="p-unit" data-id="-1">选择单位</label>
+                                <ul></ul>
+                            </div>
+                            <div class="form-tips"><span>请完整填写数量和单位</span></div>
+                            <div class="min-info box-min">
+                                <a href="javascript:;">添加更多说明</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-min"><span>离岸价</span><span>FOB Price</span></label>
+                        <div class="form-info">
+                            <!-- <select name="unit" id="fob-curr" class="selects selects2"></select> -->
+                            <div class="model-select model2">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="fob-curr" data-id="-1">选择货币</label>
+                                <ul></ul>
+                            </div>
+                            <input type="text" class="inputs long-input3" name="st-price" id="st-price" />
+                            <span class="group-split">-</span>
+                            <input type="text" class="inputs long-input3" name="ed-price" id="ed-price" />
+                            <span class="group-pre">Pre</span>
+                            <div class="model-select model1">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="fob-unit" data-id="-1">选择单位</label>
+                                <ul></ul>
+                            </div>
+                            <div class="form-tips"><span>请完整填写货币类型、数量和单位</span></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-min"><span>港口</span><span>Port</span></label>
+                        <div class="form-info">
+                            <input type="text" class="inputs long-input" name="p-Port" id="p-Port" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><span>付款方式</span><span>Payment Term</span></label>
+                        <div class="form-checkbox"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-supply"><span>供应能力</span><span>Supply Ability</span></label>
+                        <div class="form-info">
+                            <input type="text" class="inputs long-input4" name="p-supply" id="p-supply" />
+                            <div class="model-select model3 sub-unit">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="sub-unit" data-id="-1">选择单位</label>
+                                <ul></ul>
+                            </div>
+                            <div class="model-select model3">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="sub-time" data-id="-1">选择时间</label>
+                                <ul></ul>
+                            </div>
+                            <div class="form-tips"><span>请完整填写货币类型、数量和单位</span></div>
+                            <div class="min-info box-ability">
+                                <a href="javascript:;">添加更多说明</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-deli-time"><span>交货时间</span><span>Delivery Time</span></label>
+                        <div class="form-info">
+                            <input type="text" class="inputs long-input" name="p-deli-time" id="p-deli-time" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-details"><span>包装明细</span><span>Packaging Details</span></label>
+                        <div class="form-info">
+                            <textarea name="p-details" id="p-details" class="inputs long-input" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="fieldset">
+                    <div class="form-title">
+                        <label>产品描述</label><span>Product Description</span>
+                    </div>
+                    <div class="form-group pro-special-style">
+                        <label for="p-desc"><span>产品描述</span><span>Product Description</span></label>
+                        <div class="form-info">
+                            <textarea name="p-desc" id="p-desc" class="inputs long-input" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="fieldset">
+                    <div class="form-title">
+                        <label>产品备注</label><span>Product Remarks（仅内部可见）</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-remark"><span>产品备注</span><span>Product Remarks</span></label>
+                        <div class="form-info">
+                            <textarea name="p-remark" id="p-remark" class="inputs long-input" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-code="product_import" role="tabpanel" class="box-form none" id='outputForm'>
+                <div class="fieldset">
+                    <div class="form-title">
+                        <label>产品导入</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-tip"><i>1</i><span>请选择导入产品类型</span></div>
+                        <div class="form-info box-select">
+                            <div class="model-select selects5 active">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="o-type" data-id="-1">请选择</label>
+                                <ul></ul>
+                            </div>
+                            <div class="model-select selects5">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="o-type2" data-id="-1">请选择</label>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        <div class="form-info box-select">
+                            <div class="model-select selects5">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="o-type3" data-id="-1">请选择</label>
+                                <ul></ul>
+                            </div>
+                            <div class="model-select selects5">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="o-type4" data-id="-1">请选择</label>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        <div class="errors">
+                            <span>请选择产品类型</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-tip"><i>2</i><span>导入模板，填写表格</span></div>
+                        <div class="form-btn">
+                            <button class="btn btn-primary" data-type="download">下载导入模板</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-tip"><i>3</i><span>选择导入的产品分组</span></div>
+                        <div class="form-info">
+                            <div class="model-select selects6 active">
+                                <i class="s-updownBg s-up3"></i>
+                                <label id="o-group" data-id="-1">请选择产品分组</label>
+                                <ul></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-tip"><i>4</i><span>上传已经编辑好的产品表格</span></div>
+                        <div class="form-btn">
+                            <button class="btn btn-primary" data-type="upload">上传产品表格</button>
+                            <span>表格控制在5M以内; 复制的字符可能会导致乱码</span>
+                        </div>
+                        <form class="form-horizontal" id="form_file" enctype="multipart/form-data" method="post">
+                            <input type="file" name="upFiles" id="up-files" data-type="file" />
+                            <input type="hidden" name="file" value="upFiles" />
+                            <input type="hidden" name="dictFileUpType" value="1" />
+                        </form>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-btn form-center">
+                            <button class="btn btn-primary btn-import" data-type="import">开始导入</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="fieldset">
+                    <div class="form-title">
+                        <label>导入历史</label>
+                    </div>
+                    <div class="form-group">
+                        <table class="table table-hover table-import">
+                            <thead>
+                                <tr>
+                                    <th>任务名称</th>
+                                    <th>导入时间</th>
+                                    <th>产品分组</th>
+                                    <th>导入状态</th>
+                                    <th>产品个数</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- <tr>
+                                    <td>产品导入.xls</td>
+                                    <td>2016.03.21 12:03:21</td>
+                                    <td>102</td>
+                                    <td>导入成功</td>
+                                    <td>2</td>
+                                    <td><a href="javascript:;">产出本次导入产品</a></td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!-- 新建客户弹窗结束 --><script src="../js/v.js"></script>
+    <script data-main="../js/pop-product-add.js" src="../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+
+</html>

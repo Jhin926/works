@@ -1,0 +1,257 @@
+@charset "UTF-8";
+/*!
+	登录注册相关
+*/
+body{
+	border-top:10px solid #e6eaed;
+}
+.set-tab-content {
+  width: 550px;
+}
+.i-container{
+	border-top: none;
+	background: #e6eaed;
+}
+.i-content-wrapper{
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+.head-img a {
+  width: 150px;
+  display: block;
+}
+.page-left,
+.page-right,
+.page-content{
+	background: none
+}
+.page-title{
+	background: #fff;
+	/*margin: 0 10px;
+	margin-top: 10px;*/
+}
+.page_info{
+	margin-top: 20px;
+}
+.head-tools {
+  width: 300px;
+  line-height: 180%;
+  color: #999;
+}
+.head-tools .btn {
+  margin-top: 50px;
+}
+.page-content{
+	min-width: 1190px;
+}
+/*# sourceMappingURL=index.css.map */
+.card{
+	width: 23%;
+	height: 150px;
+	display: inline-block;
+	margin: 0 1%;
+	color: #fff;
+	float: left;
+	border-radius:3px;
+}
+.card1{
+	background: #445871;
+	cursor: pointer;
+}
+.card2{
+	background: #61a0a8;
+	cursor: pointer;
+}
+.card3{
+	background: #e39f76;
+	cursor: pointer;
+}
+.card4{
+	background: #c23531;
+}
+.indexInfo{
+	width: 100%;
+	float: left;
+	margin:20px 0;
+}
+.indexInfoBlock{
+	min-width: 556px;
+	width: 48%;
+	margin: 0 1%;
+	display: inline-block;
+	border:1px solid #ddd;
+	float: left;
+	box-shadow: 0 0 10px #ddd;
+	background: #fff;
+}
+.indexInfoBlock-title{
+	padding: 15px;
+    padding-left: 11px;
+	border-bottom: 1px solid #ddd;
+	background: #eee;
+}
+.indexInfoBlock h4,
+.indexInfoBlock a{
+	display: inline-block;
+	line-height: 20px;
+	font-size: 14px;
+}
+.indexInfoBlock h4{
+	font-weight: 600;
+	color:#666;
+}
+.indexInfoBlock a{
+	font-weight: normal;
+	font-size: 12px;
+	height:20px;
+	overflow:hidden;
+}
+.right{
+	float: right;
+}
+.indexInfoBlock-cont{
+	background: #fff;
+}
+.indexInfoBlock-cont li{
+	display: inline-block;
+	width: 100%;
+	padding:8px 0;
+	min-height: 77px;
+	border-bottom: 1px solid #ddd;
+	cursor: pointer;
+}
+.indexInfoBlock-cont li:hover {
+    background-color: #f5f5f5;
+}
+.contLeft{
+	line-height: 25px;
+    padding-left: 10px;
+    width: 30%;
+    display: inline-block;
+    position: relative;
+    color: #999;
+}
+.contLeft p{
+	line-height: 25px;
+	color: #999;
+}
+.contLeft .blue{
+	color: #4b73ec;
+}
+.contRight p{
+	line-height: 25px;
+	margin: 3px 0;
+	font-size: 14px;
+	font-weight: normal;
+	height: 25px;
+	overflow: hidden;
+}
+
+.contLeft span{
+	display: inline-block;
+    position: absolute;
+    margin-top: -2px;
+    margin-left: 5px;
+}
+.contLeft p:first-child{
+	margin:3px 0;
+	font-size: 14px;
+	height:25px;
+	overflow: hidden;
+}
+.blue{
+	color: #4b73ec;
+}
+.contRight{
+	line-height: 25px;
+	padding-right: 10px;
+    width: 65%;
+    display: inline-block;
+    float: right;
+    font-weight: 600;
+}
+#task,
+#cust{
+	min-height: 385px;
+	position: relative;
+}
+#sales,
+#dev{
+	width: 100%;
+	display: inline-block;
+	float: left;
+	height: 380px;
+	position: relative;
+}
+.cardLeft{
+	display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding-left: 16px;
+    padding-top: 15px;
+    margin-left: 10%;
+    margin-top: 35px;
+    float: left;
+    position: relative;
+}
+.card1 .cardLeft{
+	background: #88b0e2;
+}
+.card2 .cardLeft{
+	background: #88c6cb;
+}
+.card3 .cardLeft{
+	background: #f1cfb1;
+}
+.card4 .cardLeft{
+	background: #f35f58;
+}
+.check-time {
+    border:none;
+    background-color: transparent;
+    outline: none;
+}
+.check-time option {
+    background-color: rgb(192, 53, 49);
+    outline: none;
+}
+.cardRight{
+	display: inline-block;
+    width: 58%;
+    text-align: center;
+}
+.cardRight p{
+	margin:25px 0;
+	font-size: 14px;
+}
+#newTime{
+	font-size: 30px;
+}
+#newCon,
+#newCust,
+#newEmail{
+	font-size: 60px;
+    display: inline-block;
+    position: absolute;
+    margin-top: 2px;
+}
+.cardP1img{
+	margin-right: 20px;
+	margin-left:-20px;
+}
+.clock{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background:url(../images/indexClock.png) no-repeat;
+}
+.s-index{
+	background: url(../images/indexIcon.png) no-repeat;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+.selectpick_div_box{
+	margin:0;
+}

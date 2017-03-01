@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-云盘</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <!-- 企业后台 -->
+    <link rel="stylesheet" type="text/css" href="../../css/cloud.css">
+    <style>div.checker{display: inline-block;}</style>
+</head>
+
+<body style="overflow-y: auto !important;">
+    <!-- 新建客户弹窗开始 -->
+    <form class="boxs form-horizontal" id="addCustForm">
+        <button type="button" class="btn btn-primary" id="savenewFile">保存</button>
+        <fieldset id="newShare">
+            <div class="form-groups">
+                <label for="f-name"><i class="red">*</i> 名称</label>
+                <div class="form-input" style="width:800px;display:inline-block">
+                    <input type="text" name="f-name" id="Newfilename" class="input-style" />
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="form-groups">
+                <label for="f-power">权限</label>
+                <div class="form-input" style="width:800px;display:inline-block">
+                    <input type="checkbox" name="f-power" id="NewfilePower" />
+                    <label for="NewfilePower" class="labelRadio" style="text-align:left;width:160px;padding-left:0">只允许查看和下载</label>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="form-groups">
+                <label for="f-people">人员</label>
+                <div class="form-input" style="width:800px;display:inline-block">
+                    <input type="radio" name="f-people" id="Newfilepeople1" checked />
+                    <label for="Newfilepeople1" class="labelRadio" style="padding:0;">共享给全公司</label>
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="f-people" id="Newfilepeople2" />
+                    <label for="Newfilepeople2" class="labelRadio" style="padding:0;width:100px;text-align:left">共享给部分员工</label>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="form-groups">
+				<div class="stepCont2">
+                    <div id="addPop" data-toggle="modal" data-target="#myModal">
+						<i class="i-addpop"></i>
+						<span class="blue">添加员工</span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </fieldset>
+    </form>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-type="">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"></h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group" id="piInput">
+                <input type="text" class="form-control" placeholder="请选择员工">
+            </div>
+            <ul class="modelDwon">
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary" id="sure">确认</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 新建客户弹窗结束 --><script src="../../js/v.js"></script><script data-main="../../js/pop-cloud-newShare-bk.js" src="../../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+</html>

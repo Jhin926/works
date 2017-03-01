@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en" class="overflow-auto"><head><meta charset="utf-8"><title>外贸通-新建客户</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta content="width=device-width,initial-scale=1" name="viewport"><meta content="" name="description"><meta content="" name="author"><meta name="MobileOptimized" content="320"><!-- build:css ../css/common.min.css?v=3efcd65e26 --><link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"><link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet"><link href="../css/common.css?v=8b3688d85b" rel="stylesheet"><!-- endbuild --><!-- build:css ../js/lib/bootstrap-datepicker/css/datepicker.min.css --><link href="../js/lib/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet"><!-- endbuild --><!-- build:css ../css/crm.min.css --><link href="../css/crm.css?v=89bd512d83" rel="stylesheet"><!-- endbuild --><link href="../css/crm-customer.css?v=2d1f610fe1" rel="stylesheet"></head><body style="overflow-y: auto !important"><!-- 新建客户弹窗开始 --><form class="boxs form-horizontal" id="addCustForm"><p class="btn-addCont"><button type="button" class="btn btn-primary" id="cust-add">保存</button></p><h4>基本信息</h4><fieldset><div class="form-groups"><label for="f-name"><i>*</i>公司名称</label><div class="form-input"><input type="text" name="f-name" id="f-name" class="input-style"></div><div class="clear"></div></div><div class="form-groups"><label for="f-email">客户邮箱</label><div class="form-input"><input type="text" name="f-email" id="f-email" class="input-style"></div><div class="clear"></div></div><div class="form-groups"><label>星级</label><div class="form-input f-stars"><i class="s-updownBg s-star2"></i><i class="s-updownBg s-unstar2"></i><i class="s-updownBg s-unstar2"></i><i class="s-updownBg s-unstar2"></i><i class="s-updownBg s-unstar2"></i></div><div class="clear"></div></div><div class="form-groups"><label for="f-source">客户来源</label><div class="form-input"><select type="text" id="f-source" class="form-control input-sm"><option value=""></option></select></div><div class="clear"></div></div><div class="form-groups"><label for="f-phone">联系电话</label><div class="form-input"><input type="text" name="f-phone" id="f-phone" class="input-style"></div><div class="clear"></div></div><div class="form-groups"><label for="f-facebook">Facebook</label><div class="form-input"><input type="text" name="f-facebook" id="f-facebook" class="input-style"></div><div class="clear"></div></div><div class="form-groups"><label for="f-linkedIn">LinkedIn</label><div class="form-input"><input type="text" name="f-linkedIn" id="f-linkedIn" class="input-style"></div><div class="clear"></div></div><div class="form-groups"><label for="f-address">地址</label><div class="form-input"><input type="text" name="f-address" id="f-address" class="input-style"></div><div class="clear"></div></div><div class="form-groups"><label for="f-main">主营产品</label><div class="form-input"><input type="text" name="f-main" id="f-main" class="input-style"></div><div class="clear"></div></div></fieldset><fieldset><div class="form-groups"><label>状态</label><div class="form-input"><div class="status-list"><div class="status-current"><label style="background-color: #bbb" data-id="" id="statuLabel">无</label><span><i class="s-updownBg s-up"></i></span></div><ul class="status-items" id="statusList"><!-- <li><label style="background-color: #bbb;" data-id="1">无</label></li>
+                    <li><label style="background-color: #ccc;" data-id="2">样</label></li>
+                    <li><label style="background-color: #fcd;" data-id="3">询</label></li> --></ul></div></div><div class="clear"></div></div><div class="form-groups"><label>客户类型</label><div class="form-input"><select type="text" id="f-kinds" class="form-control input-sm"><option value=""></option></select></div><div class="clear"></div></div><div class="form-groups"><label>分组</label><div class="form-input"><select type="text" id="f-group" class="form-control input-sm"><option value="0"></option></select></div><div class="clear"></div></div><div class="form-groups"><label for="f-tag">客户标签</label><div class="form-input"><div id="f-tag"><div class="checked-tags"></div><ul class="tag-list"></ul></div></div><div class="clear"></div></div><div class="form-groups"><label>国家地区</label><div class="form-input"><select type="text" id="f-country" class="form-control input-sm"><option value="0"></option></select></div><div class="clear"></div></div><div class="form-groups"><label>规模</label><div class="form-input"><select type="text" id="f-size" class="form-control input-sm"><option value="0">请选择</option><option value="1">少于50人</option><option value="2">50-150人</option><option value="3">150-500人</option><option value="4">500-1000人</option><option value="5">1000-5000人</option><option value="6">5000人以上</option></select></div><div class="clear"></div></div><div class="form-groups"><label for="f-fax">传真</label><div class="form-input"><input type="text" name="f-fax" id="f-fax" class="input-style"></div><div class="clear"></div></div><div class="form-groups"><label for="f-twitter">Twitter</label><div class="form-input"><input type="text" name="f-twitter" id="f-twitter" class="input-style"></div><div class="clear"></div></div><div class="form-groups"><label for="f-page">主页</label><div class="form-input"><input type="text" name="f-page" id="f-page" class="input-style"></div><div class="clear"></div></div></fieldset><div class="clear"></div><div class="form-other"><label for="f-remark">备注</label><div class="form-input"><textarea name="f-remark" id="f-remark" class="input-style"></textarea></div><div class="clear"></div></div><div class="c-add" id="c-add"></div><div class="box-add"><!-- <div class="add-contact">
+        <div class="contact-title">
+            <h4>联系人1</h4>
+            <a href="javascript:;"><i class="s-updownBg s-dels5"></i><span>删除联系人</span></a>
+            <div class="clear"></div>
+        </div>
+        <fieldset>
+            <div class="form-groups">
+                <label for="c-name">姓名</label>
+                <div class="form-input">
+                    <input type="text" name="c-name" id="c-name" class="input-style" />
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="form-groups">
+                <label for="c-position">职位</label>
+                <div class="form-input">
+                    <input type="text" name="c-position" id="c-position" class="input-style" />
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="form-groups">
+                <label for="c-phone">联系电话</label>
+                <div class="form-input">
+                    <input type="text" name="c-phone" id="c-phone" class="input-style" />
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="form-groups">
+                <label for="c-facebook">Facebook</label>
+                <div class="form-input">
+                    <input type="text" name="c-facebook" id="c-facebook" class="input-style" />
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="form-groups">
+                <label for="c-twitter">Twitter</label>
+                <div class="form-input">
+                    <input type="text" name="c-twitter" id="c-twitter" class="input-style" />
+                </div>
+                <div class="clear"></div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="form-groups">
+                <label for="c-email"><i>*</i>邮箱</label>
+                <div class="form-input">
+                    <input type="text" name="c-email" id="c-email" class="input-style" />
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="form-groups">
+                <label for="c-company">公司名称</label>
+                <div class="form-input">
+                    <input type="text" id="f-type" class="input-style" />
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="form-groups">
+                <label>星级</label>
+                <div class="form-input">
+                    <i class="s-updownBg s-star2"></i><i class="s-updownBg s-unstar2"></i><i class="s-updownBg s-unstar2"></i><i class="s-updownBg s-unstar2"></i><i class="s-updownBg s-unstar2"></i>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="form-groups">
+                <label for="c-birthday">生日</label>
+                <div class="form-input">
+                    <input type="text" name="c-birthday" id="c-birthday" class="input-style" />
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="form-groups">
+                <label for="c-linkin">linkIn</label>
+                <div class="form-input">
+                    <input type="text" name="c-linkin" id="c-linkin" class="input-style" />
+                </div>
+                <div class="clear"></div>
+            </div>
+        </fieldset>
+        <div class="clear"></div>
+    </div> --></div><a href="javascript:;" class="btn-contacts"><i class="s-updownBg s-add2"></i><span>添加联系人</span></a></form><!-- 新建客户弹窗结束 --><script src="../js/v.js"></script><script data-main="../js/pop-customer-add.js" src="../js/lib/require.min.js"></script></body><!-- END BODY --></html>

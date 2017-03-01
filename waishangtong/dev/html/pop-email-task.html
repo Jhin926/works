@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-auto">
+
+<head>
+    <meta charset="utf-8" />
+    <title>收件箱-创建任务</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <link href="../js/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- build:css ../css/common.min.css -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    
+    <!-- build:css ../css/email.min.css -->
+    <link href="../css/email.css" rel="stylesheet" />
+    <!-- endbuild -->
+</head>
+
+<body style="overflow-y: auto !important;">
+    <!-- 创建任务弹窗开始 -->
+    <form class="boxs form-horizontal" id="addNewTask">
+        <div class="submir-btn">
+            <a class="btn btn-primary set-up" type="submit" href="#" role="button">创建</a>
+            <a class="btn btn-default" href="#" role="button">取消</a>
+        </div>
+        <div class="renwu-form-main">
+            <div class="form-group">
+                <label for="renwuInputName">任务名称</label>
+                <input type="text" class="form-control" id="renwuInputName" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="customerInputName">客户名称</label>
+                <input type="text" class="form-control" id="customerInputName" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="renwuInputDisc">任务描述</label>
+                <input type="text" class="form-control" id="renwuInputDisc" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="renwuInputPerson">任务负责人</label>
+                <input type="text" class="form-control" id="renwuInputPerson" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="renwuInputTime">任务时间</label>
+                <input type="text" class="form-control" id="renwuInputTime" placeholder="">
+                <select class="select-time">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </form>
+    <!-- 创建任务弹窗结束 --><script src="../js/v.js"></script>
+
+    <script data-main="../js/pop-email-task.js" src="../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+
+</html>

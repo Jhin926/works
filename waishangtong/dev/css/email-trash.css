@@ -1,0 +1,319 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #e6eaed;
+	font-family: PingHei, Helvetica, Tahoma, Arial, "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", SimSun, "\5b8b\4f53", STXihei, "\534e\6587\7ec6\9ed1", Heiti, "\9ed1\4f53", sans-serif;
+	font-size: 12px;
+	line-height: 1;
+	overflow-y: auto;
+}
+button,input {
+	border: none;
+	outline: none;
+}
+li {
+	list-style: none;
+}
+.clear {
+	clear: both;
+}
+.ellipsis {
+	white-space: nowrap !important;
+	text-overflow: ellipsis !important;
+	overflow: hidden !important;
+}
+.wrap-container {
+	padding: 12px;
+	border-radius: 2px;
+	min-width: 0;
+}
+.header {
+	height: 70px;
+	position: relative;
+	background-color: #fff;
+}
+.title {
+	font-size: 16px;
+	float: left;
+	margin: 27px 0 0 17px;
+}
+.handle {
+	width: 280px;
+	float: right;
+	margin-top: 18px;
+}
+.filter {
+	float: left;
+	width: 35px;
+	height: 35px;
+	margin-right: 20px;
+	background-color: #6a91ff;
+}
+.ico-filter {
+	display: inline-block;
+	background-image: url(../images/new-icon.png);
+	background-repeat: no-repeat;
+	margin-top: 5px;
+	position: relative;
+	width: 18px;
+	height: 21px;
+	background-position: -50px 0;
+}
+.ico-search {
+	position: absolute;
+	right: 9px;
+	top: 8px;
+	cursor: pointer;
+	display: inline-block;
+	width: 17px;
+	height: 16px;
+	background: url(../images/updown.png) no-repeat;
+	background-position: -107px -40px;
+}
+.ico-search-clear {
+	position: absolute;
+	right: 9px;
+	top: 8px;
+	cursor: pointer;
+	display: inline-block;
+	width: 17px;
+	height: 16px;
+	background: url(../images/icon_clear_email.png) no-repeat;
+}
+.search {
+	float: left;
+	width: 250px;
+	height: 34px;
+	border: 1px solid #dcdcdc;
+	border-radius: 2px;
+	position: relative;
+}
+.search input {
+	width: 100%;
+	height: 32px;
+	padding: 8px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.side-handle {
+	position: absolute;
+	width: 100%;
+	height: 70px;
+	top: 0;
+	left: -101%;
+	background-color: #fff;
+	transition: left 0.7s;
+}
+.close-side-handle {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background: url(../images/remove-icon-small2.png) no-repeat 0;
+	position: absolute;
+	top: 24px;
+	right: 15px;
+	cursor: pointer;
+}
+.close-side-handle:hover {
+	background: url(../images/remove-icon-small3.png) no-repeat 0;
+}
+.btn {
+	height: 30px;
+	padding: 0 15px;
+	margin-right: 10px;
+	border: 1px solid #cecece;
+	border-radius: 2px;
+	background-color: #fff;
+}
+.side-handle-btns {
+	margin: 22px 0 0 15px;
+}
+
+/*垃圾邮件列表*/
+.wrap-content {
+	background-color: #fff;
+	margin-bottom: 10px;
+}
+.list-title {
+	height: 40px;
+	padding: 13px 0;
+	font-weight: bold;
+	border-top: 2px solid #ddd;
+	border-bottom: 1px solid #f2f2f2;
+	background-color: #fafafa;
+}
+.email-list li {
+	height: 40px;
+	padding: 13px 0;
+	cursor: pointer;
+}
+.email-list li:hover {
+	background-color: #f5f5f5;
+}
+.email-list li.active {
+	background-color: #f5f5f5;
+}
+.email-list li.active:hover {
+	background-color: #f3f9ff;
+}
+.email-check {
+	float: left;
+	width: 44px;
+	text-align: center;
+	margin-top: -3px;
+}
+div.checker {
+	margin-right: 0;
+}
+.addressee {
+	float: left;
+	width: 200px;
+	height: 40px;
+	margin-right: 5px;
+	position: relative;
+	margin-top: -13px;
+	padding-top: 13px;
+}
+.pub-icon {
+	display: inline-block;
+	width: 14px;
+	height: 16px;
+	background-image: url(../images/new-icon.png);
+	background-repeat: no-repeat;
+	float: left;
+	margin-top:-1px;
+	margin-right: 5px;
+}
+.sender1-icon {
+	background-position: -251px 0;
+}
+.sender2-icon {
+	background-position: -235px 0;
+}
+.sender3-icon {
+	background-position: -215px 0;
+}
+.sender4-icon {
+	background-position: -197px 0;
+}
+.tag-close {
+	display: none;
+	width: 12px;
+	height: 12px;
+	background-position: -318px 0;
+	position: absolute;
+	right: -10px;
+	top: -4px;
+	cursor: pointer;
+}
+.email {
+	float: left;
+	max-width: 740px;
+}
+.email .email-subject {
+	float: left;
+	display: inline-block;
+	max-width: 190px;
+	margin-right: 3px;
+}
+.email .email-content {
+	float: left;
+	display: inline-block;
+	max-width: 300px;
+	margin-left: 3px;
+	color: #999;
+}
+.email .tags-list {
+	float: left;
+	display: inline-block;
+	margin-left: 8px;
+	margin-top: -3px;
+}
+.tags-list .tag-item {
+	display: inline-block;
+	margin-right: 8px;
+	color: #ff7200;
+	position: relative;
+}
+.tags-list .tag-item:hover .tag-close {
+	display: inline-block;
+}
+.tags-list .tag-name {
+	display: inline-block;
+	max-width: 100px;
+	padding: 1px 3px;
+	border: 1px solid #ff7200;
+	border-radius: 8px;
+	background-color: #fff;
+}
+.time {
+	float: right;
+	width: 150px;
+}
+.list-item {
+	border-bottom: 1px solid #f2f2f2;
+	background-color: #fff;
+}
+.list-item .addressee {
+	color: #4c74ee;
+}
+.list-item .addressee-name {
+	display: inline-block;
+	width: 180px;
+	float: left;
+}
+
+.card {
+	display: none;
+	padding: 8px 21px 17px;
+	width: 270px;
+	background: #cfdeff;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 0 10px #dfe4ee;
+	-moz-box-shadow: 0 0 10px #dfe4ee;
+	box-shadow: 0 0 10px #dfe4ee;
+	position: absolute;
+	top: 39px;
+	left: 37px;
+	z-index:9;
+}
+.card-btns {
+	width: 100%;
+}
+
+/* 分页样式 */
+.page{
+	margin-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+}
+.page > a {
+	display: inline-block;
+	padding: 5px 9px;
+	color: #4b73ec;
+	background-color: #fff;
+	margin-right: 5px;
+	box-shadow: 0 1px 2px 1px #ddd;
+}
+.page > a.active{
+	color: #333;
+	cursor: default;
+	background-color: #f1f1f1;
+	box-shadow: none;
+}
+.page > input,
+.page > button {
+	border: 1px solid #ddd;
+}
+.page > input {
+	margin: 0 4px;
+	width: 30px;
+	padding: 4px;
+}
+.page > button {
+	background-color: #fafafa;
+	padding: 5px;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-统计</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <!-- 企业后台 -->
+    <link rel="stylesheet" type="text/css" href="../../css/statistics.css">
+    <script src="../../js/lib/echarts/echarts.js"></script>
+</head>
+
+<body>
+<div class="i-content-wrapper">
+    <div class="panel mid">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<ul class="panel-title padding0 panel-right-nav">
+					<li><a><h1><i class="i-xiashu"></i> 统计</h1></a></li>
+					<li><a href="underling.html"><i class=""></i>下属</a></li>
+					<li><a href="order.html"><i class=""></i>订单</a></li>
+					<li><a href="PI.html"><i class=""></i>PI</a></li>
+					<li><a href="quote.html"><i class=""></i>报价单</a></li>
+					<li><a href="customer.html">客户</a></li>
+					<li><a href="develop.html">营销</a></li>
+					<li><a href="pdt.html" class="active">产品</a></li>
+					<li><a href="email.html"><i class=""></i>邮件</a></li>
+				</ul>
+				<i class="i-alertNew" title="消息" style="top:18px"></i>
+			</div>
+			<div class="panel panel-body">
+				<h1 class="panel-title title-name" style="border:none;">
+					<span class="left titleSpan">产品分组</span>
+					<span>产品总数：<label class="blue"><span id="money"></span></label></span>
+				</h1>
+				<div class="bodyLeft" style="width:55%">
+					<div id="chart"></div>
+				</div>
+				<div class="bodyRight" style="width:45%;padding:0">
+					<p class="charTableTitle">
+						<span>产品分组名称</span>
+						<span style="padding-left:6px;">产品数</span>
+					</p>
+					<ul class="chartTable">
+					</ul>
+					<div id="up"><a href="javascript:;"><img src="../../images/tongji-up.png"></a></div>
+	    			<div id="down"><a href="javascript:;"><img src="../../images/tongji-up.png"></a></div>
+				</div>
+			</div>
+			<div class="panel panel-body" id="pdtGroup">
+				<h1 style="border:none;width:100%">
+					<span class="titleSpan">产品分组综合表现</span>
+					<div class="right">
+						<select name="" class="years">
+						</select>
+						<select name="" class="month"></select>
+					</div>
+				</h1>
+				<table class="table table-border table1">
+					<thead>
+						<tr class="active">
+							<th>分组名称</th>
+							<th>订单金额￥</th>
+							<th class="pointer">订单次数 <i class="i-jiantou"></i></th>
+							<th class="pointer">订单均单价￥ <i class="i-jiantou"></i></th>
+							<th class="pointer">报价次数 <i class="i-jiantou"></i></th>
+							<th class="pointer">订单金额/报价次数 <i class="i-jiantou"></i></th>
+							<th class="pointer">报价次数-订单次数转化率 <i class="i-jiantou"></i></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<ul class="pagination pull-right" id="pagination"></ul>
+			</div>
+			<div class="panel panel-body" id="pdt">
+				<h1 style="border:none;width:100%">
+					<span class="titleSpan">产品成交综合表现</span>
+					<div class="right">
+						<select name="" class="years">
+						</select>
+						<select name="" class="month"></select>
+					</div>
+				</h1>
+				<table class="table table-border table2">
+					<thead>
+						<tr class="active">
+							<th>产品名称</th>
+							<th>订单金额￥</th>
+							<th class="pointer">订单次数 <i class="i-jiantou"></i></th>
+							<th class="pointer">订单均单价￥ <i class="i-jiantou"></i></th>
+							<th class="pointer">报价次数 <i class="i-jiantou"></i></th>
+							<th class="pointer">订单金额/报价次数 <i class="i-jiantou"></i></th>
+							<th class="pointer">报价次数-订单次数转化率 <i class="i-jiantou"></i></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<ul class="pagination pull-right" id="pagination1"></ul>
+			</div>
+		</div>
+	</div>
+</div>
+    <!-- END CONTAINER --><script src="../../js/v.js"></script>
+    <script data-main="../../js/statistics-pdt.js" src="../../js/lib/require.min.js"></script>
+</body>
+</html>

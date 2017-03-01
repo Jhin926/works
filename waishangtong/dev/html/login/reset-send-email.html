@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-重置密码</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../../css/register.css">
+    <style>
+		hr{
+			border-color: #ccc;
+		}
+		.bottom-a{
+			color:#999;
+		}
+		#account{
+			color: #2dc15a;
+		}
+    </style>
+</head>
+<body>
+    <div class="content">
+	    <div class="form">
+			<div class="text-center title form-group" style="padding:0">外商通</div>
+			<div class="text-center registerKind form-group" style="padding:0">
+				<a href="./reset-pw.html" class="noactive">手机号找回</a>
+				&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+				<a href="javascript:;">邮箱找回</a>
+			</div>
+			<div class="reset text-center">
+				<div class="form-group">
+					<div class="col-sm-12">
+						<p>重置密码的邮件已发送至邮箱</p>
+						<p id="account"></p>
+						<p>请按照邮件的引导继续操作</p>
+					</div>
+				</div>
+				<hr />
+				<div class="form-group">
+					<div class="col-sm-12">
+						没有收到邮件？可以<a href="javascript:;">点此重新发送</a><br/>
+						或者<br/>
+						<a href="" class="bottom-a">寻求客户帮助</a>
+					</div>
+				</div>
+				<hr />
+				<div class="form-group">
+					<div class="col-sm-12">
+						<a href="../login.html" class="bottom-a">返回登录</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="./register.html" class="bottom-a">免费注册</a>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <!-- <script data-main="../../js/login-register.js" src="../../js/lib/require.min.js"></script> -->
+	<script>
+		var Ohref=location.href;
+		var arrhref=Ohref.slice(Ohref.indexOf('=')+1);
+		var account=document.getElementById("account");
+		account.innerHTML=arrhref;
+	</script>
+</body>
+</html>

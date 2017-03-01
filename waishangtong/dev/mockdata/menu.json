@@ -1,0 +1,7 @@
+{"success":true,
+"code":0,
+"data":[
+	{"id":1,"isDelete":null,"gmtCreate":1446777050000,"gmtModified":1446777054000,"rid":1,"pid":-1,"name":"CRM","resId":1,"description":"CRM","url":"http://","type":0,"isLeaf":0,"isSys":0,"isShow":1,"orders":100,"cusFiled":1},
+	{"id":14,"isDelete":null,"gmtCreate":1446777050000,"gmtModified":1446777054000,"rid":14,"pid":-1,"name":"工具","resId":14,"description":"工具","url":"http://","type":0,"isLeaf":0,"isSys":0,"isShow":1,"orders":200,"cusFiled":1}
+	]
+,"message":null}

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    <title>外贸通-资源设置</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../../js/lib/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet"/>
+    <link href="../../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="../../js/lib/zTree_v3/css/zTreeStyle.css" rel="stylesheet">
+    <!-- 企业后台 -->
+    <link rel="stylesheet" type="text/css" href="../../css/manage.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bk-resource-set.css">
+    <link rel="stylesheet" type="text/css" href="../../js/lib/evol-colorpicker/evol-colorpicker.min.css">
+</head>
+<body>
+<div class="i-content-wrapper">
+    <!-- BEGIN MAIN -->
+    <div class="panel mid" style="padding:10px;position: relative">
+    	<div class="panel panel-default panel-left">
+    		<div class="panel-heading">
+				<h1 class="panel-title"><i class="i-resource"></i>资源设置</h1>
+			</div>
+			<ul class="list-group">
+			    <li id="group-set-li" class="list-group-item none" data-code="resouce_customer_group">
+					<label class="panel-left-label active">分组设置</label>
+			    </li>
+			    <li id="client-up-li" class="list-group-item none" data-code="resouce_customer_uplimit">
+					<label class="panel-left-label">客户上限</label>
+			    </li>
+			    <li id="client-source-li" class="list-group-item none" data-code="resouce_customer_source">
+					<label class="panel-left-label">客户来源</label>
+			    </li>
+			    <li id="blacklist-set-li" class="list-group-item none" data-code="resouce_customer_blacklist">
+					<label class="panel-left-label">黑名单设置</label>
+			    </li>
+			    <li id="client-info-set-li" class="list-group-item none" data-code="resouce_customer_defined">
+					<label class="panel-left-label">客户字段设置</label>
+			    </li>
+			    <li id="status-set-li" class="list-group-item none" data-code="resouce_customer_status">
+					<label class="panel-left-label">客户状态设置</label>
+			    </li>
+			    <li id="client-public-li" class="list-group-item none" data-code="resouce_customer_highseas">
+					<label class="panel-left-label">客户公海设置</label>
+			    </li>
+			    <li id="output-cust-li" class="list-group-item none" data-code="customer_export">
+					<label class="panel-left-label">导出客户</label>
+			    </li>
+			</ul>
+			<i class="i-alertNew" title="消息" style="top:30px;right:30px"></i>
+        </div>
+        <div class="panel panel-default panel-right" style="background:#e6eaed;">
+    		<div class="panel-heading padding0">
+				<ul class="panel-title padding0 panel-right-nav left">
+                    <li class="none" data-code="resouce_customer"><a href="bk-resource-set.html" class="active"><i class="i-cust"></i> 客户设置</a></li>
+                    <li class="none" data-code="resouce_contact"><a href="bk-resource-lm.html"><i class="i-cont"></i> 联系人设置</a></li>
+                    <li class="none" data-code="resouce_email"><a href="bk-resource-email.html"><i class="i-email"></i> 邮件模板设置</a></li>
+                    <li class="none" data-code="resouce_product"><a href="bk-resource-pdt.html"><i class="i-pdt"></i> 产品设置</a></li>
+                    <li class="none" data-code="resouce_quotation"><a href="bk-resource-quoteHeader.html"><i class="i-quote"></i> 报价设置</a></li>
+                    <li class="none" data-code="resouce_pi"><a href="bk-resource-piHeader.html"><i class="i-pi"></i> PI设置</a></li>
+                    <li class="none" data-code="resouce_order"><a href="bk-resource-ofInfo.html"><i class="i-order"></i> 订单设置</a></li>
+                </ul>
+			</div>
+			<!--BEGIN 分组设置 -->
+			<div id="group-set" class="panel-body" style="padding:10px;">
+				<button type="button" id="group-set-save" class="btn btn-lg btn-primary btn-radial-out">保存</button>
+				<ul class="resource-ul">
+				</ul>
+				<button type="button" class="btn btn-lg btn-primary btn-radial-out addGoup"> <i class="i-add"> + </i>添加新分组</button>
+			</div>
+			<!--END 分组设置 -->
+			<!--BEGIN 客户上限 -->
+			<div id="client-up" class="panel-body none">
+				<button type="button" id="client-up-save" class="btn btn-lg btn-primary btn-radial-out">保存</button> <label class="gray">-1为无上限</label>
+				<table class="table" style="margin-top:10px;">
+					<thead>
+						<tr class="gray">
+							<th>姓名</th>
+							<th>部门</th>
+							<th>目前客户数</th>
+							<th>客户上限数</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+			<!--END 客户上限 -->
+			<!--BEGIN 客户来源 -->
+			<div id="client-source" class="panel-body none">
+				<button type="button" id="client-source-save" class="btn btn-lg btn-primary btn-radial-out">保存</button>
+				<ul class="resource-ul">
+				</ul>
+				<button type="button" class="btn btn-lg btn-primary btn-radial-out addGoup"><i class="i-add"> + </i> 添加新来源</button>
+			</div>
+			<!--END 客户来源 -->
+			<!--BEGIN 黑名单设置 -->
+			<div id="blacklist-set" class="panel-body none nomove">
+				<button type="button" class="btn btn-lg btn-primary btn-radial-out" id="blacklist-set-save">保存</button> <label class="gray" id="labelTitleBlack">被加为建档黑名单的邮箱，将无法被公司内同事建档为联系人</label>
+				<ul class="resource-ul">
+				</ul>
+				<button type="button" class="btn btn-lg btn-primary btn-radial-out addGoup"><i class="i-add"> + </i> 添加黑名单</button>
+			</div>
+			<!--END 黑名单设置 -->
+			<!--BEGIN 客户字段设置 -->
+			<div id="client-info-set" class="panel-body none nomove">
+				<button type="button" id="client-info-set-save" class="btn btn-lg btn-primary btn-radial-out">保存</button>
+				<div class="client-info-div">
+					<ul class="resource-ul client-info-ul">
+						<li>
+							<input type="text" class="resource-input" name="" value="状态" disabled="ture"><input type="checkbox" checked="true" disabled> 必填
+						</li> 
+						<li>
+							<input type="text" class="resource-input" name="" value="客户类型" disabled="ture"><input type="checkbox" checked="true"> 必填
+						</li>
+						<li>
+							<input type="text" class="resource-input" name="" value="星级" disabled="ture"><input type="checkbox" checked="true"> 必填
+						</li> 
+						<li>
+							<input type="text" class="resource-input" name="" value="分组" disabled="ture"><input type="checkbox" checked="true"> 必填
+						</li>
+						<li>
+							<input type="text" class="resource-input" name="" value="客户来源" disabled="ture"><input type="checkbox" checked="true"> 必填
+						</li> 
+						<li>
+							<input type="text" class="resource-input" name="" value="国家地区" disabled="ture"><input type="checkbox" checked="true"> 必填
+						</li>
+						<li>
+							<input type="text" class="resource-input" name="" value="联系电话"><input type="checkbox"> 必填 <i class="group-remove"></i>
+						</li> 
+						<li>
+							<input type="text" class="resource-input" name="" value="传真"><input type="checkbox"> 必填 <i class="group-remove"></i>
+						</li>
+						<li>
+							<input type="text" class="resource-input" name="" value="Facebook"><input type="checkbox"> 必填 <i class="group-remove"></i>
+						</li> 
+						<li>
+							<input type="text" class="resource-input" name="" value="Twitter"><input type="checkbox"> 必填 <i class="group-remove"></i>
+						</li>
+						<li>
+							<input type="text" class="resource-input" name="" value="Linkedin"><input type="checkbox"> 必填 <i class="group-remove"></i>
+						</li> 
+						<li>
+							<input type="text" class="resource-input" name="" value="主页"><input type="checkbox"> 必填 <i class="group-remove"></i>
+						</li>
+						<li>
+							<input type="text" class="resource-input" name="" value="地址"><input type="checkbox"> 必填 <i class="group-remove"></i>
+						</li> 
+						<li>
+							<input type="text" class="resource-input" name="" value="主营产品"><input type="checkbox"> 必填 <i class="group-remove"></i>
+						</li>
+					</ul>
+					<div class="addGoup-li">
+						<button id="client-info-set-add" type="button" class="btn btn-lg btn-primary btn-radial-out addGoup"><i class="i-add"> + </i> 添加新字段</button>
+					</div>
+				</div>
+			</div>
+			<!--END 客户字段设置 -->
+			<!--BEGIN 客户状态设置 -->
+			<div id="status-set" class="panel-body none">
+				<button type="button" id="status-set-save" class="btn btn-lg btn-primary btn-radial-out">保存</button>
+				<ul class="resource-ul status-ul">
+				</ul>
+				<button type="button" id="status-button" class="btn btn-lg btn-primary btn-radial-out addGoup"><i class="i-add">+</i> 添加新状态</button>
+			</div>
+			<!--END 客户状态设置 -->
+			<!--BEGIN 客户公海设置 -->
+			<div id="client-public" data-id="" class="panel-body none">
+				<button type="button" id="client-public-save" class="btn btn-lg btn-primary btn-radial-out">保存</button>
+				<div class="client-public-div">
+					<h1 class="client-public-h1">客户进入客户公海条件设置</h1>
+					<div class="client-public-input">
+						<input type="text" id="daysNoCC" data-type="" class="resource-input" value=""> <label>天内未联系客户</label>
+					</div>
+					<div>
+						<input type="text" id="daysNoCh" data-type="" class="resource-input" value=""> <label>天内没有任何时间轴变化时</label>
+					</div>
+				</div>
+				<div class="client-public-div">
+					<h1 class="client-public-h1">业务员每日领取公海客户上限</h1>
+					<div class="client-public-input">
+						<input type="text" id="clientEachDay" data-type="" class="resource-input" value=""> <label>客户/天</label>
+					</div>
+				</div>
+			</div>
+			<!--END 客户公海设置 -->
+			<!--BEGIN 导出客户-->
+			<div id="output-cust" class="panel-body none">
+				<div class="cust-screen">
+					<h2 class="cust-screen-h2">客户筛选</h2>
+					<form id="screen-term">
+						<ul class="cust-screen-term">
+						<li>
+							<dl>
+								<dt>跟进人</dt>
+								<dd>
+									<div class="check-sea">
+										<select id="check-sea" class="form-control">
+											<option value="0">私海</option>
+											<option value="1">公海</option>
+										</select>
+									</div>
+									<div class="follower-list">
+										<select id="follower" class="form-control">
+											<option value="0">请选择</option>
+										</select>
+									</div>
+								</dd>
+								<dd class="clear"></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>星级</dt>
+								<dd>
+									<label class="checkbox-inline checkstar">
+										<input name="checkAllstar" type="checkbox" id="inlineCheckbox" value=""> 全部
+									</label>
+									<label class="checkbox-inline checkstar">
+										<input name="checkstar" type="checkbox" id="inlineCheckbox0" value="0"> 0星
+									</label>
+									<label class="checkbox-inline checkstar">
+										<input name="checkstar" type="checkbox" id="inlineCheckbox1" value="1"> 1星
+									</label>
+									<label class="checkbox-inline checkstar">
+										<input name="checkstar" type="checkbox" id="inlineCheckbox2" value="2"> 2星
+									</label>
+									<label class="checkbox-inline checkstar">
+										<input name="checkstar" type="checkbox" id="inlineCheckbox3" value="3"> 3星
+									</label>
+									<label class="checkbox-inline checkstar">
+										<input name="checkstar" type="checkbox" id="inlineCheckbox4" value="4"> 4星
+									</label>
+									<label class="checkbox-inline checkstar">
+										<input name="checkstar" type="checkbox" id="inlineCheckbox5" value="5"> 5星
+									</label>
+								</dd>
+								<dd class="clear"></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>客户分组</dt>
+								<dd>
+									<select id="group-list" class="form-control">
+										<option value="0">请选择</option>
+									</select>
+								</dd>
+								<dd class="clear"></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>最近联系时间</dt>
+								<dd>
+									<select id="lastest" class="form-control">
+										<option value="0">全部</option>
+										<option value="3">3天内</option>
+										<option value="7">7天内</option>
+										<option value="15">15天内</option>
+										<option value="30">30天内</option>
+										<option value="180">180天内</option>
+									</select>
+								</dd>
+								<dd class="clear"></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>客户来源</dt>
+								<dd>
+									<select id="source-list" class="form-control">
+										<option value="0">请选择</option>
+									</select>
+								</dd>
+								<dd class="clear"></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>客户状态</dt>
+								<dd>
+									<select id="status-list" class="form-control">
+										<option value="0">全</option>
+									</select>
+								</dd>
+								<dd class="clear"></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>国家地区</dt>
+								<dd>
+									<select id="countries" class="form-control">
+										<option value="0">请选择</option>
+									</select>
+								</dd>
+								<dd class="clear"></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>创建时间</dt>
+								<dd>
+									<input type="text" id="createTime" class="form-control datetime-picker" readonly />
+								</dd>
+								<dd class="clear"></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>客户类型</dt>
+								<dd>
+									<select id="type-list" class="form-control">
+										<option value="0">请选择</option>
+									</select>
+								</dd>
+								<dd class="clear"></dd>
+							</dl>
+						</li>
+						<li class="product-type-con">
+							<dl>
+								<dt>主营产品</dt>
+								<dd id="product-type">
+								</dd>
+								<dd class="clear"></dd>
+							</dl>
+						</li>
+					</ul>
+					<div class="cust-screen-handle">
+						<button class="btn btn-primary" id="btn-screen">筛选</button>
+						<button class="btn btn-primary" type="reset">重置</button>
+					</div>
+					</form>
+				</div>
+				<div class="onekey-output">
+					<button class="btn btn-primary btn-onekey-output">一键导出</button>
+					<div class="onekey-output-result">
+						<p class="result-amount">共筛选出 <span>0</span> 个客户</p>
+						<p class="result-list" data-toggle="modal" data-target="#customerModal">查看结果列表</p>
+					</div>
+				</div>
+				<div class="cust-list">
+					<h2 class="cust-screen-h2">导出列表</h2>
+					<table class="table" id="output-list">
+						<thead>
+						<tr>
+							<th>名称</th>
+							<th>导出客户数</th>
+							<th>导出时间</th>
+							<th>任务状态</th>
+							<th>操作</th>
+						</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--END 导出客户-->
+		</div>
+    </div>
+</div>
+<div class="modal fade" id="customerModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+						aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">客户列表</h4>
+			</div>
+			<div class="modal-body">
+				<ul class="customer-list">
+					<li>没有客户列表</li>
+				</ul>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn" data-dismiss="modal">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
+    <!-- END MAIN -->
+	<script src="../../js/v.js"></script>
+    <script data-main="../../js/bk-resource-set.js" src="../../js/lib/require.min.js"></script>
+</body>
+</html>

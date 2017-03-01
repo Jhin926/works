@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-auto">
+
+<head>
+    <meta charset="utf-8" />
+    <title>收件箱-新建邮件</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <link href="../js/lib/UEditor/themes/default/css/ueditor.css" type="text/css" rel="stylesheet" />
+    <!-- build:css ../css/common.min.css -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="../js/lib/zTree_v3/css/zTreeStyle.css" rel="stylesheet" />
+    <!-- build:css ../css/email.min.css -->
+    <link href="../css/email.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <style>
+        .submir-btn .btn{
+            line-height: 15px;
+        }
+        .page{display: none;margin-top: 15px;}
+        .text{
+            font-size:12px;
+            color:#333;
+            display:inline-block;
+            width:353px;
+            height:16px;
+            line-height:23px;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+            overflow:hidden;
+        }
+    </style>
+</head>
+
+<body style="overflow-y: auto !important;">
+    <!-- 新建弹窗开始 -->
+    <div class="boxs form-horizontal" id="addEmailNew" action= "" method= "post" enctype="">
+        <div class="submir-btn">
+            <a class="btn btn-primary set-up" id="sendEmail" type="submit" href="#" role="button">发送</a>
+            <!-- <a class="btn btn-primary set-up" id="delayedSendEmail" type="submit" href="#" role="button">定时发送</a> -->
+            <a class="btn btn-primary set-up" id="saveDrafts" type="submit" href="#" role="button">存草稿</a>
+        </div>
+        <div class="sentbox-left pull-left">
+            <div class="input-group">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td valign="top">
+                                <table class="email">
+                                    <tbody>
+                                        <tr>
+                                            <td width="70">
+                                                <span class="input-group-addon" id="shoujianren-title">
+                                                    <i class="pub-icon down-zk-icon"></i>
+                                                    收件人
+                                                </span>
+                                            </td>
+                                            <td width="100%" style="position:relative">
+                                                <div id="divtxt" class="divtxt">
+                                                    <div class="addrcontainer"></div>
+                                                    <div class="addressinput">
+                                                        <input type="text" class="inputaddress">
+                                                    </div>
+                                                </div>
+                                                <ul class="receptetips">
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="csAndMs">
+                <div class="input-group">
+                    <table width="100%">
+                        <tbody>
+                            <tr>
+                                <td valign="top">
+                                    <table class="email">
+                                        <tbody>
+                                            <tr>
+                                                <td width="70">
+                                                    <span class="input-group-addon">抄送</span>
+                                                </td>
+                                                <td width="100%">
+                                                    <div id="carbonCopy" class="divtxt">
+                                                        <div class="addrcontainer"></div>
+                                                        <div class="addressinput">
+                                                            <input type="text" class="inputaddress">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="input-group">
+                    <table width="100%">
+                        <tbody>
+                            <tr>
+                                <td valign="top">
+                                    <table class="email">
+                                        <tbody>
+                                            <tr>
+                                                <td width="70">
+                                                    <span class="input-group-addon">密送</span>
+                                                </td>
+                                                <td width="100%">
+                                                    <div id="blindCarbonCopy" class="divtxt">
+                                                        <div class="addrcontainer"></div>
+                                                        <div class="addressinput">
+                                                            <input type="text" class="inputaddress">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" style="float:left;" id="basic-addon1">主题</span>
+                <input id="sendTheme" type="text" class="form-control" placeholder="主题">
+            </div>
+            <div class="input-group-s">
+                <span class="input-group-addon" id="">正文</span>
+                <div style="width:calc(100% - 86px);width:-webkit-calc(100% - 86px);width:-moz-calc(100% - 86px);float:right">
+                    <div class="add-files">
+                        <span id="emailAttachment" class="add-attachment">
+                            <i class="pub-icon list-fujian-icon"></i>
+                            添加附件
+                        </span>
+                        <span class="add-images">
+                            <i class="pub-icon list-img-icon"></i>
+                            插入图片
+                        </span>
+                        <span class="add-quotation data-code" data-code="quotation" data-toggle="modal" data-target="#myModal">
+                            <i class="pub-icon list-bjd-icon"></i>
+                            插入报价单
+                        </span>
+                        <span class="add-PI data-code" data-code="pi" data-toggle="modal" data-target="#myModal">
+                            <i class="pub-icon list-pi-icon"></i>
+                            插入PI
+                        </span>
+                        <span class="add-product data-code" data-code="product" data-toggle="modal" data-target="#myModal">
+                            <i class="pub-icon list-product-icon"></i>
+                            插入产品
+                        </span>
+                        <span class="add-text" data-toggle="modal" data-target="#myModal">
+                            <i class="pub-icon list-text-icon"></i>
+                            插入快速文本
+                        </span>
+                        <span class="add-cloud" data-toggle="modal" data-target="#myModal">
+                            <i class="pub-icon list-cloud-icon"></i>
+                            添加云文档
+                        </span>
+                        <span class="add-model" data-toggle="modal" data-target="#myModal">
+                            <i class="pub-icon list-model-icon"></i>
+                            插入模版
+                        </span>
+                    </div>
+                    <form class="form-horizontal" id="form_file" enctype="multipart/form-data" method="post" style="display:none;">
+                        <input type="file" name="upFiles" id="up-files" />
+                        <input type="hidden" name="file" value="upFiles" />
+                        <input type="hidden" name="dictFileUpType" value="1" />
+                    </form>
+                    <form class="form-horizontal" action="/api/file/upload" id="form_img" enctype="multipart/form-data" method="post" style="display:none;">
+                        <input type="file" class="" name="upImgs" id="up_1" />
+                        <input type="hidden" name="file" value="upImgs" />
+                        <input type="hidden" name="dictFileUpType" value="0" />
+                    </form>
+                    <ul id="added-files">
+                    </ul>
+                    <div id="sendEditor">
+                    </div>
+                    <div class="emailcondition">
+                        <label>
+                            <input type="checkbox" name="batch" id="priority">紧急
+                        </label>
+                        <label style="margin-left:15px;">
+                            <input type="checkbox" name="batch" id="readReturn">需要回执
+                        </label>
+                        <label style="margin-left:15px;">
+                            <input type="checkbox" name="batch" id="tracking">开启追踪
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightShow" data-code="">
+            <i class="leftIcon"></i>
+        </div>
+        <div class="sentbox-right pull-left">
+            <div class="contacter-search-t">搜索</div>
+            <div class="input-group" style="position:relative">
+                <input id="search-input" name="q" type="text" class="form-control" placeholder="Search for...">
+                <i class="search-icon-email" id="c-search-btn"></i>
+            </div>
+            <ul id="emailContacts">
+                <li class="address-list current">
+                    <div class="contacter-search-t">
+                        通讯录
+                    </div>
+                </li>
+                <li class="address-list">
+                    <div class="contacter-search-t">
+                        联系人
+                    </div>
+                </li>
+                <div class="clear"></div>
+            </ul>
+            <div id="content" class="ess email-dtail-tab">
+                <div class="essy rightShowList activities">
+                    <ul class="contacts" id="personalMaillist" data-code=""></ul>
+                </div>
+                <div class="essy rightShowList">
+                    <ul class="contacts" id="companyMaillist" data-code=""></ul>
+                </div>
+            </div>
+            <div class="ess search-list">
+                <div class="essy">
+                    <div class="contacter-search-t">
+                        查找到：
+                    </div>
+                    <ul class="search-contacts" id="search-list"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-type="">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"></h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group" id="piInput">
+                <input type="text" class="form-control" placeholder="输入报价PI名称、PI编号">
+                <button type="button" class="btn btn-primary">筛选</button>
+            </div>
+            <div class="form-group" id="quoteInput">
+                <input type="text" class="form-control" placeholder="输入报价单名称、报价单编号">
+                <button type="button" class="btn btn-primary">筛选</button>
+            </div>
+            <div class="form-group" id="pdtInput1">
+                <input type="text" class="form-control" placeholder="输入产品名称、产品编号、产品型号">
+                <button type="button" class="btn btn-primary">筛选</button>
+            </div>
+            <div class="form-group" id="pdtInput2">
+                <label class="col-md-2 control-label">分组</label>
+                <div class="col-md-10">
+                    <select type="text" class="form-control" id="pdtGroup">
+                        <option value="">全部</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" id="pdtInput3">
+                <label class="col-md-2 control-label">分类</label>
+                <div class="col-md-10">
+                    <select type="text" class="form-control" id="pdtSelect1"></select>
+                    <select type="text" class="form-control" id="pdtSelect2"></select>
+                    <select type="text" class="form-control" id="pdtSelect3"></select>
+                    <select type="text" class="form-control" id="pdtSelect4"></select>
+                </div>
+            </div>
+            <div class="form-group" id="modelInput">
+                <a href="javascript:;" class="active">公司模板</a>
+                <a href="javascript:;">个人模板</a>
+                <a href="javascript:;">系统模板</a>
+            </div>
+            <ul class="modelDwon new_style">
+            </ul>
+            <ul id="treeDemoAdd" class="ztree"></ul>
+            <div class="page pagePi"></div>
+            <div class="page pageQuo"></div>
+            <div class="page pagePdt"></div>
+            <div class="page pageText"></div>
+            <div class="page pageMod"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary">提交</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="preview" class="preview text-center">
+        <div class="previewTop">
+            <h3 style="display: inline-block;color: #e6e6e6;line-height: 60px;"></h3>
+            <button id="previewClose">X</button>
+        </div>
+    </div>
+    <!-- 新建弹窗结束 -->
+    <script src="../js/v.js"></script>
+
+    <script data-main="../js/pop-email-new.js" src="../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+
+</html>

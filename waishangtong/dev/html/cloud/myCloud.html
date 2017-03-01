@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-云盘</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <!-- 企业后台 -->
+    <link rel="stylesheet" type="text/css" href="../../css/cloud.css">
+</head>
+
+<body ng-controller="fileList">
+<div class="i-content-wrapper">
+    <div class="panel mid">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<ul class="panel-title padding0 panel-right-nav">
+					<li><a><h1><i class="s-menuBg s-menu15" style="margin-right: 9px;"></i>云盘</h1></a></li>
+					<li><a href="javascript:;" ng-class="{'active':isMycloud}" ng-click="switchCloud(true)">{{cloudTitle}}</a></li>
+					<li><a href="javascript:;" ng-class="{'active':!isMycloud}" ng-click="switchCloud(false)">共享云盘</a></li>
+				</ul>
+				<div class="page-title2 right">
+                    <div class="btn-about right">
+                        <a href="{{diskHref}}" ng-show="(isMycloud && !isMange)||(!isMycloud && isMange)" class="btn btn-primary" data-maintab><i class="s-updownBg s-add3"></i><span>新建文件夹</span></a>
+                        <a href="{{uploadHref}}" ng-show="!(isMycloud && isMange)" class="btn btn-primary" data-maintab><i class="s-updownBg s-add3"></i><span>上传</span></a>
+                    </div>
+                    <i class="i-alertNew" id="i-alertNew"
+ title="消息" style="top:18px"></i>
+                </div>
+                <div class="m_batch1" ng-class="{'active':showHandle}">
+                    <button type="button" class="btn btn-tools" ng-disabled="btnArr.isDownload" ng-click="download()">下载</button>
+                    <button type="button" class="btn btn-tools" ng-disabled="btnArr.isSendEml" ng-show="!isMange" ng-click="sendEmail()">发邮件</button>
+                    <button type="button" class="btn btn-tools" ng-disabled="btnArr.isEditName" ng-show="!(isMycloud && isMange)" ng-click="isShow = isShow?false:true;">编辑名称</button>
+                    <button type="button" class="btn btn-tools" ng-disabled="btnArr.isDel" ng-show="!(isMycloud && isMange)" ng-click="delete()">删除</button>
+                    <i class="s-updownBg s-dels4 pull-right" id="batchClose" ng-click="showHandle=false"></i>
+                    <div id="editDiv" ng-show="isShow">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="" ng-model="checkFile[0].name" />
+                        </div>
+						<div class="select-a text-right">
+							<button href="javascript:;" class="sure btn btn-sm btn-primary" ng-click="confirm()">确认</button>
+							<button href="javascript:;" class="cancle btn btn-sm btn-danger" ng-click="isShow = false">取消</button>
+						</div>
+                    </div>
+                </div>
+			</div>
+			<div class="panel panel-body">
+				<div class="tools-title">
+					<a href="javascript:;" ng-click="homePage()"><span>返回首页</span></a>
+					<a href="javascript:;" ng-click="prev()"><span>返回上一级</span></a>
+					<a href="javascript:;" ng-click="reload()"><span>刷新</span></a>
+					<div class="navUrl">
+						<div id="navInput" data-pid="{{currentId}}">
+                            {{title}}
+						</div>
+					</div>
+				</div>
+				<div class="mainCloud" ng-show="isEmpty">
+                    <div class="empty-cloud">
+                        <img src="../../images/empty-cloud.png" alt="" />
+                        <p><a href="{{uploadHref}}" ng-show="!(isMycloud && isMange)" class="btn btn-primary" data-maintab><i class="s-updownBg s-add3"></i><span>上传</span></a></p>
+                    </div>
+				</div>
+                <div class="file-list" ng-show="!isEmpty">
+                    <ul>
+                        <li>
+                            <ul class="file-overview">
+                                <li></li>
+                                <li>名称</li>
+                                <li></li>
+                                <li>修改日期</li>
+                                <li>大小</li>
+                            </ul>
+                        </li>
+                        <li ng-click="getDetail(file,$event)" ng-repeat="file in files" data-id="{{file.id}}" data-pid="{{file.pid}}" data-url="{{file.file}}">
+                            <ul class="file-overview">
+                                <li><input ng-click="check(file,$event)" name="checkFile" type="checkbox" /></li>
+                                <li><img ng-src="{{file.imgSrc}}" width="16" height="16" alt="" /></li>
+                                <li>{{file.subName}}</li>
+                                <li>{{file.createTime}}</li>
+                                <li ng-if="file.type==1">{{file.size}}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="preview" class="preview text-center">
+    <div class="previewTop">
+        <h3 style="display: inline-block;color: #e6e6e6;line-height: 60px;"></h3>
+        <button id="previewClose" ng-click="closePreview()">X</button>
+    </div>
+</div>
+    <!-- END CONTAINER -->
+<script src="../../js/v.js"></script>
+<script data-main="../../js/cloud-mine.js" src="../../js/lib/require.min.js"></script>
+</body>
+</html>

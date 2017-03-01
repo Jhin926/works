@@ -1,0 +1,163 @@
+.mid,
+.panel-default{
+	/*height: 100%;*/
+}
+.panel-body{
+	/*height: 100%;*/
+	padding: 0;
+	margin-bottom:0;
+}
+.panel-left{
+	width: 230px;
+    height: 100%;
+	float: left;
+	padding:15px;
+}
+.panel-right{
+	width: -webkit-calc(100% - 230px);
+	width: -moz-calc(100% - 230px);
+	width: calc(100% - 230px);
+    height: 100%;
+	float: left;
+	margin-left: 0;
+	padding:15px;
+	border-left: 1px solid #ddd;
+}
+.panel-title{
+	float: left;
+}
+.org-btn{
+	width: -webkit-calc(100% - 220px);
+	width: -moz-calc(100% - 220px);
+	width: calc(100% - 220px);
+	float: right;
+	margin-top: 6px;
+}
+.pop-client,
+.pop-info{
+	border-top: 1px solid #ddd;
+	margin: 10px auto;
+	padding:15px 0;
+}
+.pop-client label,
+.pop-info label{
+	font-size: 14px;
+}
+.addAll{
+	position: relative;
+	display: none;
+	z-index: 99;
+	text-align: center;
+}
+.newDep input,
+.newUser input,
+.newUser select{
+	margin-bottom: 15px;
+	width: 100%;
+	padding:4px;
+	border:1px solid #ddd;
+}
+.newDep input:hover,
+.newUser input:hover,
+.newUser select:hover,
+.newDep input:focus,
+.newUser input:focus,
+.newUser select:focus{
+	border:1px solid #c4c4c4;
+}
+.newDep input,
+.newUser input{
+	width: 190px;
+}
+.newDep input:first-child,
+.newUser input:first-child{
+	margin-top:15px;
+}
+.newUser{
+	display: none;
+}
+.newDep-a,
+.newUser-a{
+	margin:0 10px;
+}
+.role-main{
+	margin-left: -15px;
+}
+.table tbody tr td{
+	line-height: 30px;
+	padding: 6px;
+}
+.org-btn button{
+	border-color: #ccc;
+	font-size:12px;
+	margin:1px;
+}
+label.blue{
+	cursor: pointer;
+}
+.supervisorNot{
+	color: #ccc;
+}
+.roles-list{
+	padding-left: 15px;
+}
+.roles-list li label{
+	margin-left: 8px;
+}
+h6{
+	font-size: 16px;
+	margin-top: 5px;
+}
+hr{
+	margin:5px 0; 
+	border-top:1px solid #ddd;
+}
+.ztreepopNum{
+	display: inline-block;
+    width: 28px;
+    height: 16px;
+    background: #999;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    float: right;
+}
+.addAll-close{
+	position: absolute;
+	display: inline-block;
+	text-align: right;
+	/*width: 100%;*/
+	cursor: pointer;
+	margin-top: 4px;
+	right: 0;
+}
+#treeDemo_1_remove{
+	display: none;
+}
+.panel-role-modal{
+	display: block;
+}
+#allot-modal,
+#depEdit-modal{
+	width: 100%;
+	height: 100%;
+	background:rgba(0,0,0,.3);
+	z-index: 99;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.panel-role-modal .role-body{
+	padding-left: 0;
+}
+#img_icon{position:relative;}
+#img_icon .img_down{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: 16px;
+	bottom: 6px;
+	background: white;
+}

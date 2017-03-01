@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-统计</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <!-- 企业后台 -->
+    <link rel="stylesheet" type="text/css" href="../../css/statistics.css">
+    <script src="../../js/lib/echarts/echarts.js"></script>
+</head>
+
+<body>
+<div class="i-content-wrapper">
+    <div class="panel mid">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<ul class="panel-title padding0 panel-right-nav">
+					<li><a><h1><i class="i-xiashu"></i> 统计</h1></a></li>
+					<li><a href="underling.html"><i class=""></i>下属</a></li>
+					<li><a href="order.html"><i class=""></i>订单</a></li>
+					<li><a href="PI.html"><i class=""></i>PI</a></li>
+					<li><a href="quote.html"><i class=""></i>报价单</a></li>
+					<li><a href="customer.html">客户</a></li>
+					<li><a href="develop.html" class="active">营销</a></li>
+					<li><a href="pdt.html">产品</a></li>
+					<li><a href="email.html"><i class=""></i>邮件</a></li>
+				</ul>
+				<i class="i-alertNew" title="消息" style="top:18px"></i>
+			</div>
+			<div class="panel panel-body">
+				<div class="bodyLeft" id="devletterNum">
+					<h1 style="border:none">
+						<span class="titleSpan">营销开发信</span>
+						<div style="display:inline-block">
+							<select name="" class="years">
+							</select>
+							<select name="" class="month"></select>
+						</div>
+					</h1>
+					<div id="chart1"></div>
+				</div>
+				<div class="bodyRight">
+					<h1 class="panel-title title-name" id="dev-title" style="border:none">
+						<span>营销发送封数：<label class="blue"><span id="sendNum"></span></label></span>
+						<span>营销送达数：<label class="blue"><span id="deliveryNum"></span></label></span>
+						<span>打开数：<label class="blue"><span id="openNum"></span></label></span>
+						<span>回复数：<label class="blue"><span id="replyNum"></span></label></span>
+					</h1>
+					<p class="charTableTitle">
+						<span>营销打开数排名</span>
+					</p>
+					<ul class="chartTable"></ul>
+					<div id="up" style="top:96px;left:"><a href="javascript:;" style="margin-left: 35px;"><img src="../../images/tongji-up.png"></a></div>
+	    			<div id="down" style="top:336px;"><a href="javascript:;" style="margin-left: 35px;"><img src="../../images/tongji-up.png"></a></div>
+				</div>
+			</div>
+			<div class="panel panel-body">
+				<div class="bodyLeft" id="devSendS">
+					<h1>
+						<span class="titleSpan">营销发送数</span>
+						<div class="right">
+							<select name="" class="years">
+							</select>
+							<select name="" class="month"></select>
+						</div>
+					</h1>
+					<div id="chart2"></div>
+				</div>
+				<div class="bodyRight" id="devSendRank">
+					<h1>
+						<span class="titleSpan">营销发送条数排名</span>
+						<div class="right">
+							<select name="" class="years">
+							</select>
+							<select name="" class="month"></select>
+						</div>
+					</h1>
+					<ul class="ulTop"></ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+    <!-- END CONTAINER --><script src="../../js/v.js"></script>
+    <script data-main="../../js/statistics-develop.js" src="../../js/lib/require.min.js"></script>
+</body>
+</html>

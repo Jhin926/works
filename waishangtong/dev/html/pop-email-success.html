@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-auto">
+
+<head>
+    <meta charset="utf-8" />
+    <title>收件箱-新建邮件</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <link href="../js/lib/UEditor/themes/default/css/ueditor.css" type="text/css" rel="stylesheet" />
+    <!-- build:css ../css/common.min.css -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="../js/lib/zTree_v3/css/zTreeStyle.css" rel="stylesheet" />
+    <!-- build:css ../css/email.min.css -->
+    <link href="../css/email.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <style>#sPop{height:100%;}</style>
+</head>
+
+<body style="overflow-y: auto !important;">
+    <!-- 新建弹窗开始 -->
+    <div class="i-content-wrapper" style="background:none">
+        <div class="boxs form-horizontal" id="addEmailNew" action= "" method= "post" enctype="">
+            <div class="sentbox-left pull-left">
+                <div class="input-group-s">
+                    <span class="input-group-addon" id="" style="margin-top:0"><img src="../images/letterSend.png" alt=""></span>
+                    <div style="width:calc(100% - 86px);width:-webkit-calc(100% - 86px);width:-moz-calc(100% - 86px);float:right">
+                        <h3 style="font-size:24px;color:#2dc15a;margin:16px 0;">发送成功</h3>
+                        <span class="save-message">已将邮件保存到 <a href="./email-outbox.html">发件箱</a></span>
+                        <div class="btnGroup">
+                            <a class="btn btn-email-success" href="./email-inbox.html">&lt;返回收件箱</a>
+                            <button class="btn btn-email-success" id="email-detail">查看此邮件</button>
+                            <a class="btn btn-email-success" href="./pop-email-new.html">再写一封</a>
+                        </div>
+                        <div class="cardInfo">
+                            <h5 style="font-size:14px;font-weight:600;">您还可以将以下收件人建档</h5>
+                            <ul class="email-list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/v.js"></script>
+    <script data-main="../js/pop-email-success.js" src="../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+</html>

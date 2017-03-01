@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-云盘</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="../../js/lib/zTree_v3/css/zTreeStyle.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../css/cloud.css">
+</head>
+
+<body style="overflow-y: auto !important;">
+    <!-- 新建客户弹窗开始 -->
+    <div class="boxs form-horizontal" id="addCustForm">
+        <button type="button" class="btn btn-primary" id="savenewFile">保存</button>
+        <p style="display:inline-block">上传超过50M的文件，有可能会因为网速原因导致上传失败。</p>
+        <fieldset>
+            <div class="form-groups">
+                <label for="f-name"><i class="red">*</i>名称</label>
+                <div class="form-input" style="width:80%;display:inline-block">
+                    <input type="text" name="f-name" id="Newfilename" data-size="" data-url="" class="input-style" />
+                </div>
+                <div class="clear"></div>
+            </div>
+			<form class="form-horizontal" id="form_file" enctype="multipart/form-data" method="post" style="display:none;">
+	            <input type="file" name="upFiles" id="up-files" multiple="multiple" />
+	            <input type="hidden" name="file" value="upFiles" />
+	            <input type="hidden" name="dictFileUpType" value="1" />
+	        </form>
+        </fieldset>
+        <div class="fileTree">
+        	<p class="upload-p"><strong>上传到：</strong><span>我的云盘</span></p>
+			<ul id="treeDemoAdd" class="ztree"></ul>
+        </div>
+    </div>
+    <!-- 新建客户弹窗结束 --><script src="../../js/v.js"></script><script data-main="../../js/pop-cloud-uploadShare.js" src="../../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+</html>

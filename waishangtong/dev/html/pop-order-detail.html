@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-订单详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    
+    <!-- build:css ../css/crm.min.css -->
+    <link href="../css/crm.css" rel="stylesheet" />
+    <!-- endbuild -->
+</head>
+
+<body style="overflow-y: auto !important;">
+    <!-- 订单详情单弹窗开始 -->
+    <div id="detailOrderForm">
+        <div class="fieldset">
+            <div class="form-group order-btn-group">
+                <button class="btn btn-primary none" id="order-del" data-type="del" data-code="order_delete">删除</button>
+                <button class="btn btn-primary none" id="order-copy" data-type="copy" data-code="order_copy">复制</button>
+                <button class="btn btn-primary none" id="order-output" data-type="export" data-code="order_export">导出</button>
+                <!--<button class="btn btn-primary" id="order-email">邮件</button>-->
+                <div class="clear"></div>
+            </div>
+            <div id="delsModal" class="modals" style="width: 270px;">
+                <div class="mhead">
+                    <i class="mclose">×</i>
+                    <h4>是否删除该订单</h4>
+                </div>
+                <div class="mbody">
+                    <div class="btn-box">
+                        <button class="btn btn-danger btn-lg btn-radial-out" id="btn-del-ok">确定</button>
+                        <button class="btn btn-primary btn-lg btn-radial-out" id="btn-del-no">取消</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group order-detail">
+                <ul>
+                    <li><label>订单名称</label><span class="order-name"></span></li>
+                    <li><label>付款方式</label><span class="order-payfor"></span></li>
+                    <li><label>订单金额</label><span class="order-price"></span></li>
+                    <li><label>交付期限</label><span class="order-Deadline"></span></li>
+                    <li><label>订单号</label><span class="order-no"></span></li>
+                    <li><label>交货日期</label><span class="order-date"></span></li>
+                    <li><label>运费</label><span class="order-freight"></span></li>
+                    <li><label>客户名称</label><span class="order-customer"></span></li>
+                    <li>
+                        <label class="info-label">归属业务员</label>
+                        <div class="box-belong"></div>
+                    </li>
+                    <li><label>结算日期</label><span class="order-payment"></span></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="form-group">
+                <div class="box-title">
+                    <label><span>产品</span></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="quo-items">
+                    <ul class="items-title">
+                        <li>No.</li>
+                        <li>Product Name</li>
+                        <li>Product Photo</li>
+                        <li>Price</li>
+                        <li>Quantity</li>
+                        <li>Amount</li>
+                        <div class="clear"></div>
+                    </ul>
+                    <!-- <ul class="items-infos">
+                        <li>1</li>
+                        <li>New Cars Export All Brand</li>
+                        <li><img src="../images/user.jpg" alt="产品图片"></li>
+                        <li>USD $200/piece</li>
+                        <li>1</li>
+                        <li>USD $10</li>
+                        <div class="clear"></div>
+                    </ul> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="box-title">
+                    <label><span>订单备注</span></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="box-desc"></div>
+            </div>
+            <div class="form-group">
+                <div class="box-title">
+                    <label><span>附件</span></label>
+                    <div class="clear"></div>
+                </div>
+                <ul class="file-list"></ul>
+            </div>
+        </div>
+    </div>
+    <!-- 订单详情单弹窗结束 --><script src="../js/v.js"></script>
+    <script data-main="../js/pop-order-detail.js" src="../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+
+</html>

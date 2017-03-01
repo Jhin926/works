@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-crm联系人</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="../js/lib/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet" />
+    <!-- build:css ../css/crm.min.css -->
+    <link href="../css/crm.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="../css/crm-customer.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- BEGIN CONTAINER -->
+    <div class="i-container">
+        <!-- BEGIN INDEX MAIN -->
+        <div class="i-content-wrapper">
+            <div class="page-content">
+                <div class="page-left">
+                    <div class="page-title m_ls">
+                        <div class="titles">
+                            <!-- <i class="i_task s-customer"></i> -->
+                            <i class="s-menuBg s-menu7"></i>
+                            <span class="i_task">联系人</span>
+                            <i class="i_task s-updownBg s-left s-unthumbs" id="s_tack"></i>
+                            <div class="clear"></div>
+                       </div>
+                    </div>
+                    <ul id="conFilter">
+                        <li>
+                            <a href="javascript:;">标签&nbsp;&nbsp;</a>
+                            <span class=""><i class="s-updownBg s-add"></i></span>
+                            <span class=""><i class="s-updownBg s-up2"></i></span>
+                            <ul class="label-list"></ul>
+                            <div class="addTags">
+                                <input type="text" class="form-control" id="labelNames" placeholder="标签名" />
+                                <button class="btn btn-primary btn-lg btn-radial-out" id="tagsAdd">创建</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="page-right">
+                    <div class="page-title">
+                        <div class="titles r-titles">
+                            <i class="i_task s-contacts"></i>
+                            <span class="i_task model-name">联系人管理</span>
+                            <i class="i_task s-updownBg s-left"></i>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="page-title2">
+                            <div class="pull-left btn-about">
+                                <button class="btn btn-primary" id="btn-underling" data-toggle="modal" data-target="#myModal"><i class="underling-icon"></i></button>
+                                <button class="btn btn-primary btn-underling-pop" id="btn-underling-pop" data-id="" data-toggle="modal" data-target="#myModal"></button>
+                                <button class="btn btn-primary btn-sm btn-radial-out" id="btn-filter" data-toggle="modal"
+                                        data-target="#filterModal"><i class="s-updownBg s-filter"></i></button>
+                                <a href="pop-contacts-add.html" class="btn btn-primary none" id="addCon" data-code="contact_add" data-maintab><i class="s-updownBg s-add3"></i><span>添加联系人</span></a>
+                            </div>
+                            <div class="pull-left box-inputs">
+                                <input type="text" class="input-sm form-control" id="inputQuick" placeholder="通过联系人名称快速搜索" />
+                                <i class="s-updownBg s-find" id="c-search-btn"></i>
+                            </div>
+                        </div>
+                        <i class="i-alertNew" title="消息"></i>
+                    </div>
+                    
+                    <div class="m_batch">
+                        <button class="btn" id="btn-tags">标记为...</button>
+                        <!-- <button class="btn btn-primary btn-lg btn-radial-out" id="btn-shift">转移</button> -->
+                        <button class="btn" id="btn-dels">删除</button>
+                        <i class="fa fa-times pull-right" id="batchClose"></i>
+                        <div id="tagsModal" class="modals">
+                            <div class="mhead">
+                                <button class="mclose">×</button>
+                            </div>
+                            <div class="mbody u-tag">
+                                <ul></ul>
+                                <a href="javascript:;" class="btn-addLabel">新建标签<i class="fa fa-plus pull-right"></i></a>
+                                <div class="u-labels">
+                                    <input type="text" class="form-control" id="labelName" placeholder="标签名" />
+                                    <button class="btn btn-primary btn-lg btn-radial-out" id="btn-addLabel">创建</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page_info">
+                        <table class="table table-hover conTable">
+                            <thead>
+                                <tr>
+                                    <th><div class="checker"><span><input id="all" type="checkbox"></span></div></th>
+                                    <th style="width:310px" id="sortsName">联系人 <i class="s-updownBg s-orderList"></i></th>
+                                    <th style="width:300px;">公司</th>
+                                    <!-- <th style="width:80px;">职位</th> -->
+                                    <th style="width:100px;" id="sortsStar">星级 <i class="s-updownBg s-orderList"></i></th>
+                                    <th style="width:80px;">跟进人</th>
+                                    <th style="text-align: right;">职位</th>
+                                    <th id="sortsTime">时间 <i class="s-updownBg s-orderList"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <ul class="page" style="float: none;"></ul>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- END INDEX MAIN -->
+        <div id="sessionKeyId" style="display:none"></div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-type="">
+      <div class="modal-dialog" role="document" style="width:380px">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">下属</h4>
+          </div>
+          <div class="modal-body">
+            <ul></ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" id="underling-close">取消</button>
+            <!--<button type="button" class="btn btn-primary" id="underling-sure">确认</button>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="filterModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">联系人筛选</h4>
+                </div>
+                <div class="modal-body filter-term">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="keyword" class="col-sm-2 control-label">关键字</label>
+
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="keyword" placeholder="客户名称、编号、联系人名称、邮箱">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inlineCheckbox" class="col-sm-2 control-label">星级</label>
+
+                            <div class="col-sm-10">
+                                <label class="checkbox-inline checkstar">
+                                    <input name="checkstar" type="checkbox" id="inlineCheckbox" value=""> 全部
+                                </label>
+                                <label class="checkbox-inline checkstar">
+                                    <input name="checkstar" type="checkbox" id="inlineCheckbox0" value="0"> 0星
+                                </label>
+                                <label class="checkbox-inline checkstar">
+                                    <input name="checkstar" type="checkbox" id="inlineCheckbox1" value="1"> 1星
+                                </label>
+                                <label class="checkbox-inline checkstar">
+                                    <input name="checkstar" type="checkbox" id="inlineCheckbox2" value="2"> 2星
+                                </label>
+                                <label class="checkbox-inline checkstar">
+                                    <input name="checkstar" type="checkbox" id="inlineCheckbox3" value="3"> 3星
+                                </label>
+                                <label class="checkbox-inline checkstar">
+                                    <input name="checkstar" type="checkbox" id="inlineCheckbox4" value="4"> 4星
+                                </label>
+                                <label class="checkbox-inline checkstar">
+                                    <input name="checkstar" type="checkbox" id="inlineCheckbox5" value="5"> 5星
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="checktag" class="col-sm-2 control-label">联系人标签</label>
+
+                            <div class="col-sm-10">
+                                <label class="checkbox-inline checkstar">
+                                    <input name="checktag" type="radio" id="checktag" value="1"> 包含任一标签的客户
+                                </label>
+                                <label class="checkbox-inline checkstar">
+                                    <input name="checktag" type="radio" id="checktag1" value="2"> 包含全部标签的客户
+                                </label>
+                                <div id="filter-tag">
+                                    <div class="form-control checked-tags" style="width: 100%;padding: 0;height: 36px;">
+                                    </div>
+                                    <ul class="tag-list" style="width: 100%;top: 35px;height: 196px;">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="companyList" class="col-sm-2 control-label">公司名称</label>
+
+                            <div class="col-sm-10">
+                                <select class="form-control" id="companyList">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="followList" class="col-sm-2 control-label">跟进人</label>
+
+                            <div class="col-sm-10">
+                                <select id="followList" class="form-control">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2 control-label">职位</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="position" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="countryList" class="col-sm-2 control-label">国家/地区</label>
+
+                            <div class="col-sm-10">
+                                <select class="form-control" id="countryList">
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="screen">筛选</button>
+                    <button type="button" class="btn btn-primary" id="reset">重置</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END CONTAINER -->
+    <script src="../js/v.js"></script>
+    <script data-main="../js/crm-contacts.js" src="../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+
+</html>

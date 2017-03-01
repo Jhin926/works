@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-账号绑定</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <link rel="shortcut icon" type="../image/favicon.ico" href="/favicon.ico">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <!-- build:css ../css/user.min.css -->
+    <link href="../css/user.css" rel="stylesheet" />
+    <!-- endbuild -->
+</head>
+<body>
+    <!-- BEGIN CONTAINER -->
+    <div class="i-container">
+        <!-- BEGIN INDEX MAIN -->
+        <div class="i-content-wrapper">
+            <div class="page-content">
+                <div class="position binding-title">
+                    <h3 class="pos-tit">
+                        <i class="pub-icon binding-title-icon"></i>
+                        账号绑定
+                        <!-- <i class="fa fa-chevron-right"></i> -->
+                    </h3>
+                    <i class="i-alertNew" title="消息" style="right:30px"></i>
+                </div>
+                <div id="bindWrap" class="binding-wrap">
+                    <div class="binding-item clearfix">
+                        <div class="binding-icon"><a class="accout-1" href="javascript:;"><i></i>Email<br>账号</a></div>
+                        <div class="binding-btn pull-right" id="emailLink"><a class="btn btn-default" href="email-binding.html" data-maintab>连接</a></div>
+                        <div class="binding-tools" id="emailAccount">
+                            <div class="binding-user">
+                                <span class="binding-user-name">sirokamui@foxmail.com</span>
+                            </div>
+                            <a href="#" class="close" id="emailUnbinding" style="color:blue;
+                            opacity:.65;font-size:12px;top:15px;">解绑</a>
+                        </div>
+                    </div>
+                    <div class="binding-item clearfix">
+                        <div class="binding-icon"><a class="accout-5" href="javascript:;"><i></i>Facebook<br>账号</a></div>
+                        <!-- <div class="binding-btn pull-right" id="fbLink"><button class="btn btn-default" id="facebook" type="button">连接</button></div> -->
+                        <div class="binding-tools facebook" id="fbAccount" style="display:inline-block">
+                            <p class="binding-user-link text-right"><a href="javascript:;" data-spop-target="#mailPop" id="facebookBtn">添加一个新账号</a></p>
+                        </div>
+                    </div>
+                    <div class="binding-item clearfix">
+                        <div class="binding-icon"><a class="accout-6" href="javascript:;"><i></i>Twitter<br>账号</a></div>
+                        <div class="binding-btn pull-right"><button class="btn btn-default" id="twitter" type="button" id="twitter">连接</button></div>
+                        <div class="binding-tools twitter">
+                            <p class="binding-user-link text-right"><a href="pop-auth.html" data-spop-target="#mailPop" data-maintab>添加一个新账号</a></p>
+                        </div>
+                    </div>
+                    <div class="binding-item clearfix">
+                        <div class="binding-icon"><a class="accout-7" href="javascript:;"><i></i>Linkedin<br>账号</a></div>
+                        <div class="binding-btn pull-right"><button class="btn btn-default" type="button">连接</button></div>
+                        <div class="binding-tools">
+                            <p class="binding-user-link text-right"><a href="javascript:;" data-spop-target="#mailPop">添加一个新账号</a></p>
+                            <a href="#" class="close">×</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END INDEX MAIN -->
+    </div>
+    <!-- END CONTAINER -->
+    <script src="../js/v.js"></script>
+    <script data-main="../js/user.js" src="../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+</html>

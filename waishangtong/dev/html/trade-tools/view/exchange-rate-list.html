@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <title>Tradee</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 防止页面缓存-->
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <link href="http://console.waishangtongmail.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../../../css/common.css" rel="stylesheet" />
+    <link href="../../../css/crm.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/exchange-rate.css">
+</head>
+<body ng-controller="exchangeRateList">
+<!-- BEGIN CONTAINER -->
+<div class="i-container exchange-rate-container">
+    <!-- BEGIN INDEX MAIN -->
+    <div class="i-content-wrapper">
+        <div class="page-content">
+            <div class="page-left">
+                <div class="page-title m_ls">
+                    <div class="titles">
+                        <i class="s-exchange-tool"></i>
+                        <span class="i_task exchange_tools">外贸工具</span>
+                        <i class="i_task s-updownBg s-left s-unthumbs" id="l_tools" ng-click="show_right()"></i>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <ul id="conFilter">
+                    <li>
+                        <a href="javascript:;">汇率查询&nbsp;&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="page-right">
+                <div class="page_title">
+                    <div class=" r_titles" style="display: none;">
+                        <i class="i_task s-exchange-tool i_tools"></i>
+                        <span class="i_task model-name">外贸工具</span>
+                        <i class="i_task s-updownBg s-left i_tools" ng-click="show_left()"></i>
+                        <div class="clear"></div>
+                    </div>
+                    <i class="i-alertNew" title="消息"></i>
+                </div>
+                <div class="page_info">
+                    <div class="exchange-rate-tools">
+                      <div class="exchange-rate-con">
+                        <div class="exchange-rate">
+                            <div class="exchange-rate-header">
+                                <div class="exchange-rate-left">
+                                        <label>兑换金额</label>
+                                    <div class="form-group">
+                                        <input type="text" class="input-sm form-control" ng-model="exchageMoney">
+                                    </div>
+                                </div>
+                                <div class="exchange-rate-left exchange-rate-mid">
+                                    <label>持有货币</label>
+                                    <div class="form-group">
+                                        <select class="form-control mid-select left-select" ng-model="List" ng-options="(List.name+List.code) for List in exchangeList">
+                                        </select>
+                                        <span class="exchange_img" ng-click="exchange(exchageMoney)">
+                                            <img src="../../../images/button_jiaohuan.png">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="exchange-rate-left exchange-rate-right">
+                                    <label>兑换货币</label>
+                                    <div class="form-group">
+                                        <select class="form-control mid-select right-select" ng-model="rightList" ng-options="(rightList.name+rightList.code) for rightList in exchangeList">
+                                        </select>
+                                        <a role="button" class="btn btn-primary btn-lg compute" ng-click="compute()">计算</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="exchange-rate-header exchange-rate-bottom">
+                                  <div class="exchange_rate">
+                                      <div class="exchange_rate_top">
+                                          <h4>
+                                              <span class="rate_red" ng-bind="exchageMoney"></span>
+                                              <span ng-bind="List.name" class="holding-money">  </span>
+                                              <span class="rate_amount default-hide"> = </span>
+                                              <span class="rate_red results" ng-bind="results.toMoney"> </span>
+                                              <span ng-bind="rightList.name" class="exchange-money">  </span>
+                                          </h4>
+                                      </div>
+                                      <div class="exchange_rate_top">
+                                          <h6>
+                                              <div class="exchange_rate_left">
+                                                  <span class="rate_red default-hide">1</span>
+                                                  <span ng-bind="List.name" class="left_rate">  </span>
+                                                  <span class="rate_amount default-hide"> = </span>
+                                                  <span class="rate_red left_results">  </span>
+                                                  <span ng-bind="rightList.name" class="right_rate">  </span>
+                                              </div>
+                                              <div class="exchange_rate_left exchange_rate_right">
+                                                  <span class="rate_red default-hide">1</span>
+                                                  <span ng-bind="rightList.name" class="right_rate">  </span>
+                                                  <span class="rate_amount default-hide"> = </span>
+                                                  <span class="rate_red right_results"> </span>
+                                                  <span ng-bind="List.name" class="left_rate">  </span>
+                                              </div>
+                                          </h6>
+                                      </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exchange-rate-tools">
+                        <div class="form-group exchange-rate-table">
+                            <div class="rate-title">
+                                <label>
+                                    <span>常用货币汇率表</span>
+                                </label>
+                            </div>
+                              <div class="rate-table">
+                                    <table class="table table-hover rateTable">
+                                        <tr class="active">
+                                            <td>类别</td>
+                                            <td>汇率</td>
+                                            <td>更新时间</td>
+                                        </tr>
+                                        <tr ng-repeat="infoList in rateList">
+                                            <td>{{infoList.name}}对人民币汇率</td>
+                                            <td ng-bind="infoList.exchangeRate"></td>
+                                            <td ng-bind="infoList.updateTime"></td>
+                                        </tr>
+                                    </table>
+                              </div>
+                        </div>
+                    </div>
+                    <ul class="page"></ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- END CONTAINER -->
+<script src="../../../js/v.js"></script>
+<script data-main="../../../js/exchange-rate.js" src="../../../js/lib/require.min.js"></script>
+
+</body>
+</html>

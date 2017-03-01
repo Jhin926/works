@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en" class="page-index"><head><meta charset="utf-8"><title>外贸通-个人设置</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta content="width=device-width,initial-scale=1" name="viewport"><meta content="" name="description"><meta content="" name="author"><meta name="MobileOptimized" content="320"><!-- <link href="../js/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" /> --><!-- build:css ../css/common.min.css?v=3efcd65e26 --><link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"><link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet"><link href="../css/common.css?v=8b3688d85b" rel="stylesheet"><!-- endbuild --><!-- build:css ../css/user.min.css --><link href="../css/user.css?v=535c7281c4" rel="stylesheet"><!-- endbuild --></head><body><!-- BEGIN CONTAINER --><div class="i-container"><!-- BEGIN INDEX MAIN --><div class="i-content-wrapper"><div class="page-content"><div class="user-box"><label><i class="s-updownBg s-user-set"></i><span>个人设置</span></label><ul><li class="active"><i class="s-updownBg s-menu-user2"></i><span>基本信息</span></li><li><i class="s-updownBg s-menu-pwd"></i><span>修改密码</span></li><li><i class="s-updownBg s-menu-sub"></i><span>订阅设置</span></li><li><i class="s-updownBg s-menu-lang"></i><span>语言设置</span></li></ul><div class="clear"></div></div><div class="user-forms"><form class="box-form active" enctype="multipart/form-data" method="post"><div class="form-info"><label for="name"><i>*</i>姓名</label><div class="box-input"><input type="text" id="name" data-msg="姓名不能为空"></div><div class="clear"></div></div><div class="form-info"><label for="department"><i>&nbsp;</i>部门</label><div class="box-input"><input type="text" id="department" readonly="readonly"></div><div class="clear"></div></div><div class="form-info"><label for="name"><i>&nbsp;</i>邮箱</label><div class="box-input"><input type="text" id="email" readonly="readonly"></div><div class="clear"></div></div><div class="form-info"><label for="role"><i>&nbsp;</i>角色</label><div class="box-input"><input type="text" id="role" readonly="readonly"></div><div class="clear"></div></div><div class="form-info"><label>&nbsp;</label><button type="button" class="btn btn-primary btn-sm" data-type="user">保存</button></div></form><form class="box-form" enctype="multipart/form-data" method="post"><div class="form-info"><label for="pwd-old"><i>*</i>旧密码</label><div class="box-input"><input type="password" id="pwd-old" data-msg="密码不能为空"></div><div class="clear"></div></div><div class="form-info"><label for="pwd-new"><i>*</i>新密码</label><div class="box-input"><input type="password" id="pwd-new" data-msg="密码不能为空"></div><div class="clear"></div></div><div class="form-info"><label for="pwd-re"><i>*</i>重复新密码</label><div class="box-input"><input type="password" id="pwd-re" data-msg="密码不能为空"></div><div class="clear"></div></div><div class="form-info"><label>&nbsp;</label><button type="button" class="btn btn-primary btn-sm" data-type="pwd">保存</button></div></form><form class="box-form" enctype="multipart/form-data" method="post"><div class="set-style"><p>向我发送以下信息的提醒邮件</p><ul></ul><div class="clear"></div></div></form><form class="box-form" enctype="multipart/form-data" method="post"><div class="form-info"><label for="set-language">语言设置</label><div class="box-input"><select name="set-language" id="set-language"><option value="1">中文</option></select></div><div class="clear"></div></div><div class="form-info"><label>&nbsp;</label><button type="button" class="btn btn-primary btn-sm" data-type="language">保存</button></div></form></div><!-- <div class="position">
+                    <h3 class="pos-tit"><i class="fa fa-th"></i> 个人设置 <i class="fa fa-chevron-right"></i></h3>
+                    <ul class="pos-pos">
+                        <li class="active"><a data-toggle="tab" href="#userSetting">基本信息</a></li>
+                        <li><a data-toggle="tab" href="#setPassword">修改密码</a></li>
+                        <li><a data-toggle="tab" href="#setBook">订阅设置</a></li>
+                        <li><a data-toggle="tab" href="#setLang">语言设置</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content set-tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="userSetting">
+                        <form class="form-horizontal" enctype="multipart/form-data" method="post">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">头像</label>
+                                <div class="col-md-10 pr m-b-10">
+                                    <div id="preview" class="head-img">
+                                        <span class="head"><img src="http://meorient-oss-bucket-test.oss-cn-hongkong.aliyuncs.com/meorient/18/7ebfb8645275ebd9a919224176a3f68d.jpg" alt=""></span>
+                                    </div>
+                                    <div class="head-tools">
+                                        大小请控制在1M内，仅支持<br>JPG、PNG、GIF等格式。
+                                        <div id="uploadImg" class="btn btn-primary btn-lg btn-block btn-radial-out btn-upload">
+                                            <input id="photoimg" class="btn-upload-input" type="file" name="upfile" multiple="multiple"/>
+                                            <input type="hidden" name="file" value="upfile" />
+                                            <input type="hidden" name="dictFileUpType" value="0" />
+                                            上 传
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <form id="basicInfoForm" class="form-horizontal" >
+                            <div class="form-group">
+                                <label class="col-md-2 control-label"><span class="required">*</span>姓名</label>
+                                <div class="col-md-10">
+                                    <input type="text" name="username" required data-msg-required="姓名不能为空" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">部门</label>
+                                <div class="col-md-10">
+                                    <input type="text" name="departments" readonly class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">邮箱</label>
+                                <div class="col-md-10">
+                                    <input type="email" name="email" readonly class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">角色</label>
+                                <div class="col-md-10">
+                                    <input type="text" name="role" readonly class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-primary btn-radial-out">保 存</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="setPassword">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">旧密码</label>
+                                <div class="col-md-10">
+                                    <input type="password" required data-rule-minlength="6" data-rule-maxlength="12" data-msg-required="请输入旧登录密码" class="form-control" name="oldpsd" placeholder="请输入旧登录密码">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">新密码</label>
+                                <div class="col-md-10">
+                                    <input type="password" required data-rule-minlength="6" data-rule-maxlength="12" data-msg-required="请设置新登录密码" class="form-control" name="newpsd" placeholder="请设置新登录密码">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">重复新密码</label>
+                                <div class="col-md-10">
+                                    <input type="password" required data-rule-minlength="6" data-rule-maxlength="12" data-msg-required="请输入新登录密码" data-rule-equal="newpsd" class="form-control" maxlength="16" name="renewpsd" placeholder="请输入新登录密码">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button id="setPsdBtn" type="submit" class="btn btn-primary btn-radial-out">提 交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="setBook">
+                        <div class="box">
+                            <h3>向我发送以下信息的提醒邮件</h3>
+                            <p><label><input type="checkbox"> 别人给我分配了任务</label></p>
+                            <p><label><input type="checkbox"> 客户发送了新邮件</label></p>
+                            <p><label><input type="checkbox"> 任务超时</label></p>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="setLang">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">语言选择</label>
+                                <div class="col-md-10">
+                                    <select name="" id="" class="form-control select2me">
+                                        <option>中文</option>
+                                        <option>英语</option>
+                                        <option>日语</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-primary btn-radial-out">保 存</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                            </div> --></div><!-- END INDEX MAIN --></div><!-- END CONTAINER --><script src="../js/v.js"></script><script data-main="../js/page-usersetting.js" src="../js/lib/require.min.js"></script></div></body><!-- END BODY --></html>

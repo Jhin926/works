@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-企业资料</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <!-- 企业后台 -->
+    <link rel="stylesheet" type="text/css" href="../../css/manage.css">
+    <style>.panel{margin-bottom: 10px;}.panel-default{border:none;}.panel-heading{background: #fff;}</style>
+</head>
+
+<body>
+<div class="i-content-wrapper" style="min-width:1180px;border:10px solid #e6eaed;">
+    <div class="panel mid">
+	    <!-- BEGIIN HEADER -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h1 class="panel-title comTitle"><i class="i-bkCom"></i>企业资料<i class=""></i></h1>
+			</div>
+			<i class="i-alertNew" title="消息" style="top:30px;right:30px"></i>
+		</div>
+		<!-- END HEADER -->
+		<div class="information panel panel-default" style="width: 50%;float: left;">
+			<div class="panel-heading text-right">
+				<h4 class="panel-title left">公司资料</h4>
+				<button type="button" id="edit" class="btn btn-lg btn-primary btn-radial-out"><i class=""></i>编辑</button>
+				<button type="button" id="space" class="btn btn-lg btn-primary btn-radial-out"><i class=""></i>清空</button>
+			</div>
+			<ul class="list-group" id="infoCompany">
+			    <li class="list-group-item">
+					<label class="labelLeft">公司名称：</label>
+					<label class="labelRight" id="name" data-id=""></label>
+					<input type="text" name="" id="nameInput" class="inputInfo gray" value="">
+			    </li>
+			    <li class="list-group-item">
+					<label class="labelLeft">公司邮箱：</label>
+					<label class="labelRight" id="email"></label>
+					<input type="text" name="" id="emailInput" class="inputInfo gray" value="">
+			    </li>
+			    <li class="list-group-item">
+					<label class="labelLeft">公司电话：</label>
+					<label class="labelRight" id="telephone"></label>
+					<input type="text" name="" id="telephoneInput" class="inputInfo gray" value="">
+			    </li>
+			    <li class="list-group-item">
+					<label class="labelLeft">公司传真：</label>
+					<label class="labelRight" id="faxes"></label>
+					<input type="text" name="" id="faxesInput" class="inputInfo gray" value="">
+			    </li>
+			    <li class="list-group-item">
+					<label class="labelLeft">公司主页：</label>
+					<label class="labelRight" id="homepage"></label>
+					<input type="text" name="" id="homepageInput" class="inputInfo gray" value="">
+			    </li>
+			    <li class="list-group-item">
+					<label class="labelLeft">公司地址：</label>
+					<label class="labelRight" id="address"></label>
+					<input type="text" name="" id="addressInput" class="inputInfo gray" value="">
+			    </li>
+			    <li class="list-group-item">
+					<label class="labelLeft">国家：</label>
+					<label class="labelRight" id="countries"></label>
+					<select id="countriesInput" class="selectInfo gray"></select>
+			    </li>
+			    <li class="list-group-item" id="addList">
+					<label><a href="#" class="addList"><i class=""></i> 添加字段</a></label>
+			    </li>
+			</ul>
+			<div class="text-right list-group-item buttonSet" style="margin: -1px;">
+				<button type="button" id="save" class="btn btn-lg btn-primary btn-radial-out">保存</button>
+				<button type="button" id="cancel" class="btn btn-lg">取消</button>
+			</div>
+		</div>
+
+		<div class="information panel panel-default" style="width: 49%;float: right;">
+			<div class="panel-heading" style="height:76px;">
+				<h1 class="panel-title">账户信息</h1>
+			</div>
+			<ul class="list-group">
+			    <li class="list-group-item">
+					<label class="labelLeft">主账号：</label>
+					<label id="masterUserEmail"></label>
+			    </li>
+			    <li class="list-group-item">
+					<label class="labelLeft">到期时间：</label>
+					<label><span id="expireDate">2016-10-28</span>(还有<span id="expireDay"></span>天)</label>
+			    </li>
+			    <li class="list-group-item">
+					<label class="labelLeft">子账号数：</label>
+					<label>已用<span id="subAccountUse">1</span>/全部<span id="subAccountTotal">20</span></label>
+					<button type="button" class="btn btn-lg btn-primary btn-radial-out" style="float: right;margin:0">购买账号</button>
+			    </li>
+			    <li class="list-group-item">
+					<label class="labelLeft">剩余开发信：</label>
+					<label><span id="edm"></span>封</label>
+					<button type="button" class="btn btn-lg btn-primary btn-radial-out" style="float: right;margin:0">购买开发信</button>
+			    </li>
+			    <li class="list-group-item">
+					<label class="labelLeft">总存储空间：</label>
+					<label>已用<span id="storageUse"></span> /全部<span id="storageTotal"></span> </label>
+					<button type="button" class="btn btn-lg btn-primary btn-radial-out" style="float: right;margin:0">升级空间</button>
+			    </li>
+			</ul>
+		</div>
+	</div>
+</div>
+    <!-- END CONTAINER --><script src="../../js/v.js"></script>
+    <script data-main="../../js/bk-info.js" src="../../js/lib/require.min.js"></script>
+</body>
+</html>

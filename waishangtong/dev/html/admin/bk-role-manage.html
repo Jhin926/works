@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    <title>外贸通-角色管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="../../js/lib/zTree_v3/css/zTreeStyle.css" rel="stylesheet">
+    <!-- 企业后台 -->
+    <link rel="stylesheet" type="text/css" href="../../css/manage.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bk-role-set.css">
+</head>
+<body>
+<div class="i-content-wrapper">
+    <!-- BEGIN MAIN -->
+    <div class="panel mid minW1025" style="padding:10px;position: relative;">
+    	<div class="panel panel-default panel-left">
+    		<div class="panel-heading">
+				<h1 class="panel-title"><i class="i-role-manage"></i>角色管理</h1>
+			</div>
+            <i class="i-alertNew" title="消息" style="top:34px;right:18px"></i>
+			<ul id="list-group" class="list-group">
+
+			</ul>
+        </div>
+        <div class="panel panel-default panel-right">
+    		<div class="panel-heading" style="padding-bottom:10px;">
+				<h1 class="panel-title text-right box-inputs" style="padding-top:0;padding-bottom:0;padding-right: 25px;">
+					<a href="bk-role-add.html" class="btn btn-lg btn-primary btn-radial-out" data-maintab style="color:#fff;"><i class="i-add"> + </i> 新建角色</a>
+					<input type="text" class="manege-search" id="inputQuick" placeholder="通过角色名快速搜索" value=""><i class="s-find popSearch" id="c-search-btn"></i>
+				</h1>
+			</div>
+			<div class="panel panel-body">
+                <button class="btn btn-lg btn-primary btn-radial-out" id="saveTree" style="color:#fff;">保存</button>
+                <ul id="treeDemo" class="ztree"></ul>
+            </div>
+        </div>
+        <!-- BEGIN EDIT MODAL -->
+        <div id="edit-modal" class="panel panel-default panel-modal" style="right:-900px;">
+            <div class="modal-head">
+                <!-- <a href="#" class=""><i class=""></i>关闭</a> -->
+                <a class="spop-hide modal-close-a" data-maintab-hide="" href="javascript:;" style="display: inline;background:none;left:6px;"><i class="fa s-spop-close"></i></a>
+                <ul class="modal-list" style="margin-left:40px;">
+                    <li>修改角色</li>
+                </ul>
+            </div>
+            <div class="text-left" style="margin: -1px;margin-bottom:20px;margin-left:30px;clear:both;">
+                <button type="button" id="pop-edit-save" class="btn btn-lg btn-primary btn-radial-out">保存</button>
+            </div>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2"><span class="red">*</span> 角色名</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="pop-edit-name" class="form-control" name="pop-name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2">&nbsp;&nbsp;备注</label>
+                    <div class="col-sm-10">
+                        <textarea cols="" id="edit-remark" class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- BEGIN EDIT MODAL -->
+    </div>
+</div>
+    <!-- END MAIN --><script src="../../js/v.js"></script>
+    <script data-main="../../js/bk-role-manage.js" src="../../js/lib/require.min.js"></script>
+</body>
+</html>

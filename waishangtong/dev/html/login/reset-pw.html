@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-重置密码</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../../css/register.css">
+    <style>
+		hr{
+			border-color: #ccc;
+		}
+		.bottom-a>a{
+			color:#999;
+		}
+		#account{
+			color: #2dc15a;
+		}
+    </style>
+</head>
+<body>
+    <div class="content">
+	    <div class="form">
+			<div class="text-center title form-group">外商通</div>
+			<div class="text-center registerKind form-group">
+				<a href="javascript:;" class="noactive">手机号找回</a>
+				&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+				<a href="javascript:;">邮箱找回</a>
+			</div>
+			<div class="reset text-center" id="phone">
+				<div class="form-group">
+					<label class="col-sm-2">手机号</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="mobile" placeholder="注册时填写的手机号">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="col-sm-2">验证码</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" placeholder="">
+					</div>
+					<div class="col-sm-4" style="padding-left:0">
+						<button class="btn btn-primary" style="width:100%;height:38px;" id="authCode">获取验证码</button>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10 col-sm-offset-2">
+						<button class="btn btn-primary col-sm-12">验证手机验证码</button>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10 col-sm-offset-2">
+						<hr />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10 col-sm-offset-2 bottom-a">
+						<a href="../login.html">返回登录</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="../register-html.html">免费注册</a>
+					</div>
+				</div>
+			</div>
+			<div class="reset text-center"  id="email">
+				<div class="form-group">
+					<label class="col-sm-2">邮箱</label>
+					<div class="col-sm-10">
+						<input type="text" id="use_email"class="form-control" placeholder="注册时填写的邮箱">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="col-sm-2">验证码</label>
+					<div class="col-sm-5">
+						<input type="text" name="emailAddress" class="form-control verification-content" placeholder="请输入验证码">
+					</div>
+					<div class="col-sm-3 verification-code">
+						<img alt="验证码图片" title="验证码图片" src="/api/verify/v1/code">
+					</div>
+					<div class="col-sm-2 change-img">
+						<a>换一张</a>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10 col-sm-offset-2">
+						<button class="btn btn-primary col-sm-12 reset_send">发送重置密码的邮件</button>
+						<!--<a href="reset-send-email.html" class="reset_send" role="button" class="btn btn-primary col-sm-12">发送重置密码的邮件</a>-->
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10 col-sm-offset-2">
+						<hr />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10 col-sm-offset-2 bottom-a">
+						<a href="../login.html">返回登录</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="./register-html.html">免费注册</a>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div><script src="../../js/v.js"></script><script data-main="../../js/reset-pw.js" src="../../js/lib/require.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>外贸通-激活账户</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 防止页面缓存--><meta http-equiv="pragma" content="no-cache"><meta http-equiv="cache-control" content="no-cache"><meta http-equiv="expires" content="0"><meta content="width=device-width,initial-scale=1" name="viewport"><meta content="" name="description"><meta content="" name="author"><meta name="MobileOptimized" content="320"><!-- build:css ../css/common.min.css?v=3efcd65e26 --><link href="../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"><link href="../../js/lib/uniform/css/uniform.default.css" rel="stylesheet"><!-- endbuild --><link rel="stylesheet" href="../../css/register.css?v=1fbd60ce6b"><style>.back{
+			background: url('../../images/login/login.png') no-repeat;
+			background-size: 100%;
+			overflow:hidden;
+		}
+		.content{
+			padding: 0;
+		}
+		.form{
+			margin-top: 8%;
+			padding-bottom: 40px;
+			border:1px solid #ccc;
+			box-shadow: 0 0 5px #ccc;
+			border-radius:5px;
+			background-color:#fff;
+			padding-right: 20px;
+		}
+		.form-group>label{
+			width: 60px;
+		}
+		.title{
+			display: inline-block;
+			width: 100%;
+			margin-top: 20px;
+			margin-bottom: 30px;
+		}
+		.identifying-code{
+			display:none;
+		}</style></head><body class="content"><div class="back"><div class="form" id="loginFrom"><div class="text-center title">外商通</div><div class="text-center registerKind">账号登录</div><div class="register"><div class="form-group"><label for="" class="col-sm-2">账号</label><div class="col-sm-10"><input type="text" required id="use_name" data-rule-mobile="true" data-msg-required="请输入登录账号" class="form-control" name="username" placeholder="请输入手机号/邮箱" value="" autofocus></div></div><div class="form-group"><label for="" class="col-sm-2">密码</label><div class="col-sm-10"><input type="password" value="" class="form-control" placeholder="请输入登录密码" name="password"></div></div><div class="form-group identifying-code"><label for="" class="col-sm-2">验证码</label><div class="col-sm-5"><input type="text" name="emailAddress" class="form-control verification-content" placeholder="请输入验证码"></div><div class="col-sm-3 verification-code"><img src="/api/verify/v1/code" alt="验证码图片" title="验证码图片"></div><div class="col-sm-2 change-img"><a>换一张</a></div></div><div class="form-group"><div class="col-sm-10" style="margin-left:60px"><input type="checkbox" id="remember"><label for="remember">记住账号</label><a href="./login/reset-pw.html" class="pull-right" style="line-height:40px">忘记密码</a></div></div><div class="form-group"><div class="col-sm-10" style="margin-left:60px"><button class="btn btn-primary col-sm-12" id="loginBtn" data-complete-text="finished!" autocomplete="off" type="button">登录</button></div></div><div class="form-group"><div class="col-sm-10" style="margin-left:60px"><hr></div></div><div class="form-group"><div class="col-sm-10 text-center" style="margin-left:60px"><p>还不是外商通用户？</p><a href="./login/register-html.html" class="btn btn-success col-sm-12">免费注册</a></div></div></div></div></div><script src="../../js/v.js"></script><script data-main="../../js/login-login.js" src="../../js/lib/require.min.js"></script></body></html>

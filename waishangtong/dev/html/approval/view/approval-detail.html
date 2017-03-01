@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-订单详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../../../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+
+    <!-- build:css ../css/crm.min.css -->
+    <link href="../../../css/crm.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/approval.css">
+</head>
+
+<body style="overflow-y: auto !important;" ng-controller="approvalDetail">
+<!-- 订单详情单弹窗开始 -->
+<div id="detailOrderForm">
+    <div class="fieldset">
+        <div id="delsModal" class="modals" style="width: 270px;">
+            <div class="mhead">
+                <i class="mclose">×</i>
+                <h4>是否删除该订单</h4>
+            </div>
+            <div class="mbody">
+                <div class="btn-box">
+                    <button class="btn btn-danger btn-lg btn-radial-out" id="btn-del-ok">确定</button>
+                    <button class="btn btn-primary btn-lg btn-radial-out" id="btn-del-no">取消</button>
+                </div>
+            </div>
+        </div>
+        <div class="approval-detail-theme">
+            <span class="subject">{{approvalDetailList.subject}}</span>
+            <div class="status">
+                <span>{{statusText}}</span>
+            </div>
+            <div class="approval-time">
+                <span>审批时间：</span>
+                <span>{{approvalDetailList.createTime}}</span>
+            </div>
+            <div class="approval-time approval-person">
+                <span class="approval_person">发起人：</span>
+                <span ng-repeat="resultsList in approvalDetailList.approvalApproverResults">
+                    <span><img src="../../../images/icon_shenpiren.png"></span>
+                    <span>{{resultsList.userName}}</span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="approval-theme">
+                <span>{{approvalDetailList.approvalOpinions}}</span>
+            </div>
+        </div>
+        <div class="form-group fujian-download" ng-repeat="fujian in approvalDetailList.approvalAttachmentEnters">
+            <span><img src="../../../images/new/link-icon.png"></span>
+            <span>{{fujian.name}}</span>
+            <a href="{{fujian.url | myFilter}}" download class="font_color">&nbsp;&nbsp;&nbsp;下载&nbsp;&nbsp;&nbsp;</a>
+            <span class="font_color" ng-click="appendixShow(fujian)">|&nbsp;&nbsp;&nbsp;预览</span>
+        </div>
+        <div class="form-group approval-waiting">
+             <div class="heaeder-choose col-xs-12">
+                 <textarea class="form-control col-xs-12 approval-remark" placeholder="请在这里输入审批备注"></textarea>
+                 <div class="add-files">
+                        <span class="add-quotation data-code" id="emailAttachment" ng-click="addAttachment()">
+                            <i class="pub-icon add-fujian-icon"></i>
+                            添加附件
+                        </span>
+                     <form class="form-horizontal" id="form_file" enctype="multipart/form-data" method="post">
+                         <input type="file" name="upFiles" id="up-files" multiple="multiple"/>
+                         <input type="hidden" name="file" value="upFiles" />
+                         <input type="hidden" name="dictFileUpType" value="1" />
+                     </form>
+                     <ul id="added-appendix">
+                     </ul>
+                 </div>
+             </div>
+             <div class="btn-group approval-btn-group">
+                 <button type="button" class="btn btn-lg btn-primary" ng-click="approvalPass()">通过</button>
+                 <button type="button" class="btn btn-lg btn-danger" ng-click="approvalNoPass()">不通过</button>
+             </div>
+        </div>
+        <iframe src="" class="approval_detail"></iframe>
+    </div>
+</div>
+        <div id="preview" class="preview text-center">
+            <div class="previewTop">
+                <h3></h3>
+                <button id="previewClose">X</button>
+            </div>
+        </div>
+<!-- 订单详情单弹窗结束 --><script src="../../../js/v.js"></script>
+<script data-main="../../../js/approval-detail.js" src="../../../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-查看产品详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    
+    <!-- build:css ../css/crm.min.css -->
+    <link href="../css/crm.css" rel="stylesheet" />
+    <!-- endbuild -->
+</head>
+
+<body style="overflow-y: auto !important;">
+    <!-- 查看产品详情弹窗开始 -->
+    <div class="box-product-detail">
+        <div class="form-group box-btn">
+            <button class="btn btn-primary none" id="pro-edit" data-type="edit" data-code="product_edit">编辑</button>
+            <button class="btn btn-primary none" id="pro-del" data-type="del" data-code="product_delete">删除</button>
+            <button class="btn btn-primary none" id="pro-copy" data-type="copy" data-code="product_copy">复制</button>
+            <button class="btn btn-primary none" id="pro-group" data-type="group" data-code="product_group">分组到...</button>
+            <button class="btn btn-primary none" id="pro-email" data-type="email" data-code="product_email">发邮件</button>
+            <button class="btn btn-primary none" id="pro-quotation" data-type="quotation" data-code="product_quotation">新建报价单</button>
+            <button class="btn btn-primary none" id="pro-pi" data-type="pi" data-code="pi_add">新建PI</button>
+            <button class="btn btn-primary none" id="btn-export" data-type="export" data-code="product_export">导出</button>
+            <div class="clear"></div>
+            <div id="groupsModal" class="modals">
+                <div class="mhead">
+                    <i class="mclose">×</i>
+                </div>
+                <div class="mbody u-group">
+                    <ul></ul>
+                </div>
+            </div>
+
+            <div id="delsModal" class="modals" style="width: 270px;">
+                <div class="mhead">
+                    <i class="mclose">×</i>
+                    <h4>是否删除该产品</h4>
+                </div>
+                <div class="mbody">
+                    <!-- <label><input type="checkbox" name="dels">同时删除该客户下所有联系人</label> -->
+                    <div class="btn-box">
+                        <button class="btn btn-danger btn-lg btn-radial-out" id="btn-del-ok">确定</button>
+                        <button class="btn btn-primary btn-lg btn-radial-out" id="btn-del-no">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pro-content">
+            <div class="pro-look">
+                <textarea id="copy-info" class="pull-left"  maxlength="58"></textarea>
+                <div class="pull-right">
+                    <a href="javascript:;" id="page-copy">复制</a>
+                    <a href="javascript:;" target="_blank" id="page-look">在线浏览</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="pro-left">
+                <div class="show-img">
+                    <img src="" id="show_img" alt="产品图片" />
+                    <ul class="img-link">
+                    </ul>
+                    <div class="switch_cn">
+                        <span id="img_left"><img src="../images/icon_arrow.png" alt=""></span>
+                        <span id="img_right"><img src="../images/icon_arrow2.png" alt=""></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro-right">
+                <div class="form-title"><label></label></div>
+                <table class="pro-info">
+                    <tbody>
+                        <tr>
+                            <td><span>FOB Price</span></td>
+                            <td><span class="pro-val fobPrice"></span></td>
+                        </tr>
+                        <tr>
+                            <td><span>Min.Order.Quanlity</span></td>
+                            <td><span class="pro-val minOrder"></span></td>
+                        </tr>
+                        <tr>
+                            <td><span>Supply Ability</span></td>
+                            <td><span class="pro-val supplyAbility"></span></td>
+                        </tr>
+                        <tr>
+                            <td><span>Port</span></td>
+                            <td><span class="pro-val g-port"></span></td>
+                        </tr>
+                        <tr>
+                            <td><span>Payment Terms</span></td>
+                            <td><span class="pro-val paymentTerms"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr style="margin-bottom:-20px;">
+                <div class="pro-history">
+                    <label>报价 / PI历史</label>
+                    <div class="his-info">
+                        <select name="pro-date" id="pro-date"></select>
+                        <div style="margin-top:12px;margin-left:-12px;">
+                        <label>
+                            <i class=""><img src="../images/icon_baojia.png" alt=""></i>
+                            <a href="javascript:;" class="pro-quotation">报价单（<span class="quotationCount"></span>）</a>
+                        </label><br>
+                        <label style="margin-top:10px;">
+                            <i class=""><img src="../images/icon_pi.png" alt=""></i>
+                            <a href="javascript:;" class="pro-pi">PI（<span class="piCount"></span>）</a>
+                        </label>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="pro-bottom">
+            <div class="tab-title">
+                <ul>
+                    <li class="active"><a href="#a_1"><span>产品信息</span><span>Product Information</span></a></li>
+                    <li><a href="#a_2"><span>贸易信息</span><span>Trade Information</span></a></li>
+                    <li><a href="#a_3"><span>产品描述</span><span>Product Description</span></a></li>
+                    <li><a href="#a_4"><span>产品备注（仅内部可见）</span><span>Product Remarks</span></a></li>
+                    <i class="on"></i>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="pro-box-info">
+                <div class="pro-infos" id="a_1">
+                    <div class="pro-titles">
+                        <label>产品信息</label><span>Product Information</span>
+                    </div>
+                    <table id="pro-information">
+                        <tbody>
+                            <tr>
+                                <td>No.:</td>
+                                <td class="info-no"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pro-infos" id="a_2">
+                    <div class="pro-titles">
+                        <label>贸易信息</label><span>Trade Information</span>
+                    </div>
+                    <ul>
+                        <li><label>Packaging Details:</label><span class="info-pd" style="line-height:24px;margin-top:-6px"></span><div class="clear"></div></li>
+                        <li><label>Delivery Time:</label><span class="info-dt"></span><div class="clear"></div></li>
+                        <li><label>Min.Order Quantity:</label><span class="info-moq"></span><div class="clear"></div></li>
+                        <li><label>FOB Price:</label><span class="info-fp"></span><div class="clear"></div></li>
+                        <li><label>Port:</label><span class="info-port"></span><div class="clear"></div></li>
+                        <li><label>Supply Ability:</label><span class="info-ability"></span><div class="clear"></div></li>
+                    </ul>
+                </div>
+                <div class="pro-infos" id="a_3">
+                    <div class="pro-titles">
+                        <label>产品描述</label><span>Product Description</span>
+                    </div>
+                    <p class="p-descs"></p>
+                </div>
+                <div class="pro-infos" id="a_4">
+                    <div class="pro-titles">
+                        <label>产品备注</label><span>Product Remarks(仅内部可见)</span>
+                    </div>
+                    <p class="p-remark"></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- 查看产品详情弹窗结束 --><script src="../js/v.js"></script>
+    <script data-main="../js/pop-product-detail.js" src="../js/lib/require.min.js"></script>
+</body>
+<!-- END BODY -->
+
+</html>

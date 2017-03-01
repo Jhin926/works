@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    <title>外贸通-资源设置</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="../../js/lib/zTree_v3/css/zTreeStyle.css" rel="stylesheet">
+    <!-- 企业后台 -->
+    <link rel="stylesheet" type="text/css" href="../../css/manage.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bk-resource-set.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bk-resource-email.css">
+</head>
+<body>
+<div class="i-content-wrapper">
+    <!-- BEGIN MAIN -->
+    <div class="panel mid">
+    	<div class="panel panel-default panel-left">
+    		<div class="panel-heading">
+				<h1 class="panel-title"><i class="i-resource"></i>资源设置</h1>
+			</div>
+			<ul class="list-group">
+			    <li class="list-group-item">
+					<a href="bk-resource-quoteHeader.html"><label class="panel-left-label">报价单头</label></a>
+			    </li>
+                <li class="list-group-item">
+                    <label class="panel-left-label active">报价单尾</label>
+                </li>
+			</ul>
+        </div>
+        <div class="panel panel-default panel-right minW1025">
+    		<div class="panel-heading padding0">
+				<ul class="panel-title padding0 panel-right-nav left">
+                    <li class="none" data-code="resouce_customer"><a href="bk-resource-set.html"><i class="i-cust"></i> 客户设置</a></li>
+                    <li class="none" data-code="resouce_contact"><a href="bk-resource-lm.html"><i class="i-cont"></i> 联系人设置</a></li>
+                    <li class="none" data-code="resouce_email"><a href="bk-resource-email.html"><i class="i-email"></i> 邮件模板设置</a></li>
+                    <li class="none" data-code="resouce_product"><a href="bk-resource-pdt.html"><i class="i-pdt"></i> 产品设置</a></li>
+                    <li class="none" data-code="resouce_quotation"><a href="bk-resource-quoteHeader.html" class="active"><i class="i-quote"></i> 报价设置</a></li>
+                    <li class="none" data-code="resouce_pi"><a href="bk-resource-piHeader.html"><i class="i-pi"></i> PI设置</a></li>
+                    <li class="none" data-code="resouce_order"><a href="bk-resource-ofInfo.html"><i class="i-order"></i> 订单设置</a></li>
+                </ul>
+                <i class="i-alertNew" title="消息" style="top:30px;right:30px"></i>
+			</div>
+            <!--BEGIN 模板列表.PI尾 -->
+            <div id="list-set" class="panel-body">
+                <h4 class="tem-title">报价设置</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>模板名称</td>
+                            <td>操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <button type="button" id="new-tem" class="btn btn-lg btn-primary btn-radial-out"> <i class="i-add"> + </i>添加新模板</button>
+            </div>
+            <!--END 模板列表.PI尾 -->
+			<!--BEGIN 模板设置.PI尾 -->
+			<div id="tem-set" class="panel-body">
+                <div class="form-group">
+                    <a href="#" class="return"><i class="i-left"></i></a>
+				    <button type="button" id="tem-add" class="btn btn-lg btn-primary btn-radial-out">添加</button>
+                </div>
+                <input type="text" id="tem-name" class="resource-input form-control" placeholder="模板名称">
+                <div class="add-files">
+                    <span class="add-images">
+                        <i class="pub-icon list-img-icon"></i>
+                        插入图片
+                    </span>
+                    <!-- <span class="add-model">
+                        <i class="pub-icon list-model-icon"></i>
+                        插入模版
+                        <ul class="modelDwon">
+                        </ul>
+                    </span> -->
+                </div>
+                <form class="form-horizontal" id="form_file" enctype="multipart/form-data" method="post" style="display:none;">
+                    <input type="file" name="upFiles" id="up-files" />
+                    <input type="hidden" name="file" value="upFiles" />
+                    <input type="hidden" name="dictFileUpType" value="1" />
+                </form>
+                <form class="form-horizontal" id="form_img" enctype="multipart/form-data" method="post" style="display:none;">
+                    <input type="file" class="" name="upImgs" id="up_1" />
+                    <input type="hidden" name="file" value="upImgs" />
+                    <input type="hidden" name="dictFileUpType" value="0" />
+                </form>
+                <div id="addEditor">
+                    <!-- <textarea style="border:none;" id="emailEditor"></textarea> -->
+                </div>
+			</div>
+			<!--END 模板设置.PI尾 -->
+        </div>
+    </div>
+</div>
+    <!-- END MAIN --><script src="../../js/v.js"></script>
+    <script data-main="../../js/bk-resource-quoteFooter.js" src="../../js/lib/require.min.js"></script>
+</body>
+</html>

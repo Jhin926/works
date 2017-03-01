@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en" class="overflow-auto"><head><meta charset="utf-8"><title>收件箱-邮件设置</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta content="width=device-width,initial-scale=1" name="viewport"><meta content="" name="description"><meta content="" name="author"><meta name="MobileOptimized" content="320"><link href="../js/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"><!-- build:css ../css/common.min.css?v=3efcd65e26 --><link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"><link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet"><link href="../css/common.css?v=8b3688d85b" rel="stylesheet"><!-- endbuild --><!-- build:css ../css/email.min.css --><link href="../css/email.css?v=96b8f60048" rel="stylesheet"><!-- endbuild --><link rel="stylesheet" type="text/css" href="../js/lib/evol-colorpicker/evol-colorpicker.min.css"><style>#normolset input[type=checkbox]{
+		margin-left: 0;
+	}
+	.evo-pointer,
+	.cpOther,
+	.evo-more,
+	.evo-color{
+		display: none;
+	}
+	.evo-pop{
+		margin-left:-8px;
+		margin-top: 30px;
+		border: 1px solid #ddd;
+		background:#f2f2f2;
+		border-radius: 5px;
+		width: 212px;
+	}
+	.f-color{
+		background: none;
+	}
+	.rightShowList .glyphicon-menu-left{
+		background:url(../images/new/return.png) no-repeat 0;
+		margin-right:10px;
+		padding: 3px;
+		cursor: pointer;
+	}
+	.glyphicon-menu-left:before{
+		content: "";
+	}
+	#blacklist-set .group-move{
+		display: none;
+	}
+	.group-move{
+		display: inline-block;
+		width: 26px;
+		height: 26px;
+		border-radius: 50%;
+		float: left;
+		background:url(../images/new/move-icon.png) no-repeat 3px 3px; 
+	}
+	.group-move:focus,
+	.group-move:hover{
+		background:url(../images/new/moved-icon.png) no-repeat 3px 3px; 
+	}
+	.i-remove{
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		float: left;
+		background:url(../images/remove-icon-small3.png) no-repeat 0 0; 
+		position: absolute;
+		top: 0;
+	}
+	.group-remove{
+		display: inline-block;
+		width: 26px;
+		height: 26px;
+		border-radius: 50%;
+		margin-left: 3px;
+		background:url(../images/new/delet.png) no-repeat 3px 3px; 
+	}
+	i{
+		cursor: pointer;
+	}
+	.add-files span{
+		cursor: pointer;
+	}
+	.blacklist .fasttText-t{
+		width: 90px;
+		top: -40px;
+	}
+	#tem-set .content{
+		display: none;
+	}
+	#edui77{
+		display: inline-block !important;
+	}
+	.td-conditionMeetType,
+	.td-condition,
+	.td-content{
+		display: none;
+	}</style></head><body style="overflow-y: auto !important;background: #fff"><!-- 新建弹窗开始 --><ul id="setLeftNav" class="setLeftNav"><li class="current">常规设置</li><li id="group-set-li">分组设置</li><li id="sign-set-li">签名设置</li><li id="addressee-rules-li">收件规则</li><li id="emailIn-li">导入邮件</li><li id="qtext-li">快速文本</li><li id="auto-res-li">自动回复</li><li id="tem-li">模版设置</li><li id="blacklist-set-li">黑名单</li></ul><div id="content" class="setRightShow" style="height:540px"><!--常规设置开始--><div class="rightShowList activities" id="normolset"><div class="submir-btn"><a class="btn btn-primary set-up" id="normolset-save" href="#" role="button">保存</a> <a class="btn btn-default set-up" id="reset" role="button">恢复默认</a></div><div class="setRightShow-main"><div class="sf-set"><h4 class="sf-set-title">收/发信设置</h4><div class="sf-set-info jieshoujg"><span class="sf-set-info-t">自动接收间隔</span> <input type="text" id="receiveInterval" value=""> <span class="jiange-time">分钟（可填入5-60）</span></div></div><div class="sf-set"><h4 class="sf-set-title">显示设置</h4><div class="sf-set-info"><span class="sf-set-info-t">回复转发前缀</span><label class="re-select-s"><input data-radio="1" id="radio1" checked="checked" type="radio" name="1">回复：/转发：</label><label style="margin-left:31px"><input type="radio" id="radio2" data-radio="2" name="1">Re：/Fw：</label></div><div class="sf-set-info"><span class="sf-set-info-t">字体设置</span><select class="select-font" id="font-family"><option value="宋体">宋体</option><option value="黑体">黑体</option><option value="楷体">楷体</option><option value="幼圆">幼圆</option><option value="微软雅黑">微软雅黑</option><option value="Arial">Arial</option><option value="Arial Black">Arial Black</option><option value="Book Antiqua">Book Antiqua</option><option value="Calibri">Calibri</option><option value="Cambria">Cambria</option><option value="Comic Sans MS">Comic Sans MS</option><option value="Helvetica Neue">Helvetica Neue</option><option value="MS Gothic">MS Gothic</option><option value="Monotype">Monotype</option><option value="Times New Roman">Times New Roman</option><option value="Verdana">Verdana</option><option value="Palatino Linotype">Palatino Linotype</option></select><select class="select-font" id="font-size" style="margin-left:10px"><option value="12px">12px</option><option value="14px">14px</option><option value="16px">16px</option><option value="18px">18px</option><option value="20px">20px</option><option value="48px">48px</option></select><span class="select-font-color"><input class="cpOther" value="" style="display:none"> <i class="down-icon"></i> <span class="f-color color-show"></span></span></div><div class="sf-set-info martop write-name"><span class="sf-set-info-t">写信昵称</span> <input class="w-input-six" id="nickname" type="text" placeholder="Song Lu"></div><div class="sf-set-info martop"><span style="width:100%;padding-left:3px"><input id="isSpelling" type="checkbox">正文拼写检查<label class="ashen">开启后，编辑器会以红色波浪线提示正文中的拼写错误</label></span></div><div class="sf-set-info martop"><span class="sf-set-info-t"><input id="copyTo" type="checkbox">默认抄送</span> <input class="w-input-six" id="defaultCc" type="text" placeholder="请使用“，”分割多个邮箱"></div><div class="sf-set-info martop"><span class="sf-set-info-t"><input id="bcCopy" type="checkbox">使用密送</span> <input class="w-input-six" id="defaultBcc" type="text" placeholder="请使用“，”分割多个邮箱"></div></div><div class="sf-set"><h4 class="sf-set-title">默认模版设置</h4><div class="sf-set-info"><span class="sf-set-info-t">使用默认模版</span><select class="select-model" id="defaultTemplate"><option data-id="null" value="无">无</option></select></div></div></div></div><!--分组设置开始--><div id="group-set" class="rightShowList"><div class="submir-btn"><a class="btn btn-primary set-up" id="group-set-save" href="#" role="button">保存</a></div><ul class="blacklist"><li><i class="move-icon"></i> <input disabled="disabled" type="text" placeholder="未分组"> <i class="delet-icon"></i></li><li><i class="moved-icon"></i> <input disabled="disabled" type="text" placeholder="礼品买家"> <i class="delet-icon"></i></li></ul><div class="submir-btn"><a class="btn btn-primary set-up addGroup" href="#" role="button"><span class="" aria-hidden="true"></span> 添加新分组</a></div></div><!--签名设置开始--><div id="sign-set" data-id="" class="rightShowList"><div class="submir-btn"><a class="btn btn-primary set-up" id="sign-set-save" href="#" role="button">保存</a></div><div class="form-group" style="margin-top:20px"><!-- <div class="line-group"></div> --><!-- <i class="s-updownBg s-img" data-type="qianming" title="插入图片"></i> --><div class="add-files"><span class="add-images3"><i class="pub-icon list-img-icon"></i> 插入图片</span></div><form class="form-horizontal" id="form_img3" enctype="multipart/form-data" method="post" style="display:none"><input type="file" class="" name="upImgs" id="up_3"> <input type="hidden" name="file" value="upImgs"> <input type="hidden" name="dictFileUpType" value="0"></form><div id="qianmingEditor"></div></div><div class="checkbox"><label class="qianm" style="padding-left: 0"><input id="sign-checkbox" type="checkbox"> 启用签名</label></div></div><!--收件规则开始--><div id="add-rule" class="rightShowList"><div id="add-rule-one"><div class="submir-btn"><a id="add-rule-btn" class="btn btn-primary set-up" href="#" role="button"><span class="" aria-hidden="true"></span> 添加新规则</a></div><table class="table"><thead><tr><th class="role-status">启动</th><th class="role-condition" style="width: 558px">名称</th><th class="role-control">操作</th></tr></thead><tbody><tr><td>已启动</td><td>122</td><td><button class="btn btn-link" type="button">编辑</button> <button class="btn btn-link" type="button">删除</button> <button class="btn btn-link" type="button">关闭</button></td></tr><tr><td>未启动</td><td>122</td><td><button class="btn btn-link" type="button">编辑</button> <button class="btn btn-link" type="button">删除</button> <button class="btn btn-link" type="button">关闭</button></td></tr></tbody></table></div><div id="add-rule-two" style="display:none"><div class="submir-btn"><i class="glyphicon-menu-left"></i> <a class="btn btn-primary set-up" id="addressee-rules-save" href="#" role="button">添加</a></div><div class="sf-set-info martop"><span style="width: 50px" class="sf-set-info-t">规则名称</span> <input type="text" id="add-rule-name" placeholder="Song Lu" class="w-input-six" style="width: 640px"></div><div class="sf-set-info" id="add-rule-checkbox"><span style="width: 50px" class="sf-set-info-t">执行时机</span><label class="re-select-s"><input type="checkbox" name="1" checked="checked" disabled="disabled">收取邮件时</label><!-- <label class="re-select-s"><input type="checkbox" name="1">发送邮件时</label> --></div><div class="sf-set"><h4 class="sf-set-title">条件</h4><div class="sf-set-info" style="margin-top:10px;margin-left:2px">满足<select class="select-font select-erji"><option value="1">全部</option><option value="2">任意一个</option></select>条件 <a class="btn btn-primary set-up removeAll" style="float:right" href="#" role="button">清空全部条件</a><div class="clear"></div></div><div class="sf-set-info" id="conditions-add" style="margin-top: 10px; margin-bottom: 20px;margin-left:2px"><a class="btn btn-primary set-up conditions-add" href="#" role="button">添加条件</a></div></div><div class="sf-set"><h4 class="sf-set-title">执行动作</h4><div class="sf-set-info"><div type="text" style="width: 300px;float:left;margin-top:10px;border:1px solid #ddd;padding:8px">分组到</div><select class="select-font select-group" style="width: 367px"><option data-id="" value="">分组到</option></select><i class="delet-icon"></i></div><div class="sf-set-info" style="margin-top: 10px; margin-bottom: 20px"><a class="btn btn-primary set-up addAction" href="#" role="button"><span class="" aria-hidden="true"></span> 添加动作</a></div></div></div></div><!--导入邮件开始--><div id="emailIn" class="rightShowList"><div class="setRightShow-main"><div class="sf-set daoruemail"><h4 class="sf-set-title">导入邮件</h4><div class="sf-set-info"><span class="sf-set-info-t">目标分组</span><select class="select-font" id="boxEmail"><option value="1">收件箱</option><option value="0">发件箱</option></select></div><div class="sf-set-info"><span class="sf-set-info-t">选择文件</span> <input class="btn btn-primary" id="selectDoc" type="button" value="选择文件"> <input style="display:none" type="file"> <span class="help-block">暂时只支持pst、eml文件或者是eml文件组成的zip压缩包，不超过50M</span><ul class="sf-set-info-file" id="uploadEmailList"><!-- <li>
+				        		<div class="media">
+				        			<div class="media-left">
+								      	<img class="media-object" src="../images/excel-icon.jpg" alt="...">
+								  	</div>
+								  	<div class="media-body">
+									    <h4 class="media-heading">20160331-只讲西路项目GANK.xlsx</h4>
+									    123KB
+								  	</div>
+								  	<i class="i-remove"></i>
+				        		</div>
+				        	</li> --></ul><form class="form-horizontal" id="form_fileEmail" enctype="multipart/form-data" method="post" style="display:none"><input type="file" name="upFiles" id="up-filesEmail"> <input type="hidden" name="file" value="upFiles"> <input type="hidden" name="dictFileUpType" value="1"></form><span class="sf-set-info-t"></span> <input class="btn btn-primary" type="button" id="uploadEmailSave" value="确认上传"></div></div><div class="sf-set drlb"><h4 class="sf-set-title">导入列表 <a href="#" id="uploadEmailF5" style="position:absolute;right:0">刷新</a></h4><table class="table" id="uploadEmailTable"><thead><tr><th style="width: 300px">文件名</th><th style="width: 80px">目标分组</th><th style="width: 55px">进度</th><th style="width: 90px">失败原因</th><th style="width: 190px">导入时间</th></tr></thead><tbody></tbody></table></div></div></div><!--快速文本开始--><div id="qtext" class="rightShowList"><div class="submir-btn"><a class="btn btn-primary set-up" id="qtext-save" href="#" role="button">保存</a></div><ul class="blacklist kswb"><li><input type="text" class="fasttText-t" value="快速文本一"><textarea class="fasttText" placeholder="感谢您的询盘"></textarea><i class="delet-icon" style="top:-25px"></i></li><li><input type="text" class="fasttText-t" value="快速文本二"><textarea class="fasttText" placeholder="感谢您的询盘"></textarea><i class="delet-icon" style="top:-25px"></i></li></ul><div class="submir-btn"><a class="btn btn-primary set-up" id="qtextAdd" href="#" role="button"><span class="glyphicon-plus" aria-hidden="true"></span> 添加新文本</a></div></div><!--自动回复开始--><div id="auto-res" class="rightShowList"><div id="add-re-one"><div class="submir-btn"><a id="add-re-btn" class="btn btn-primary set-up" href="#" role="button"><span class="glyphicon-plus" aria-hidden="true"></span> 添加新规则</a></div><table class="table"><thead><tr><th class="role-status" style="width: 70px">启动</th><th class="role-condition" style="width: 520px">条件</th><th class="role-control" style="width: 125px">操作</th></tr></thead><tbody></tbody></table></div><div id="add-re-two" style="display:none"><div class="submir-btn"><i class="glyphicon-menu-left"></i> <a class="btn btn-primary set-up" id="auto-res-save" href="#" role="button">添加</a></div><div class="sf-set-info martop"><span style="width: 50px" class="sf-set-info-t">规则名称</span> <input type="text" id="auto-res-name" placeholder="Song Lu" class="w-input-six" style="width: 640px"></div><div class="sf-set"><h4 class="sf-set-title">条件</h4><div class="sf-set-info" style="margin-top:10px;margin-left:2px">满足<select class="select-font select-erji"><option value="1">全部</option><option value="2">任意一个</option></select>条件 <a class="btn btn-primary set-up removeAll" style="float:right" href="#" role="button">清空全部条件</a><div class="clear"></div></div><!-- <div class="sf-set-info conditions" style="margin-left:2px;">
+        				<select class="select-font typeName" style="width: 190px;margin-left:0;">
+	        				<option value="">发件人名称或邮件地址</option>
+	        				<option value="主题">主题</option>
+	        				<option value="全文">全文</option>
+	        				<option value="收件人">收件人</option>
+	        				<option value="抄送人">抄送人</option>
+	        			</select>
+	        			<select class="select-font isOpen" style="width: 100px;">
+	        				<option value="1">包含</option>
+	        				<option value="0">不包含</option>
+	        			</select>
+	        			<input type="text" style="width: 355px;">
+	        			<i class="delet-icon"></i>
+        			</div> --><div class="sf-set-info" id="conditions-add" style="margin-top: 10px; margin-bottom: 20px;margin-left:2px"><a class="btn btn-primary set-up conditions-add" href="#" role="button">添加条件</a></div></div><div class="sf-set"><h4 class="sf-set-title">回复</h4><div class="add-files"><span class="add-attachment"><i class=""></i> 添加附件</span><div style="display:none"><input type="file" id="fujian"></div><span class="add-images"><i data-type="main" class=""></i> 插入图片 </span><span class="add-quotation"><i class=""></i> 插入报价单 </span><span class="add-PI"><i class=""></i> 插入PI </span><span class="add-product"><i class=""></i> 插入产品 </span><span class="add-text"><i class=""></i> 插入快速文本<ul class="textDwon"></ul></span><span class="add-model"><i class=""></i> 插入模版<ul class="modelDwon"></ul></span></div><form class="form-horizontal" id="form_file" enctype="multipart/form-data" method="post" style="display:none"><input type="file" name="upFiles" id="up-files"> <input type="hidden" name="file" value="upFiles"> <input type="hidden" name="dictFileUpType" value="1"></form><form class="form-horizontal" id="form_img" enctype="multipart/form-data" method="post" style="display:none"><input type="file" class="" name="upImgs" id="up_1"> <input type="hidden" name="file" value="upImgs"> <input type="hidden" name="dictFileUpType" value="0"></form><ul id="added-files"></ul><div class="form-group"><div id="szidonghuifuEditor"></div></div></div></div></div><!--模版设置开始--><div id="tem-set" class="rightShowList"><div id="add-model-one"><div class="submir-btn"><a id="add-model-btn" class="btn btn-primary set-up" href="#" role="button"><span class="glyphicon-plus" aria-hidden="true"></span> 添加模版</a></div><table class="table"><thead><tr><th class="model-name">模版名称</th><th class="model-control">操作</th></tr></thead><tbody></tbody></table></div><div id="add-model-two" style="display:none"><div class="submir-btn"><i class="glyphicon-menu-left"></i> <a class="btn btn-primary set-up" id="tem-add" href="#" role="button">添加</a></div><div class="sf-set-info"><input placeholder="模版名称" id="tem-name" class="w-input-six" type="text" style="width:100%;margin:20px 0 0"></div><div class="add-files"><span class="add-images1"><i class=""></i> 插入图片 </span><span class="add-model1"><i class=""></i> 插入模版<ul class="modelDwon"></ul></span></div><form class="form-horizontal" id="form_img1" enctype="multipart/form-data" method="post" style="display:none"><input type="file" class="" name="upImgs" id="up_11"> <input type="hidden" name="file" value="upImgs"> <input type="hidden" name="dictFileUpType" value="0"></form><div class="form-group" style="width:698px"><!-- <div class="line-group"></div> --> <i class="s-updownBg s-img" data-type="modelSet" title="插入图片"></i><div id="modelSetEditor"></div></div></div></div><!--黑名单开始--><div id="blacklist-set" class="rightShowList"><div class="submir-btn"><a class="btn btn-primary set-up" id="blacklist-set-save" href="#" role="button">保存</a></div><ul class="blacklist"><li><input type="text" placeholder="123456789@qq.com"> <i class="delet-icon"></i></li><li><input type="text" placeholder="123456789@qq.com"> <i class="delet-icon"></i></li></ul><div class="submir-btn addGoup"><a class="btn btn-primary set-up addGroup" href="#" role="button"><span class="" aria-hidden="true"></span> 添加黑名单</a></div></div></div><div class="clear"></div><!-- 新建弹窗结束 --><script src="../js/v.js"></script><script data-main="../js/pop-email-setting.js" src="../js/lib/require.min.js"></script><script></script></body></html>

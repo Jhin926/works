@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-审批</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- build:css ../css/common.min.css -->
+    <link href="../../../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../../../css/common.css" rel="stylesheet" />
+    <link href="../../../js/lib/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet">
+    <!-- endbuild -->
+    <link rel="stylesheet" type="text/css" href="../../../css/crm.css">
+    <link rel="stylesheet" type="text/css" href="../css/approval.css">
+</head>
+<body ng-controller="approvalList">
+
+<div class="i-content-wrapper">
+    <div class="panel mid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <ul class="panel-title padding0 panel-right-nav">
+                    <li><h1><i class="approval_img"><img src="../../../images/icon_sp.png"></i>审批</h1></li>
+                    <li><a href="javascript:;" ng-class="{'active':!isMyApproval}" ng-click="switchApprovalList(1)">由我审批</a></li>
+                    <li><a href="javascript:;" ng-class="{'active':isMyApproval}" ng-click="switchApprovalList(2)">我的审批</a></li>
+                </ul>
+                <div class="page-title2">
+                    <div class="pull-left btn-about">
+                        <button class="btn btn-primary btn-underling-pop" id="btn-underling-pop" data-id="" data-toggle="modal" data-target="#myModal">
+                        </button>
+                        <button class="btn btn-primary btn-sm btn-radial-out" id="btn-filter" data-toggle="modal" data-target="#filterModal"><i class="s-updownBg s-filter"></i></button>
+                        <a href="approval-add.html" class="btn btn-primary" id="addCon" data-code="contact_add" data-maintab=""><i class="s-updownBg s-add3"></i><span>添加审批</span></a>
+                    </div>
+                    <div class="pull-left box-inputs">
+                        <input type="text" class="input-sm form-control" id="inputQuick" placeholder="通过标题名快速搜索">
+                        <i class="s-updownBg s-find" id="c-search-btn"></i>
+                    </div>
+                    <i class="i-alertNew" title="消息"></i>
+                </div>
+                <div class="m_batch1" ng-class="{'active':showToolbar}" data-id="1">
+                    <button type="button" class="btn btn-tools" ng-disabled="approved" ng-click="approvalOfOperation(1)">通过</button>
+                    <button type="button" class="btn btn-tools" ng-disabled="approved" ng-click="approvalOfOperation(2)">不通过</button>
+                    <i class="s-updownBg s-dels4 pull-right" id="batchClose" ng-click="showToolbar=false"></i>
+                </div>
+            </div>
+            <div class="panel panel-body">
+                <div class="appvoral-list">
+                    <ul>
+                        <li>
+                            <ul class="table-header">
+                                <li>状态</li>
+                                <li>类型</li>
+                                <li>标题</li>
+                                <li class="positon-change">发起人</li>
+                                <li class="approval-sort" ng-click="approvalSort(approvalItem)">时间<p class="s-updownBg s-orderList"></p></li>
+                            </ul>
+                        </li>
+                        <div class="trNone">
+                            <div class="trnone-info">
+                                <img src="../../../images/empty-contact.png" alt="">
+                                <p class="trnone-text">暂无数据</p>
+                            </div>
+                        </div>
+                        <li ng-click="getDetail(approvalItem)" ng-repeat="approvalItem in approvalList" data-id="{{approvalItem.id}}" ng-model="approvalItem" >
+                            <ul class="table-body">
+                                <li date-id="{{approvalItem.status}}"><p ng-class="{1: 'class1',2: 'class2',3: 'class3'}[approvalItem.status]">{{approvalItem.statusText}}</p></li>
+                                <li date-id="{{approvalItem.bizType}}">{{approvalItem.bizTypeText}}</li>
+                                <li alt="{{approvalItem.subject}}">{{approvalItem.shortSubject}}</li>
+                                <li date-id="{{approvalItem.initiatorId}}">{{approvalItem.approverName}}</li>
+                                <li>{{approvalItem.updateTime}}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="approval-line">
+                    <div class="page"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="preview" class="preview text-center">
+    <div class="previewTop">
+        <h3 style="display: inline-block;color: #e6e6e6;line-height: 60px;"></h3>
+        <button id="previewClose" data-dismiss="modal"> X </button>
+    </div>
+</div>
+<div class="modal fade in" id="filterModal" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content approval_form">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">我的审批筛选</h4>
+            </div>
+            <div class="modal-body filter-term">
+                <form class="form-horizontal approvalFilter">
+                    <div class="form-group">
+                        <label for="approvalType" class="col-sm-2 control-label">审批类型</label>
+                        <div class="col-sm-10 approval_down">
+                            <span class="img_down"><img src="../../../images/portlet-collapse-icon.png"></span>
+                            <select id="approvalType" class="form-control">
+                                <option value="0">请选择</option>
+                                <option value="1">报价</option>
+                                <option value="2">PI</option>
+                                <option value="3">订单</option>
+                                <option value="4">Email</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="approvalStatus" class="col-sm-2 control-label">审批状态</label>
+                        <div class="col-sm-10 approval_down">
+                            <span class="img_down"><img src="../../../images/portlet-collapse-icon.png"></span>
+                            <select id="approvalStatus" class="form-control">
+                                <option value="0">请选择</option>
+                                <option value="1">待审批</option>
+                                <option value="2">通过</option>
+                                <option value="3">不通过</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label approval-person" data-id="1">发起人</label>
+                        <div class="col-sm-10 approval_down">
+                            <span class="img_down"><img src="../../../images/portlet-collapse-icon.png"></span>
+                            <select id="approvalThrough" class="form-control" ng-model="List" ng-options="List.id as List.name for List in principalList">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">时间</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control datetime-picker approval-time" name="start-date" placeholder="YYYY-MM-DD">
+                        </div>
+                        <label class="col-sm-1 control-label" style="margin-left:28px;width:5px;">—</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control datetime-picker approval-time" name="end-date" placeholder="YYYY-MM-DD">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer approval_footer">
+                <div class="col-sm-2"></div>
+                <button type="button" class="btn btn-primary btn-lg" ng-click="approvalSearch()" data-dismiss="modal">搜索</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../../js/v.js"></script>
+<script data-main="../../../js/approval.js" src="../../../js/lib/require.min.js"></script>
+</body>
+</html>

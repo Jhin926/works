@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>外贸通-激活账户</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <link href="../js/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- build:css ../css/common.min.css   -->
+    <link href="../js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../js/lib/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="../css/activate.css" rel="stylesheet" />
+</head>
+<style type="text/css">
+    
+</style>
+<body>
+    <div class="body">
+        <div id="main">
+            <div class="body-top">
+                <div class="pull-left logo">
+                    <img src="../images/logo.png">
+                </div>
+                <div class="pull-right">
+                    <ul class="loginAndReg">
+                        <li>
+                            <a href="register.html">免费注册</a>
+                        </li>
+                        <li>｜</li>
+                        <li>
+                            <a href="login.html">登陆</a>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="page-main">
+                <div class="page-tips">
+                    <div class="page-tips-top">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">设置密码：</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="passwordConfirm" placeholder="密码不少于6位">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">确认密码：</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="password" placeholder="确认密码">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="line"></div>
+                    <button class="re-sent" id="activate">点击激活</button>
+                </div>
+            </div>
+        </div>
+        <div id="status">
+            <div class="body-top">
+                <div class="pull-left logo">
+                    <img src="../images/logo.png">
+                </div>
+                <div class="pull-right">
+                    <ul class="loginAndReg">
+                        <li>
+                            <a href="register.html">免费注册</a>
+                        </li>
+                        <li>｜</li>
+                        <li>
+                            <a href="login.html">登陆</a>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="page-main">
+                <div class="page-tips" id="failed">
+                    <div class="page-tips-top">
+                        <i class="close-icon"></i>
+                        <span class="tips-languege">激活失败</span>
+                        <div class="tips-info">&nbsp;&nbsp;&nbsp;您的激活邮件已过时</div>
+                    </div>
+                    <div class="line"></div>
+                    <!-- <button class="re-sent" type="button">重新发送激活邮件</button> -->
+                </div>
+                <div class="page-tips" id="success">
+                    <div class="page-tips-top">
+                        <img class="close-icon-success" src="../images/letterSend.png">
+                        <span class="tips-languege" style="top:5px;">激活成功</span>
+                    </div>
+                    <div class="line"></div>
+                    <a class="re-sent" href="javascript:;" style="width:134px;">开始使用外贸通</a>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="waishangtong">
+            <div class="wst-top">外商通</div>
+            <div class="wst-tips">
+                <div class="wst-tips-top">您好，<span>37688965@qq.com</span></div>
+                <div class="line"></div>
+                <div class="wst-tips-bottom">您申请修改登录密码，请在30分钟内完成设置。如果未做任何操作，系统将保留原密码。</div>
+            </div>
+            <div class="wst-tips-info">
+                <p>请点击下面的链接重新修改密码</p>
+                <a href="">https://waishangtong.com/cgi-bin/frame_html?sid=_6QRejJJQVtiRgFW&r=1ae78337107fbbefff6661
+7f6510dfa2</a>
+                <p>如果以上链接无法点击，请把上面网页地址复制到浏览器地址栏中打开</p>
+                <p style="color:#666666;margin:5px 0;">外商通营销管理软件是利用云计算、移动互联、大数据及社交网络等新技术为基础，打造的一款以连接海外买家为基础，提供外贸客户与商机的发现、跟踪、转化、管理的外贸营销管理工具，来提高外贸企业的营销效率帮助外贸提升销售业绩。</p>
+                <p>外商通，专业外贸crm</p>
+                <time>2016-05-16</time>
+            </div>
+        </div>  -->
+    </div>
+    <script src="../js/v.js"></script>
+    <script data-main="../js/activate.js" src="../js/lib/require.min.js"></script>
+</body>
+</html>

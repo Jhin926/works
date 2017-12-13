@@ -1,0 +1,262 @@
+{
+    "carlist": [
+        {
+            "teaid": 123,
+            "indexPicture": "../static/xhlj2.png",
+            "teaCategoryName": "西湖龙井",
+            "starLeve": 1,
+            "teaName": "小罐茶",
+            "weightText": "250g",
+            "displayPrice": "60",
+            "unitPrice": "56",
+            "quantity": 2
+        },
+        {
+            "teaid": 123,
+            "indexPicture": "../static/xymj2.png",
+            "teaCategoryName": "信阳毛尖",
+            "starLeve": 3,
+            "teaName": "小罐茶",
+            "weightText": "250g",
+            "displayPrice": "60",
+            "unitPrice": "56",
+            "quantity": 3
+        },
+        {
+            "teaid": 123,
+            "indexPicture": "../static/hsmf2.png",
+            "teaCategoryName": "黄山毛峰",
+            "starLeve": 6,
+            "teaName": "小罐茶",
+            "weightText": "250g",
+            "displayPrice": "60",
+            "unitPrice": "56",
+            "quantity": 1
+        }
+    ],
+    "detail": {
+        "teaid": 123,
+        "teaPictureResult": [
+            {
+                "pictureUrl": "../static/1.png"
+            },
+            {
+                "pictureUrl": "../static/2.png"
+            },
+            {
+                "pictureUrl": "../static/3.png"
+            }
+        ],
+        "teaCategoryName": "茗茶",
+        "starLevel": 1,
+        "title": "标题",
+        "name": "一等品",
+        "teaName": "小罐茶",
+        "weightText": "250g",
+        "displayPrice": "56",
+        "unitPrice": "96",
+        "quantity": 2,
+        "producingArea": "河南",
+        "expirationDate": "18个月",
+        "artNo": "货号",
+        "teaPictureShowResult": [
+            {
+                "pictureUrl": "../static/4.png"
+            },
+            {
+                "pictureUrl": "../static/3.png"
+            }
+        ]
+    },
+    "mine": {
+        "level": 4,
+        "mobileNumber": "15565533829",
+        "wxNickname": "昵称",
+        "goldCoin": "26526",
+        "amount": 59
+    },
+    "orderlist": [
+        {
+            "id": 123,
+            "orderNumber": "242823048204208",
+            "status": 1,
+            "teaOrderDetailListResults": [
+                {
+                    "indexPicture": "../static/xymj2.png",
+                    "teaCategoryName": "信阳毛尖",
+                    "name": "绿茶",
+                    "starLeve": 1,
+                    "teaName": "小罐茶",
+                    "weightText": "250g",
+                    "transactionPrice": "56",
+                    "quantity": 2
+                }
+            ]
+        },
+        {
+            "id": 125,
+            "orderNumber": "242823048204208",
+            "status": 3,
+            "teaOrderDetailListResults": [
+                {
+                    "indexPicture": "../static/xhlj2.png",
+                    "teaCategoryName": "西湖龙井",
+                    "name": "绿茶",
+                    "starLeve": 1,
+                    "teaName": "小罐茶",
+                    "weightText": "250g",
+                    "transactionPrice": "56",
+                    "quantity": 2
+                }
+            ]
+        },
+        {
+            "id": 124,
+            "orderNumber": "242823048204208",
+            "status": 2,
+            "teaOrderDetailListResults": [
+                {
+                    "indexPicture": "../static/ynpe2.png",
+                    "teaCategoryName": "云南普洱",
+                    "name": "绿茶",
+                    "starLeve": 1,
+                    "teaName": "小罐茶",
+                    "weightText": "250g",
+                    "transactionPrice": "56",
+                    "quantity": 2
+                }
+            ]
+        }
+    ],
+    "tealist": [
+        {
+            "id": 123,
+            "indexPicture": "../static/xhlj1.png",
+            "teaCategoryName": "西湖龙井",
+            "weightText": "456g",
+            "unitPrice": "123"
+        },
+        {
+            "id": 123,
+            "indexPicture": "../static/xymj1.png",
+            "teaCategoryName": "信阳毛尖",
+            "weightText": "456g",
+            "unitPrice": "123"
+        },
+        {
+            "id": 123,
+            "indexPicture": "../static/ynpe1.png",
+            "teaCategoryName": "云南普洱",
+            "weightText": "456g",
+            "unitPrice": "123"
+        },
+        {
+            "id": 123,
+            "indexPicture": "../static/hsmf1.png",
+            "teaCategoryName": "黄山毛峰",
+            "weightText": "456g",
+            "unitPrice": "123"
+        }
+    ],
+    "orderDetail": {
+        "receiver": "盖伦",
+        "receiverPhone": "13888888888",
+        "receiverAddress": "德玛西亚城德玛西亚街666号",
+        "id": "ID.666",
+        "orderNumber": "No.88888",
+        "status": 1,
+        "deliveryTime": "2017-12-11",
+        "remark": "备注信息",
+        "totalAmount": "60",
+        "freightFee": "20",
+        "goldCoin": "100",
+        "foldCoin": 100,
+        "paymentAmount": "30",
+        "accountBalance": 66,
+        "invoiceResult": {
+            "invoiceTitle": "发票抬头",
+            "remark": "发票备注"
+        }
+    },
+    "address": {
+        "receiver": "德莱厄斯",
+        "receiverPhone": "13888888888",
+        "province": "诺克萨斯省",
+        "city": "祖安城",
+        "district": "祖安区",
+        "address": "默认街道"
+    },
+    "snap": {
+        "teaid": 123,
+        "teaPictureResults": [
+            {
+                "pictureUrl": "../static/1.png"
+            },
+            {
+                "pictureUrl": "../static/2.png"
+            },
+            {
+                "pictureUrl": "../static/3.png"
+            }
+        ],
+        "teaCategoryName": "茗茶",
+        "starLevel": 1,
+        "title": "标题",
+        "name": "一等品",
+        "teaName": "小罐茶",
+        "weightText": "250g",
+        "displayPrice": "56",
+        "unitPrice": "96",
+        "totalInventory": "6888",
+        "quantity": 2,
+        "producingArea": "河南",
+        "expirationDate": "18个月",
+        "artNo": "货号",
+        "teaPictureShowResults": [
+            {
+                "pictureUrl": "../static/4.png"
+            },
+            {
+                "pictureUrl": "../static/3.png"
+            }
+        ]
+    },
+    "addressList": [
+        {
+            "isDefault": 0,
+            "receiver": "嘉文四世",
+            "receiverPhone": "13888888888",
+            "province": "德玛西亚省",
+            "city": "德玛西亚城",
+            "district": "皇宫区",
+            "address": "默认街道"
+        },
+        {
+            "isDefault": 1,
+            "receiver": "德莱厄斯",
+            "receiverPhone": "13888888888",
+            "province": "诺克萨斯省",
+            "city": "祖安城",
+            "district": "祖安区",
+            "address": "默认街道"
+        },
+        {
+            "isDefault": 1,
+            "receiver": "艾瑞莉娅",
+            "receiverPhone": "13888888888",
+            "province": "艾欧尼亚省",
+            "city": "祖安城",
+            "district": "祖安区",
+            "address": "默认街道"
+        },
+        {
+            "isDefault": 1,
+            "receiver": "蒙多",
+            "receiverPhone": "13888888888",
+            "province": "艾欧尼亚省",
+            "city": "祖安城",
+            "district": "祖安区",
+            "address": "默认街道"
+        }
+    ]
+}

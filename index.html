@@ -1,33 +1,19 @@
 <html>
 <head>
 <style type="text/css">
-    html{font-size:62.5%;}
-    body{font-size:16px;}
-    .fa{font-size: 16px;}
-    .aaaaa{background-color: #000000 !important;}
+html,body,div,p,ul,li,ol,dl,dt,dd {
+  margin: 0;
+  padding: 0;
+}
+ul,li,ol,dl,dt,dd {
+  list-style: none;
+}
 </style>
 </head>
 <body>
-<div id="xincon" style="width: 1px; height: 1px; margin: 300px auto; position: relative;"></div>
+  <h1>工作项目</h1>
+  <ul>
+    <li><li>
+  </ul>
 </body>
-<script>
-    //alert(Math.sin(90*Math.PI/180));
-    var angle = 0;
-    function getHeartPoint() {//心形曲线
-        var t = angle / Math.PI;
-        var xin2 = document.createElement("div");
-        angle+=0.01;
-        var y = 3.7 * (16 * Math.pow(Math.sin(t), 3));
-        var x = - 4 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
-        xin2.style.width = "1px";
-        xin2.style.height = "1px";
-        xin2.style.backgroundColor = "red";
-        xin2.style.position = "absolute";
-        xin2.style.top = x + "px";
-        xin2.style.left = y + "px";
-        document.getElementById("xincon").appendChild(xin2);
-        setTimeout(getHeartPoint, 1);
-    }
-    getHeartPoint();
-</script>
 </html>

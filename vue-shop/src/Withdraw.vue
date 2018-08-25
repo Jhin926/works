@@ -4,11 +4,11 @@
       <div class="withdrawmoney-item">
         <div class="money-item-title">
           <p class="left">提现账户
-          <p>
+          </p>
           <p class="left right">
             微信零钱
             <span class="title-color">(无需手续费)</span>
-          <p>
+          </p>
         </div>
         <div class="clear"></div>
         <div class="money-item-con">

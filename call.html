@@ -12,12 +12,12 @@ ul,li,ol,dl,dt,dd {
 </head>
 <body>
   <h1>电话拨打中...</h1>
-  <a href="tel:15565533829" id="call">拨打</a>
-  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <a href="tel:15565533829">点击拨打</a>
+  <a href="sms:15565533829">点击发送短信</a>
   <script>
-    $(function() {
-      $('#call').click()
-    })
+    setTimeout(function() {
+        window.location.href = "tel:15565533829"
+      }, 200)
   </script>
 </body>
 </html>

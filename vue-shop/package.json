@@ -79,7 +79,7 @@
     "sinon-chai": "^2.8.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.1.1",
-    "swiper": "^3.4.0",
+    "swiper": "^6.5.1",
     "url-loader": "^0.5.7",
     "vue-awesome-swiper": "^2.2.3",
     "vue-hot-reload-api": "^1.2.0",
